@@ -92,7 +92,16 @@ p{
   object-fit: cover;
 }
 
+.prew_item3{
+  width: 100%;
+  height: 200px;
+  background-image: url(../img/prew_item.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 /* /swiper */
+
 .prew_item2{
   width: 100%;
   height: 300px;
