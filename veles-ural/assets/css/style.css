@@ -64,17 +64,39 @@ p{
 }
 @media (max-width:1200px) {
   .mySwiper {
+    width: 500px;
     height: 200px;
-    margin-left: -150px;
+    margin-left: -20px;
   }
   .mySwiper2 {
     height: 500px;
   }
 }
-@media (max-width:576px) {
+@media (max-width:1024px) {
   .mySwiper {
-    height: 300px;
-    margin-left: -150px;
+    width: 500px;
+    height: 200px;
+    margin-left: 50px;
+  }
+  .mySwiper2 {
+    height: 500px;
+  }
+}
+@media (max-width:768px) {
+  .mySwiper {
+    width: 500px;
+    height: 200px;
+    margin-left: -30px;
+  }
+  .mySwiper2 {
+    height: 500px;
+  }
+}
+@media (max-width:574px) {
+  .mySwiper {
+    width: 300px;
+    height: 200px;
+    margin-left: 20px;
   }
   .mySwiper2 {
     height: 250px;

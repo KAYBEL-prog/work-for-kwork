@@ -132,11 +132,11 @@
                   <img src="../assets/img/logo-item.png" width="102" height="34" alt="logo-item" >
                 </div>
             </div>
-            <div class="container row justify-content-center justify-content-xl-between px-0 mt-2 mx-auto">
-              <div class="col-10 col-lg-6 col-xl-8 px-1">
+            <div class="container row justify-content-center justify-content-xl-between overflow-hidden px-0 mt-2 mx-auto ">
+              <div class=" col-10 col-lg-6 col-xl-8 px-1 ">
 
 
-                <div  class="swiper mySwiper2">
+                <div class="swiper mySwiper2">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide prew_item"></div>
                     <div class="swiper-slide prew_item"></div>
@@ -454,13 +454,11 @@
   <script>
     var swiper = new Swiper(".mySwiper", {
       loop: true,
-      spaceBetween: 10,
       slidesPerView: 3,
       watchSlidesProgress: true,
     });
     var swiper2 = new Swiper(".mySwiper2", {
       loop: true,
-      spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
