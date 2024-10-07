@@ -1261,7 +1261,9 @@ form textarea {
       background: url(images/arrow.png) no-repeat;
       display: inline-block;
       margin-left: 10px; }
-
+      .hero-block_bg{
+        background-image: url(./dummy/slide-1.jpg);
+      }
 .hero-slider {
   position: relative;
   margin-bottom: 50px; }
@@ -1314,9 +1316,7 @@ form textarea {
     text-align: center; }
 
 
-    .hero-block_bg{
-			background-image: url(../../dummy/slide-1.jpg);
-		}
+   
 
     .hero-slider .flex-control-nav li {
       display: inline-block;
