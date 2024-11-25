@@ -22,7 +22,10 @@ p{
 
 .btn-search{
   position: relative;
-  margin-left: -65px;
+  background-color: #ffffff;
+  border-radius: 0px 5px 5px 0px;
+  border: solid rgba(0, 0, 0, 0.2);
+  border-width: 1px 1px 1px 0px;
 }
 .bg-bluess{
   background-color: #468AE7;
