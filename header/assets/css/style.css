@@ -20,7 +20,11 @@ p{
   margin: 0;
 }
 
+.btn-search{
+  position: relative;
+  margin-left: -35px;
 
+}
 .bg-bluess{
   background-color: #468AE7;
   color: #ffffff;
@@ -74,15 +78,12 @@ p{
 }
 .text-fs-9-cst{
   font-size: 13px;
-
 }
 .uppen-fz{
   font-size: 13px;
 }
-
 .text-fs-10-cst{
   font-size: 10px;
-
 }
 .bottom-links{
   color: #ffffff;
