@@ -1,3 +1,7 @@
+*{
+  font-family: "Inter";
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -14,6 +18,15 @@ button{
 }
 p{
   margin: 0;
+}
+
+
+.bg-bluess{
+  background-color: #468AE7;
+  color: #ffffff;
+}
+.border-bluess{
+  border-color: #468AE7;
 }
 .btn::after{
   display: none;
