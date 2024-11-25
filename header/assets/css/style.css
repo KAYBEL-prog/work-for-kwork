@@ -26,6 +26,7 @@ p{
   position: relative;
   height: 2px;
   transition: 0.3s;
+  border-radius: 999px;
   background-color: #ffffff;
 }
 .show .icon-btn-menu_item:nth-child(1){
