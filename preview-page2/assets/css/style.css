@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+a{
+  color: #000000;
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+button{
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  user-select: none;
+}
+main{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #F5F5F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+.container{
+  position: relative;
+  z-index: 99;
+  width: 1530px;
+  height: 85vh;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.upper_text{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+}
+.middle_content{
+  
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.content{
+
+  padding-left: 0px;
+  padding-right: 0px;
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+.content2{
+  position: relative;
+  z-index: 999;
+}
+.h1-text{
+  width: 900px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 120%;
+  text-align: center;
+  transition: 0.3s;
+
+}
+.h1-text>span{
+  color: #4145F9;
+}
+.h2-text{
+  width: 1100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+
+  opacity: 0.5;
+  text-align: center;
+  transition: 0.3s;
+
+}
+
+.go-to-link{
+  max-width: 300px;
+  height: 50px;
+
+  padding: 10px;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffff;
+
+
+  border-radius: 999px;
+  background-color: #4145F9;
+  transition: 0.3s;
+
+}
+.go-to-link>img {
+  width: 45px;
+  height: 25px;
+  margin-left: 10px;
+}
+.logo{
+  position: relative;
+  z-index: -1;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.logo_item::before{
+  content: '';
+  z-index: -1;
+  position: absolute;
+  margin-top: -600px;
+  margin-left: 40px;
+  display: block;
+  width: 1000px;
+  height: 1000px;
+  background-image: url(../img/bg-item.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.logo>p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+.logo>p>span{
+  text-decoration: line-through;
+}
+
+.lower_img{
+  position: absolute;
+  z-index: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+}
+.lower_img_inner{
+  min-width: 1200px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(./../img/logo/solutions.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width:1135px) {
+  .h1-text{
+    width: 450px;
+    font-size: 32px;
+    transition: 0.3s;
+  }
+  .h2-text{
+    width: 600px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  .go-to-link{
+    max-width: 200px;
+    height: 30px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  .logo_item::before{
+    margin-top: -600px;
+    margin-left: -220px;
+  }
+}
+@media (max-width:635px) {
+  .upper_text{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .h1-text{
+    width: 320px;
+    font-size: 32px;
+    transition: 0.3s;
+  }
+  .h2-text{
+    max-width: 320px;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.3s;
+  }
+  .go-to-link{
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  .logo_item::before{
+    margin-top: -600px;
+    margin-left: -340px;
+  }
+}
