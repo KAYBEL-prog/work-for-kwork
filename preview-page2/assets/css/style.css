@@ -204,7 +204,7 @@ main{
   }
   .lower_img_inner{
     min-width: 500px;
-    height: 150px;
+    height: 50px;
   }
 }
 @media (max-width:635px) {
@@ -242,6 +242,6 @@ main{
   }
   .lower_img_inner{
     min-width: 300px;
-    height: 150px;
+    height: 30px;
   }
 }
