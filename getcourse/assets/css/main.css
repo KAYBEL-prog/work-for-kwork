@@ -125,7 +125,10 @@
 .courses-title {
   margin-bottom: 50px;
 }
+.course-title:empty{
 
+  margin-top: 52px;
+}
 .courses-slider {
   width: 100%;
   display: grid;
@@ -238,7 +241,7 @@ li.course-content-item::before {
   min-width: 150px;
   min-height: 150px;
   position: absolute;
-  margin-top: -80px;
+  margin-top: 110px;
   margin-right: -60px;
   right: 0;
   display: block;
