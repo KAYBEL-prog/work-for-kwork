@@ -11,6 +11,9 @@
   font-weight: 300;
   font-size: 20px;
 }
+.pages_text{
+  color: #292929;
+}
 .pages_inner .pages_text svg{ 
 
   opacity: 0.5;
