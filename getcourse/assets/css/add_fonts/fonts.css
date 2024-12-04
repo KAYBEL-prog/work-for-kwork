@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fileservice/file/download/h/1a50d12d2ffcb10ca766aef0c3ec22b1.woff2/a/823955/sc/350'),
+      url('/fileservice/file/download/h/aad7d29de1416af966c0bd7fa17258d8.woff/a/823955/sc/295'),
+      url('/fileservice/file/download/h/2d071fdc5ae55e0582004486288e5b6a.ttf/a/823955/sc/95');
+      font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fileservice/file/download/h/bf0869f6a968113bfda76a8c772f3083.woff2/a/823955/sc/162'),
+      url('/fileservice/file/download/h/7c2d10a9ddeeb048c7914b44be85e8ae.woff/a/823955/sc/340'),
+      url('/fileservice/file/download/h/b3e2e017757a6b0a63bd23da01051d31.ttf/a/823955/sc/110');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fileservice/file/download/h/7b311aac22e37343798c63d391fc2d96.woff2/a/823955/sc/99'),
+      url('/fileservice/file/download/h/2b076a9109a23e658a0b989b4cf6cce8.woff/a/823955/sc/200'),
+      url('/fileservice/file/download/h/2d350ccab85d485fc183723e7c91b22a.ttf/a/823955/sc/186');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fileservice/file/download/h/8e062ff7903a1655c9292636db50b2a6.woff2/a/823955/sc/52'),
+      url('/fileservice/file/download/h/b005ff0df39ad70dd5117be5c76cde29.woff/a/823955/sc/334'),
+      url('/fileservice/file/download/h/d8a5b143f86913f762628a951c31af6f.ttf/a/823955/sc/108');
+  font-weight: 700;
+  font-style: normal;
+}
