@@ -255,7 +255,9 @@ li.course-content-item::before {
   background-color: #292929;
   transform: translateY(-50%);
 }
-
+.course-content-item_link{
+  display: block;
+}
 .course-link {
   min-width: 150px;
   min-height: 150px;

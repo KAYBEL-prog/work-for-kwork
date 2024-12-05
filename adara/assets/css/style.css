@@ -1,0 +1,49 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #000000;
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+button{
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  user-select: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.inter {
+  font-family: "Inter", sans-serif;
+}
+main{
+  padding: 24px 24px 0 24px;
+
+}
+.container{
+  max-width: 1872px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.block{
+  
+  padding: 24px 50px 0 50px ;
+  background: #F1F1F1;
+  border-radius: 40px;
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+.block_content{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+}
+.block_content-header__logo{
+  max-width: 200px;
+  min-height: 100px;
+}
