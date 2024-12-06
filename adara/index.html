@@ -264,6 +264,50 @@
           <video class="w-100 mx-auto" preload="metadata" controls style=" background-color: #000; border-radius: 25px; max-width: 1200px; height: 650px;" src="./assets/img/video/video_adara.mp4"></video>
         </div>
       </div>
+      <div class="container mx-auto my-5 d-flex justify-content-center py-5 px-3" style="max-width: 1872px; max-height: 800px; overflow: hidden; color: #32475C; background: #F1F1F1; border-radius: 40px; " style="">
+        <div class="w-100" style="max-width: 1700px; height: max-content;">
+            <div class="swiper2 h-100  z-1">
+              <div class="d-flex">
+                <h2 class="oswald fs-1 my-1">ГАЛЕРЕЯ ADARA</h2>
+
+                <!-- Навигация -->
+                <div class="swiper2_arrow d-flex" style="margin-top: 80px;">
+                  <div class="swiper-button-prev" style="z-index: 999; position: relative; right: 0; width: 100px; height: 100px; margin-top: -100px; "></div>
+                  <div class="swiper-button-next" style="z-index: 999; position: relative; right: 0; width: 100px; height: 100px; margin-top: -100px; "></div>
+                </div>
+              </div>
+              <!-- Враппер -->
+              <div class="swiper-wrapper z-1" style=" overflow: visible;">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider1.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider2.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider3.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider4.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider1.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider2.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider3.png" alt="img-slider1 photo">
+                </div>
+                <div class="swiper-slide">
+                  <img style="width: 100%;height: 100%; border-radius: 25px;" src="./assets/img/for_slider/img-slider4.png" alt="img-slider1 photo">
+                </div>
+              </div>
+              
+            </div>
+        </div>
+      </div>
       <div class="container mx-auto my-2 py-3" style="max-width: 1200px; border-radius: 25px; background-color: #FF8A00;">
         <h2 class="oswald fw-normal text-center text-white mt-5" style="font-size: 48px;">Нет ответа на ваш вопрос?</h2>
         <p class="gilroy-m fs-5 text-white text-center" >Напишите его ниже и мы ответим вам лично!</p>
@@ -367,7 +411,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper('.swiper', {
-      speed: 300, // скорость перелистывание
+      speed: 1000, // скорость перелистывание
       slidesPerView: 1, // кол-во слайдов на показ
       slidesPerGroup: 1, // кол-во слайдов при перелистовании 
       initialSlide: 0, // с кагого слайда начинается
@@ -377,6 +421,37 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+    });
+    var swiper = new Swiper('.swiper2', {
+      speed: 1000, // скорость перелистывание
+      slidesPerView: 3, // кол-во слайдов на показ
+      slidesPerGroup: 1, // кол-во слайдов при перелистовании 
+      initialSlide: 4, // с кагого слайда начинается
+      centeredSlides: true, //активный слайдер будет по середине. false - активный слайдер будет сбоку
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        
+        
+
+      }
     });
   </script>
 
