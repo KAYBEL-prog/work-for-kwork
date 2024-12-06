@@ -12,6 +12,66 @@
     <title>Document</title>
   </head>
   <body>
+    
+    <div class="modal fade " style="border-radius: 25px;" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content px-2">
+          <div class="d-flex justify-content-between align-items-center px-2 pt-3 ">
+            <h1 class="w-100 text-center fs-3 oswald" style="color: #32475C;" id="exampleModalToggleLabel">МЫ ПОЗВОНИМ ВАМ!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="send-data.php" method="post" class=" ">
+              <!-- Поле Имя -->
+              <input 
+                type="text" 
+                class="form-control px-3 py-2 my-2 rounded-pill " 
+                name="name" 
+                placeholder="Ваше имя" 
+                required 
+                aria-label="Имя">
+              
+              <!-- Поле Номер телефона -->
+              <input 
+                type="tel" 
+                class="form-control px-3 py-2 my-2 rounded-pill" 
+                name="phone" 
+                placeholder="Ваш номер телефона" 
+                required 
+                aria-label="Номер телефона">
+              
+              <!-- Кнопка -->
+              <div class="w-100 text-center">
+                <button type="submit" class="btn w-85 text-center rounded-pill mt-3 py-2 px-5 gilroy-m" style="border:1px solid #FF8A00;" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Отправить</button>
+              </div>
+            </form>
+            <p class="mt-2 text-muted text-center fs-6  px-5 small ">
+              Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 oswald" style="color: #32475C;" id="exampleModalToggleLabel">СПАСИБО, ЧТО ОСТАВИЛИ СВОИ ДАННЫЕ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="color: #32475C;">
+            СКОРО С ВАМИ СВЯЖЕТСЯ НАШ МЕНЕДЖЕР.
+          </div>
+          <div class="py-2 mx-auto">
+            <button class="btn w-85 px-5 rounded-pill " style="border:1px solid #FF8A00;" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
     <main class="px-0 px-lg-2">
       <div class="container block__ hero" style="max-width: 1872px;margin-left: auto;margin-right: auto;">
         <div class="block_backgrund " style="z-index: 0;">
@@ -21,7 +81,9 @@
           
           <div class="block_content col-12 col-xl-6 d-block " style="z-index: 99;">
             <div class="block_content-header mt-4 d-flex align-items-center align-md-items-start justify-content-between">
-              <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo"style="max-width: 200px;min-height: 100px;">
+              <a href="#">
+                <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo"style="max-width: 200px;min-height: 100px;">
+              </a>
               <button class="menu-burger d-block d-md-none" style="width: 60px; height: 30px;" >
                 <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
                 <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
@@ -48,8 +110,8 @@
                 что позволяет реже производить замену и экономить до 30%
               </p>
               <div class="d-flex flex-wrap mt-5">
-                <a class="mx-auto mx-lg-3 fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; " href="#">Купить ADARA</a>
-                <a class="mx-auto mx-lg-3 mt-3 mt-md-0 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" href="#">Консультация</a>
+                <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="mx-auto mx-lg-3 fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; " >Купить ADARA</button>
+                <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="mx-auto mx-lg-3 mt-3 mt-md-0 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" >Консультация</button>
               </div>
             </div>
             <div class="block_content-bottom w-100 mb-5 d-flex justify-content-around">
@@ -76,8 +138,8 @@
                   <div class="swiper-slide">
                     <div class="block_images-slider_contact w-100 d-flex justify-content-end pt-3 px-3" style="position: absolute; width: max-content; ">
                       <div class="block_images-slider_contact__icons d-flex">
-                        <img src="./assets/img/telegram-plane.svg" alt="telegram-plane icon">
-                        <img src="./assets/img/whatsapp.svg" alt="whatsapp icon">
+                        <a href="#"><img src="./assets/img/telegram-plane.svg" alt="telegram-plane icon"></a>
+                        <a href="#"><img src="./assets/img/whatsapp.svg" alt="whatsapp icon"></a>
                       </div>
                       <div class="block_images-slider_contact__number-phone text-end" style="width: min-content;">
                         <a class="gilroy-sb text-white fs-4 text-nowrap" href="tel:+7 (965) 115-85-14">+7 (965) 115-85-14</a>
@@ -89,8 +151,8 @@
                   <div class="swiper-slide">
                     <div class="block_images-slider_contact w-100 d-flex justify-content-end pt-3 px-3" style="position: absolute; width: max-content; ">
                       <div class="block_images-slider_contact__icons d-flex">
-                        <img src="./assets/img/telegram-plane.svg" alt="telegram-plane icon">
-                        <img src="./assets/img/whatsapp.svg" alt="whatsapp icon">
+                        <a href="#"><img src="./assets/img/telegram-plane.svg" alt="telegram-plane icon"></a>
+                        <a href="#"><img src="./assets/img/whatsapp.svg" alt="whatsapp icon"></a>
                       </div>
                       <div class="block_images-slider_contact__number-phone text-end" style="width: min-content;">
                         <a class="gilroy-sb text-white fs-4 text-nowrap" href="tel:+7 (965) 115-85-14">+7 (965) 115-85-14</a>
@@ -102,8 +164,8 @@
                   <div class="swiper-slide">
                     <div class="block_images-slider_contact w-100 d-flex justify-content-end pt-3 px-3" style="position: absolute; width: max-content; ">
                       <div class="block_images-slider_contact__icons d-flex">
-                        <img src="./assets/img/telegram-plane.svg" alt="telegram-plane icon">
-                        <img src="./assets/img/whatsapp.svg" alt="whatsapp icon">
+                        <a href="#"><img src="./assets/img/telegram-plane.svg" alt="telegram-plane icon"></a>
+                        <a href="#"><img src="./assets/img/whatsapp.svg" alt="whatsapp icon"></a>
                       </div>
                       <div class="block_images-slider_contact__number-phone text-end" style="width: min-content;">
                         <a class="gilroy-sb text-white fs-4 text-nowrap" href="tel:+7 (965) 115-85-14">+7 (965) 115-85-14</a>
@@ -142,61 +204,61 @@
           </p>
         </div>
       </div>
-      <div class="container mx-auto my-5 d-flex justify-content-center px-3" style="max-width: 1872px; color: #32475C; background: #F1F1F1; border-radius: 40px; " style="">
+      <div class="container mx-auto my-5 d-flex justify-content-center py-5 px-3" style="max-width: 1872px; color: #32475C; background: #F1F1F1; border-radius: 40px; " style="">
         <div class="w-100" style="max-width: 1200px;">
           <h2 class="oswald fw-normal text-center mb-5" style="font-size: 48px;">Основные преимущества</h2>
           <div class="w-100 mx-auto row justify-content-center row-cols-1 row-cols-lg-12">
             <div class="col-12 col-lg-6 px-1">
               <img style="width: 100%;  border-radius: 25px;" src="./assets/img/for_slider/img-slider1.png" alt="img-slider1">
             </div>
-            <div class="col-12 col-lg-6 row row-cols-2 px-1 py-4 ">
+            <div class="col-12 col-lg-6 row row-cols-2 px-0 px-md-3 py-4 ">
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-1.png" alt="Frame-1 icon">
-                <p class="gilroy-m fs-4  mt-2" style="color: #32475C;">Нержавеющая сталь</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">Нержавеющая сталь</p>
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-2.png" alt="Frame-2 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Полный розжиг угля до 7 минут</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">Полный розжиг угля до 7 минут</p>
 
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-3.png" alt="Frame-3 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">WI-FI модуль для удаленного включения и выключения</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">WI-FI модуль для удаленного включения и выключения</p>
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-4.png" alt="Frame-4 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Высокая износостойкая внутренняя камера</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">Высокая износостойкая внутренняя камера</p>
 
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-5.png" alt="Frame-5 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Cреднее потребление при постоянной нагрузке от 0.5 до 0.75 кв. в час</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">Cреднее потребление при постоянной нагрузке от 0.5 до 0.75 кв. в час</p>
 
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-6.png" alt="Frame-6 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">3 литые керамические нагревательные плиты закрытого типа</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">3 литые керамические нагревательные плиты закрытого типа</p>
 
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-7.png" alt="Frame-7 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Загрузка до 1,5 кг углей за раз</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">Загрузка до 1,5 кг углей за раз</p>
 
               </div>
               <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-8.png" alt="Frame-8 icon">
-                <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">5 лет гарантии на печь, 6 месяцев на плиты и термопару</p>
+                <p class="gilroy-m fs-6 fs-md-4 mt-2" style="color: #32475C;">5 лет гарантии на печь, 6 месяцев на плиты и термопару</p>
 
               </div>
               <div class="d-flex col-12 flex-wrap flex-md-nowrap justify-content-center mt-5">
-                <a class="mx-auto mx-lg-3 fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; " href="#">Купить ADARA</a>
-                <a class="mx-auto mx-lg-3 mt-3 mt-md-0 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" href="#">Консультация</a>
+                <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="mx-auto mx-lg-3 fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; height: max-content;" href="#">Купить ADARA</button>
+                <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="mx-auto mx-lg-3 mt-3 mt-md-0 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C; height: max-content;" href="#">Консультация</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container mx-auto my-5 " style="color: #32475C;">
+      <div class="container mx-auto my-5" style="color: #32475C;">
         <h2 class="oswald fw-normal text-center my-5" style="font-size: 48px;">Видеообзор печи adara</h2>
         <div class="w-100 text-center">
           <video class="w-100 mx-auto" preload="metadata" controls style=" background-color: #000; border-radius: 25px; max-width: 1200px; height: 650px;" src="./assets/img/video/video_adara.mp4"></video>
