@@ -69,9 +69,28 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered mx-auto" style="max-width: 90vw;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 oswald" style="color: #32475C;" id="exampleModalToggleLabel">МЕНЮ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-content">
+            <nav class="block_content-header__menu d-block">
+              <ul class=" p-0 inter text-end mt-3">
+                <li class="py-2"><a class="px-2 py-3 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">преимущества</a></li>
+                <li class="py-2"><a class="px-2 py-3 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">о печи</a></li>
+                <li class="py-2"><a class="px-2 py-3 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">видео</a></li>
+                <li class="py-2"><a class="px-2 py-3 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="p-5 bgblack" ></button>
     
-
-
     <main class="px-0 px-lg-2">
       <div class="container block__ hero" style="max-width: 1872px;margin-left: auto;margin-right: auto;">
         <div class="block_backgrund " style="z-index: 0;">
@@ -84,7 +103,7 @@
               <a href="#">
                 <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo"style="max-width: 200px;min-height: 100px;">
               </a>
-              <button class="menu-burger d-block d-md-none" style="width: 60px; height: 30px;" >
+              <button class="menu-burger d-block d-md-none" style="width: 60px; height: 30px;" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">
                 <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
                 <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
                 <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
@@ -399,7 +418,10 @@
             <span class="text-nowrap">ИНН 772613150980</span>
           </p>
           <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo mx-auto"style="max-width:150px;max-height: 100px;">
-          <a class=" mx-auto mx-sm-0 gilroy-m text-center" style="color: #8D9FBB; max-width: 300px;" href="#">политикой конфиденциальности</a>
+          <div class="mx-auto d-flex flex-wrap text-end" style="width: min-content;">
+            <a href="#" class=" mx-auto mx-sm-0 gilroy-m text-end text-nowrap" style=" width: 100%; height: max-content; color: #8D9FBB; max-width: 300px;">политикой конфиденциальности</a>
+            <a href="tel:+7 (965) 115-85-14" class=" mx-auto mx-sm-0 gilroy-m text-center text-md-end" style=" width: 100%; height: max-content; color: #8D9FBB; max-width: 300px;">+7 (965) 115-85-14</a>
+          </div>
         </div>
 
       </div>
