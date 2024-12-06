@@ -77,7 +77,26 @@ main{padding: 24px 24px 0 24px;}
   border: 3px solid #ffffff;
   padding: 10px 20px 10px 23px;
 }
-
+.fs-7{
+  font-size: 80px;
+}
+.fs-8{
+  font-size: 20px;
+}
+@media (max-width:800px) {
+  .fs-7{
+    font-size: 50px;
+  }
+  
+}
+@media (max-width:576px) {
+  .fs-7{
+    font-size: 30px;
+  }
+  .fs-8{
+    font-size: 16px;
+  }
+}
 .block_content-main h1 span{
   background-image: linear-gradient(-180deg,#FDBA03,#FDBA03, #EE2023,#EE2023);
   color: transparent;

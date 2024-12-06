@@ -12,18 +12,23 @@
     <title>Document</title>
   </head>
   <body>
-    <main>
-      <div class="container block__" style="max-width: 1872px;margin-left: auto;margin-right: auto;">
+    <main class="px-0 px-lg-2">
+      <div class="container block__ hero" style="max-width: 1872px;margin-left: auto;margin-right: auto;">
         <div class="block_backgrund " style="z-index: 0;">
           <img src="./assets/img/item-backgroun.svg" alt="item-backgroun line">
         </div>
-        <div class="block row row-cols-1 row-cols-xl-12" style=" background: #F1F1F1;border-radius: 40px; padding: 25px 50px 25px 50px ;">
+        <div class="block row row-cols-1 row-cols-xl-12 py-3 px-0 px-xxl-3" style=" background: #F1F1F1;border-radius: 40px; padding: auto 50px auto 50px ;">
           
           <div class="block_content col-12 col-xl-6 d-block " style="z-index: 99;">
-            <div class="block_content-header mt-4 d-flex justify-content-between">
+            <div class="block_content-header mt-4 d-flex align-items-center align-md-items-start justify-content-between">
               <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo"style="max-width: 200px;min-height: 100px;">
-              <nav class="block_content-header__menu">
-                <ul class="d-flex p-0 inter ">
+              <button class="menu-burger d-block d-md-none" style="width: 60px; height: 30px;" >
+                <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
+                <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
+                <div class="w-100 h-25 my-1 rounded-pill" style="background-color: #32475C;"></div>
+              </button> 
+              <nav class="block_content-header__menu d-none d-md-block">
+                <ul class="d-none d-sm-flex p-0 inter ">
                   <li><a class="px-2 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">преимущества</a></li>
                   <li><a class="px-2 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">о печи</a></li>
                   <li><a class="px-2 inter text-nowrap h4" style=" color: #8F9AA5;" href="#">видео</a></li>
@@ -31,20 +36,20 @@
                 </ul>
               </nav>
             </div>
-            <div class="block_content-main px-5" style="margin-top: 90px; margin-bottom: 210px;">
-              <h1 class="oswald lh-sm" style="font-size: 80px;color: #32475C; ">
-                <span>ПЕЧЬ ДЛЯ РОЗЖИГА</span>
+            <div class="block_content-main px-2 px-sm-5" style="margin-top: 90px; margin-bottom: 210px;">
+              <h1 class="oswald fs-7 lh-sm" style="color: #32475C; ">
+                <span class="text-nowrap" >ПЕЧЬ ДЛЯ РОЗЖИГА</span>
                 УГЛЕЙ ADARA
               </h1>
-              <p class="fs-5 pe-5 me-5 gilroy-m" style="color: #32475C;">
+              <p class=" pe-0 pe-sm-5 gilroy-m" style="color: #32475C;">
                 Благодаря технологии нагрева печи ADARA,
                 по сравнению с обычными способами розжига,
                 угль в процессе разогрева не теряет свои размеры,
                 что позволяет реже производить замену и экономить до 30%
               </p>
-              <div class="d-flex mt-5">
-                <a class="me-3  fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; " href="#">Купить ADARA</a>
-                <a class="mx-3  fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" href="#">Консультация</a>
+              <div class="d-flex flex-wrap mt-5">
+                <a class="mx-auto mx-lg-3 fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; " href="#">Купить ADARA</a>
+                <a class="mx-auto mx-lg-3 mt-3 mt-md-0 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" href="#">Консультация</a>
               </div>
             </div>
             <div class="block_content-bottom w-100 mb-5 d-flex justify-content-around">
@@ -63,7 +68,7 @@
             </div>
           </div>
                  
-          <div class="block_images-slider col-12 col-xl-6 d-block z-3 " style=" border-radius: 25px; overflow: hidden;">
+          <div class="block_images-slider col-12 col-xl-6 d-flex align-items-center z-3 " style=" border-radius: 25px; overflow: hidden;">
             <div class="swiper z-1" style=" position: relative;">
                 <!-- Враппер -->
                 <div class="swiper-wrapper z-1" style=" position: relative;">
@@ -137,55 +142,55 @@
           </p>
         </div>
       </div>
-      <div class="container mx-auto my-5 d-flex justify-content-center" style="max-width: 1872px; color: #32475C; background: #F1F1F1; border-radius: 40px; padding: 25px 50px 25px 50px ;" style="">
+      <div class="container mx-auto my-5 d-flex justify-content-center px-3" style="max-width: 1872px; color: #32475C; background: #F1F1F1; border-radius: 40px; " style="">
         <div class="w-100" style="max-width: 1200px;">
           <h2 class="oswald fw-normal text-center mb-5" style="font-size: 48px;">Основные преимущества</h2>
-          <div class="w-100 row row-cols-1 row-cols-xl-12">
-            <div class="col-12 col-xl-6">
+          <div class="w-100 mx-auto row justify-content-center row-cols-1 row-cols-lg-12">
+            <div class="col-12 col-lg-6 px-1">
               <img style="width: 100%;  border-radius: 25px;" src="./assets/img/for_slider/img-slider1.png" alt="img-slider1">
             </div>
-            <div class="col-12 col-xl-6 row row-cols-2 px-2 py-4 ">
-              <div class="col lh-sm" style="height: 150px;">
+            <div class="col-12 col-lg-6 row row-cols-2 px-1 py-4 ">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-1.png" alt="Frame-1 icon">
                 <p class="gilroy-m fs-4  mt-2" style="color: #32475C;">Нержавеющая сталь</p>
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-2.png" alt="Frame-2 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Полный розжиг угля до 7 минут</p>
 
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-3.png" alt="Frame-3 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">WI-FI модуль для удаленного включения и выключения</p>
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-4.png" alt="Frame-4 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Высокая износостойкая внутренняя камера</p>
 
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-5.png" alt="Frame-5 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Cреднее потребление при постоянной нагрузке от 0.5 до 0.75 кв. в час</p>
 
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-6.png" alt="Frame-6 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">3 литые керамические нагревательные плиты закрытого типа</p>
 
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-7.png" alt="Frame-7 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">Загрузка до 1,5 кг углей за раз</p>
 
               </div>
-              <div class="col lh-sm" style="height: 150px;">
+              <div class="col lh-sm mt-3" style="height: max-content;">
                 <img src="./assets/img/icon/Frame-8.png" alt="Frame-8 icon">
                 <p class="gilroy-m fs-4 mt-2" style="color: #32475C;">5 лет гарантии на печь, 6 месяцев на плиты и термопару</p>
 
               </div>
-              <div class="d-flex mt-5">
-                <a class="     fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="height: max-content; padding: 15px 50px 15px 50px; " href="#">Купить ADARA</a>
-                <a class="mx-3 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="height: max-content; padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" href="#">Консультация</a>
+              <div class="d-flex col-12 flex-wrap flex-md-nowrap justify-content-center mt-5">
+                <a class="mx-auto mx-lg-3 fs-5 gilroy-sb text-white text-center text-nowrap rounded-pill box-gradient__castom " style="padding: 15px 50px 15px 50px; " href="#">Купить ADARA</a>
+                <a class="mx-auto mx-lg-3 mt-3 mt-md-0 fs-5 gilroy-r text-center fw-bold text-nowrap rounded-pill " style="padding: 15px 50px 15px 50px; border: 1px solid #FF8A00; color: #32475C;" href="#">Консультация</a>
               </div>
             </div>
           </div>
@@ -271,9 +276,9 @@
             </div>
 
           </div>
-          <div class="maps col">
+          <!-- <div class="maps col">
             <iframe width="700" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577344.0899329502!2d36.724868040420496!3d55.580249902281395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1733468833118!5m2!1sru!2sru" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          </div> -->
         </div>
       </div>
     </main>
@@ -281,14 +286,14 @@
 
     <footer>
       <div class="container w-100 mx-auto my-3 border-top" style="max-width: 1200px;">
-        <div class="d-flex justify-content-between py-3" style="color: #8D9FBB;">
-          <p class="gilroy-m " style="width: 250px;">
+        <div class="d-flex flex-wrap flex-md-nowrap justify-content-between py-3" style="color: #8D9FBB;">
+          <p class="mx-auto mx-sm-0 gilroy-m text-center text-sm-start" style="max-width: 250px;">
             <span class="text-nowrap">© 2024 ADARAИП</span>
             <span class="text-nowrap">Елизаров Григорий Владимирович</span>
             <span class="text-nowrap">ИНН 772613150980</span>
           </p>
-          <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo"style="max-width: 150px;min-height: 50px;">
-          <a class="gilroy-m" style="color: #8D9FBB;" href="#">политикой конфиденциальности</a>
+          <img src="./assets/img/logo.png" alt="logo img" class="block_content-header__logo mx-auto"style="max-width:150px;max-height: 100px;">
+          <a class=" mx-auto mx-sm-0 gilroy-m text-center" style="color: #8D9FBB; max-width: 300px;" href="#">политикой конфиденциальности</a>
         </div>
 
       </div>
