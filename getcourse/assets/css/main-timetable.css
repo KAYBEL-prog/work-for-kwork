@@ -161,7 +161,7 @@
   position: relative;
   padding-top: 60px;
   padding-bottom: 83px;
-  background: #ece4db;
+  background: #ffffff;
 }
 
 .courses-container::before {
@@ -172,7 +172,7 @@
   display: block;
   width: 100vw;
   height: 100%;
-  background: #ece4db;
+  background: #ffffff;
   transform: translateX(-50%);
 }
 
