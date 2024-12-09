@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $phone = htmlspecialchars($_POST['phone']);
 
     // Email, куда будет отправлено сообщение
-    $to = "klimopjesys@gmail.com";
+    $to = "your-email@example.com";
     $subject = "Запрос на консультацию";
     $message = "
         Имя: $name\n

@@ -21,7 +21,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="./send-mail.php" method="POST">
+            <form id="contactForm" action="./send-mail.php" method="POST">
               <!-- Поле Имя -->
               <input 
                 type="text" 
@@ -30,7 +30,6 @@
                 placeholder="Ваше имя" 
                 required 
                 aria-label="Имя">
-              
               <!-- Поле Номер телефона -->
               <input 
                 type="tel" 
@@ -42,11 +41,11 @@
               
               <!-- Кнопка -->
               <div class="w-100 text-center">
-                <button type="submit" class="btn w-85 text-center rounded-pill mt-3 py-2 px-5 gilroy-m" style="border:1px solid #FF8A00;" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Отправить</button>
+                <button type="submit" class="btn w-85 text-center rounded-pill mt-3 py-2 px-5 gilroy-m" style="border:1px solid #FF8A00;" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Отправить</button>
               </div>
             </form>
             <p class="mt-2 text-muted text-center fs-6  px-5 small ">
-              Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>.
+              Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>.
             </p>
           </div>
           
@@ -330,7 +329,7 @@
         <h2 class="oswald fw-normal text-center text-white mt-5" style="font-size: 48px;">Нет ответа на ваш вопрос?</h2>
         <p class="gilroy-m fs-5 text-white text-center" >Напишите его ниже и мы ответим вам лично!</p>
         <div class="container mt-5">
-          <form action="./send-mail.php" method="POST" class="d-flex flex-wrap align-items-center gap-4 px-5">
+          <form id="contactForm" action="./send-mail.php" method="POST" class="d-flex flex-wrap align-items-center gap-4 px-5">
             <!-- Поле Имя -->
             <input 
               type="text" 
@@ -360,7 +359,7 @@
               aria-label="Номер телефона">
             
             <!-- Кнопка -->
-            <button  type="submit" class="btn gilroy-m text-nowrap rounded-pill bg-white px-4 py-3" style="color: #AD9CE2;">Получить консультацию</button>
+            <button type="submit" class="btn gilroy-m text-nowrap rounded-pill bg-white px-4 py-3" style="color: #AD9CE2;">Получить консультацию</button>
           </form>
           <p class="mt-2 fs-6 text-center small" style="color:#ffffff;">
             Нажимая на кнопку, вы соглашаетесь с <a style="color:#ffffff; text-decoration: underline;" href="privacy-policy.html"  target="_blank">политикой конфиденциальности</a>.
@@ -474,6 +473,33 @@
 
       }
     });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      // Обработка отправки формы с использованием AJAX
+      $('#contactForm').on('submit', function(event) {
+          event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+          $.ajax({
+              url: 'send_mail.php', // Путь к обработчику PHP
+              type: 'POST',
+              data: $(this).serialize(), // Отправляем данные формы
+              success: function(response) {
+                  // Если запрос выполнен успешно, показываем сообщение
+                  $('#responseMessage')
+                      .html('<div class="alert alert-success">Форма успешно отправлена!</div>')
+                      .fadeIn();
+              },
+              error: function() {
+                  // Если произошла ошибка
+                  $('#responseMessage')
+                      .html('<div class="alert alert-danger">Ошибка при отправке формы. Попробуйте еще раз.</div>')
+                      .fadeIn();
+              }
+          });
+      });
   </script>
 
 </html>
