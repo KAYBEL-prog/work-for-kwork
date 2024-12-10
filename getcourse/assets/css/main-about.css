@@ -1,15 +1,19 @@
 
 /* hero */
 .pages_inner{
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
 }
+.pages_inner img{
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .pages_inner .pages_text{
-
   opacity: 0.5;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 16px;
+  text-wrap: nowrap;
 }
 .pages_text{
   color: #292929;
@@ -17,6 +21,14 @@
 .pages_inner .pages_text svg{ 
   opacity: 0.5;
 }
+@media (max-width: 480px) {
+  .pages_inner .pages_text{
+    opacity: 0.5;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -106,7 +118,7 @@
   }
   .hero-top-title {
     font-size: 50px !important;
-}
+  }
 }
 @media (max-width: 480px) {
   .hero-top a img{
@@ -117,49 +129,17 @@
     margin-left: 15px;
 
   }
-  
-}
-
-
-
-.filter {
-  width: 100%;
-  height: max-content;
-  margin-bottom: 30px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.filter_items {
-  min-width: 0;
-  height: min-content;
-  margin: 10px 5px 10px 5px ;
-  padding: 12px 30px 12px 30px ;
-
-
-  background-color: #ffffff;
-  border-radius: 999px;
-  
-
-  font-size: 18px;
-  text-wrap: nowrap;
-
-}
-.filter_items.active{background-color: #C4A730;}
-.filter_items:empty{display: none;}
-
-
-
-@media (max-width:576px) {
-  .filter_items {
+  .pages_inner .pages_text{
+    opacity: 0.5;
+    font-weight: 300;
     font-size: 12px;
-    padding: 7px 15px 7px 15px ;
-    margin: 5px 3px 5px 3px ;
   }
 }
+
 /* courses */
 .courses-container {
   position: relative;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 83px;
   background: #ffffff;
 }
@@ -215,17 +195,20 @@
 }
 .hero_block {
   display: grid;
-  grid-template-rows: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(auto, minmax(0, 1fr));
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
 .hero_block_col-img {
   width: 100%;
   height: 480px;
 
   border-radius: 40px;
+
+  /* background-image: url(https://fs.getcourse.ru/fileservice/file/download/a/823955/sc/129/h/2741bba97ca845a8210ed4a5c21f1427.jpg); */
   background-image: url(../img/about-img.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .hero_block_col-info {
@@ -238,42 +221,123 @@
   color: #292929;
 }
 .hero_block_col-info_contact-items {
+  max-width: 1000px;
+  min-width: 150px;
+  margin: 0;
+  
   display: flex;
   flex-wrap: wrap;
+
 }
 .hero_block_col-info_contact__item {
-  min-width: 260px;
+  min-width: 250px;
   min-height: 150px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 10px;
-  border-radius: 40px;
-  border: 1px solid #292929;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
+  border-radius: 30px;
+  border: 1px solid rgb(41, 41, 41,0.2);
   /* overflow: hidden; */
 }
+
 .hero_block_col-info_contact__item-inner{
   width: 100%;
   height: 100%;
   padding: 15px;
+
 }
 
 .title_icon {
   width: 100%;
   height: 50px;
-  padding: 10px;
-  border: 1px #000000;
+  padding: 15px;
+  border: 1px rgb(41, 41, 41,0.2);
   border-bottom-style: solid;
 }
-.title_icon-item {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-  background-image: url(../img/Phone.svg);
-  background-repeat: no-repeat;
-  background-size: 69%;
-}
+
 .hero_block_col-info_contact__item .number a{
   display: block;
   padding-top: 5px;
-  font-size: 20px;
+  font-size: 16px;
+}
+.hero_block_col-info_contact__item .number p{
+  display: block;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+@media (max-width:1131px) {
+  .hero_block {
+    display: grid;
+    grid-template-rows: repeat(auto, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .hero_block_col-img {
+    width: 100%;
+    height: 480px;
+    margin-top: 20px;
+    border-radius: 40px;
+    background-image: url(../img/about-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hero_block_col-info_contact-items {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  .hero_block_col-info_title{
+    font-size: 24px;
+  }
+
+}
+@media (max-width:620px) {
+  .hero_block_col-img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.main_block{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.main_block-instruction{margin-top: 50px;}
+.main_block-instruction .title{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.main_block-instruction .title img {
+  width: 35px;
+  height: 25px;
+  margin-right: 20px;
+}
+.block_bus .title img {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+.main_block-instruction .title h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.main_block-instruction .description{
+  margin-top: 20px;
+  max-width: 1000px;
+  min-width: 0px;
+  font-size: 18px;
+  font-weight:lighter;
+}
+@media (max-width:768px) {
+  .main_block-instruction .title h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .main_block .img-big-logo{
+    display: none;
+  }
+  
 }
