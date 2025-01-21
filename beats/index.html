@@ -89,6 +89,50 @@
               width: 300px;
             }
           }
+              /* Стили для бокового меню */
+    #sideMenu {
+      position: fixed;
+      top: 0;
+      left: -250px; /* Скрываем меню за пределами экрана */
+      width: 250px;
+      height: 100%;
+      background-color: #343a40;
+      overflow-y: auto;
+      transition: 0.3s ease;
+      z-index: 1050;
+    }
+
+    #sideMenu a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 15px 20px;
+    }
+
+    #sideMenu a:hover {
+      background-color: #495057;
+    }
+
+    /* Сдвигаем меню на экран */
+    #sideMenu.show {
+      left: 0;
+    }
+
+    /* Зона затемнения фона */
+    #backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 1040;
+    }
+
+    #backdrop.active {
+      display: block;
+    }
         </style>
   <body>
     <header style="height: 0;">
@@ -96,42 +140,52 @@
         <a class="block" style="width: max-content; height:max-content; " href="#">
           <img class="m-3" src="./assets/img/logo_beats.png" alt="logo beats">
         </a>
-        <nav class=" d-none d-sm-flex justify-content-center" style="border: #ffffff;" >
+        <nav class=" d-none d-md-flex justify-content-center" style="border: #ffffff;">
           <a class="px-4" style="border: 1px #ffffff ; border-right: solid;" href="#">
             <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="23.5" cy="23.5" r="23.5" fill="white"/>
-              <path d="M23 29C27.4183 29 31 25.4183 31 21C31 16.5817 27.4183 13 23 13C18.5817 13 15 16.5817 15 21C15 25.4183 18.5817 29 23 29Z" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M33.0004 31.0004L28.6504 26.6504" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="23.5" cy="23.5" r="23.5" fill="white"></circle>
+              <path d="M23 29C27.4183 29 31 25.4183 31 21C31 16.5817 27.4183 13 23 13C18.5817 13 15 16.5817 15 21C15 25.4183 18.5817 29 23 29Z" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M33.0004 31.0004L28.6504 26.6504" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </a>
           <a class="px-4" style="border: 1px #ffffff ; border-right: solid;" href="#">
             <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="23.5" cy="23.5" r="23.5" fill="white"/>
-              <path d="M17 13L14 17V31C14 31.5304 14.2107 32.0391 14.5858 32.4142C14.9609 32.7893 15.4696 33 16 33H30C30.5304 33 31.0391 32.7893 31.4142 32.4142C31.7893 32.0391 32 31.5304 32 31V17L29 13H17Z" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14 17H32" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M27 21C27 22.0609 26.5786 23.0783 25.8284 23.8284C25.0783 24.5786 24.0609 25 23 25C21.9391 25 20.9217 24.5786 20.1716 23.8284C19.4214 23.0783 19 22.0609 19 21" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="23.5" cy="23.5" r="23.5" fill="white"></circle>
+              <path d="M17 13L14 17V31C14 31.5304 14.2107 32.0391 14.5858 32.4142C14.9609 32.7893 15.4696 33 16 33H30C30.5304 33 31.0391 32.7893 31.4142 32.4142C31.7893 32.0391 32 31.5304 32 31V17L29 13H17Z" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M14 17H32" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M27 21C27 22.0609 26.5786 23.0783 25.8284 23.8284C25.0783 24.5786 24.0609 25 23 25C21.9391 25 20.9217 24.5786 20.1716 23.8284C19.4214 23.0783 19 22.0609 19 21" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg> 
           </a>
           <a class="px-4" href="#">
             <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="23.5" cy="23.5" r="23.5" fill="white"/>
-              <path d="M24 22C26.2091 22 28 20.2091 28 18C28 15.7909 26.2091 14 24 14C21.7909 14 20 15.7909 20 18C20 20.2091 21.7909 22 24 22Z" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M32 32V30C32 28.9391 31.5786 27.9217 30.8284 27.1716C30.0783 26.4214 29.0609 26 28 26H20C18.9391 26 17.9217 26.4214 17.1716 27.1716C16.4214 27.9217 16 28.9391 16 30V32" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="23.5" cy="23.5" r="23.5" fill="white"></circle>
+              <path d="M24 22C26.2091 22 28 20.2091 28 18C28 15.7909 26.2091 14 24 14C21.7909 14 20 15.7909 20 18C20 20.2091 21.7909 22 24 22Z" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M32 32V30C32 28.9391 31.5786 27.9217 30.8284 27.1716C30.0783 26.4214 29.0609 26 28 26H20C18.9391 26 17.9217 26.4214 17.1716 27.1716C16.4214 27.9217 16 28.9391 16 30V32" stroke="#FF4948" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>   
           </a>
         </nav>
-        <nav class="d-flex justify-content-center" >
-          <button class="btn px-3 block" style="width: max-content;" href="#">
+        <nav class="d-flex justify-content-center">
+          <button class="btn px-3 d-md-none d-block" style="width: max-content;" id="menuButton">
             <svg width="41" height="29" viewBox="0 0 41 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M39.5007 10.334H10.334" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M39.5 2H2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M39.5 18.666H2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M39.5007 27H10.334" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M39.5007 10.334H10.334" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M39.5 2H2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M39.5 18.666H2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M39.5007 27H10.334" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </button>
         </nav>
       </div>
     </header>
+
+    
+    <div id="sideMenu">
+      <div class="menu-title fs-1 fw-bold ms-5 text-white">МЕНЮ</div>
+      <a href="#">Главная</a>
+      <a href="#">О нас</a>
+      <a href="#">Product</a>
+    </div>
+
+
     <main>
         <div class="wrapper position-relative z-2">
           <div class="hero-block vw-100 d-flex align-items-center" style="background-color: #DE5151;">
@@ -225,7 +279,7 @@
               <p class="product__description fs-4  w-50 text-center mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis nunc ipsum aliquam, ante. </p>
             </div>
             <div class="row row-cols-4 row-cols-4 flex-wrap">
-              <a href="#" class="product-item my-5  col-xl-4 col-7 mx-auto">
+              <a href="#" style="border: none;" class="product-item my-5 col-xl-4 col-7 mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ДОБАВИТЬ В КОРЗИНУ">
                 <div class="preview_product" style="height: max;">
                   <div class="rounded-5 d-flex justify-content-center" style="height: 300px;  background: #FFE5EE;">
                     <img style="height: 350px;margin-top: -50px; position: relative; bottom: 0;"  src="./assets/img/preview_product/item_1.png" alt="product item_1">
@@ -248,7 +302,7 @@
                   </div>
                 </div>
               </a>
-              <a href="#" class="product-item my-5  col-xl-4 col-7 mx-auto">
+              <a href="#" class="product-item my-5  col-xl-4 col-7 mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ДОБАВИТЬ В КОРЗИНУ">
                 <div class="preview_product" style="height: max;">
                   <div class="rounded-5 d-flex justify-content-center" style="height: 300px;  background: #FFE5EE;">
                     <img style="height: 350px;margin-top: -50px; position: relative; bottom: 0;"  src="./assets/img/preview_product/item_2.png" alt="product item_1">
@@ -271,7 +325,7 @@
                   </div>
                 </div>
               </a>
-              <a href="#" class="product-item my-5  col-xl-4 col-7 mx-auto">
+              <a href="#" class="product-item my-5  col-xl-4 col-7 mx-auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ДОБАВИТЬ В КОРЗИНУ">
                 <div class="preview_product" style="height: max;">
                   <div class="rounded-5 d-flex justify-content-center" style="height: 300px;  background: #FFE5EE;">
                     <img style="height: 350px;margin-top: -50px; position: relative; bottom: 0;"  src="./assets/img/preview_product/item_3.png" alt="product item_1">
@@ -454,6 +508,31 @@
         }, false);
       });
     })();
+  </script>
+  <script>
+    // Логика для управления меню
+    const menuButton = document.getElementById('menuButton');
+    const sideMenu = document.getElementById('sideMenu');
+    const backdrop = document.getElementById('backdrop');
+
+    menuButton.addEventListener('click', () => {
+      sideMenu.classList.toggle('show');
+      backdrop.classList.toggle('active');
+    });
+
+    backdrop.addEventListener('click', () => {
+      sideMenu.classList.remove('show');
+      backdrop.classList.remove('active');
+    });
+  </script>
+  <script>
+    // Активируем все подсказки на странице
+    document.addEventListener('DOMContentLoaded', function () {
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
   </script>
 
   </html>
