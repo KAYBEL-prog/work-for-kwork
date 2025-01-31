@@ -11,15 +11,22 @@ a{
   font-family: "Roboto", serif;
   font-style: normal;
 }
-.wrapper{
+.background_image{
+  position: fixed;
   min-width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background-color: #000000;
   background-image: url(./background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+
+}
+.wrapper{
+  min-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
 
   display: flex;
   justify-content: center;
