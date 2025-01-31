@@ -102,16 +102,22 @@ a{
 
   text-align: center;
 }
-
+.form-col__block-form{
+  display: flex;
+  justify-content: center;
+}
 form {
+  width: 100%;
+
   background: white;
-  padding: 20px;
+
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 input {
-  width: 100%;
+  width: 98%;
+  min-width: 300px;
   padding: 25px 0px 25px 10px;
   margin: 20px 0;
   font-style: normal; /* Курсив */
@@ -130,7 +136,10 @@ input::placeholder {
 
 button {
   width: 100%;
+  min-width: 300px;
   padding: 20px 10px 20px 10px ;
+
+  
 
   margin: auto ;
   background: red;
@@ -147,7 +156,11 @@ button:hover {
   background-color: rgba(255, 0, 0, 0.60);
   transition: background-color 0.3s;
 }
-
+.form-col__block-form_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .modal {
   display: none;
   position: fixed;
@@ -229,10 +242,9 @@ button:hover {
 
 @media (max-width:768px) {
   .form-col__block{
-    width: 100%;
+    width: 90%;
     min-width:auto;
     min-height: 500px;
-  
     z-index: 2;
     position: absolute;
   
@@ -252,6 +264,7 @@ button:hover {
   }
 
   form {
+    width: 90%;
     margin-top: 0px;
     background: white;
     padding: 00px;
@@ -270,6 +283,7 @@ button:hover {
     width: 35%;
   }
   .form-col__block-upper__title {
+    width: 100%;
     max-width: 250px;
   
     margin-left: auto;
@@ -283,8 +297,8 @@ button:hover {
     text-align: center;
   }
   .form-col__block-upper__subtitle {
-    width: 300px;
-  
+    width: 100%;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -297,7 +311,7 @@ button:hover {
     text-align: center;
   }
   input {
-    width: 100%;
+    width: 97%;
     padding: 15px 0px 15px 10px;
     margin: 20px auto;
     display: flex;
@@ -331,7 +345,8 @@ button:hover {
 }
 @media (max-width:425px) {
   input {
-    width: 100%;
+    width: 90%;
+    min-width: 220px;
     padding: 15px 0px 15px 10px;
     margin: 20px auto;
     display: flex;
@@ -341,6 +356,23 @@ button:hover {
     font-size: 18px; /* Размер шрифта */
   
   }
+  button {
+    width: 95%;
+    min-width: 250px;
+    padding: 20px 10px 20px 10px ;
+  
+    display: flex;
+    justify-content: center;
+
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0);
+    transition: background-color 0.3s;
+    font-size: 24px;
+  }
   input::placeholder {
     color: gray; /* Цвет текста */
     font-size: 18px; /* Размер шрифта */
@@ -349,5 +381,18 @@ button:hover {
     width: 50%;
   }
 
-
+  .form-col__block-upper__subtitle {
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  
+    
+    font-weight:400;
+    font-size: 20px;
+    line-height: 100%;
+  
+    text-align: center;
+  }
 }
