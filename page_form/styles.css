@@ -266,7 +266,6 @@ button:hover {
     background: white;
     padding: 00px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   .form-col__block-upper__logo {
     width: 100%;
