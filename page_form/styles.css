@@ -59,8 +59,8 @@ a{
 }
 .form-col__block{
   
-  min-width: 800px;
-  min-height: 700px;
+  min-width: 700px;
+  min-height: 600px;
 
   z-index: 2;
   position: absolute;
@@ -92,7 +92,7 @@ a{
 
   font-weight:800;
   font-size: 48px;
-  line-height: 100%;
+  line-height: 120%;
   text-align: center;
 }
 .form-col__block-upper__subtitle {
@@ -105,7 +105,7 @@ a{
   
   font-weight:400;
   font-size: 32px;
-  line-height: 100%;
+  line-height: 130%;
 
   text-align: center;
 }
@@ -120,15 +120,18 @@ form {
 }
 
 input {
-  width: 98%;
+  width: 96%;
   min-width: 300px;
-  padding: 25px 0px 25px 10px;
-  margin: 20px 0;
+  padding: 20px 10px 20px 10px;
+  margin: 50px 0 20px 0;
+  display: flex;
+  justify-content: center;
+
+  border: 1px solid #646464;
+  border-radius: 5px;
+  font-size: 24px; /* Размер шрифта */
   font-style: normal; /* Курсив */
 
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 32px; /* Размер шрифта */
 
 }
 input::placeholder {
@@ -142,9 +145,6 @@ button {
   width: 100%;
   min-width: 300px;
   padding: 20px 10px 20px 10px ;
-
-  
-
   margin: auto ;
   background: red;
   color: white;
@@ -153,7 +153,7 @@ button {
   cursor: pointer;
   background-color: rgba(255, 0, 0);
   transition: background-color 0.3s;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
 }
 button:hover {
@@ -271,7 +271,7 @@ button:hover {
     width: 90%;
     margin-top: 0px;
     background: white;
-    padding: 00px;
+    padding: 0px;
     border-radius: 10px;
   }
   .form-col__block-upper__logo {
@@ -296,7 +296,7 @@ button:hover {
   
     font-weight:800;
     font-size: 32px;
-    line-height: 100%;
+    line-height: 110%;
     text-align: center;
   }
   .form-col__block-upper__subtitle {
@@ -309,7 +309,7 @@ button:hover {
     
     font-weight:400;
     font-size: 24px;
-    line-height: 100%;
+    line-height: 120%;
   
     text-align: center;
   }
@@ -347,11 +347,18 @@ button:hover {
   
 }
 @media (max-width:425px) {
+  form {
+    width: 100%;
+    margin-top: 0px;
+    background: white;
+    padding: 0px;
+    border-radius: 10px;
+  }
   input {
-    width: 90%;
+    width: 95%;
     min-width: 220px;
     padding: 15px 0px 15px 10px;
-    margin: 20px auto;
+    margin: 20px 0;
     display: flex;
     justify-content: center;
     border: 1px solid #ccc;
@@ -402,7 +409,7 @@ button:hover {
     
     font-weight:400;
     font-size: 20px;
-    line-height: 100%;
+    line-height: 120%;
   
     text-align: center;
   }
