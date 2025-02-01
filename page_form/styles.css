@@ -380,6 +380,14 @@ button:hover {
     color: gray; /* Цвет текста */
     font-size: 18px; /* Размер шрифта */
   }
+  .form-col__block{
+  
+    z-index: 2;
+    position: absolute;
+    margin-top: -100px;
+    border-radius: 20px;
+    background-color: #fff;
+  }
   .form-col__block-upper__logo img {
     width: 50%;
   }
