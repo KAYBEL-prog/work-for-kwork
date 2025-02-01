@@ -126,22 +126,20 @@ form {
 input {
   width: 96%;
   min-width: 300px;
-  padding: 20px 10px 20px 10px;
+  padding: 15px 10px 15px 10px;
   margin: 20px 0 20px 0;
   display: flex;
   justify-content: center;
 
   border: 1px solid #646464;
   border-radius: 5px;
-  font-size: 24px; /* Размер шрифта */
+  font-size: 28px; /* Размер шрифта */
   font-style: normal; /* Курсив */
-
-
 }
 input::placeholder {
   color: gray; /* Цвет текста */
   font-style: normal; /* Курсив */
-  font-size: 32px; /* Размер шрифта */
+  font-size: 28px; /* Размер шрифта */
   font-weight: 900;
 }
 
@@ -157,7 +155,7 @@ button {
   cursor: pointer;
   background-color: rgba(255, 0, 0);
   transition: background-color 0.3s;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 800;
 }
 button:hover {
