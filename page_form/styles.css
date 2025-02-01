@@ -59,8 +59,8 @@ a{
 }
 .form-col__block{
   
-  min-width: 600px;
-  min-height: 500px;
+  min-width: 700px;
+  min-height: 600px;
 
   z-index: 2;
   position: absolute;
@@ -70,7 +70,7 @@ a{
 }
 .form-col__block_inner{
   
-  padding: 20px 50px 50px 50px;
+  padding: 50px 50px 50px 50px;
 
 }
 .form-col__block-upper {
@@ -259,7 +259,7 @@ button:hover {
   }
   .form-col__block_inner{
   
-    padding: 50px 15px 50px 15px;
+    padding: 30px 15px 50px 15px;
   
   }
   .form-col {
@@ -321,7 +321,7 @@ button:hover {
     margin: 20px auto;
     display: flex;
     justify-content: center;
-    border: 1px solid #ccc;
+    border: 1px solid #646464;
     border-radius: 5px;
     font-size: 24px; /* Размер шрифта */
   
@@ -363,7 +363,7 @@ button:hover {
     margin: 20px 0;
     display: flex;
     justify-content: center;
-    border: 1px solid #ccc;
+    border: 1px solid #646464;
     border-radius: 5px;
     font-size: 18px; /* Размер шрифта */
   
