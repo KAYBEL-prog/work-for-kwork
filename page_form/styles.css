@@ -389,7 +389,6 @@ button:hover {
   
     z-index: 2;
     position: absolute;
-    margin-top: -100px;
     border-radius: 20px;
     background-color: #fff;
   }
