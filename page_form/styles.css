@@ -40,27 +40,27 @@ a{
 .img-col {
   z-index: 1;
   position: relative;
-  width: 50%;
+  width: 30%;
   height: 100%;
 }
 .img-col__inner {
   width: 800px;
   min-height: 100%;
   background-image: url(./img_col.png);
-  background-size: 100%;
+  background-size: 60%;
   background-repeat: no-repeat;
-  background-position: -50px 100px;
+  background-position: 200px 50px;
 }
 .form-col {
-  width: 50%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .form-col__block{
   
-  min-width: 700px;
-  min-height: 600px;
+  min-width: 520px;
+  min-height: 450px;
 
   z-index: 2;
   position: absolute;
@@ -69,11 +69,9 @@ a{
   background-color: #fff;
 }
 .form-col__block_inner{
-  padding: 30px;
+  padding: 20px ;
 }
-.form-col__block-upper {
-  
-}
+
 .form-col__block-upper__logo {
   width: 100%;
   height: max-content;
@@ -87,26 +85,27 @@ a{
 
 }
 .form-col__block-upper__title {
-  max-width: 320px;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  font-weight:800;
-  font-size: 38px;
-  line-height: 120%;
-  text-align: center;
-}
-.form-col__block-upper__subtitle {
-  max-width: 380px;
+  max-width: 250px;
 
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
 
+  font-weight:800;
+  font-size: 30px;
+  line-height: 120%;
+  text-align: center;
+}
+.form-col__block-upper__subtitle {
+  max-width: 250px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+
   
   font-weight:400;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 130%;
 
   text-align: center;
@@ -124,27 +123,27 @@ form {
 input {
   width: 95%;
   min-width: 300px;
-  padding: 15px 10px 15px 10px;
-  margin: 20px auto 20px auto;
+  padding: 10px 10px 10px 10px;
+  margin: 20px auto 10px auto;
   display: flex;
   justify-content: center;
 
   border: 1px solid #646464;
   border-radius: 5px;
-  font-size: 28px; /* Размер шрифта */
+  font-size: 24px; /* Размер шрифта */
   font-style: normal; /* Курсив */
 }
 input::placeholder {
   color: gray; /* Цвет текста */
   font-style: normal; /* Курсив */
-  font-size: 28px; /* Размер шрифта */
+  font-size: 24px; /* Размер шрифта */
   font-weight: 900;
 }
 
 button {
   width: 100%;
   min-width: 300px;
-  padding: 20px 10px 20px 10px ;
+  padding: 15px 10px 15px 10px ;
   margin: auto ;
   background: red;
   color: white;
@@ -214,12 +213,12 @@ button:hover {
     width: 800px;
     min-height: 100%;
     background-image: url(./img_col.png);
-    background-size: 100%;
+
     background-repeat: no-repeat;
-    background-position: -150px 100px;
+    /* background-position: 0px 100px; */
   }
 }
-@media (max-width:1124px) {
+@media (max-width:1024px) {
   .img-col {
     display: none;
     z-index: 1;
@@ -243,7 +242,6 @@ button:hover {
     background-position: -150px 100px;
   }
 }
-
 @media (max-width:768px) {
   .form-col__block{
     width: 90%;
