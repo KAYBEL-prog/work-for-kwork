@@ -64,7 +64,7 @@ a{
 .form-col__block{
   
   min-width: 520px;
-  min-height: 450px;
+  max-height: 550px;
 
   z-index: 2;
   position: absolute;
@@ -73,7 +73,7 @@ a{
   background-color: #fff;
 }
 .form-col__block_inner{
-  padding: 20px ;
+  padding: 20px 30px 30px 30px ;
 }
 
 .form-col__block-upper__logo {
@@ -125,9 +125,9 @@ form {
 }
 
 input {
-  width: 95%;
-  min-width: 300px;
-  padding: 10px 10px 10px 10px;
+  width: 93%;
+
+  padding: 10px 10px 10px 20px;
   margin: 20px auto 10px auto;
   display: flex;
   justify-content: center;
@@ -136,17 +136,22 @@ input {
   border-radius: 5px;
   font-size: 24px; /* Размер шрифта */
   font-style: normal; /* Курсив */
+  font-weight: 500;
 }
 input::placeholder {
   color: gray; /* Цвет текста */
   font-style: normal; /* Курсив */
   font-size: 24px; /* Размер шрифта */
-  font-weight: 900;
+  font-weight: 500;
 }
-
+.form-col__block-form_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 button {
   width: 100%;
-  min-width: 300px;
+  min-width: 400px;
   padding: 15px 10px 15px 10px ;
   margin: auto ;
   background: red;
@@ -163,11 +168,7 @@ button:hover {
   background-color: rgba(255, 0, 0, 0.60);
   transition: background-color 0.3s;
 }
-.form-col__block-form_btn{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+
 .modal {
   display: none;
   position: fixed;
@@ -250,7 +251,7 @@ button:hover {
   .form-col__block{
     width: 90%;
     min-width:auto;
-    min-height: 500px;
+    max-height: 550px;
     z-index: 2;
     position: absolute;
   
@@ -258,9 +259,7 @@ button:hover {
     background-color: #fff;
   }
   .form-col__block_inner{
-  
-    padding: 15px;
-  
+    padding: 20px 15px 15px 15px ;
   }
   .form-col {
     width: 100%;
@@ -318,7 +317,7 @@ button:hover {
   input {
     width: 97%;
     padding: 15px 0px 15px 10px;
-    margin: 20px auto;
+    margin: 20px auto 10px;
     display: flex;
     justify-content: center;
     border: 1px solid #646464;
@@ -332,6 +331,7 @@ button:hover {
   }
   button {
     width: 100%;
+    min-width: 300px;
     padding: 20px 10px 20px 10px ;
   
     display: flex;
@@ -349,6 +349,7 @@ button:hover {
   
 }
 @media (max-width:425px) {
+
   form {
     width: 100%;
     margin-top: 0px;
@@ -357,10 +358,10 @@ button:hover {
     border-radius: 10px;
   }
   input {
-    width: 95%;
-    min-width: 220px;
+    width: 92%;
+    min-width: 150px;
     padding: 15px 0px 15px 10px;
-    margin: 20px 0;
+    margin: 20px auto 10px;
     display: flex;
     justify-content: center;
     border: 1px solid #646464;
@@ -368,9 +369,14 @@ button:hover {
     font-size: 18px; /* Размер шрифта */
   
   }
+  input::placeholder {
+    color: gray; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+  }
+  
   button {
     width: 95%;
-    min-width: 250px;
+    min-width: 150px;
     padding: 20px 10px 20px 10px ;
   
     display: flex;
@@ -385,10 +391,7 @@ button:hover {
     transition: background-color 0.3s;
     font-size: 24px;
   }
-  input::placeholder {
-    color: gray; /* Цвет текста */
-    font-size: 18px; /* Размер шрифта */
-  }
+  
   .form-col__block{
   
     z-index: 2;
@@ -414,4 +417,7 @@ button:hover {
   
     text-align: center;
   }
+}
+.btn__modal-content{
+  min-width: 100%;
 }

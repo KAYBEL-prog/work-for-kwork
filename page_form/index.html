@@ -5,12 +5,17 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
         
+        
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <link rel='stylesheet' href='styles.css'>
           <title>Document</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"></script>
         </head>
   <body>
     <main>
@@ -37,10 +42,8 @@
 
                   <div class="form-col__block-form">
                     <form id="phoneForm" action="" method="post">
-                      <input class="roboto" type="tel" id="phone" name="phone" pattern="\+?[0-9\s\-]{7,15}" placeholder="Введите номер телефона..." required>
-                      <div class="form-col__block-form_btn">
-                        <button type="submit" class="roboto" >Отправить</button>
-                      </div>
+                      <input class="roboto" type="text" id="phone" name="phone" name="phone" placeholder="Введите номер телефона...">
+                      <button type="submit" class="roboto" >Отправить</button>
                     </form>
                   </div>
 
@@ -54,13 +57,14 @@
         <div class="modal" id="modal">
           <div class="modal-content">
               <p>Спасибо! Ожидайте звонка сотрудника</p>
-              <button onclick="closeModal()">Закрыть</button>
+              <button class="btn__modal-content" onclick="closeModal()">Закрыть</button>
           </div>
         </div>
         
       </section>
     </main>
   </body>
+
   <script>
     document.getElementById("phoneForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Отменяем стандартную отправку формы
@@ -70,5 +74,18 @@
     function closeModal() {
         document.getElementById("modal").style.display = "none";
     }
+    
+    
   </script>
+
+<script>
+    $(document).ready(function() {
+            $('#phone').inputmask("+7 (999) 999-99-99", {
+                placeholder: "_",
+                clearIncomplete: true,
+                showMaskOnHover: false
+            });
+        });
+</script>
+
 </html>
