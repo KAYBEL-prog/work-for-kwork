@@ -1,0 +1,230 @@
+
+@font-face {
+  font-family: 'inter-black';
+  src: url('../fonts/Inter_18pt-Black.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-black{
+  font-family: 'inter-black';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-black_italic';
+  src: url('../fonts/Inter_18pt-BlackItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-black_italic{
+  font-family: 'inter-black_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-bold';
+  src: url('../fonts/Inter_18pt-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-bold{
+  font-family: 'inter-bold';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-bold_italic';
+  src: url('../fonts/Inter_18pt-BoldItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-bold_italic{
+  font-family: 'inter-bold_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'inter-extrabold';
+  src: url('../fonts/Inter_18pt-ExtraBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-extrabold{
+  font-family: 'inter-extrabold';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-extrabold_italic';
+  src: url('../fonts/Inter_18pt-ExtraBoldItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-extrabold_italic{
+  font-family: 'inter-extrabold_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-extralight';
+  src: url('../fonts/Inter_18pt-ExtraLight.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-extralight{
+  font-family: 'inter-inter-extralight';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-extralight_italic';
+  src: url('../fonts/Inter_18pt-ExtraLightItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-extralight_italic{
+  font-family: 'inter-extralight_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-italic';
+  src: url('../fonts/Inter_18pt-Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-italic{
+  font-family: 'inter-italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-light';
+  src: url('../fonts/Inter_18pt-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-light{
+  font-family: 'inter-light';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-light_italic';
+  src: url('../fonts/Inter_18pt-LightItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-light_italic{
+  font-family: 'inter-light_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-medium';
+  src: url('../fonts/Inter_18pt-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-medium{
+  font-family: 'inter-medium';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-medium_italic';
+  src: url('../fonts/Inter_18pt-MediumItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-medium_italic{
+  font-family: 'inter-medium_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-regular';
+  src: url('../fonts/Inter_18pt-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-regular{
+  font-family: 'inter-regular';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-semibold';
+  src: url('../fonts/Inter_18pt-SemiBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-semibold{
+  font-family: 'inter-semibold';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-semibold_italic';
+  src: url('../fonts/Inter_18pt-SemiBoldItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-semibold_italic{
+  font-family: 'inter-semibold_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-thin';
+  src: url('../fonts/Inter_18pt-Thin.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-thin{
+  font-family: 'inter-thin';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'inter-thin_italic';
+  src: url('../fonts/Inter_18pt-ThinItalic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.inter-thin_italic{
+  font-family: 'inter-thin_italic';
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
