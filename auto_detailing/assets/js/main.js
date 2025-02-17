@@ -1,8 +1,8 @@
 window.addEventListener('scroll', function () {
   let header = document.querySelector('.header');
   if (window.scrollY > 50) {
-    header.classList.add('bg-black');
+    header.style.backgroundColor = '#151515';
   } else {
-    header.classList.remove('bg-black');
+    header.style.backgroundColor = 'transparent';
   }
 });
