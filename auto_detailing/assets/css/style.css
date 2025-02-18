@@ -1,4 +1,5 @@
 body{
+  background-color: #F2F2F2;
   margin: 0;
   padding: 0;
   font-family: 'inter-regular';
@@ -25,10 +26,24 @@ button{
 }
 .upper-backrounn__inner{
   width: 100%;
-  height: 400px;
+  height: 450px;
   background-color: #000000;
-  background-image: url(../img/img-page_contact/upper_backgroud.png);
+  background-image: url(../img/img-page_contact/upper_backgroud.jpg);
   background-size: 100% contain ;
   background-repeat: no-repeat;
   background-position: center -600px ;
+}
+.underline-hover{
+  text-decoration: none;
+}
+.underline-hover:hover{
+  text-decoration:underline;
+}
+.fz-castom{
+  font-size: 16px;
+}
+@media (min-width:576px) {
+  .fz-castom{
+    font-size: 21px;
+  }
 }
