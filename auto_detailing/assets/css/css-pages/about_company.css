@@ -1,0 +1,114 @@
+
+.about_content-text::before{
+  content: '';
+  position: absolute;
+  margin-left: -35px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../img/icon/point-list.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.carousel-control-next-icon-castom{
+  background: linear-gradient(0deg, rgba(255,255,255) 0%, rgba(255,255,255) 100%);
+}
+.carousel-control-next-icon-castom:hover{
+  background: linear-gradient(0deg, rgba(255,102,0,1) 0%, rgba(255,51,0,1) 100%);
+}
+.carousel-control-next-icon-castom svg path{
+  stroke: #000;
+  transition:0.1s;
+}
+.carousel-control-next-icon-castom:hover svg path{
+  stroke: #fff;
+  transition:0.1s;
+}
+.carousel-control-prev{
+  z-index: 9999;
+}
+.carousel-control-prev-icon-castom{
+  z-index: 999;
+  background-color: #fff;
+}
+.carousel-control-prev-icon-castom:hover{
+  background: linear-gradient(0deg, rgba(255,102,0,1) 0%, rgba(255,51,0,1) 100%);
+  transition: 0.3s;
+}
+.carousel-control-prev-icon-castom svg path{
+  stroke: #000;
+  transition:0.1s;
+}
+.carousel-control-prev-icon-castom:hover svg path{
+  stroke: #fff;
+  transition:0.1s;
+}
+
+.upper-backrounn__inner_our-experts{
+  width: 100%;
+  height: 600px;
+  background-color: #000000;
+  background-image: url(../../img/about_company-img/backgroud-block_1.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center 0px ;
+}
+.upper-backrounn__inner_customer-reviews{
+  width: 100%;
+  height: 650px;
+  background-color: #000000;
+  background-image: url(../../img/about_company-img/backgroud-block_2.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center -300px ;
+}
+
+.slider_customer-reviews_img-1{
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  background-color: #000000;
+  background-image: url(../../img/about_company-img/customer-reviews/img_1.png);
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center ;
+}
+
+.slider_customer-reviews_img-1::before{
+  content: '';
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/icon/about_company-img/play.svg);
+  background-repeat: no-repeat;
+  background-size: 15%;
+  background-position: center;
+}
+.slider_customer-reviews_img-2{
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  background-color: #000000;
+  background-image: url(../../img/about_company-img/customer-reviews/img_2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center ;
+}
+.slider_customer-reviews_img-2::before{
+  content: '';
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/icon/about_company-img/play.svg);
+  background-repeat: no-repeat;
+  background-size: 15%;
+  background-position: center;
+}
+
+.slider_customer-reviews_overlay{
+
+}

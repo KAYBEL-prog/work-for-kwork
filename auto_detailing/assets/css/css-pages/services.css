@@ -1,0 +1,164 @@
+.about_content-text::before{
+  content: '';
+  position: absolute;
+  margin-left: -35px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../img/icon/point-list.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-table th, .service-table td {
+  vertical-align: middle;
+}
+.service-card {
+  max-width: 100%;
+  overflow-x: auto;
+}
+@media (max-width: 768px) {
+  .service-table th, .service-table td {
+      font-size: 14px;
+      padding: 8px;
+  }
+}
+@media (max-width: 576px) {
+  .service-table th, .service-table td {
+      font-size: 12px;
+      padding: 6px;
+  }
+  .service-card {
+      padding: 1rem;
+  }
+}
+.fz-castom_2{
+  font-size: 34px;
+}
+
+.customer_reviews__item{
+  min-width: 280px;
+  height: 350px;
+}
+
+.slider_customer-services_img-1{
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  background-color: #000000;
+  background-image: url(../../img/img-page_services/man-working-car-detailing-coating-car.png);
+  background-size:  170% ;
+  background-repeat: no-repeat;
+  background-position: 0px -150px ;
+}
+.slider_customer-services_img-2{
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  background-color: #000000;
+  background-image: url(../../img/img-page_services/close-up-car-care-process.png);
+  background-size:  150% ;
+  background-repeat: no-repeat;
+  background-position: -50px -50px ;
+}
+
+.slider_completed_works_img-1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/img-page_services/photo-for-slider/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.slider_customer-reviews_overlay-1{
+  opacity: 1;
+}
+.slider_customer-reviews_overlay{
+  opacity: 0;
+  background-color: rgba(0,0,0, 0.0);
+  transition: opacity 0.3s;
+}
+.completed_works__item:hover .slider_customer-reviews_overlay{
+  opacity: 1;
+  display: block;
+  background-color: rgba(0,0,0, 0.70);
+  transition: opacity 0.3s;
+}
+
+
+.completed_works .slick-dots li button{
+  background-color: #000;
+  transition: 0.3s;
+}
+
+
+
+
+.upper-backrounn__inner_working{
+  width: 100%;
+  height: max-content;
+  background-color: #000000;
+  background-image: url(../../img/about_company-img/backgroud-block_1.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center -300px ;
+}
+@media (max-width:1200px) {
+  .customer_reviews__item{
+    min-width: 280px;
+    height: 350px;
+  }
+  .slider_customer-services_img-1{
+    width: 100%;
+    height: 350px;
+    background-position: 0px -100px ;
+  }
+  .slider_customer-services_img-2{
+    width: 100%;
+    height: 350px;
+    background-position: -50px 0px ;
+  }
+}
+@media (max-width:992px) {
+  .fz-castom_2{
+    font-size: 20px;
+  }
+  .customer_reviews__item{
+    min-width: 280px;
+    height: 220px;
+  }
+  .slider_customer-services_img-1{
+    width: 100%;
+    height: 350px;
+    background-position: 0px -50px ;
+  }
+  .slider_customer-services_img-2{
+    width: 100%;
+    height: 350px;
+    background-position: -50px 0px ;
+  }
+}
+@media (max-width:768px) {
+  .customer_reviews__item{
+    margin-top: 20px;
+  }
+  .slider_customer-services_img-1{
+    background-position: 0px -120px ;
+  }
+  .slider_customer-services_img-2{
+    background-position: -50px 0px ;
+  }
+}
+@media (max-width:425px) {
+  .customer_reviews__item{
+    margin-top: 20px;
+  }
+  .slider_customer-services_img-1{
+    background-position: 0px -50px ;
+  }
+  .slider_customer-services_img-2{
+    background-position: -50px 0px ;
+  }
+}
+
+

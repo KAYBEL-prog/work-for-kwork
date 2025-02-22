@@ -4,6 +4,14 @@ body{
   padding: 0;
   font-family: 'inter-regular';
 }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+ul li {
+  position: relative;
+  padding-left: 30px; 
+}
 a{
   color: white;
   text-decoration: none;
@@ -18,6 +26,8 @@ button{
   color: #000000;
   user-select: none;
 }
+
+
 .upper-backround{
   position:static;
   width: 100%;
@@ -33,11 +43,32 @@ button{
   background-repeat: no-repeat;
   background-position: center -600px ;
 }
+.upper-backrounn__inner-two{
+  width: 100%;
+  height: 600px;
+  background-color: #000000;
+  background-image: url(../img/img-page_about/upper_backgroud.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center 0px ;
+}
+.upper-backrounn__inner-three{
+  width: 100%;
+  height: 600px;
+  background-color: #000000;
+  background-image: url(../img/img-page_services/upper_backgroud.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center -1150px ;
+}
+.block-title-page_2{
+  height: 600px;
+}
 .underline-hover{
   text-decoration: none;
 }
 .underline-hover:hover{
-  text-decoration:underline;
+  text-decoration: underline;
 }
 .fz-castom{
   font-size: 16px;
@@ -46,4 +77,114 @@ button{
   .fz-castom{
     font-size: 21px;
   }
+}
+.block-title-page__inner-list li {
+  position: relative;
+  padding-left: 50px; 
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.block-title-page__inner-list li::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/icon/point-list.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+@media (max-width:576px) {
+  .upper-backrounn__inner-two{
+    height: 730px;
+  }
+  .block-title-page_2{
+    height: 730px;
+  }
+  .block-title-page__inner-list li {
+    padding-left: 30px; 
+  }
+}
+.slider {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.card {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+.slick-track{
+  display: flex;
+}
+.licenses-certificates .slick-dots li button{
+  background-color: #000000;
+}
+.slick-dots{
+  bottom: -50px;
+}
+.slick-dots li button{
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 999px;
+  list-style: none;
+  opacity: 1;
+  transition: 0.3s;
+}
+.slick-dots li button::before{
+  width: 0;
+  height: 0;
+  font-size: 0;
+  list-style: none;
+}
+.slick-dots li{
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.slick-dots .slick-active{
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.carousel-control-next-icon-castom{
+  background: linear-gradient(0deg, rgba(255,255,255) 0%, rgba(255,255,255) 100%);
+}
+.carousel-control-next-icon-castom:hover{
+  background: linear-gradient(0deg, rgba(255,102,0,1) 0%, rgba(255,51,0,1) 100%);
+}
+.carousel-control-next-icon-castom svg path{
+  stroke: #000;
+  transition:0.1s;
+}
+.carousel-control-next-icon-castom:hover svg path{
+  stroke: #fff;
+  transition:0.1s;
+}
+.carousel-control-prev{
+  z-index: 9999;
+}
+.carousel-control-prev-icon-castom{
+  z-index: 999;
+  background-color: #fff;
+}
+.carousel-control-prev-icon-castom:hover{
+  background: linear-gradient(0deg, rgba(255,102,0,1) 0%, rgba(255,51,0,1) 100%);
+  transition: 0.3s;
+}
+.carousel-control-prev-icon-castom svg path{
+  stroke: #000;
+  transition:0.1s;
+}
+.carousel-control-prev-icon-castom:hover svg path{
+  stroke: #fff;
+  transition:0.1s;
 }
