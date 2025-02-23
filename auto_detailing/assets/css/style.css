@@ -52,6 +52,15 @@ button{
   background-repeat: no-repeat;
   background-position: center 0px ;
 }
+.upper-backrounn__inner-2two{
+  width: 100%;
+  height: 400px;
+  background-color: #000000;
+  background-image: url(../img/img-page_portfolio/upper_backgroud.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center -700px ;
+}
 .upper-backrounn__inner-three{
   width: 100%;
   height: 600px;
@@ -63,6 +72,9 @@ button{
 }
 .block-title-page_2{
   height: 600px;
+}
+.block-title-page_22{
+  height: 400px;
 }
 .underline-hover{
   text-decoration: none;
