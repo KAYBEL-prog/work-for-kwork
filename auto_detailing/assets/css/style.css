@@ -4,6 +4,9 @@ body{
   padding: 0;
   font-family: 'inter-regular';
 }
+header{
+  transition: 0.3s
+}
 ul {
   list-style: none;
   padding-left: 0;
@@ -27,7 +30,10 @@ button{
   user-select: none;
 }
 
-
+.py-cast-y{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 .upper-backround{
   position:static;
   width: 100%;
@@ -45,7 +51,7 @@ button{
 }
 .upper-backrounn__inner-two{
   width: 100%;
-  height: 600px;
+  height: max-content;
   background-color: #000000;
   background-image: url(../img/img-page_about/upper_backgroud.jpg);
   background-size: 100% contain ;
@@ -54,7 +60,7 @@ button{
 }
 .upper-backrounn__inner-2two{
   width: 100%;
-  height: 400px;
+  height: max-content;
   background-color: #000000;
   background-image: url(../img/img-page_portfolio/upper_backgroud.jpg);
   background-size: 100% contain ;
@@ -63,18 +69,16 @@ button{
 }
 .upper-backrounn__inner-three{
   width: 100%;
-  height: 600px;
+  height: max-content;
   background-color: #000000;
   background-image: url(../img/img-page_services/upper_backgroud.jpg);
   background-size: 100% contain ;
   background-repeat: no-repeat;
   background-position: center -1150px ;
 }
-.block-title-page_2{
-  height: 600px;
-}
+
 .block-title-page_22{
-  height: 400px;
+  height: max-content;
 }
 .underline-hover{
   text-decoration: none;
@@ -111,12 +115,7 @@ button{
 
 }
 @media (max-width:576px) {
-  .upper-backrounn__inner-two{
-    height: 730px;
-  }
-  .block-title-page_2{
-    height: 730px;
-  }
+
   .block-title-page__inner-list li {
     padding-left: 30px; 
   }
@@ -199,4 +198,9 @@ button{
 .carousel-control-prev-icon-castom:hover svg path{
   stroke: #fff;
   transition:0.1s;
+}
+
+.completed_works .slick-dots li button{
+  background-color: #000;
+  transition: 0.3s;
 }

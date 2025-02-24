@@ -61,15 +61,6 @@
   background-position: -50px -50px ;
 }
 
-.slider_completed_works_img-1{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../img/img-page_services/photo-for-slider/1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 .slider_customer-reviews_overlay-1{
   opacity: 1;
 }
@@ -86,11 +77,15 @@
 }
 
 
-.completed_works .slick-dots li button{
-  background-color: #000;
-  transition: 0.3s;
+.slider_completed_works_img-1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/img-page_services/photo-for-slider/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-
 
 .upper-backrounn__inner_protect-car{
   width: 100%;

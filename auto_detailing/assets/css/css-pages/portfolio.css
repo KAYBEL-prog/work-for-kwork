@@ -1,6 +1,6 @@
 .upper-backrounn__inner_comments{
   width: 100%;
-  height: 500px;
+  height: max-content;
   background-color: #000000;
   background-image: url(../../img/img-page_portfolio/upper_backgroud22.jpg);
   background-size: 100% contain ;
@@ -61,6 +61,34 @@
   }
 }
 
+
+.slider_completed_works_img-1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/img-page_services/photo-for-slider/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.slider_customer-reviews_overlay-1{
+  opacity: 1;
+}
+.slider_customer-reviews_overlay{
+  opacity: 0;
+  background-color: rgba(0,0,0, 0.0);
+  transition: opacity 0.3s;
+}
+.completed_works__item:hover .slider_customer-reviews_overlay{
+  opacity: 1;
+  display: block;
+  background-color: rgba(0,0,0, 0.70);
+  transition: opacity 0.3s;
+}
+
+.slider_card_item{
+  min-width: 280px;
+}
 .completed-portfolio_preview{
   display: grid;
   grid-template-areas:
@@ -80,6 +108,10 @@
 .item-dots:hover {
   color:#FF3300;
   text-decoration: underline;
+}
+.card_header{
+  max-width: 380px;
+  min-height: 0;
 }
 
 
