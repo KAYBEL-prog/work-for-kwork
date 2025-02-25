@@ -79,6 +79,10 @@
   background-color: rgba(0,0,0, 0.0);
   transition: opacity 0.3s;
 }
+.completed_works__item{
+  min-width: 280px;
+  height: 320px;
+}
 .completed_works__item:hover .slider_customer-reviews_overlay{
   opacity: 1;
   display: block;
@@ -86,9 +90,7 @@
   transition: opacity 0.3s;
 }
 
-.slider_card_item{
-  min-width: 280px;
-}
+
 .completed-portfolio_preview{
   display: grid;
   grid-template-areas:
@@ -113,7 +115,18 @@
   max-width: 380px;
   min-height: 0;
 }
+.btn_slider-cast{
+  text-decoration: underline;
+  color: #FF3300;
+}
+.slider_card_item-avatar{
+  width: 70px;
+  height: 70px;
+}
 
 
-
+.stars .stars-item{
+  width: 20px;
+  height: 20px;
+}
 

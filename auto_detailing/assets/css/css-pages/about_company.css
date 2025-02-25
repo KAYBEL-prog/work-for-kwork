@@ -121,21 +121,35 @@
 .about_content-achievements_text{
   max-width: 250px;
   line-height:130%;
-  
 }
-
 .card_img__inner{
   max-width: 380px;
   height: 245px;
 }
-
 .slider_certificates_card{
   min-width: 250px;
 }
 .slider_certificates_card_img__inner{
-  width: 220px;
+  min-width: 200px;
 }
 .slider_certificates_card_img__inner img{
   width: 100%;
   height: max-content;
+}
+.slider_certificates_card-modal{
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+.slider_certificates_card-modal_img__inner{
+  width: 100%;
+}
+.our_experts-card{
+  min-width: 280px;
+}
+.slider_customer-reviews__card{
+  min-width: 280px;
+  height: 380px;
 }

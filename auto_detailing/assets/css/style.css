@@ -7,6 +7,10 @@ body{
 header{
   transition: 0.3s
 }
+.inner__footer{
+  min-height: 100px;
+  background-color: #151515;
+}
 ul {
   list-style: none;
   padding-left: 0;
@@ -40,6 +44,12 @@ button{
   height: 0px;
   overflow: visible;
 }
+.box-shadow_modal{
+  box-shadow: 0px 0px 40px -10px #000;
+}
+.navigation-pages{
+  margin-top: 80px;
+}
 .upper-backrounn__inner{
   width: 100%;
   height: 450px;
@@ -52,6 +62,7 @@ button{
 .upper-backrounn__inner-two{
   width: 100%;
   height: max-content;
+  padding-bottom: 100px;
   background-color: #000000;
   background-image: url(../img/img-page_about/upper_backgroud.jpg);
   background-size: 100% contain ;
@@ -61,6 +72,7 @@ button{
 .upper-backrounn__inner-2two{
   width: 100%;
   height: max-content;
+  padding-bottom: 100px;
   background-color: #000000;
   background-image: url(../img/img-page_portfolio/upper_backgroud.jpg);
   background-size: 100% contain ;
@@ -70,6 +82,7 @@ button{
 .upper-backrounn__inner-three{
   width: 100%;
   height: max-content;
+  padding-bottom: 100px;
   background-color: #000000;
   background-image: url(../img/img-page_services/upper_backgroud.jpg);
   background-size: 100% contain ;
@@ -203,4 +216,40 @@ button{
 .completed_works .slick-dots li button{
   background-color: #000;
   transition: 0.3s;
+}
+
+.btn_cast{
+  height: 60px;
+  box-shadow: 0 0 20px rgba(255,102,0,1);
+  background: rgb(255,102,0); background: linear-gradient(0deg, rgba(255,102,0,1) 0%, rgba(255,51,0,1) 100%);
+}
+
+.btn_cast-revers{
+  min-width: 250px;
+  height: 60px;
+  border: 1px solid #fff;
+  transition: 0.3s;
+  background-color: transparent;
+}
+.btn_cast-revers:hover{
+  min-width: 250px;
+  height: 60px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 20px rgba(255,102,0,1);
+  background: rgb(255,102,0); background: linear-gradient(0deg, rgba(255,102,0,1) 0%, rgba(255,51,0,1) 100%);
+  transition: 0.3s;
+}
+.profil-manager{
+  width: 110px;
+  min-height: 120px;
+  background-color:#F2F2F2;
+}
+.profil-manager p{
+  width: 100px;
+}
+.bg-castom-gray{
+  background-color: #F2F2F2;
+}
+.cast-color_orange{
+  color: #FF6600;
 }

@@ -69,6 +69,10 @@
   background-color: rgba(0,0,0, 0.0);
   transition: opacity 0.3s;
 }
+.completed_works__item{
+  min-width: 280px;
+  height: 320px;
+}
 .completed_works__item:hover .slider_customer-reviews_overlay{
   opacity: 1;
   display: block;
@@ -225,3 +229,8 @@
 }
 
 
+.number-works{
+  width: 60px; 
+  height: 50px;
+  background-color: rgb(255,102,0);
+}
