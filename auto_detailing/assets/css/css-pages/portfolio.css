@@ -107,10 +107,6 @@
 .item-dots {
   color: #000;
 }
-.item-dots:hover {
-  color:#FF3300;
-  text-decoration: underline;
-}
 .card_header{
   max-width: 380px;
   min-height: 0;

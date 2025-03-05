@@ -178,7 +178,11 @@ button{
   opacity: 1;
   transition: 0.3s;
 }
-
+.carousel-control-next{
+  width: 100px;
+  height: 100%;
+  margin-right: -15px;
+}
 .carousel-control-next-icon-castom{
   background: linear-gradient(0deg, rgba(255,255,255) 0%, rgba(255,255,255) 100%);
 }
@@ -193,8 +197,13 @@ button{
   stroke: #fff;
   transition:0.1s;
 }
+
+
 .carousel-control-prev{
   z-index: 9999;
+  width: 100px;
+  height: 100%;
+  margin-left: -15px;
 }
 .carousel-control-prev-icon-castom{
   z-index: 999;
@@ -211,6 +220,20 @@ button{
 .carousel-control-prev-icon-castom:hover svg path{
   stroke: #fff;
   transition:0.1s;
+}
+
+@media (max-width:576px) {
+  .carousel-control-prev{
+    z-index: 9999;
+    width: 100px;
+    height: 100%;
+    margin-left: -10px;
+  }
+  .carousel-control-next{
+    width: 100px;
+    height: 100%;
+    margin-right: -10px;
+  }
 }
 
 .completed_works .slick-dots li button{

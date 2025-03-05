@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/slick-slider_css/slick-theme.css"/>
 
         <!-- fancybox -->
-        <!-- <link rel="stylesheet" href="../assets/css/fancybox/jquery.fancybox.min.css"> -->
+        <link rel="stylesheet" href="../assets/css/fancybox/jquery.fancybox.min.css">
 
         <link rel="stylesheet" href="../assets/css/fonts.css">
         <link rel="stylesheet" href="../assets/css/style.css">
@@ -201,7 +201,7 @@
         </div>
 
         <div class="our_experts upper-backrounn__inner_our-experts slick-slider mt-5">
-          <div class="py-cast-y container my-auto overflow-hidden">
+          <div class="py-cast-y container my-auto">
             <h2 class="text-center text-white inter-bold mb-4">Наши специалисты</h2>
             
             <div class="container px-0 mt-3">
@@ -287,7 +287,7 @@
           </div>
         </div>
 
-        <div class="licenses-certificates slick-slider mt-5">
+        <div class="licenses-certificates slick-slider mt-5 ">
           
           <div class="py-cast-y container my-auto">
             <h2 class="text-center text-black inter-bold mb-4">Лицензии и сертификаты</h2>
@@ -340,12 +340,13 @@
             </div>
 
 
-            <!-- <div class="slider_certificates_card-modal" id="hidden1">
+            <div class="slider_certificates_card-modal" id="hidden1">
               <img class="mx-auto slider_certificates_card-modal_img__inner" src="../assets/img/about_company-img/licenses-certificates/img_1.png" alt="img_1.png">
             </div>
             <div class="slider_certificates_card-modal" id="hidden2">
               <img class="mx-auto slider_certificates_card-modal_img__inner" src="../assets/img/about_company-img/licenses-certificates/img_2.png" alt="img_2.png">
-            </div> -->
+            </div>
+
           </div>
         </div>
 
@@ -648,7 +649,7 @@
   <script src="../assets/js/slick-slider/slick.min.js"></script>
 
   <!-- fancybox -->
-  <!-- <script src="../assets/js/fancybox/jquery.fancybox.min.js"></script> -->
+  <script src="../assets/js/fancybox/jquery.fancybox.min.js"></script>
 
   <script>
       $(document).ready(function(){
@@ -660,8 +661,8 @@
               dots: true,
               autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 overflow-hidden position-absolute justify-content-start align-items-center z-2" style="width: 100px;height: 100%; margin-left: -12px;" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 overflow-hidden position-absolute justify-content-end align-items-center z-5" style="width: 100px;height: 100%; margin-right: -12px;" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px; " aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
@@ -696,8 +697,8 @@
               dots: true,
               // autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 overflow-hidden position-absolute justify-content-start align-items-center z-2" style="width: 100px;height: 100%; margin-left: -12px;" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 overflow-hidden position-absolute justify-content-end align-items-center z-5" style="width: 100px;height: 100%; margin-right: -12px;" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px; " aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
@@ -739,8 +740,8 @@
               dots: true,
               // autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 overflow-hidden position-absolute justify-content-start align-items-center z-2" style="width: 100px;height: 100%; margin-left: -12px;" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 overflow-hidden position-absolute justify-content-end align-items-center z-5" style="width: 100px;height: 100%; margin-right: -12px;" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px; " aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
