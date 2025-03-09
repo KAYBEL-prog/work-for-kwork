@@ -3,11 +3,34 @@
 @import "tailwindcss";
 
 @theme {
+  /* fonts */
   --font-sans: "Manrope", sans-serif;
-}
+  /* font-size */
+  --text-tiny: 40px; 
 
+}
 
 @utility container{
   padding-inline: 0rem;
   margin-inline: auto;
 }
+@layer base {
+  .hero-block{
+    height: 880px;
+    background-image: url(../assets/img/pages-home/bg-hero-block.png);
+    background-repeat: no-repeat;
+    background-size: 171%;
+    background-position: top left;
+  }
+  @media (max-width:860px) {
+    .hero-block{
+      height: auto;
+      min-height: 100svh;
+      background-image: url(../assets/img/pages-home/bg-hero-block.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top left;
+    }
+  }
+}
+
