@@ -7,14 +7,34 @@
   --font-sans: "Manrope", sans-serif;
   /* font-size */
   --text-tiny: 40px; 
+  /* h 1-4 */
+  --text-h1: 72px;
+  --text-h2: 52px;
+  --text-h3: 46px;
+  --text-h4: 32px;
 
+  /* colors */
+  --color-brand: #FFC800;
+  --color-grey-1: #202020;
+  --color-grey-2: #494A4E;
+  --color-grey-3: #E6E3DE;
+  --color-grey-3: #E6E3DE;
+  
 }
+
 
 @utility container{
   padding-inline: 0rem;
   margin-inline: auto;
 }
+
 @layer base {
+  h1 {
+    @apply text-h1 font-semibold text-black leading-20;
+  }
+  h2 {
+    @apply text-h2 font-semibold text-black leading-20;
+  }
   .hero-block{
     height: 880px;
     background-image: url(../assets/img/pages-home/bg-hero-block.png);
@@ -22,14 +42,75 @@
     background-size: 171%;
     background-position: top left;
   }
+  .our-solutions{
+    /* max-height: 780px; */
+  }
+  .our-solutions__inner{
+    min-height: 810px;
+    max-height: 1500px;
+    height: max-content;
+  }
+  .our-solutions-set{
+    min-height: 810px;
+    max-height: 1500px;
+    height: max-content;
+  }
+  
+  .our-solutions_bg-items{
+    background-image: url(../assets/img/pages-home/bg-items.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  .why-xcelerit__inner{
+
+    background-image: url(../assets/img/pages-home/bg-hero-block__why-xcelerit.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .btn-slick-dots{
+    border: 1px #000;
+    border-left-style: solid;
+    transition: 0.5s;
+  }
+  .custom-dots_active{
+    border: 3px #000;
+    border-left-style: solid;
+    font-weight: 900;
+    transition: 0.5s;
+  }
   @media (max-width:860px) {
     .hero-block{
       height: auto;
-      min-height: 100svh;
+      min-height: 100vh;
       background-image: url(../assets/img/pages-home/bg-hero-block.png);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: top left;
+    }
+
+    .our-solutions__inner{
+      min-height: none;
+      max-height: none;
+      height: max-content;
+    }
+    .our-solutions-set{
+      min-height: auto;
+      max-height: auto;
+      height: max-content;
+    }
+
+    .btn-slick-dots{
+      border: 1px #000;
+      border-left-style: none;
+      border-bottom-style: solid;
+      transition: 0.1s;
+    }
+    .custom-dots_active{
+      border: 3px #000;
+      border-left-style: none;
+      border-bottom-style: solid;
+
+      transition: 0.1s;
     }
   }
 }
