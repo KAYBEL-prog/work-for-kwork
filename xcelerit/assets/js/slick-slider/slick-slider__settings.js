@@ -85,3 +85,40 @@ $('.slider_3').slick({
     },
   ]
 });
+$('.slider_4').slick({
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 0,
+  speed: 2000,
+  cssEase: 'linear',
+  responsive: [
+    {
+      breakpoint: 1202,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 514,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
+  ]
+});
