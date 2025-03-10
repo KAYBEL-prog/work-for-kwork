@@ -1,6 +1,8 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
 @config "../tailwind.config.js";
+
 
 @utility container{
   padding-inline: 0rem;
@@ -8,26 +10,7 @@
 }
 
 @layer base {
-  h1 {
-    @apply text-h1 font-semibold text-black leading-20;
-  }
-  h2 {
-    @apply text-h2 font-semibold text-black leading-20;
-  }
-  .hero-block{
-    height: 880px;
-    background-size: 171%;
-  }
-  .our-solutions__inner{
-    min-height: 810px;
-    max-height: 1000px;
-    height: max-content;
-  }
-  .our-solutions-set{
-    min-height: 810px;
-    max-height: 1000px;
-    height: max-content;
-  }
+
   .slider_2 .slick-list{
     order: 1;
     z-index: 10;
