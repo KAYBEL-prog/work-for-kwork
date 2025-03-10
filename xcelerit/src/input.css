@@ -55,7 +55,12 @@
     max-height: 1500px;
     height: max-content;
   }
-  
+
+  .slider_2 .slick-list{
+    order: 1;
+    z-index: 10;
+  }
+
   .our-solutions_bg-items{
     background-image: url(../assets/img/pages-home/bg-items.png);
     background-repeat: no-repeat;
@@ -67,12 +72,12 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .btn-slick-dots{
+  .our-solutions__inner div nav .btn-slick-dots{
     border: 1px #000;
     border-left-style: solid;
     transition: 0.5s;
   }
-  .custom-dots_active{
+  .our-solutions__inner div nav .custom-dots_active{
     border: 3px #000;
     border-left-style: solid;
     font-weight: 900;
@@ -99,18 +104,17 @@
       height: max-content;
     }
 
-    .btn-slick-dots{
+    .our-solutions__inner div nav  .btn-slick-dots{
       border: 1px #000;
       border-left-style: none;
       border-bottom-style: solid;
-      transition: 0.1s;
+      transition: 0.5s;
     }
-    .custom-dots_active{
+    .our-solutions__inner div nav  .custom-dots_active{
       border: 3px #000;
       border-left-style: none;
       border-bottom-style: solid;
-
-      transition: 0.1s;
+      transition: 0.5s;
     }
   }
 }
