@@ -8,7 +8,6 @@
 }
 
 @layer base {
-  /* *{border:1px solid red;} */
   .slider_2 .slick-list{
     order: 1;
     z-index: 10;
