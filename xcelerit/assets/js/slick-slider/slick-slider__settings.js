@@ -51,6 +51,12 @@ $('.slider_2').slick({
 $('.slider_3').slick({
   slidesToShow: 7,
   slidesToScroll: 1,
+
+  draggable: false,
+  swipe: false,
+  touchMove: false,
+  accessibility: false,
+
   arrows: false,
   dots: false,
   infinite: true,
@@ -88,6 +94,12 @@ $('.slider_3').slick({
 $('.slider_4').slick({
   slidesToShow: 7,
   slidesToScroll: 1,
+
+  draggable: false,
+  swipe: false,
+  touchMove: false,
+  accessibility: false,
+
   arrows: false,
   dots: false,
   infinite: true,
