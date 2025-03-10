@@ -60,6 +60,12 @@
     order: 1;
     z-index: 10;
   }
+  .slider_2 .carousel-control-prev{
+    order: 2;
+  }
+  .slider_2 .carousel-control-next{
+    order: 3;
+  }
 
   .our-solutions_bg-items{
     background-image: url(../assets/img/pages-home/bg-items.png);
@@ -116,6 +122,17 @@
       border-bottom-style: solid;
       transition: 0.5s;
     }
+  }
+  .join-team_list {
+    list-style-image: url(../assets/img/icons/Bullet.svg);
+  }
+  .resources-insights_shadow{
+    
+  }
+  .bgbgbg{
+    background-image: url(../assets/img/bgbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
