@@ -1,7 +1,6 @@
-
+@config "../tailwind.config.js";
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
-@config "../tailwind.config.js";
 
 
 @utility container{
@@ -10,17 +9,16 @@
 }
 
 @layer base {
-
   .slider_2 .slick-list{
     order: 1;
     z-index: 10;
   }
-  .our-solutions__inner div nav .btn-slick-dots{
+  .btn-custom-dots div nav .btn-slick-dots{
     border: 1px #000;
     border-left-style: solid;
     transition: 0.5s;
   }
-  .our-solutions__inner div nav .custom-dots_active{
+  .btn-custom-dots div nav .custom-dots_active{
     border: 3px #000;
     border-left-style: solid;
     font-weight: 900;
@@ -29,6 +27,5 @@
   .join-team_list {
     list-style-image: url(../assets/img/icons/Bullet.svg);
   }
-
 }
 

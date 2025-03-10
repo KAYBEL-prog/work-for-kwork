@@ -1760,6 +1760,9 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
+  .text-h2 {
+    font-size: 52px;
+  }
   .text-h4 {
     font-size: 32px;
   }
@@ -2830,12 +2833,12 @@
     order: 1;
     z-index: 10;
   }
-  .our-solutions__inner div nav .btn-slick-dots {
+  .btn-custom-dots div nav .btn-slick-dots {
     border: 1px #000;
     border-left-style: solid;
     transition: 0.5s;
   }
-  .our-solutions__inner div nav .custom-dots_active {
+  .btn-custom-dots div nav .custom-dots_active {
     border: 3px #000;
     border-left-style: solid;
     font-weight: 900;
