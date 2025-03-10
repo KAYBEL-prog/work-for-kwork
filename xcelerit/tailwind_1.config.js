@@ -22,8 +22,11 @@ module.exports = {
       backgroundImage: {
         'hero-block': "url('../assets/img/pages-home/bg-hero-block.png')",
         'bg-items': "url('../assets/img/pages-home/bg-items.png')",
-        'why-xcelerit-inner': "url('../assets/img/pages-home/bg-hero-block__why-xcelerit.png')",
-        'bgbgbg': "url('../assets/img/bgbg.png')",
+        'bgwhy-xcelerit': "url('../assets/img/pages-home/bg-hero-block__why-xcelerit.png')",
+        'resources-insights': "url('../assets/img/bgbg.png')",
+      },
+      screens: {
+        'max-860': { 'max': '860px' },
       },
     },
   },

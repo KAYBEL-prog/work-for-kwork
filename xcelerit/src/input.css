@@ -1,26 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
-@config "../tailwind.config.js";
-@theme {
-  /* fonts */
-  /* --font-sans: "Manrope", sans-serif; */
-  /* font-size */
-  /* --text-tiny: 40px;  */
-  /* h 1-4 */
-  /* --text-h1: 72px; */
-  /* --text-h2: 52px; */
-  /* --text-h3: 46px; */
-  /* --text-h4: 32px; */
-
-  /* colors */
-  /* --color-brand: #FFC800;
-  --color-grey-1: #202020;
-  --color-grey-2: #494A4E;
-  --color-grey-3: #E6E3DE;
-  --color-grey-3: #E6E3DE; */
-  
-}
-
+@config "../tailwind_1.config.js";
 
 @utility container{
   padding-inline: 0rem;
@@ -38,40 +18,19 @@
     height: 880px;
     background-size: 171%;
   }
-  .our-solutions{
-    /* max-height: 780px; */
-  }
   .our-solutions__inner{
     min-height: 810px;
-    max-height: 1500px;
+    max-height: 1000px;
     height: max-content;
   }
   .our-solutions-set{
     min-height: 810px;
-    max-height: 1500px;
+    max-height: 1000px;
     height: max-content;
   }
-
   .slider_2 .slick-list{
     order: 1;
     z-index: 10;
-  }
-  .slider_2 .carousel-control-prev{
-    order: 2;
-  }
-  .slider_2 .carousel-control-next{
-    order: 3;
-  }
-
-  .bg-items{
-    background-image: url(../assets/img/pages-home/bg-items.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
-  }
-  .why-xcelerit__inner{
-    background-image: url(../assets/img/pages-home/bg-hero-block__why-xcelerit.png);
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   .our-solutions__inner div nav .btn-slick-dots{
     border: 1px #000;
@@ -84,47 +43,9 @@
     font-weight: 900;
     transition: 0.5s;
   }
-  @media (max-width:860px) {
-    .hero-block{
-      height: auto;
-      min-height: 100vh;
-      background-image: url(../assets/img/pages-home/bg-hero-block.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: top left;
-    }
-
-    .our-solutions__inner{
-      min-height: none;
-      max-height: none;
-      height: max-content;
-    }
-    .our-solutions-set{
-      min-height: auto;
-      max-height: auto;
-      height: max-content;
-    }
-
-    .our-solutions__inner div nav  .btn-slick-dots{
-      border: 1px #000;
-      border-left-style: none;
-      border-bottom-style: solid;
-      transition: 0.5s;
-    }
-    .our-solutions__inner div nav  .custom-dots_active{
-      border: 3px #000;
-      border-left-style: none;
-      border-bottom-style: solid;
-      transition: 0.5s;
-    }
-  }
   .join-team_list {
     list-style-image: url(../assets/img/icons/Bullet.svg);
   }
-  .bgbgbg{
-    background-image: url(../assets/img/bgbg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
 }
 
