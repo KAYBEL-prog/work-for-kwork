@@ -427,6 +427,9 @@
     padding-inline: 0rem !important;
     margin-inline: auto !important;
   }
+  .mx-2 {
+    margin-inline: 0.5rem;
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -1593,8 +1596,8 @@
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
   }
-  .px-3 {
-    padding-inline: 0.75rem;
+  .px-2 {
+    padding-inline: 0.5rem;
   }
   .px-4 {
     padding-inline: 1rem;
@@ -1750,9 +1753,6 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-h2 {
-    font-size: 52px;
   }
   .text-h4 {
     font-size: 32px;
@@ -2349,9 +2349,19 @@
       outline-style: none;
     }
   }
+  .sm\:mx-0 {
+    @media (width >= 40rem) {
+      margin-inline: calc(var(--spacing) * 0);
+    }
+  }
   .sm\:-mt-48 {
     @media (width >= 40rem) {
       margin-top: calc(12rem * -1);
+    }
+  }
+  .sm\:mt-0 {
+    @media (width >= 40rem) {
+      margin-top: calc(var(--spacing) * 0);
     }
   }
   .sm\:mt-3 {
@@ -2456,9 +2466,10 @@
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
-  .sm\:text-h2 {
+  .sm\:leading-13 {
     @media (width >= 40rem) {
-      font-size: 52px;
+      --tw-leading: 3.25rem;
+      line-height: 3.25rem;
     }
   }
   .sm\:leading-14 {
@@ -2572,6 +2583,11 @@
       padding-block: 3rem;
     }
   }
+  .md\:pr-20 {
+    @media (width >= 48rem) {
+      padding-right: 5rem;
+    }
+  }
   .md\:pr-24 {
     @media (width >= 48rem) {
       padding-right: 6rem;
@@ -2602,16 +2618,6 @@
     @media (width >= 48rem) {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-  .md\:text-h2 {
-    @media (width >= 48rem) {
-      font-size: 52px;
-    }
-  }
-  .md\:text-h3 {
-    @media (width >= 48rem) {
-      font-size: 46px;
     }
   }
   .md\:leading-20 {
@@ -2767,9 +2773,9 @@
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
-  .lg\:text-h2 {
+  .lg\:text-h3 {
     @media (width >= 64rem) {
-      font-size: 52px;
+      font-size: 46px;
     }
   }
   .xl\:w-3\/6 {
