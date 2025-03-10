@@ -1,24 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
 @import "tailwindcss";
-
+@config "../tailwind.config.js";
 @theme {
   /* fonts */
-  --font-sans: "Manrope", sans-serif;
+  /* --font-sans: "Manrope", sans-serif; */
   /* font-size */
-  --text-tiny: 40px; 
+  /* --text-tiny: 40px;  */
   /* h 1-4 */
-  --text-h1: 72px;
-  --text-h2: 52px;
-  --text-h3: 46px;
-  --text-h4: 32px;
+  /* --text-h1: 72px; */
+  /* --text-h2: 52px; */
+  /* --text-h3: 46px; */
+  /* --text-h4: 32px; */
 
   /* colors */
-  --color-brand: #FFC800;
+  /* --color-brand: #FFC800;
   --color-grey-1: #202020;
   --color-grey-2: #494A4E;
   --color-grey-3: #E6E3DE;
-  --color-grey-3: #E6E3DE;
+  --color-grey-3: #E6E3DE; */
   
 }
 
@@ -37,10 +36,7 @@
   }
   .hero-block{
     height: 880px;
-    background-image: url(../assets/img/pages-home/bg-hero-block.png);
-    background-repeat: no-repeat;
     background-size: 171%;
-    background-position: top left;
   }
   .our-solutions{
     /* max-height: 780px; */
@@ -67,13 +63,12 @@
     order: 3;
   }
 
-  .our-solutions_bg-items{
+  .bg-items{
     background-image: url(../assets/img/pages-home/bg-items.png);
     background-repeat: no-repeat;
     background-position: right bottom;
   }
   .why-xcelerit__inner{
-
     background-image: url(../assets/img/pages-home/bg-hero-block__why-xcelerit.png);
     background-repeat: no-repeat;
     background-size: cover;
