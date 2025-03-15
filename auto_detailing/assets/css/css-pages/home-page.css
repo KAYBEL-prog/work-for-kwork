@@ -1,0 +1,295 @@
+.slider_certificates_card-modal_img__inner{
+  width: 100%;
+}
+
+.advantages{
+  height: max-content;
+  background-color: #E6E6E6;
+}
+.advantages .border-castoms {
+  border: 1px #999999;
+  border-bottom-style: solid;
+}
+.advantages_item{
+  width: max-content;
+}
+.advantages_item p{
+  width: 180px;
+}
+.our_experts-card{
+  min-width: 280px;
+}
+.slider_certificates_card-modal{
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.popular-services {
+}
+.our_experts {
+}
+.upper-backrounn__inner_popular-services{
+  width: 100%;
+  height: max-content;
+  background-color: #000000;
+  background-image: url(../../img/img-page_main-page/backgroud-block_popular-services.png);
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popular-services-card{
+  width: 300px;
+  min-height: 280px;
+}
+
+.card_img__inner{
+  max-width: 380px;
+  min-height: 180px;
+  max-height: 180px;
+  
+}
+.card_img__inner img{
+  z-index: 30;
+}
+.position-relative {
+
+}
+.card-body_link-hover span{
+  position: relative;
+  color: #FF6600;
+  z-index: 20;
+}
+.card-title{
+  position: relative;
+  z-index: 30;
+}
+.card-body_link-hover{
+  position: relative;
+  transition: 0.5s;
+  transition-delay: 1s;
+  margin-top: -80px;
+  z-index: 10;
+
+}
+.popular-services-card:hover .card-body_link-hover{
+  margin-top: 10px;
+  transition: 0.5s;
+}
+
+.slider_completed_works_img-1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/img-page_services/photo-for-slider/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.slider_customer-reviews_overlay-1{
+  opacity: 1;
+}
+.slider_customer-reviews_overlay{
+  opacity: 0;
+  background-color: rgba(0,0,0, 0.0);
+  transition: opacity 0.3s;
+}
+.completed_works__item{
+  min-width: 280px;
+  height: 320px;
+}
+.completed_works__item:hover .slider_customer-reviews_overlay{
+  opacity: 1;
+  display: block;
+  background-color: rgba(0,0,0, 0.70);
+  transition: opacity 0.3s;
+}
+
+
+.upper-backrounn__inner_protect-car{
+  width: 100%;
+  min-height: 790px;
+  height: max-content;
+  background-color: #000000;
+  background-image: url(../../img/img-page_services/protect-car.jpg);
+  background-size: 100% contain;
+  background-repeat: no-repeat;
+  background-position: center 0px ;
+}
+
+@media (max-width:1200px) {
+  .upper-backrounn__inner_protect-car{
+    width: 100%;
+    min-height: 550px;
+    height: max-content;
+    background-color: #000000;
+    background-image: url(../../img/img-page_services/protect-car.jpg);
+    background-size: 140%;
+    background-repeat: no-repeat;
+    background-position: center 0px ;
+  }
+}
+@media (max-width:992px) {
+  .upper-backrounn__inner_protect-car{
+    width: 100%;
+    min-height: 450px;
+    height: max-content;
+    background-color: #000000;
+    background-image: url(../../img/img-page_services/protect-car.jpg);
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: center 0px ;
+  }
+}
+@media (max-width:856px) {
+  .upper-backrounn__inner_protect-car{
+    width: 100%;
+    min-height: 350px;
+    height: max-content;
+    background-color: #000000;
+    background-image: url(../../img/img-page_services/protect-car.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center 0px ;
+  }
+}
+@media (max-width:576px) {
+  .upper-backrounn__inner_protect-car{
+    width: 100%;
+    min-height: 300px;
+    height: max-content;
+    background-color: #000000;
+    background-image: url(../../img/img-page_services/protect-car.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center 0px ;
+  }
+}
+@media (max-width:456px) {
+  .upper-backrounn__inner_protect-car{
+    width: 100%;
+    min-height: 250px;
+    height: max-content;
+    background-color: #000000;
+    background-image: url(../../img/img-page_services/protect-car.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center 0px ;
+  }
+}
+
+
+.form-check-input {
+  display: none;
+}
+.form-check-label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.form-check-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  background-color: white;
+}
+.form-check-input:checked + .form-check-label::before {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  background-image: url(../../img/img-page_main-page/icons/check.svg);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #FF6600;
+  transition: 0.3s;
+}
+
+
+.slider_card_item-avatar{
+  width: 70px;
+  height: 70px;
+}
+.stars .stars-item{
+  width: 20px;
+  height: 20px;
+}
+.upper-backrounn__inner_comments{
+  width: 100%;
+  height: max-content;
+  background-color: #000000;
+  background-image: url(../../img/img-page_portfolio/upper_backgroud22.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center -500px ;
+}
+
+
+
+.upper-backrounn__inner_customer-reviews{
+  width: 100%;
+  height: max-content;
+  background-color: #000000;
+  background-image: url(../../img/about_company-img/backgroud-block_2.jpg);
+  background-size: 100% contain ;
+  background-repeat: no-repeat;
+  background-position: center -300px ;
+}
+.slider_customer-reviews__card{
+  min-width: 280px;
+  height: 380px;
+}
+.slider_customer-reviews_img-1{
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  background-color: #000000;
+  background-image: url(../../img/img-page_main-page/images/for-slider__customer-reviews/img_1.png);
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center ;
+}
+
+.slider_customer-reviews_img-1::before{
+  display: none;
+}
+.slider_customer-reviews_img-2{
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  background-color: #000000;
+  background-image: url(../../img/img-page_main-page/images/for-slider__customer-reviews/img_2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center ;
+}
+.slider_customer-reviews_img-2::before{
+  display: none;
+}
+
+.number-works{
+  width: 60px; 
+  height: 50px;
+  background-color: rgb(255,102,0);
+}
+
+.about_content-text::before{
+  content: '';
+  position: absolute;
+  margin-left: -35px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../img/icon/point-list.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
