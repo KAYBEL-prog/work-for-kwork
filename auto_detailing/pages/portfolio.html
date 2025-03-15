@@ -21,6 +21,13 @@
   <body>
     <header class="fixed-top header z-5" >
       <div class="inner__header container mx-auto mt-2 py-3 d-flex align-items-center justify-content-between" >
+        
+        <button id="burgerMenu" data-bs-toggle="modal" data-bs-target="#burgermenu" class="burger-menu d-block d-lg-none">
+          <span class="w-100 bg-white mb-1 rounded-pill"></span>
+          <span class="w-100 bg-white mb-1 rounded-pill"></span>
+          <span class="w-100 bg-white mb-1 rounded-pill"></span>
+        </button>
+
         <a href="#" class="logo">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="48" viewBox="0 0 121 48">
             <image id="logo" width="121" height="48" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAwCAYAAAA1rdXtAAASfElEQVR4nOTQwQ1AMBQA0MelK0hs4NK9XDtHh3MXxMUMFck3h3gjvC4i/EEruceACUeqy9pKHjHjwYUTG3ZEqsv9+Rq8AAAA//9iGQRuoCn4WazvxMDA4AXFKgwMDKDIDmFgYLjDwMBgxMDAUMrAwMCK5AZQqv/MwMAgPCwCgIGBAQAAAP//GpaR/LNYH5RjPzEwMHxnYGAoYmBg8EaS/sjAwHAbylZFi2AQYGRgYFjG3nsRlLtBZrkwMDCYMDAw9MDEhhRgYGAAAAAA//9iGoqOxgV+Fuur/yzWn8/AwHCRgYFBCqoMVAQjg2+g4vhnsT4oMjWwGAVSn43EB5nXzsDAcP1nsX7ogHiMEsDAwAAAAAD//xoWkfyzWF/kZ7F+PQMDw2UGBoYEBgYGLgYGBgH23ougovcZmvI37L0XQRENAqD6GRn8Y2BgaGTvvQiiQebWMDAwyEAVgIr6VT+L9Rf/LNbnppvnKAUMDAwAAAAA//8aLjk5jIGBoQGp6GVnYGAQhbJfQ+vZNwwMDG8ZGBgOQMVBOVkHzZzrDAwMi0CMn8X6cgwMDCVY7IphYGA487NYn4d23qEiYGBgAAAAAP//GrJ18s9ifTZQ7mLvvXiNgYFhD7QO5mNgYPjNwMBwkIGB4RVU6UoGBobt0AgGycG6EyA6l4GBQZOBgcGGgYHBFsQH1bvQojyHgYGBH4vVIH2HoGYNfsDAwAAAAAD//xqyXaifxfoLGBgY7Nl7LypC+aC68xIDA8Mm9t6Ld0k0C5yr2Xsvgop7EF+bgYHhCg7l2ey9F6dRww90AQwMDAAAAAD//xpykfyzWF+IgYFhIQMDgw9USI299+JtAtpItcOTgYFhG5rwDwYGhgz23osgu2Hq9BkYGJLZey/mUdN+qgIGBgYAAAAA//8ainVyJDSCXzIwMBRC61qqAvbei6DiXYGBgWEL1Ny/oLoYLYL9GBgYjoGK+J/F+qB6enACBgYGAAAAAP//Goo5WY2BgaGMgYGhnL334ls62FcJamix917cDeWDMkYbAwNDMQMDA6xNA0pwRuy9F9Fb8gMPGBgYAAAAAP//GjKR/LNYv4KBgWEFe+/FBwPoBlCXaxkDAwOomEYHHey9F0EJYnABBgYGAAAAAP//GhLF9c9ifS/ogITQQLnhT4IgJ/OHZ/lMX95qM/788pHhz6//iIY6GFQMyv4zAwMDAAAA//8a9Dn5Z7E+aEjxNKgeZu+9uJVS854+fcoLHZcGYVCXC9SnBiX2nwwMDB8YGBjegbpb0tLSoC4ZVvCjzJiD+et7OcZvH1QY//3R+s/CbvGfjcf2PzvnFLYJ15op9jQ1AQMDAwAAAP//Ggr9ZFcGBoZQciL46dOnoKFNQ2hfGDTwocfAwCDPwMAgCB0MwQZAqf7D06dPQYMooK7Yjf8cvE//cfPdZfr25Q7j9083pLvOglrat6AY3gr/nSkPGhUbXICBgQEAAAD//xpWU41Pnz4VYWBgsGZgYLBjYGAwZmBgsIDmVKqA/8ysDAzMrK//s7Jf/8/Ccec/G9M1xn8MNxm/fTkvK8TzdGB9jwMwMDAAAAAA//8atJH8s1gfVJSasPde3IdP3dOnT0H1dBADA4MbAwODLwMDAwcOpSCPgopk0MwUaDYJxAeVZKChUNBYNzNZDgWVB0ysv/6xcV35z859kfHnl0tM3z8fYWD4f0laWnrg56MZGBgAAAAA//8avMX1vz8OTN8+XsIm9fTpUx5ohKZDcy1y0fsSOgYNGiC5wMDA8BA6xAmqa79AIxk2vAnyP2h4FGQeCIPGu0GlAWgUDdSSBvWVQVgSZ+IBmfL3NxvT949GDCCMAM+ePn0KGnIFDbEeBc2MSUtLg9xAX8DAwAAAAAD//xqUOflXnhob46/vcqwzHt+BiT19/oKF4d9fBwYGhjzoAgBYzgOt5AD1Yc8zMDDsBa36kJaWptq879OnT0GNMlDkg6YlQXW6OnRGSomBgQE0iUFsdQBqyJ1lYGA4Am1IXpaWlqZ9d5CBgQEAAAD//xr0dfKjL38VmD+9zGP4/z+NgYEB1EX5BY1M0MTDDmlp6ZcD5banT5+Ccjgo8k2huR+ElaE0oeIfNJ0JyumgUbMz0LFyUG6HTYNSBzAwMAAAAAD//xqUkfz4w3fG/0wsroy/vtUw/fhswcDICAqQFQwMDKuhEft3EDgTJ4C26kG5HZQIQBjUoge17kGlAGh+mhFSw2CEPchfoCrmKnSyBbT44QYDA8MLsksnBgYGAAAAAP//zJqxCsJQDEXPe68FB0ehQwtufpL00/wYv8LdsagFFx0EpblyUfQXGghZA4HkJLmzKvIXorbk3CM6FAdS2alU+65ZxQxS/NkwDAY2t2y71zRLidzW/Z50ri7Kg1zflPOFUo0q9RV012JpNliT2ChhMWGDaJNokWoiSDGBAj7xmabXSMQpRZxRHNFkzvBZ13ImR48DjwAzx9+ANwAAAP//zJcxCgIxEEX/TDImCAERXNTCQhsbL+ABPKI38QxWlrY2sipYCOISXDAjWewU6/0n+MW8P/+3oniVp/NU2a7gwzKJj5DOGozNxKFqgb1GnwNcAMi9IM+0TGam9KeU7SP1iis9Y0l1vFG8H01dbQE6jGbzP2Rlwg0u+51Rlj7EjZXtQH0YqrgiuW6AOKhpvoEFQRQw9NIE+o4GAHgDAAD//xrwnPzoJ4Mkw59/bow/v3xl/vL2kJSc4isitFEN/MpTZ2T8+ZWJdeYTlCoA2oI3Y2BgsATNW0MjFtTVQgagHAsaMAE1pECteVDxCqpbnyLXrd/a/NgZf36RZ/z1VZ6BgVGB5fUDTcbf37j/MzJxMjAyMjEwMn1nYGL+8J+Z9TMDI9Ob/8ys7/6zcr77z8zygYGV/S0DE8ub/xy8nzjrdpIeWQwMDAAAAAD//7yaTYrCQBCFX3USAyOi+EPEXgxeIJfwJjI3cO8V9AIuPYcrDyCCGxdhNg5ZDAyIiElX11AhK9GlXqA2H/Xeq5+3Qa6vN2EdSATec7zYl3/r+Qddz0X7a/GyT8jbLDVgTogLS+WtS8UlBrNHGOXcGhzi5aECcsqOqcTNCUQUrI5myV0phaohaVN7p8LNrLVPrcRN+x0Jok8EoZUg6gHSQ6OZiAk6gAwhlcSPARlV8qy97HUt7gBlU8s2cSnw/EPefZNzmahkG7MDmS0M5eHq9zFIAP8AAAD//6yasUoDQRCG/9nzkpwhmtwRrzi8IhBshDycz5G3sbGwtrBKE9IHQVAQPS/c7u3tyJAJKJhKp9ty/2Vhvo//Xx7Z3izOtcN8rYtFrm44Vf4UsZEok0YaVkv2szEfLzXIOMQ9y3Gy496gZnNSwUQNQJVyba1s2+r5wMWxIoxs3SMgjCh0E7RuTN4m5B2Tdw2D3zg5ewrDdB1Ox89+Ogs+nw+7rMz8xSzv0vKqy4qFeX+dkxdj+cN4irq8027YY1EU2z8H9nuG8gkks8tvnC7IJtUkqRgfGbZgbBD8A8jcw0S3/eVKLrEfAF8AAAD//yI7kqHTbgHQNc060IikHWBkZGD68YWB4fc3BsZ//yCNkj9/GBj//2X4D2ms/mRgZH74j5P36X8uwTv/eIRu/ZFQe/yfme37XzHlP79Flf78E5Bk+8cjbPiXT0L9PweHyX9GBnWmX78YGH98ZWD8/QNiJmThHyiH7oCu5boykK35n8X6oIQMGnsHDdGClgSDShl8s10voIsdZrL3XjzDwMDAAAAAAP//IimSoYvnvKCL3JxxKHvPwMBwE7rV5D7U0hfQFRzfod0EkDkC0IkCIehoEhfSMCMyAI8pMX37+Osft8CXvwKSb/6zcr5mYOF4+o+T58N/Nu4//zl4///l4GP8zyfK/ldAiucvv6jgfy5hib88QtoMrJw2/1iZjBj//udn/P0LHJngCAUVgwz/QSUDqE4F1aWgLguo/w3qq6LkhMEEfhbrg3J7MnSFjAEet4HCbTsDA8MUAAAAAP//IjqSfxbrg8aGu6FFCDIADU6cYmBg2Act0s6y917EOU1HKXj64rXcf2ZmZQZmFr3/LBw6/1nYNBkYGZQZmBjE/jMyMDH9/svAAIrMPz8ZGP/8YmD4/5cBVP9DIxM0xAlqIIFG0mD90dfS0tJDcpbmZ7F+PAMDQy10AAY7YGC4BwAAAP//IhjJP4v1QXXpLAYGhgj4cpf//xiYfny6wvTt45L/LOzrWea8vEVrD4HAk08/mRl+fpFj+P9fiOH/f2nGf395GP7/Y2H4D6rnwWXtT2ii+wnFoD4kaI74Cbb+43AAP4v1QSXiRAYGhjis/mFgKAQAAAD//8IbyT+L9Q2gI03qYIF///4yf361j4Hhf/dvCY09nC2HRsaWyCEAfhbrg5YJZ6I59R8DA4MEAAAA///CORgCXXKzDtx6/f/vP/Pn13sY/jOUs8x5CZoIYHj18J7o66//xOW4mXCtTx4F9AWglaugOXRQ3x4GNjEwMHwAAAAA///CusbrZ7F+IEQBIzvTzy/3md8/C/mpZO7OMufF+Sev3/M9+sGQ/ZdXdB/zxxecoxE5OAB770VQ9QRaRQoDoHbIHPbei78BAAAA///CKK5/Fuvbg/uF//6ys3x4PuePsFwJe8/5j09evub6xy9ayvzpbSrD7x+g8dZMaWnpGSMyRAcx+FmsD4tQUAPYhIGBgQEAAAD//0IprqGbvPYy/vj8hfHXtyjm+W/XgUYuHv1iKGFmYs5nfvsUtsNvyWgED3oAWfDPwMAAAAAA//+CRzJ4uQ0j0zamz6/u/+MS9GSbeu/O4y+/7Rn+/JnE/OWtHmgwAgnkj/QQHIwAuoUIBPrYey+CpigZGBgYGAAAAAD//0Lk5P//65jfPmT/pW6r8cm/jvnXj/9zmT+/TQIPGkAi+B90ac3egVrGMgoIgmjo2SegNeoQwMDAAAAAAP//AtfJP4sNDJk+vVz3U99L92NQs94/XuFNTJ/eCENHgXZCVy+AVjHcHewT9rQG3759c+Hi4trz7ds30DwyAxcXF2j50YAD6EgYKJ6C2HsvggZ5IICBgQEAAAD//wLnZOYPzwq+WkRofgptK2D886eR6ePrTQyMjB3S0tJnyXX9t2/fdkOHLcPoERDfvn07g0W4AhQhVLaq49u3byAzQd0V0EoV0EDRYACg0a8K9AhmYGBgAAAAAP//YvpVoCH/3ci/9VN4VwLjrx/qjD+/qkvLyIRSGMGgw1RcoNxyWocA1D5YoHdCaWNoIqPEXGz6QYv9QePzs7i4uAZFBP8s1heDHqWxEUOSgYEBAAAA//+0XMkNgDAMy9tjwArsxAqMUEZghTILK3QMv5ElVxREP0j0F8lJqhz+JMov82SS2WsxKhTR2xhXMlIDLV6rTU5K+2qXbC6Y0gssSU1nslljf8rGyEc97LIDWHrd7yQKL7/qWjHCQVJ/KQBW07V8yJZkFfPtcAyAqafj2CRh/D/pDwDmF1vfGSkiTgAAAP//otXyHxdoBIEclgarx6A5yxh6xocgNALPQj29B5rr7yEFwiqounRoopn57du397CIwwKwBgQ00ECrPUERCAKgIhdkDyjXgwDIHpAcSAxkL2gyA2QHyJ0gv4DcCYoMkNtBCQAEQGIgPsxOWK4HmQmKoFBoSYBLD1gOpIaLiwskD1OLbhYIkF2qMjAwMAAAAAD//6J6JH/79i0N6sg9UMfdgwYwcgTAPHMPmhPuMSAi4x40NwpCA7gCKTemIRXLyECJgLNAgQ6yA6YOFKighBeGVCTD7AWphYnBinxQZMBLGqg7sVYFUDPQSyV8esq/fQMvTMHQgycxEw8YGBgAAAAA//+iRU6G1cW7kcRw1Y2CSLmeGPAehxpQAJ2F5ghcAFkOFHj41IIATB6W42F8kF2gxAIqXYjxIz49tAcMDAwAAAAA//+i6v5kpNw3C7oYQAjaUBGE5kIY6ISqgeVyDACNMFDudwHVZdAcZgzVg2xnGtROUJ0ZClUHy7EgfbBSBSQGshOEMcxBAiC1ILtBGBa5oLoSph7mP3gRitTQxGUmhh7ksAC1DygtknECBgYGAAAAAP//onZOhhXVq5Fy1R5o/eeCVMzCBlPuQes9XKACWl/CTvNBaXhBI3Amkt3oCQbUeILlRFDEwswBRSTW+hvk7m/fvoHUg4pXkH5YZMPAHmgjCjnnwhqTsDofHWDTQx/AwMAAAAAA//+ieusaqSGBUx7GJlC8YuhBVw8VfwdNKOiR5oKlhY3THGxuIcYvuOSJMZOQ+VQBDAwMAAAAAP//GvL7k6HdIIwuBlJ3jRYDIkMHMDAwAAAAAP//AwBqyTRQ51/RDAAAAABJRU5ErkJggg=="/>
@@ -35,19 +42,53 @@
           <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Отзывы</a>
           <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Контакты</a>
         </nav>
-
-        <nav class="d-flex align-items-center">
+        <a href="tel:+79125557999" class="d-flex d-xl-none  bg-orange_cast p-2 rounded-pill">
+          <img src="../assets/img/icon/phone.svg" alt="icon phone" style="width: 30px;">
+        </a>
+        <nav class="d-none d-md-flex align-items-center">
           
           <a href="tel:+79125557999" class="d-none px-4 d-xl-flex align-items-center" >
-            <img  src="../assets/img/icon/phone-receiver-silhouette.svg"  alt="icon phone" class="mx-2" style="width: 20px;">
+            <img src="../assets/img/icon/phone-receiver-silhouette.svg" alt="icon phone" class="mx-2" style="width: 20px;">
             <span class="fs-5 inter-bold text-nowrap">+7 912 555 79 99</span>
           </a>
-          <button type="button" class="btn btn_cast border-0 rounded-pill mx-1 mx-sm-3 " data-bs-toggle="modal" data-bs-target="#modalOne">
+          
+          <button type="button" class="d-none d-md-block btn btn_cast border-0 rounded-pill mx-1 mx-sm-3 " data-bs-toggle="modal" data-bs-target="#modalOne">
             <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Оставить заявку</span>
           </button>
         </nav>
       </div>
     </header>
+    <div class="modal block-burder-menu fade" id="burgermenu" tabindex="-1" aria-labelledby="modalOneLabel" aria-hidden="true">
+      <div class="modal-dialog vh-100 py-4 bg-castom-gray_2 mt-0 mx-0 mx-sm-auto">
+        <div class="d-flex justify-content-between px-3">
+          <button type="button" data-bs-dismiss="modal" aria-label="Закрыть">
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn-close_castom " id="Outline" viewBox="0 0 24 24" width="512" height="512">
+              <path d="M23.707.293h0a1,1,0,0,0-1.414,0L12,10.586,1.707.293a1,1,0,0,0-1.414,0h0a1,1,0,0,0,0,1.414L10.586,12,.293,22.293a1,1,0,0,0,0,1.414h0a1,1,0,0,0,1.414,0L12,13.414,22.293,23.707a1,1,0,0,0,1.414,0h0a1,1,0,0,0,0-1.414L13.414,12,23.707,1.707A1,1,0,0,0,23.707.293Z"/>
+            </svg>
+          </button>
+          <a href="#" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="48" viewBox="0 0 121 48">
+              <image id="logo" width="121" height="48" xlink:href="data:img/png;base64,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"/>
+            </svg>
+          </a>
+          <a href="tel:+79125557999" class="d-flex bg-orange_cast p-2 rounded-pill">
+            <img src="../assets/img/icon/phone.svg" alt="icon phone" style="width: 30px;">
+          </a>
+        </div>
+        <nav class="row row-cols-1 px-4 mt-4">
+          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">О компании</a>
+          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Услуги</a>
+          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Цены</a>
+          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Портфолио</a>
+          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Отзывы</a>
+          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Контакты</a>
+        </nav>
+        <a href="tel:+79125557999" class="d-flex px-4 mt-3 justify-content-center align-items-center" >
+          <img src="../assets/img/icon/phone-receiver-silhouette.svg" alt="icon phone" class="mx-2" style="width: 20px;">
+          <span class="fs-4 inter-bold text-nowrap">+7 912 555 79 99</span>
+        </a>
+      </div>
+    </div>
 
     <div class="modal fade" id="modalOne" tabindex="-1" aria-labelledby="modalOneLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -894,30 +935,28 @@
 
 
     <footer>
-      <div class="inner__footer container d-flex align-items-center rounded-5 rounded-bottom-0 "> 
-        <div class="w-100 row align-items-center justify-content-between">
-          <div class="ms-3 px-5 px-sm-2 col text-white inter-regular text-nowrap">
+      <div class="inner__footer container  d-flex align-items-center rounded-5 rounded-bottom-0 "> 
+        <div class="w-100 mx-auto row align-items-center justify-content-center">
+          <div class="order-2 order-lg-1 col-6 col-lg-auto ms-2 ms-md-3 px-0 px-sm-2 text-white inter-regular text-nowrap">
             <p>Авто Детейлинг</p>
             <p>©Все права защищены</p>
           </div>
-          <div class="col d-none d-xl-flex">
-            <nav class="d-flex px-4">
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">О компании</a>
-              <span class="px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">Услуги</a>
-              <span class="px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">Цены</a>
-              <span class="px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">Портфолио</a>
-              <span class="px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">Отзывы</a>
-              <span class="px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">Контакты</a>
-              <span class="px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular ">Политика конфиденцифльности</a>
+          <div class="order-1 order-lg-2 col col-lg-auto d-flex py-3">
+            <nav class="d-flex flex-wrap justify-content-between align-items-center px-4">
+              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">О компании</a>
+              <span class="d-none d-md-block px-1 text-white">∙</span>
+              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">Услуги</a>
+              <span class="d-none d-md-block px-1 text-white">∙</span>
+              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">Цены</a>
+              <span class="d-none d-md-block px-1 text-white">∙</span>
+              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">Портфолио</a>
+              <span class="d-none d-md-block px-1 text-white">∙</span>
+              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">Отзывы</a>
+              <span class="d-none d-md-block px-1 text-white">∙</span>
+              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">Контакты</a>
             </nav>
           </div>
-          <div class="col px-5 px-sm-0 d-flex d-lg-flex d-xl-none  d-xxl-flex justify-content-center">
+          <div class="order-3 order-lg-3 col-5 col-lg-3 px-0 px-sm-0 d-flex  justify-content-center">
             <div class="row w-50 flex-nowrap">
 
               <a href="#" class="col ">
@@ -940,6 +979,9 @@
               </a>
 
             </div>
+          </div>
+          <div class="col-12 order-4 d-flex justify-content-center py-3">
+            <a href="#" class="underline-hover px-1 text-white text-nowrap inter-regular">Политика конфиденцифльности</a>
           </div>
         </div>
       </div>
