@@ -1596,6 +1596,9 @@
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
   }
+  .px-0\.5 {
+    padding-inline: calc(var(--spacing) * 0.5);
+  }
   .px-2 {
     padding-inline: 0.5rem;
   }
@@ -2429,6 +2432,11 @@
       flex-wrap: nowrap;
     }
   }
+  .sm\:px-1 {
+    @media (width >= 40rem) {
+      padding-inline: 0.25rem;
+    }
+  }
   .sm\:px-5 {
     @media (width >= 40rem) {
       padding-inline: 1.25rem;
@@ -2656,9 +2664,24 @@
       margin-bottom: 3rem;
     }
   }
+  .lg\:ml-0 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 0);
+    }
+  }
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
+    }
+  }
+  .lg\:h-72 {
+    @media (width >= 64rem) {
+      height: 18rem;
+    }
+  }
+  .lg\:h-80 {
+    @media (width >= 64rem) {
+      height: 20rem;
     }
   }
   .lg\:h-96 {
@@ -2773,6 +2796,11 @@
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
+  .lg\:text-h2 {
+    @media (width >= 64rem) {
+      font-size: 52px;
+    }
+  }
   .lg\:text-h3 {
     @media (width >= 64rem) {
       font-size: 46px;
@@ -2791,6 +2819,17 @@
   .xl\:text-h1 {
     @media (width >= 80rem) {
       font-size: 72px;
+    }
+  }
+  .xl\:text-h2 {
+    @media (width >= 80rem) {
+      font-size: 52px;
+    }
+  }
+  .xl\:leading-16 {
+    @media (width >= 80rem) {
+      --tw-leading: 4rem;
+      line-height: 4rem;
     }
   }
   .xl\:leading-20 {
@@ -2818,13 +2857,14 @@
   .btn-custom-dots div nav .btn-slick-dots {
     border: 1px #000;
     border-left-style: solid;
-    transition: 0.5s;
+    font-weight: 500;
+    transition: 0.3s;
   }
   .btn-custom-dots div nav .custom-dots_active {
     border: 3px #000;
     border-left-style: solid;
-    font-weight: 900;
-    transition: 0.5s;
+    font-weight: 600;
+    transition: 0.3s;
   }
   .join-team_list {
     list-style-image: url(../assets/img/icons/Bullet.svg);

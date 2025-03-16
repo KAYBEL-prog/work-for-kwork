@@ -7,6 +7,7 @@ $(document).ready(function () {
     dots: false,
     infinite: true,
     speed: 1000,
+    fade: true,
   });
   $('.custom-dots button').removeClass('custom-dots_active');
   $('.custom-dots button').eq(savedSlideIndex).addClass('custom-dots_active');
