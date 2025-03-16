@@ -96,6 +96,23 @@ module.exports = {
           '2xl': '96rem',
         },
       },
+      colors: {
+        red: {
+          500: 'oklch(0.637 0.237 25.331)',
+        },
+        blue: {
+          400: 'oklch(0.707 0.165 254.624)',
+        },
+        black: '#000',
+        white: '#fff',
+        brand: '#FFC800',
+        grey: {
+          1: '#202020',
+          2: '#494A4E',
+          3: '#E6E3DE',
+          4: '#EAEAEA',
+        },
+      },
       backgroundImage: {
         'hero-block': "url('../assets/img/pages-home/bg-hero-block.png')",
         'bg-items': "url('../assets/img/pages-home/bg-items.png')",
