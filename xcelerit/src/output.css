@@ -450,8 +450,14 @@
   .my-12 {
     margin-block: 3rem;
   }
+  .my-14 {
+    margin-block: 3.5rem;
+  }
   .my-16 {
     margin-block: 4rem;
+  }
+  .my-20 {
+    margin-block: 5rem;
   }
   .-mt-32 {
     margin-top: calc(8rem * -1);
@@ -1661,6 +1667,12 @@
   .py-7 {
     padding-block: 1.75rem;
   }
+  .py-8 {
+    padding-block: 2rem;
+  }
+  .py-9 {
+    padding-block: 2.25rem;
+  }
   .py-10 {
     padding-block: 2.5rem;
   }
@@ -2434,6 +2446,11 @@
       margin-bottom: 2.5rem;
     }
   }
+  .sm\:mb-16 {
+    @media (width >= 40rem) {
+      margin-bottom: 4rem;
+    }
+  }
   .sm\:mb-20 {
     @media (width >= 40rem) {
       margin-bottom: 5rem;
@@ -2487,6 +2504,11 @@
   .sm\:px-14 {
     @media (width >= 40rem) {
       padding-inline: 3.5rem;
+    }
+  }
+  .sm\:px-16 {
+    @media (width >= 40rem) {
+      padding-inline: 4rem;
     }
   }
   .sm\:px-20 {
@@ -2889,6 +2911,16 @@
   .lg\:text-h3 {
     @media (width >= 64rem) {
       font-size: 46px;
+    }
+  }
+  .xl\:mx-10 {
+    @media (width >= 80rem) {
+      margin-inline: 2.5rem;
+    }
+  }
+  .xl\:mx-16 {
+    @media (width >= 80rem) {
+      margin-inline: 4rem;
     }
   }
   .xl\:mx-20 {
