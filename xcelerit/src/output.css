@@ -435,23 +435,23 @@
   .mx-5 {
     margin-inline: 1.25rem;
   }
-  .mx-20 {
-    margin-inline: 5rem;
-  }
   .mx-auto {
     margin-inline: auto;
   }
   .my-5 {
     margin-block: 1.25rem;
   }
+  .my-6 {
+    margin-block: 1.5rem;
+  }
+  .my-7 {
+    margin-block: 1.75rem;
+  }
   .my-10 {
     margin-block: 2.5rem;
   }
   .my-12 {
     margin-block: 3rem;
-  }
-  .my-14 {
-    margin-block: 3.5rem;
   }
   .my-16 {
     margin-block: 4rem;
@@ -528,12 +528,6 @@
   .mb-10 {
     margin-bottom: 2.5rem;
   }
-  .mb-16 {
-    margin-bottom: 4rem;
-  }
-  .mb-20 {
-    margin-bottom: 5rem;
-  }
   .mb-36 {
     margin-bottom: 9rem;
   }
@@ -542,6 +536,9 @@
   }
   .ml-5 {
     margin-left: 1.25rem;
+  }
+  .ml-6 {
+    margin-left: 1.5rem;
   }
   .box-border {
     box-sizing: border-box;
@@ -731,6 +728,12 @@
   }
   .w-40 {
     width: 10rem;
+  }
+  .w-85 {
+    width: calc(var(--spacing) * 85);
+  }
+  .w-auto {
+    width: auto;
   }
   .w-full {
     width: 100%;
@@ -1643,6 +1646,15 @@
   .px-10 {
     padding-inline: 2.5rem;
   }
+  .px-20 {
+    padding-inline: 5rem;
+  }
+  .px-28 {
+    padding-inline: 7rem;
+  }
+  .px-32 {
+    padding-inline: 8rem;
+  }
   .py-0 {
     padding-block: calc(var(--spacing) * 0);
   }
@@ -1670,9 +1682,6 @@
   .py-8 {
     padding-block: 2rem;
   }
-  .py-9 {
-    padding-block: 2.25rem;
-  }
   .py-10 {
     padding-block: 2.5rem;
   }
@@ -1681,6 +1690,15 @@
   }
   .py-14 {
     padding-block: 3.5rem;
+  }
+  .py-16 {
+    padding-block: 4rem;
+  }
+  .py-20 {
+    padding-block: 5rem;
+  }
+  .py-28 {
+    padding-block: 7rem;
   }
   .pt-3 {
     padding-top: 0.75rem;
@@ -1776,10 +1794,6 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
-  .text-4xl {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -1795,6 +1809,9 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-h2 {
+    font-size: 52px;
   }
   .text-h4 {
     font-size: 32px;
@@ -1821,6 +1838,10 @@
   .leading-11 {
     --tw-leading: 2.75rem;
     line-height: 2.75rem;
+  }
+  .leading-16 {
+    --tw-leading: 4rem;
+    line-height: 4rem;
   }
   .leading-none {
     --tw-leading: 1;
@@ -2501,19 +2522,9 @@
       padding-inline: 2.5rem;
     }
   }
-  .sm\:px-14 {
-    @media (width >= 40rem) {
-      padding-inline: 3.5rem;
-    }
-  }
   .sm\:px-16 {
     @media (width >= 40rem) {
       padding-inline: 4rem;
-    }
-  }
-  .sm\:px-20 {
-    @media (width >= 40rem) {
-      padding-inline: 5rem;
     }
   }
   .sm\:py-0 {
@@ -2591,6 +2602,11 @@
       width: calc(1/2 * 100%);
     }
   }
+  .md\:w-85 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 85);
+    }
+  }
   .md\:flex-nowrap {
     @media (width >= 48rem) {
       flex-wrap: nowrap;
@@ -2625,6 +2641,11 @@
       padding-inline: 1.75rem;
     }
   }
+  .md\:px-10 {
+    @media (width >= 48rem) {
+      padding-inline: 2.5rem;
+    }
+  }
   .md\:px-14 {
     @media (width >= 48rem) {
       padding-inline: 3.5rem;
@@ -2633,6 +2654,11 @@
   .md\:px-16 {
     @media (width >= 48rem) {
       padding-inline: 4rem;
+    }
+  }
+  .md\:px-20 {
+    @media (width >= 48rem) {
+      padding-inline: 5rem;
     }
   }
   .md\:px-24 {
@@ -2716,9 +2742,9 @@
       line-height: 5rem;
     }
   }
-  .lg\:mx-20 {
+  .lg\:mx-0 {
     @media (width >= 64rem) {
-      margin-inline: 5rem;
+      margin-inline: calc(var(--spacing) * 0);
     }
   }
   .lg\:my-0 {
@@ -2826,11 +2852,6 @@
       width: calc(5/8 * 100%);
     }
   }
-  .lg\:w-full {
-    @media (width >= 64rem) {
-      width: 100%;
-    }
-  }
   .lg\:min-w-auto {
     @media (width >= 64rem) {
       min-width: auto;
@@ -2913,21 +2934,6 @@
       font-size: 46px;
     }
   }
-  .xl\:mx-10 {
-    @media (width >= 80rem) {
-      margin-inline: 2.5rem;
-    }
-  }
-  .xl\:mx-16 {
-    @media (width >= 80rem) {
-      margin-inline: 4rem;
-    }
-  }
-  .xl\:mx-20 {
-    @media (width >= 80rem) {
-      margin-inline: 5rem;
-    }
-  }
   .xl\:w-3\/6 {
     @media (width >= 80rem) {
       width: calc(3/6 * 100%);
@@ -2988,8 +2994,11 @@
     font-weight: 700;
     transition: 0.3s;
   }
-  .join-team_list {
+  .list-style-image-arrow {
     list-style-image: url(../assets/img/icons/Bullet.svg);
+  }
+  .list-style-image-arrow-white {
+    list-style-image: url(../assets/img/icons/Bullet-white.svg);
   }
 }
 @property --tw-translate-x {

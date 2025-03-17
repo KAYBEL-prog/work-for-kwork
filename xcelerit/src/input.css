@@ -24,8 +24,14 @@
     font-weight: 700;
     transition: 0.3s;
   }
-  .join-team_list {
+  .list-style-image-arrow{
     list-style-image: url(../assets/img/icons/Bullet.svg);
+    /* color: #fff; */
   }
+  .list-style-image-arrow-white{
+    list-style-image: url(../assets/img/icons/Bullet-white.svg);
+    /* color: #fff; */
+  }
+
 }
 
