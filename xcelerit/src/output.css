@@ -6,6 +6,8 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
@@ -20,6 +22,7 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --tracking-widest: 0.1em;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -441,9 +444,6 @@
   .my-5 {
     margin-block: 1.25rem;
   }
-  .my-6 {
-    margin-block: 1.5rem;
-  }
   .my-7 {
     margin-block: 1.75rem;
   }
@@ -728,12 +728,6 @@
   }
   .w-40 {
     width: 10rem;
-  }
-  .w-85 {
-    width: calc(var(--spacing) * 85);
-  }
-  .w-auto {
-    width: auto;
   }
   .w-full {
     width: 100%;
@@ -1646,15 +1640,6 @@
   .px-10 {
     padding-inline: 2.5rem;
   }
-  .px-20 {
-    padding-inline: 5rem;
-  }
-  .px-28 {
-    padding-inline: 7rem;
-  }
-  .px-32 {
-    padding-inline: 8rem;
-  }
   .py-0 {
     padding-block: calc(var(--spacing) * 0);
   }
@@ -1691,14 +1676,8 @@
   .py-14 {
     padding-block: 3.5rem;
   }
-  .py-16 {
-    padding-block: 4rem;
-  }
   .py-20 {
     padding-block: 5rem;
-  }
-  .py-28 {
-    padding-block: 7rem;
   }
   .pt-3 {
     padding-top: 0.75rem;
@@ -1744,6 +1723,9 @@
   }
   .pl-3 {
     padding-left: 0.75rem;
+  }
+  .pl-5 {
+    padding-left: 1.25rem;
   }
   .text-center {
     text-align: center;
@@ -1810,6 +1792,10 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
   .text-h2 {
     font-size: 52px;
   }
@@ -1874,6 +1860,10 @@
   .font-semibold {
     --tw-font-weight: 600;
     font-weight: 600;
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
   }
   .text-balance {
     text-wrap: balance;
@@ -2582,9 +2572,24 @@
       margin-bottom: 0.25rem;
     }
   }
+  .md\:mb-2 {
+    @media (width >= 48rem) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .md\:mb-3 {
+    @media (width >= 48rem) {
+      margin-bottom: 0.75rem;
+    }
+  }
   .md\:mb-4 {
     @media (width >= 48rem) {
       margin-bottom: 1rem;
+    }
+  }
+  .md\:mb-5 {
+    @media (width >= 48rem) {
+      margin-bottom: 1.25rem;
     }
   }
   .md\:flex {
@@ -2681,9 +2686,9 @@
       padding-block: 3rem;
     }
   }
-  .md\:pr-20 {
+  .md\:pr-16 {
     @media (width >= 48rem) {
-      padding-right: 5rem;
+      padding-right: 4rem;
     }
   }
   .md\:pr-24 {
@@ -2907,6 +2912,11 @@
       padding-left: 0.25rem;
     }
   }
+  .lg\:pl-10 {
+    @media (width >= 64rem) {
+      padding-left: 2.5rem;
+    }
+  }
   .lg\:pl-20 {
     @media (width >= 64rem) {
       padding-left: 5rem;
@@ -3103,6 +3113,10 @@
   inherits: false;
 }
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
   syntax: "*";
   inherits: false;
 }
