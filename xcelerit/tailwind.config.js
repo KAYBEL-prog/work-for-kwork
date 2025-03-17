@@ -19,6 +19,7 @@ module.exports = {
         },
       },
       spacing: {
+        '1/2': '50%',
         '0.25': '0.25rem',
         '1': '0.25rem',
         '2': '0.5rem',
@@ -71,6 +72,9 @@ module.exports = {
         'ease-in': 'cubic-bezier(0.4, 0, 1, 1)',
         'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
         'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'ease-sm': '0.1s',
+        'ease-md': '0.2s',
+        'ease-lg': '0.3s',
       },
       transitionDuration: {
         DEFAULT: '150ms',
