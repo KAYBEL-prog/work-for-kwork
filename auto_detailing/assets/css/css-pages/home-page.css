@@ -227,6 +227,18 @@
   border-radius: 50%;
   background-color: white;
 }
+.service-cards-item:hover .form-check-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  background-color: #E6E6E6;
+}
 .form-check-input:checked + .form-check-label::before {
   width: 20px;
   height: 20px;
@@ -239,6 +251,11 @@
   transition: 0.3s;
 }
 
+.form-check-input:checked:hover {
+
+  background-color: #FF6600;
+  transition: 0.3s;
+}
 
 .slider_card_item-avatar{
   width: 70px;
