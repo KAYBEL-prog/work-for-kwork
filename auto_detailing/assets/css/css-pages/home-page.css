@@ -1,7 +1,23 @@
+.slider_certificates_card{
+  min-width: 250px;
+}
+.slider_certificates_card_img__inner{
+  min-width: 200px;
+}
+.slider_certificates_card_img__inner img{
+  width: 100%;
+  height: max-content;
+}
+.slider_certificates_card-modal{
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 500px;
+}
 .slider_certificates_card-modal_img__inner{
   width: 100%;
 }
-
 .advantages{
   height: max-content;
   background-color: #E6E6E6;
@@ -16,15 +32,11 @@
 .advantages_item p{
   width: 180px;
 }
+.advantages_item-cast p{
+  width: 220px;
+}
 .our_experts-card{
   min-width: 280px;
-}
-.slider_certificates_card-modal{
-  display: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%;
-  max-width: 500px;
 }
 
 .popular-services {
@@ -34,15 +46,28 @@
 .upper-backrounn__inner_popular-services{
   width: 100%;
   height: max-content;
+  max-height: 490px;
   background-color: #000000;
   background-image: url(../../img/img-page_main-page/backgroud-block_popular-services.png);
   background-size: cover ;
   background-repeat: no-repeat;
   background-position: center;
 }
-
+@media (max-width:1200px) {
+  .upper-backrounn__inner_popular-services{
+    width: 100%;
+    height: max-content;
+    max-height: 1500px;
+    background-color: #000000;
+    background-image: url(../../img/img-page_main-page/backgroud-block_popular-services.png);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
 .popular-services-card{
   width: 300px;
+  height: max-content;
   min-height: 280px;
 }
 
