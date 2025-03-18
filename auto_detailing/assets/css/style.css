@@ -4,27 +4,50 @@ body{
   padding: 0;
   font-family: 'inter-regular';
 }
+.inner__main{
+  position: relative;
+  z-index: 100;
+}
 /* *{border: 1px solid red;} */
-header{
+.header{
   transition: 0.3s;
   background-color: transparent;
+  z-index: 10000;
 }
+
+.burger-menu{
+  width: 50px;
+  height: 40px;
+}
+.burger-menu span {
+  display: block;
+  height: 5px;
+  margin-bottom: 4px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.burger-menu__line1.active{
+  background-color: #fff;
+  transform: rotateZ(45deg);
+  transition: 0.3s;
+}
+
+.burger-menu__line3.active{
+  background-color: #fff;
+  transform: rotateZ(-45deg);
+  margin-top: -9px;
+  transition: 0.3s;
+}
+
+
 .btn-close_castom{
   width: 30px;
   height: 30px;
   stroke: #fff;
   fill: #fff;
 }
-.burger-menu{
-  width: 50px;
-  height: 40px;
-  
-}
-.burger-menu span{
-  display: block;
 
-  height: 5px;
-}
+
 @media (max-width:768px) {
   header{
     transition: 0.3s;
@@ -336,8 +359,15 @@ button.cast-color_orange:hover{
   transition: 0.3s;
 }
 
-
 .form-check-label .service-cards-item:hover::before{
   background-color: #000;
+}
 
+.footer-icon-hover{
+  opacity: 1;
+  transition: 0.3s;
+}
+.footer-icon-hover:hover{
+  opacity: 0.5;
+  transition: 0.3s;
 }
