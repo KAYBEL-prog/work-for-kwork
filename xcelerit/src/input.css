@@ -32,6 +32,10 @@
     list-style-image: url(../assets/img/icons/Bullet-white.svg);
     /* color: #fff; */
   }
+  .list-style-image-tick-financial{
+    list-style-image: url(../assets/img/pages-financial/icon_for-list.svg);
+  }
+
 
 }
 
