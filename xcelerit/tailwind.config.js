@@ -176,7 +176,7 @@ module.exports = {
         'bg-items': "url('../assets/img/pages-home/bg-items.png')",
         'bgwhy-xcelerit': "url('../assets/img/pages-home/bg-hero-block__why-xcelerit.png')",
         'resources-insights': "url('../assets/img/bgbg.png')",
-        'schedule': "url(../../assets/img/pages-financial/banner.png)",
+        'schedule': "url(../assets/img/pages-financial/banner.png)",
       },
       backgroundSize: {
         'hero-block-size': '171%',

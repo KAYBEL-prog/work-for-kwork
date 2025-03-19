@@ -1534,7 +1534,7 @@
     background-image: url('../assets/img/bgbg.png');
   }
   .bg-schedule {
-    background-image: url(../../assets/img/pages-financial/banner.png);
+    background-image: url(../assets/img/pages-financial/banner.png);
   }
   .via-none {
     --tw-gradient-via-stops: initial;
@@ -2422,6 +2422,9 @@
   .outline-solid {
     --tw-outline-style: solid;
     outline-style: solid;
+  }
+  .\[default\:\\u202F\$\{N\(\`\$\{u\}\`\)\}\] {
+    default: \u202F${N(`${u}`)};
   }
   .backface-hidden {
     backface-visibility: hidden;
