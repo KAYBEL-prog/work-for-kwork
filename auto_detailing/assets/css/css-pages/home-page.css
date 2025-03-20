@@ -1,3 +1,7 @@
+.border-gray-1{
+  border: 2px solid rgba(0,0,0, 0.5);
+}
+
 .slider_certificates_card{
   min-width: 250px;
 }
@@ -26,22 +30,36 @@
   border: 1px #999999;
   border-bottom-style: solid;
 }
+
+
 .advantages_item{
-  width: max-content;
+  width: calc(1/4 * 100%);
 }
 .advantages_item p{
-  width: 180px;
-}
-.advantages_item-cast p{
   width: 220px;
+}
+
+@media (max-width:1200px) {
+  .advantages_item{
+    width: calc(1/2 * 100%);
+  }
+}
+@media (max-width:576px) {
+  .advantages_item{
+    width: calc(1/1 * 100%);
+  }
+  .advantages .border-castoms {
+    border: 0px #999999;
+    border-bottom-style: solid;
+  }
+}
+
+.our_experts {
 }
 .our_experts-card{
   min-width: 280px;
 }
-
 .popular-services {
-}
-.our_experts {
 }
 .upper-backrounn__inner_popular-services{
   width: 100%;
@@ -95,10 +113,8 @@
 .card-body_link-hover{
   position: relative;
   transition: 0.5s;
-  transition-delay: 1s;
   margin-top: -80px;
   z-index: 10;
-
 }
 .popular-services-card:hover .card-body_link-hover{
   margin-top: 10px;

@@ -26,12 +26,21 @@
 
   <body>
     <header class="fixed-top header" >
-      <div class="inner__header container mx-auto mt-2 py-3 d-flex align-items-center justify-content-between" >
+      <div class="container d-flex align-items-center justify-content-between inner__header mt-2 mx-auto py-3" >
         
-        <button id="burgerMenuBtn" data-bs-toggle="modal" data-bs-target="#burgermenu" class="burger-menu d-block d-lg-none">
-          <span class="burger-menu__line1"></span>
-          <span class="burger-menu__line2"></span>
-          <span class="burger-menu__line3"></span>
+        <button class="d-block d-lg-none burger-menu" id="burgerMenuBtn" data-bs-toggle="modal" data-bs-target="#burgermenu" >
+          <svg class="burger__menu-icon-1 d-block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 362.7" style="enable-background:new 0 0 512 362.7;" xml:space="preserve">
+            <style type="text/css">
+            	.st0{fill:#FFFFFF;}
+            </style>
+            <g>
+            	<path class="st0" d="M480,149.3H32c-17.7,0-32,14.3-32,32s14.3,32,32,32h448c17.7,0,32-14.3,32-32S497.7,149.3,480,149.3z"/>
+            	<path class="st0" d="M32,64h448c17.7,0,32-14.3,32-32S497.7,0,480,0H32C14.3,0,0,14.3,0,32S14.3,64,32,64z"/>
+            	<path class="st0" d="M480,298.7H32c-17.7,0-32,14.3-32,32c0,17.7,14.3,32,32,32h448c17.7,0,32-14.3,32-32
+            		C512,313,497.7,298.7,480,298.7z"/>
+            </g>
+          </svg>
+          <svg class="burger__menu-icon-2 d-none" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path d="M23.707.293h0a1,1,0,0,0-1.414,0L12,10.586,1.707.293a1,1,0,0,0-1.414,0h0a1,1,0,0,0,0,1.414L10.586,12,.293,22.293a1,1,0,0,0,0,1.414h0a1,1,0,0,0,1.414,0L12,13.414,22.293,23.707a1,1,0,0,0,1.414,0h0a1,1,0,0,0,0-1.414L13.414,12,23.707,1.707A1,1,0,0,0,23.707.293Z"/></svg>
         </button>
 
         <a href="#" class="logo">
@@ -39,45 +48,45 @@
             <image id="logo" width="121" height="48" xlink:href="data:img/png;base64,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"/>
           </svg>
         </a>
-        <nav class="d-none d-lg-flex px-4 ">
-          <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">О компании</a>
-          <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Услуги</a>
-          <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Цены</a>
-          <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Портфолио</a>
-          <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Отзывы</a>
-          <a href="#" class="px-md-2 px-lg-2 px-xxl-3 px-3 fs-6 text-white inter-light text-nowrap">Контакты</a>
+        <nav class="d-lg-flex d-none px-4">
+          <a href="about_company.html" class="text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3">О компании</a>
+          <a href="services.html" class="text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3">Услуги</a>
+          <a href="#" class="text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3">Цены</a>
+          <a href="portfolio.html" class="text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3">Портфолио</a>
+          <a href="#" class="text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3">Отзывы</a>
+          <a href="contact.html" class="text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3">Контакты</a>
         </nav>
         <a href="tel:+79125557999" class="d-flex d-md-none bg-orange_cast p-2 rounded-pill">
           <img src="../assets/img/icon/phone.svg" alt="icon phone" style="width: 30px;">
         </a>
-        <nav class="d-none d-md-flex align-items-center">
+        <nav class="d-md-flex d-none align-items-center">
           
-          <a href="tel:+79125557999" class="d-none px-4 d-xl-flex align-items-center" >
+          <a href="tel:+79125557999" class="d-none d-xl-flex align-items-center px-4" >
             <img src="../assets/img/icon/phone-receiver-silhouette.svg" alt="icon phone" class="mx-2" style="width: 20px;">
-            <span class="fs-5 inter-bold text-nowrap">+7 912 555 79 99</span>
+            <span class="text-nowrap fs-5 inter-bold">+7 912 555 79 99</span>
           </a>
           
-          <button type="button" class="d-none d-md-block btn btn_cast border-0 rounded-pill mx-1 mx-sm-3 " data-bs-toggle="modal" data-bs-target="#modalOne">
-            <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Оставить заявку</span>
+          <button type="button" class="d-md-block d-none btn btn_cast border-0 rounded-pill mx-1 mx-sm-3" data-bs-toggle="modal" data-bs-target="#modalOne">
+            <span class="p-2 p-sm-4 text-nowrap text-white fz-castom inter-bold px-1">Оставить заявку</span>
           </button>
         </nav>
       </div>
     </header>
     
-    <div class="modal block-burder-menu d-block d-lg-none fade" id="burgermenu" tabindex="-1" aria-labelledby="modalOneLabel" aria-hidden="true">
-      <div class="modal-dialog vh-100 py-4 bg-castom-gray_2 mt-0 mx-0 mx-sm-auto">
-        <div class="d-flex justify-content-between px-3 pt-5"></div>
-        <nav class="row row-cols-1 px-4 mt-5">
-          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">О компании</a>
-          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Услуги</a>
-          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Цены</a>
-          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Портфолио</a>
-          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Отзывы</a>
-          <a href="#" class="col px-md-2 px-lg-2 px-xxl-3 px-3 py-2 fs-6 text-white text-center inter-light text-nowrap">Контакты</a>
+    <div class=" modal block-burder-menu fade" id="burgermenu" tabindex="-1" aria-labelledby="modalOneLabel" aria-hidden="true">
+      <div class="modal-dialog bg-castom-gray_2 mt-0 mx-0 mx-sm-auto py-4 vh-100">
+        <div class="d-flex justify-content-between pt-5 px-3"></div>
+        <nav class="row row-cols-1 mt-5 px-4">
+          <a href="about_company.html" class="col text-center text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3 py-2">О компании</a>
+          <a href="services.html" class="col text-center text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3 py-2">Услуги</a>
+          <a href="#" class="col text-center text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3 py-2">Цены</a>
+          <a href="portfolio.html" class="col text-center text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3 py-2">Портфолио</a>
+          <a href="#" class="col text-center text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3 py-2">Отзывы</a>
+          <a href="contact.html" class="col text-center text-nowrap text-white fs-6 inter-light px-3 px-lg-2 px-md-2 px-xxl-3 py-2">Контакты</a>
         </nav>
-        <a href="tel:+79125557999" class="d-flex px-4 mt-3 justify-content-center align-items-center" >
+        <a href="tel:+79125557999" class="d-flex align-items-center justify-content-center mt-3 px-4" >
           <img src="../assets/img/icon/phone-receiver-silhouette.svg" alt="icon phone" class="mx-2" style="width: 20px;">
-          <span class="fs-4 inter-bold text-nowrap">+7 912 555 79 99</span>
+          <span class="text-nowrap fs-4 inter-bold">+7 912 555 79 99</span>
         </a>
       </div>
     </div>
@@ -85,41 +94,41 @@
 
     <div class="modal fade" id="modalOne" tabindex="-1" aria-labelledby="modalOneLabel" aria-hidden="true">
       <div class="modal-dialog">
-          <div class="modal-content px-0 px-sm-3 py-3 rounded-5 box-shadow_modal">
-              <div class="px-4 d-flex justify-content-end">
+          <div class="modal-content rounded-5 box-shadow_modal px-0 px-sm-3 py-3">
+              <div class="d-flex justify-content-end px-4">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
               </div>
-              <div class="px-4 pt-3 d-flex">
+              <div class="d-flex pt-3 px-4">
                 <div>
-                  <p class="modal-title inter-bold fs-4" id="exampleModalLabel">Онлайн заявка</p>
+                  <p class="modal-title fs-4 inter-bold" id="exampleModalLabel">Онлайн заявка</p>
                   <p class="inter-regular">Заполните форму и наш менеджер свяжется с вами и ответит на все вопросы.</p>
                 </div>
                 <div class="d-flex align-items-center" >
-                  <div class="rounded-2 px-2 py-3 profil-manager">
-                    <div class="w-100 d-flex justify-content-center">
+                  <div class="rounded-2 profil-manager px-2 py-3">
+                    <div class="d-flex justify-content-center w-100">
                       <img src="../assets/img/avatar.png" alt="avatar">
                     </div>
                     <p class="text-center inter-regular lh-1 mt-1">Ольга менеджер</p>
                   </div>
                 </div>
               </div>
-              <div class="px-4 pt-2 pb-4">
+              <div class="pb-4 pt-2 px-4">
                   
                   <form class="mt-4" >
                       <div class="mb-3" >
                           <label for="name" class="form-label inter-bold">Ваше имя</label>
-                          <input type="text" class="form-control border-none bg-castom-gray" id="name" placeholder="Иван">
+                          <input type="text" class="form-control bg-castom-gray border-none" id="name" placeholder="Иван">
                       </div>
                       <div class="mb-3">
                           <label for="phone" class="form-label inter-bold">Номер телефона</label>
-                          <input type="tel" class="form-control border-none bg-castom-gray" id="phone" placeholder="+7 900 123 45 67">
+                          <input type="tel" class="form-control bg-castom-gray border-none" id="phone" placeholder="+7 900 123 45 67">
                       </div>
                       <div class="mb-3">
                           <label for="comment" class="form-label inter-bold">Комментарии</label>
-                          <textarea class="form-control border-none bg-castom-gray" rows="4" id="comment" placeholder="Ваше сообщение..."></textarea>
+                          <textarea class="form-control bg-castom-gray border-none" rows="4" id="comment" placeholder="Ваше сообщение..."></textarea>
                       </div>
-                      <button type="button" class="btn btn_cast border-0 rounded-pill mx-1 mx-sm-3 " data-bs-toggle="modal" data-bs-target="#modalTwo">
-                        <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Оставить заявку</span>
+                      <button type="button" class="btn btn_cast border-0 rounded-pill mx-1 mx-sm-3" data-bs-toggle="modal" data-bs-target="#modalTwo">
+                        <span class="p-2 p-sm-4 text-nowrap text-white fz-castom inter-bold px-1">Оставить заявку</span>
                       </button>
                   </form>
 
@@ -128,159 +137,167 @@
       </div>
     </div>
 
-    <main>    
+    <main>
       <div class="inner__main">
 
-        <div class="block-title-page_2 upper-backrounn__inner-four pt-5">
-          <nav class="navigation-pages z-3 container d-flex opacity-75">
+        <div class="block-title-page_2 pt-5 upper-backrounn__inner-four">
+          <nav class="container d-flex navigation-pages opacity-75 z-3">
             
-            <a href="#" class="inter-light text-white">Главная</a>
+            <a href="#" class="text-white inter-light">Главная</a>
             <span class="text-white px-4">/</span>
-            <a href="#" class="inter-light text-white">О компании</a>
+            <a href="#" class="text-white inter-light">О компании</a>
 
           </nav>
-          <div class="block-title-page__inner container text-white mt-5">
-            <h1 class="title-pages w-50 mt-5 inter-bold">
+          <div class="container text-white block-title-page__inner mt-5">
+            <h1 class=" w-100 w-md-50 inter-bold mt-5 title-pages">
               Детейлинг премиум-класса 
               <br>
               в Санкт-Петербурге
             </h1>
-            <p class="subtitle_pages fs-4 mt-3 inter-regular">Инновационные технологии и премиальный подход</p>
-            <ul class="block-title-page__inner-list inter-extralight fs-5 mt-4">
+            <p class="fs-4 inter-regular mt-3 subtitle_pages">Инновационные технологии и премиальный подход</p>
+            <ul class="block-title-page__inner-list fs-5 inter-extralight mt-4">
               <li>Полировка</li>
               <li>Защитные покрытия</li>
               <li>Химчистка и многое другое</li>
             </ul>
             <div class="block-title-page__inner-btns mt-5">
-              <button type="button" class=" btn_cast-revers rounded-pill mx-1 mx-sm-3 " data-bs-toggle="modal" data-bs-target="#modalOne">
-                  <span class="inter-regular fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Записаться на услугу</span>
+              <button type="button" class="btn_cast-revers rounded-pill mx-1 mx-sm-3" data-bs-toggle="modal" data-bs-target="#modalOne">
+                  <span class="p-2 p-sm-4 text-nowrap text-white fz-castom inter-regular px-1">Записаться на услугу</span>
               </button>
             </div>
           </div>
         </div>
 
-        <div class="advantages flex flex-wrap py-4">
-          <div class="inner__advantages container px-2 px-lg-5">
-            <div class="border-castoms w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between pb-3 pt-md-4 pb-3 pb-md-5">
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+        <div class="flex flex-wrap advantages py-4">
+          <div class="container inner__advantages px-2 px-lg-0">
+            <div class="d-flex flex-wrap border-castoms justify-content-center justify-content-sm-between w-100 pb-0 pb-md-5 pt-md-5">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
                   <image id="car-service" width="44" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
-                <p class="inter-bold fs-5" >
-                  Опыт работы более 10 лет
+                <p class="fs-5 inter-bold" >
+                  Опыт работы
+                  <br>
+                  более 10 лет
                 </p>
               </div>
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
                   <image id="diamond" width="44" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
-                <p class="inter-bold fs-5" >
+                <p class="fs-5 inter-bold" >
                   Современное оборудование
                 </p>
               </div>
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="44" viewBox="0 0 38 44">
                   <image id="clean" width="38" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
                 
-                <p class="inter-bold fs-5" >
+                <p class="fs-5 inter-bold" >
                   Гарантия на все услуги до 5 лет
                 </p>
               </div>
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
                   <image id="customer" width="44" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
-                <p class="inter-bold fs-5" >
+                <p class="fs-5 inter-bold" >
                   Индивидуальный подход
                 </p>
               </div>
             </div>
-            <div class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mt-5 pb-2">
-              <div class="advantages_item-cast my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-between w-100 pb-0 pb-md-5 pt-md-5">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
                   <image id="feedback" width="44" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
-                <p class="inter-bold fs-5" >
-                  Более 20,000 довольных клиентов 
+                <p class="fs-5 inter-bold" >
+                  Более 20,000
+                  <br>
+                  довольных клиентов 
                 </p>
               </div>
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="44" viewBox="0 0 38 44">
                   <image id="car-painting" width="38" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
                 
-                <p class="inter-bold fs-5" >
-                  Работаем с премиум авто
+                <p class="fs-5 inter-bold" >
+                  Работаем с 
+                  <br>
+                  премиум авто
                 </p>
               </div>
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-xxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
                   <image id="cctv" width="44" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
                 
-                <p class="inter-bold fs-5">
+                <p class="fs-5 inter-bold">
                   Все центры под охраной
                 </p>
               </div>
-              <div class="advantages_item my-3 mx-2 mx-xl-0 my-xl-0 d-flex align-items-center justify-content-center flex-nowrap">
+              <div class="advantages_item d-flex flex-nowrap align-items-center justify-content-center mx-0 my-3 my-чxl-0 px-0">
                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="44" viewBox="0 0 34 44">
                   <image id="quality_4_копия" data-name="quality (4) копия" width="34" height="44" xlink:href="data:img/png;base64,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"/>
                 </svg>
                 
-                <p class="inter-bold fs-5" >
-                  Сертифицированные материалы
+                <p class="fs-5 inter-bold " >
+                  Сертифицированные
+                  <br>
+                  материалы
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="licenses-certificates slick-slider mt-5 ">
+        <div class="licenses-certificates mt-5 slick-slider">
           
-          <div class="py-cast-y container my-auto">
-            <h2 class="text-center text-black inter-bold mb-4">Лицензии и сертификаты</h2>
+          <div class="container my-auto py-cast-y">
+            <h2 class="text-black text-center inter-bold mb-4">Лицензии и сертификаты</h2>
             
-            <div class="container px-0 mt-3">
-              <div class="slider_certificates ">
+            <div class="container mt-3 px-0">
+              <div class="slider_certificates">
 
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden1" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden1" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_1.png" alt="img_1.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden2" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden2" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_2.png" alt="img_2.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden1" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden1" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_1.png" alt="img_1.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden2" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden2" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_2.png" alt="img_2.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden1" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden1" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_1.png" alt="img_1.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden2" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden2" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_2.png" alt="img_2.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden1" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden1" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_1.png" alt="img_1.png">
                   </a>
                 </div>
                 <div class="slider_certificates_card">
-                  <a data-fancybox href="#hidden2" class="slider_certificates_card_img__inner d-block mx-2 px-2" >
+                  <a data-fancybox href="#hidden2" class="d-block mx-2 px-2 slider_certificates_card_img__inner" >
                     <img src="../assets/img/about_company-img/licenses-certificates/img_2.png" alt="img_2.png">
                   </a>
                 </div>
@@ -299,84 +316,84 @@
           </div>
         </div>
 
-        <div class="upper-backrounn__inner_popular-services mt-5">
-          <div class="py-cast-y container my-auto">
+        <div class="mt-5 upper-backrounn__inner_popular-services">
+          <div class="container my-auto py-cast-y">
             <h2 class="text-center text-white inter-bold mb-4">Популярные услуги</h2>
             
-            <div class="container px-0 mt-3">
-              <div class="d-flex justify-content-center flex-wrap flex-xl-nowrap">
+            <div class="container mt-3 px-0">
+              <div class="d-flex flex-wrap flex-xl-nowrap justify-content-center">
         
-                <div class="popular-services-card bg-white p-4 my-2 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="popular-services-card bg-white p-4 rounded-5 mx-2 my-2 overflow-hidden">
 
-                  <div class="card_img__inner w-100 rounded-5 mx-auto overflow-hidden ">
+                  <div class="card_img__inner rounded-5 w-100 mx-auto overflow-hidden">
                     <img class="position-relative" style="top: -20px; left: -30px;" src="../assets/img/img-page_main-page/images/img_1.png" alt="img-page_main-page/images/img_1.png">
                   </div>
 
-                  <div class="card-body text-center">
-                    <p class="card-title inter-bold pt-2 fs-5 bg-white">Полировка кузова</p>
+                  <div class=" text-center">
+                    <p class="card-title bg-white text-black fs-5 inter-bold pt-2">Полировка кузова</p>
 
-                    <a href="#" class="card-body_link-hover d-flex align-items-center justify-content-center ">
+                    <div class="d-flex card-body_link-hover align-items-center justify-content-center">
                       <span class="lh-1">Подробнее об услуге</span>
                       <img class="mx-2" style="width: 10px; height: 15px;" src="../assets/img/img-page_main-page/icons/angle-small-right_orange.svg" alt="arrow-right_orange">
-                    </a>
+                    </div>
 
                   </div>
 
-                </div>
+                </a>
 
-                <div class="popular-services-card bg-white p-4 my-2 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="popular-services-card bg-white p-4 rounded-5 mx-2 my-2 overflow-hidden">
 
-                  <div class="card_img__inner w-100 rounded-5 mx-auto overflow-hidden ">
+                  <div class="card_img__inner rounded-5 w-100 mx-auto overflow-hidden">
                     <img class="position-relative" style="top: -20px; left: -30px;" src="../assets/img/img-page_main-page/images/img_2.png" alt="img-page_main-page/images/img_2.png">
                   </div>
 
                   <div class="card-body text-center">
-                    <p class="card-title pt-2 inter-bold fs-5 bg-white">Покрытие керамикой</p>
+                    <p class="card-title bg-white text-black fs-5 inter-bold pt-2">Покрытие керамикой</p>
 
-                    <a href="#" class="card-body_link-hover d-flex align-items-center justify-content-center ">
+                    <div class="d-flex card-body_link-hover align-items-center justify-content-center">
                       <span class="lh-1">Подробнее об услуге</span>
                       <img class="mx-2" style="width: 10px; height: 15px;" src="../assets/img/img-page_main-page/icons/angle-small-right_orange.svg" alt="arrow-right_orange">
-                    </a>
+                    </div>
 
                   </div>
 
-                </div>
+                </a>
 
-                <div class="popular-services-card bg-white p-4 my-2 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="popular-services-card bg-white p-4 rounded-5 mx-2 my-2 overflow-hidden">
 
-                  <div class="card_img__inner w-100 rounded-5 mx-auto overflow-hidden ">
+                  <div class="card_img__inner rounded-5 w-100 mx-auto overflow-hidden">
                     <img class="position-relative" style="top: -20px; left: -30px;" src="../assets/img/img-page_main-page/images/img_3.png" alt="img-page_main-page/images/img_3.png">
                   </div>
 
                   <div class="card-body text-center">
-                    <p class="card-title pt-2 inter-bold fs-5 bg-white">Химчистка салона</p>
+                    <p class="card-title bg-white text-black fs-5 inter-bold pt-2">Химчистка салона</p>
 
-                    <a href="#" class="card-body_link-hover d-flex align-items-center justify-content-center ">
+                    <div class="d-flex card-body_link-hover align-items-center justify-content-center">
                       <span class="lh-1">Подробнее об услуге</span>
                       <img class="mx-2" style="width: 10px; height: 15px;" src="../assets/img/img-page_main-page/icons/angle-small-right_orange.svg" alt="arrow-right_orange">
-                    </a>
+                    </div>
 
                   </div>
 
-                </div>
+                </a>
 
-                <div class="popular-services-card bg-white p-4 my-2 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="popular-services-card bg-white p-4 rounded-5 mx-2 my-2 overflow-hidden">
 
-                  <div class="card_img__inner w-100 rounded-5 mx-auto overflow-hidden ">
+                  <div class="card_img__inner rounded-5 w-100 mx-auto overflow-hidden">
                     <img class="position-relative" style="top: -20px; left: -30px;" src="../assets/img/img-page_main-page/images/img_4.png" alt="img-page_main-page/images/img_4.png">
                   </div>
 
                   <div class="card-body text-center">
-                    <p class="card-title pt-2 inter-bold fs-5 bg-white">Антигравийная защита</p>
+                    <p class="card-title text-black bg-white fs-5 inter-bold pt-2">Антигравийная защита</p>
 
-                    <a href="#" class="card-body_link-hover d-flex align-items-center justify-content-center ">
+                    <div class="d-flex card-body_link-hover align-items-center justify-content-center">
                       <span class="lh-1">Подробнее об услуге</span>
                       <img class="mx-2" style="width: 10px; height: 15px;" src="../assets/img/img-page_main-page/icons/angle-small-right_orange.svg" alt="arrow-right_orange">
-                    </a>
+                    </div>
 
                   </div>
 
-                </div>
+                </a>
 
               </div>
             </div>
@@ -385,273 +402,371 @@
         </div>
 
         <div class="completed_works__ my-5">
-          <div class=" container my-auto py-cast-y">
+          <div class="container my-auto py-cast-y">
 
-            <div class="d-flex justify-content-center align-items-center mb-4 px-2">
+            <div class="d-flex align-items-center justify-content-center mb-4 px-2">
               <h2 class="text-black inter-bold px-2">Выполненые работы</h2>
             </div>
 
-            <div class="container px-0 mt-3">
-              <div class="completed_works ">
+            <div class="container mt-3 px-0">
+              <div class="completed_works">
 
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
                   <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
                         <div class="slider_customer-reviews_overlay__avatar">
                           <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
                         </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
                           <p class="inter-light">5 дней</p>
                         </div>
                       </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
                         Защита кузова автомобиля
                         бизнес-класса Mercedes-
                         Maybach S 580
                       </p>
                       <div class="d-flex justify-content-start mt-3">
                         <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
                         </button>
                       </div>
                   </div>
                 </a>
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
                   <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
                         <div class="slider_customer-reviews_overlay__avatar">
                           <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
                         </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
                           <p class="inter-light">5 дней</p>
                         </div>
                       </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
                         Защита кузова автомобиля
                         бизнес-класса Mercedes-
                         Maybach S 580
                       </p>
                       <div class="d-flex justify-content-start mt-3">
                         <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
                         </button>
                       </div>
                   </div>
                 </a>
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
                   <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
                         <div class="slider_customer-reviews_overlay__avatar">
                           <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
                         </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
                           <p class="inter-light">5 дней</p>
                         </div>
                       </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
                         Защита кузова автомобиля
                         бизнес-класса Mercedes-
                         Maybach S 580
                       </p>
                       <div class="d-flex justify-content-start mt-3">
                         <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
-                        </button>
-                      </div>
-                  </div>
-                </a>
-
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
-                  <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
-                        <div class="slider_customer-reviews_overlay__avatar">
-                          <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
-                        </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
-                          <p class="inter-light">5 дней</p>
-                        </div>
-                      </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
-                        Защита кузова автомобиля
-                        бизнес-класса Mercedes-
-                        Maybach S 580
-                      </p>
-                      <div class="d-flex justify-content-start mt-3">
-                        <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
-                        </button>
-                      </div>
-                  </div>
-                </a>
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
-                  <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
-                        <div class="slider_customer-reviews_overlay__avatar">
-                          <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
-                        </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
-                          <p class="inter-light">5 дней</p>
-                        </div>
-                      </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
-                        Защита кузова автомобиля
-                        бизнес-класса Mercedes-
-                        Maybach S 580
-                      </p>
-                      <div class="d-flex justify-content-start mt-3">
-                        <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
-                        </button>
-                      </div>
-                  </div>
-                </a>
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
-                  <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
-                        <div class="slider_customer-reviews_overlay__avatar">
-                          <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
-                        </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
-                          <p class="inter-light">5 дней</p>
-                        </div>
-                      </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
-                        Защита кузова автомобиля
-                        бизнес-класса Mercedes-
-                        Maybach S 580
-                      </p>
-                      <div class="d-flex justify-content-start mt-3">
-                        <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
                         </button>
                       </div>
                   </div>
                 </a>
 
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
                   <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
                         <div class="slider_customer-reviews_overlay__avatar">
                           <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
                         </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
                           <p class="inter-light">5 дней</p>
                         </div>
                       </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
                         Защита кузова автомобиля
                         бизнес-класса Mercedes-
                         Maybach S 580
                       </p>
                       <div class="d-flex justify-content-start mt-3">
                         <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
                         </button>
                       </div>
                   </div>
                 </a>
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
                   <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
                         <div class="slider_customer-reviews_overlay__avatar">
                           <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
                         </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
                           <p class="inter-light">5 дней</p>
                         </div>
                       </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
                         Защита кузова автомобиля
                         бизнес-класса Mercedes-
                         Maybach S 580
                       </p>
                       <div class="d-flex justify-content-start mt-3">
                         <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
                         </button>
                       </div>
                   </div>
                 </a>
-                <a href="#" class="card completed_works__item bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
                   <div class="slider_completed_works_img-1"></div>
-                  <div class="slider_customer-reviews_overlay position-absolute px-5 px-sm-5 w-100 h-100 pt-5 px-5" >
-                      <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex align-items-center">
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
                         <div class="slider_customer-reviews_overlay__avatar">
                           <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
                         </div>
-                        <div class="slider_customer-reviews_overlay__name-profession text-start text-white ps-2">
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
                           <p class="inter-light">5 дней</p>
                         </div>
                       </div>
-                      <p class="pt-2  inter-bold text-start text-white fs-5" style="min-width: 248px; max-width: 320px;">
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
                         Защита кузова автомобиля
                         бизнес-класса Mercedes-
                         Maybach S 580
                       </p>
                       <div class="d-flex justify-content-start mt-3">
                         <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
-                          <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Подробнее ></span>
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                  </div>
+                </a>
+
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
+                  <div class="slider_completed_works_img-1"></div>
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
+                        <div class="slider_customer-reviews_overlay__avatar">
+                          <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
+                        </div>
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
+                          <p class="inter-light">5 дней</p>
+                        </div>
+                      </div>
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
+                        Защита кузова автомобиля
+                        бизнес-класса Mercedes-
+                        Maybach S 580
+                      </p>
+                      <div class="d-flex justify-content-start mt-3">
+                        <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                  </div>
+                </a>
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
+                  <div class="slider_completed_works_img-1"></div>
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
+                        <div class="slider_customer-reviews_overlay__avatar">
+                          <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
+                        </div>
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
+                          <p class="inter-light">5 дней</p>
+                        </div>
+                      </div>
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
+                        Защита кузова автомобиля
+                        бизнес-класса Mercedes-
+                        Maybach S 580
+                      </p>
+                      <div class="d-flex justify-content-start mt-3">
+                        <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                  </div>
+                </a>
+                <a href="#" class="card bg-transparent p-0 rounded-5 completed_works__item mx-2 overflow-hidden">
+                  <div class="slider_completed_works_img-1"></div>
+                  <div class="h-100 position-absolute w-100 pt-5 px-5 px-sm-5 slider_customer-reviews_overlay" >
+                      <div class="d-flex align-items-center slider_customer-reviews_overlay__avatar-name-profession">
+                        <div class="slider_customer-reviews_overlay__avatar">
+                          <img src="../assets/img/img-page_services/photo-for-slider/icons-for-overlay.png" alt="avatar_1.png">
+                        </div>
+                        <div class="text-start text-white ps-2 slider_customer-reviews_overlay__name-profession">
+                          <p class="inter-light">5 дней</p>
+                        </div>
+                      </div>
+                      <p class="text-start text-white fs-5 inter-bold pt-2" style="min-width: 248px; max-width: 320px;">
+                        Защита кузова автомобиля
+                        бизнес-класса Mercedes-
+                        Maybach S 580
+                      </p>
+                      <div class="d-flex justify-content-start mt-3">
+                        <button type="button" class="btn btn_cast border-0 rounded-pill mx-3 mx-md-0">
+                          <span class="px-4 text-nowrap text-white fz-castom inter-bold px-1 d-flex align-items-center">
+                            <p class="me-2">Подробнее</p>
+                            <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                          </span>
                         </button>
                       </div>
                   </div>
                 </a>
                 
               </div>
-
             </div>
           </div> 
-          <button type="button" class="bg-castom-gray_2 border-2 rounded-pill mx-1 mx-sm-3 d-flex align-items-center " style="height: 60px; justify-self: center;" data-bs-toggle="modal" data-bs-target="#modalOne">
-            <span class="inter-bold fz-castom p-2 px-1 p-sm-4 text-white text-nowrap">Больше примеров</span>
+          <button type="button" class="d-flex align-items-center bg-castom-gray_2 border-2 rounded-pill mx-1 mx-sm-3" style="height: 60px; justify-self: center;" data-bs-toggle="modal" data-bs-target="#modalOne">
+            <span class="p-2 p-sm-4 text-nowrap text-white fz-castom inter-bold px-1">Больше примеров</span>
           </button>
         </div>
 
-        <div class="upper-backrounn__inner_protect-car mt-5 d-none d-sm-grid ">
+        <div class="d-none d-sm-grid mt-5 upper-backrounn__inner_protect-car">
 
-          <div class="container pt-3 pt-md-5 d-flex justify-content-center">
-            <h2 class="text-white text-wrap inter-bold fs-1 px-2">Защитите свой автомобиль</h2>
+          <div class="container d-flex justify-content-center pt-3 pt-md-5">
+            <h2 class="text-white text-wrap fs-1 inter-bold px-2">Защитите свой автомобиль</h2>
           </div>
 
-          <a href="#" class="btn btn_cast-revers border-2 rounded-pill mx-1 mx-sm-3 mt-auto mb-3 mb-sm-5 d-flex align-items-center " style="height: 60px; justify-self: center;" data-bs-toggle="modal" data-bs-target="#modalOne">
-            <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Узнать больше</span>
+          <a href="#" class="d-flex btn btn_cast-revers align-items-center border-2 rounded-pill mb-3 mb-sm-5 mt-auto mx-1 mx-sm-3" style="height: 60px; justify-self: center;" data-bs-toggle="modal" data-bs-target="#modalOne">
+            <span class="w-100 p-2 p-sm-4 text-nowrap text-white fz-castom inter-bold px-1">Узнать больше</span>
           </a>
         </div>
 
         <div class="calculate-cost-of-service my-5">
           <div class="container pt-5">
-            <h2 class="mb-4 text-center inter-bold">Рассчитайте стоимость услуги онлайн</h2>
+            <h2 class="text-center inter-bold mb-4">Рассчитайте стоимость услуги онлайн</h2>
             
-            <form class=" rounded-5 bg-white p-5 shadow ">
+            <form class="bg-white p-5 rounded-5 shadow">
                 <!-- Марка и модель авто -->
                 <div class="row mb-3">
-                    <div class="col-md-4 col-12 mb-2">
+                    <div class="col-12 col-md-4 mb-2">
                         <label for="carBrand" class="form-label inter-bold">Выберите марку авто из списка</label>
-                        <select id="carBrand" class="form-select border-0 py-3 rounded-3 bg-castom-gray">
+                        <select id="carBrand" class="form-select bg-castom-gray border-0 rounded-3 py-3">
                             <option selected>Выберите марку...</option>
                             <option value="1">1 пример</option>
                             <option value="2">2 пример</option>
                             <option value="3">3 пример</option>
                         </select>
                     </div>
-                    <div class="col-md-4 col-12 mb-2">
+                    <div class="col-12 col-md-4 mb-2">
                         <label for="carModel" class="form-label inter-bold">Модель автомобиля</label>
-                        <select id="carModel" class="form-select border-0 py-3 rounded-3 bg-castom-gray">
+                        <select id="carModel" class="form-select bg-castom-gray border-0 rounded-3 py-3">
                             <option selected>Выберите модель...</option>
                             <option value="1">1 пример</option>
                             <option value="2">2 пример</option>
                             <option value="3">3 пример</option>
                         </select>
                     </div>
-                    <div class="col-md-4 col-12">
+                    <div class="col-12 col-md-4">
                         <label for="serviceType" class="form-label inter-bold">Выберите услуги</label>
-                        <select id="serviceType" class="form-select border-0 py-3 rounded-3 bg-castom-gray">
+                        <select id="serviceType" class="form-select bg-castom-gray border-0 rounded-3 py-3">
                             <option selected>Оклейка, Защитная пропитка салона</option>
                             <option value="1">1 пример</option>
                             <option value="2">2 пример</option>
@@ -661,42 +776,42 @@
                 </div>
                 
                 <!-- Ваш результат -->
-                <h4 class="mb-3 fs-3 inter-bold">Ваш результат</h4>
-                <div class="row mb-3 p-2 align-items-end bg-castom-gray rounded-3">
+                <h4 class="fs-3 inter-bold mb-3">Ваш результат</h4>
+                <div class="row align-items-end bg-castom-gray p-2 rounded-3 mb-3">
                     
-                    <div class="col-12 row  justify-content-between py-2 pe-0">
+                    <div class="col-12 row justify-content-between pe-0 py-2">
                       <p class="col-1 form-label fs-5 inter-bold">Оклейка</p>
-                      <button class="col-auto px-0 text-nowrap cast-color_orange" type="button" onclick="removeCard(this)">Удалить услугу</button>
+                      <button class="col-auto text-nowrap cast-color_orange px-0" type="button" onclick="removeCard(this)">Удалить услугу</button>
                     </div>
-                    <div class="col-md-4 col-12 mb-2">                      
-                        <select id="wrapType" class="form-select border-0 py-3 rounded-3">
+                    <div class="col-12 col-md-4 mb-2">                      
+                        <select id="wrapType" class="form-select border-0 rounded-3 py-3">
                             <option selected>Выберите тип...</option>
                             <option value="full">Полная</option>
                             <option value="partial">Частичная</option>
                         </select>
                     </div>
-                    <div class="col-md-4 col-12 mb-2 ">
-                        <select id="extraOption" class="form-select border-0 py-3 rounded-3">
+                    <div class="col-12 col-md-4 mb-2">
+                        <select id="extraOption" class="form-select border-0 rounded-3 py-3">
                             <option selected>Дополнительные опции...</option>
                             <option value="ceramic">Керамическое покрытие</option>
                             <option value="ppf">Бронирование пленкой</option>
                         </select>
                     </div>
-                    <div class="col-md-4 col-12 d-flex flex-wrap align-items-center align-self-center gap-1">
-                        <div class="form-check ps-2 col-auto">
+                    <div class="col-12 col-md-4 d-flex flex-wrap align-items-center align-self-center gap-1">
+                        <div class="col-auto form-check ps-2">
                             <input class="form-check-input" type="radio" name="serviceLevel" id="vega190" value="vega190">
                             <label class="form-check-label" for="vega190">Vega190</label>
                         </div>
-                        <div class="form-check ps-2 col-auto">
+                        <div class="col-auto form-check ps-2">
                             <input class="form-check-input" type="radio" name="serviceLevel" id="suntek" value="suntek">
                             <label class="form-check-label" for="suntek">Suntek</label>
                         </div>
-                        <div class="form-check ps-2 col-auto">
+                        <div class="col-auto form-check ps-2">
                             <input class="form-check-input" type="radio" name="serviceLevel" id="lumar" value="lumar">
                             <label class="form-check-label" for="lumar">Lumar</label>
                         </div>
                     </div>
-                    <p class="col-10 fs-7 py-2 text-secondary" >
+                    <p class="col-10 text-secondary fs-7 py-2" >
                       Капот, бампер, фары, зеркала, стойки лобового стекла, пространство под ручками дверей, полоса над лобовым стеклом, внутренние
                       пороги, погрузочная зона
                     </p>
@@ -704,36 +819,36 @@
                 
                 <!-- вариация карточки услуг -->
                 <div id="serviceCards">
-                    <div class="service-cards-item px-0 py-3 mb-4 row justify-content-between align-items-center rounded-3">
+                    <div class="row align-items-center justify-content-between rounded-3 mb-4 px-0 py-3 service-cards-item">
                         <p class="col-auto inter-bold">Защитная пропитка салона <span class="text-secondary">(кожа, текстиль, пластик)</span></p>
-                        <div class="col-auto px-1 text-end">
-                          <button type="button" class="btn btn-sm cast-color_orange " onclick="removeCard(this)">Удалить услугу</button>
+                        <div class="col-auto text-end px-1">
+                          <button type="button" class="btn btn-sm cast-color_orange" onclick="removeCard(this)">Удалить услугу</button>
                         </div>
                     </div>
-                    <div class="service-cards-item px-0 py-3 mb-4 row align-items-center justify-content-between rounded-3">
-                      <div class="row col-auto">
+                    <div class="row align-items-center justify-content-between rounded-3 mb-4 px-0 py-3 service-cards-item">
+                      <div class="col-auto row">
                         <p class="col-auto inter-bold">Бронирование лобового стекла </p>
-                        <div class="col-auto px-3 row">
-                          <div class="form-check col-6">
+                        <div class="col-auto row px-3">
+                          <div class="col-6 form-check">
                           <input class="form-check-input" type="radio" name="windshield" id="clearplex" value="clearplex">
                           <label class="form-check-label" for="clearplex">Clearplex</label>
                           </div>
-                          <div class="form-check col-6">
+                          <div class="col-6 form-check">
                             <input class="form-check-input" type="radio" name="windshield" id="deltaplex" value="deltaplex">
                             <label class="form-check-label" for="deltaplex">Deltaplex</label>
                           </div>
                         </div>
                       </div>
-                      <div class="col-auto px-1 text-end">
+                      <div class="col-auto text-end px-1">
                         <button type="button" class="btn btn-sm cast-color_orange" onclick="removeCard(this)">Удалить услугу</button>
                       </div>
                     </div>
-                    <div class="service-cards-item px-0 py-3 mb-4 row align-items-center justify-content-between rounded-3">
+                    <div class="row align-items-center justify-content-between rounded-3 mb-4 px-0 py-3 service-cards-item">
                         <p class="col-auto inter-bold">Защитная пропитка салона <span class="text-secondary">(кожа, текстиль, пластик)</span></p>
-                        <div class="col-auto px-1 text-end">
-                          <button type="button" class="btn btn-sm cast-color_orange " onclick="removeCard(this)">Удалить услугу</button>
+                        <div class="col-auto text-end px-1">
+                          <button type="button" class="btn btn-sm cast-color_orange" onclick="removeCard(this)">Удалить услугу</button>
                         </div>
-                        <p class="col-12 fs-7 py-2 text-secondary" >
+                        <p class="col-12 text-secondary fs-7 py-2" >
                           Трехфазная мойка кузова, жидкий полимер, глубокая чистка дисков и насадок выхлопных труб, коврики, пороги, консервация шин, уход за
                           <br>
                           всеми поверхностями салона: кожа, пластик, стекла, уборка багажника, кондиционер кожи GYEON антидождь передних стёкол.
@@ -747,19 +862,19 @@
                 </div>
     
                 <!-- Контактная информация и заявка -->
-                <div class="mt-4 border-top pt-3">
-                    <div class="row mb-3 align-items-end">
-                        <div class="col-lg-4 col-12 mb-2 mb-md-0">
+                <div class="border-top mt-4 pt-3">
+                    <div class="row align-items-end mb-3">
+                        <div class="col-12 col-lg-4 mb-2 mb-md-0">
                             <label for="userName" class="form-label">Ваше имя</label>
-                            <input type="text" id="userName" class="form-control bg-castom-gray rounded-3 py-3" placeholder="Введите ваше имя">
+                            <input type="text" id="userName" class="form-control border-0 bg-castom-gray rounded-3 py-3" placeholder="Введите ваше имя">
                         </div>
-                        <div class="col-lg-4 col-12">
+                        <div class="col-12 col-lg-4">
                             <label for="userPhone" class="form-label">Номер телефона</label>
-                            <input type="tel" id="userPhone" class="form-control bg-castom-gray rounded-3 py-3" placeholder="Введите ваш номер">
+                            <input type="tel" id="userPhone" class="form-control border-0 bg-castom-gray rounded-3 py-3" placeholder="Введите ваш номер">
                         </div>
-                        <div class="col-lg-3 col-12 mt-5 mt-lg-0">
-                          <button type="submit" class=" btn btn_cast border-0 rounded-pill  " data-bs-toggle="modal" data-bs-target="#modalOne">
-                            <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Оставить заявку</span>
+                        <div class="col-12 col-lg-3 mt-5 mt-lg-0">
+                          <button type="submit" class="btn btn_cast border-0 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalOne">
+                            <span class="p-2 p-sm-4 text-nowrap text-white fz-castom inter-bold px-1">Оставить заявку</span>
                           </button>
                         </div>
                     </div>
@@ -769,21 +884,21 @@
           </div>
         </div>
 
-        <div class="comments upper-backrounn__inner_comments slick-slider mt-5">
-          <div class="py-cast-y container my-auto">
+        <div class="comments mt-5 slick-slider upper-backrounn__inner_comments">
+          <div class="container my-auto py-cast-y">
             <h2 class="text-center text-white inter-bold mb-4">Отзывы клиентов</h2>
             
-            <div class="container px-0 mt-3">
+            <div class="container mt-3 px-0">
               <div class="slider">
 
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex" >
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto" >
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar.png" alt="avatar">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Виктория</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Виктория</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -800,14 +915,14 @@
                       невероятную конфетку!</p>
                   </div>
                 </div>
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex" >
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto" >
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar1.png" alt="">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Александр</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Александр</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -823,14 +938,14 @@
                       профессионалы своего дела.</p>
                   </div>
                 </div>
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex" >
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto" >
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar2.png" alt="">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Борис</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Борис</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -847,14 +962,14 @@
                       понравилось.</p>
                   </div>
                 </div>
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex">
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto">
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar3.png" alt="">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Екатерина</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Екатерина</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -871,14 +986,14 @@
                   </div>
                 </div>
 
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex" >
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto" >
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar.png" alt="avatar">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Виктория</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Виктория</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -895,14 +1010,14 @@
                       невероятную конфетку!</p>
                   </div>
                 </div>
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex" >
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto" >
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar1.png" alt="">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Александр</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Александр</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -918,14 +1033,14 @@
                       профессионалы своего дела.</p>
                   </div>
                 </div>
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex" >
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto" >
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar2.png" alt="">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Борис</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Борис</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -942,14 +1057,14 @@
                       понравилось.</p>
                   </div>
                 </div>
-                <div class="card slider_card_item p-4 pb-3 mx-2 rounded-5 overflow-hidden">
-                  <div class="card_header w-100 rounded-5 mx-auto d-flex">
+                <div class="card p-4 rounded-5 mx-2 overflow-hidden pb-3 slider_card_item">
+                  <div class="d-flex card_header rounded-5 w-100 mx-auto">
                     <div>
                       <img class="slider_card_item-avatar" src="../assets/img/avatar3.png" alt="">
                     </div>
                     <div class="text-start ms-2">
-                      <h5 class="inter-bold fs-4">Екатерина</h5>
-                      <div class="stars d-flex">
+                      <h5 class="fs-4 inter-bold">Екатерина</h5>
+                      <div class="d-flex stars">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
                         <img class="me-1 stars-item" src="../assets/img/icon/star.png" alt="star icon">
@@ -972,14 +1087,14 @@
           </div>
         </div>
 
-        <div class="container upper-backrounn__inner_working my-auto py-cast-y">
-            <div class="container px-0 mt-3">
-             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  ">
+        <div class="container my-auto py-cast-y upper-backrounn__inner_working">
+            <div class="container mt-3 px-0">
+             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2">
 
-              <div class="title col py-3 px-3 d-flex justify-content-start align-items-center">
+              <div class="col d-flex align-items-center justify-content-start px-3 py-3 title">
                 <div>
-                  <p class="inter-extrabold fs-1">Процесс работы</p>
-                  <p class="about_content-text mt-3 ms-4 ps-2 inter-regular text-black fs-5">
+                  <p class="fs-1 inter-extrabold">Процесс работы</p>
+                  <p class="text-black about_content-text fs-5 inter-regular ms-4 mt-3 ps-2">
                     Контроль всех этапов
                     <br>
                     выполнения работ
@@ -988,21 +1103,21 @@
               </div>
 
               <div class="col my-3">
-                <div class="w-100 h-100 border border-secondary rounded-5 py-5 px-5">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class=" number-works d-flex justify-content-center align-items-center mx-sm-0 text-white rounded-pill fs-4 inter-extrabold">
+                <div class="border-gray-1 h-100 rounded-5 w-100 px-5 py-5">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-center rounded-pill text-white fs-4 inter-extrabold mx-sm-0 number-works">
                       1
                     </div>
-                    <div class="w-100 d-none d-sm-flex align-items-center flex-nowrap opacity-50">
-                      <div class="ms-4 bg-black" style="width: 100%; height: 2px;"></div>
-                      <div class="text-black inter-light fs-2" style="padding-bottom: 5px; ">
+                    <div class="d-none d-sm-flex flex-nowrap align-items-center w-100 opacity-50">
+                      <div class="bg-black ms-4" style="width: 100%; height: 2px;"></div>
+                      <div class="text-black fs-2 inter-light" style="padding-bottom: 5px; ">
                         <img style="width: 20px; height: 14px;" src="../assets/img/img-page_main-page/icons/arrow_item.png" alt="">
                       </div>
                     </div>
                   </div>
                   <div class="mt-4">
-                    <p class="text-black inter-bold fs-5">Запись на консультацию</p>
-                    <p class="text-black mt-3 fs-6">
+                    <p class="text-black fs-5 inter-bold">Запись на консультацию</p>
+                    <p class="text-black fs-6 mt-3">
                       Сначала наш мастер осмотрит
                       и примет ваш автомобиль
                     </p>
@@ -1010,22 +1125,22 @@
                 </div>
               </div>
               <div class="col my-3">
-                <div class="w-100 h-100 border border-secondary rounded-5 py-5 px-5">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class=" number-works d-flex justify-content-center align-items-center mx-sm-0 text-white rounded-pill fs-4 inter-extrabold">
+                <div class="border-gray-1 h-100 rounded-5 w-100 px-5 py-5">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-center rounded-pill text-white fs-4 inter-extrabold mx-sm-0 number-works">
                       2
                     </div>
-                    <div class="w-100 d-none d-sm-flex align-items-center flex-nowrap opacity-50">
-                      <div class="ms-4 bg-black" style="width: 100%; height: 2px;"></div>
-                      <div class="text-black inter-light fs-2" style="padding-bottom: 5px; ">
+                    <div class="d-none d-sm-flex flex-nowrap align-items-center w-100 opacity-50">
+                      <div class="bg-black ms-4" style="width: 100%; height: 2px;"></div>
+                      <div class="text-black fs-2 inter-light" style="padding-bottom: 5px; ">
                         <img style="width: 20px; height: 14px;" src="../assets/img/img-page_main-page/icons/arrow_item.png" alt="">
                       </div>
                     </div>
                   </div>
                   <div class="mt-4">
-                    <p class="text-black inter-bold fs-5">Диагностика и 
+                    <p class="text-black fs-5 inter-bold">Диагностика и 
                       согласование услуг</p>
-                    <p class="text-black mt-3 fs-6">
+                    <p class="text-black fs-6 mt-3">
                       После наши мастера проведут
                       диагностику и оценят работу
                     </p>
@@ -1033,21 +1148,21 @@
                 </div>
               </div>
               <div class="col my-3">
-                <div class="w-100 h-100 border border-secondary rounded-5 py-5 px-5">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class=" number-works d-flex justify-content-center align-items-center mx-sm-0 text-white rounded-pill fs-4 inter-extrabold">
+                <div class="border-gray-1 h-100 rounded-5 w-100 px-5 py-5">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-center rounded-pill text-white fs-4 inter-extrabold mx-sm-0 number-works">
                       3
                     </div>
-                    <div class="w-100 d-none d-sm-flex align-items-center flex-nowrap opacity-50">
-                      <div class="ms-4 bg-black" style="width: 100%; height: 2px;"></div>
-                      <div class="text-black inter-light fs-2" style="padding-bottom: 5px; ">
+                    <div class="d-none d-sm-flex flex-nowrap align-items-center w-100 opacity-50">
+                      <div class="bg-black ms-4" style="width: 100%; height: 2px;"></div>
+                      <div class="text-black fs-2 inter-light" style="padding-bottom: 5px; ">
                         <img style="width: 20px; height: 14px;" src="../assets/img/img-page_main-page/icons/arrow_item.png" alt="">
                       </div>
                     </div>
                   </div>
                   <div class="mt-4">
-                    <p class="text-black inter-bold fs-5">Выполнение работ</p>
-                    <p class="text-black mt-3 fs-6">
+                    <p class="text-black fs-5 inter-bold">Выполнение работ</p>
+                    <p class="text-black fs-6 mt-3">
                       Наши опытные специалисты выпонят
                       все работы в срок
                     </p>
@@ -1055,21 +1170,21 @@
                 </div>
               </div>
               <div class="col my-3">
-                <div class="w-100 h-100 border border-secondary rounded-5 py-5 px-5">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class=" number-works d-flex justify-content-center align-items-center mx-sm-0 text-white rounded-pill fs-4 inter-extrabold">
+                <div class="border-gray-1 h-100 rounded-5 w-100 px-5 py-5">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-center rounded-pill text-white fs-4 inter-extrabold mx-sm-0 number-works">
                       4
                     </div>
-                    <div class="w-100 d-none d-sm-flex align-items-center flex-nowrap opacity-50">
-                      <div class="ms-4 bg-black" style="width: 100%; height: 2px;"></div>
-                      <div class="text-black inter-light fs-2" style="padding-bottom: 5px; ">
+                    <div class="d-none d-sm-flex flex-nowrap align-items-center w-100 opacity-50">
+                      <div class="bg-black ms-4" style="width: 100%; height: 2px;"></div>
+                      <div class="text-black fs-2 inter-light" style="padding-bottom: 5px; ">
                         <img style="width: 20px; height: 14px;" src="../assets/img/img-page_main-page/icons/arrow_item.png" alt="">
                       </div>
                     </div>
                   </div>
                   <div class="mt-4">
-                    <p class="text-black inter-bold fs-5">Гарантия результата</p>
-                    <p class="text-black mt-3 fs-6">
+                    <p class="text-black fs-5 inter-bold">Гарантия результата</p>
+                    <p class="text-black fs-6 mt-3">
                       Выдадим гарантийный талон и чек
                       после оплаты
                     </p>
@@ -1077,14 +1192,14 @@
                 </div>
               </div>
               <div class="col my-3">
-                <div class="w-100 h-100 border bg-castom-gray_2 rounded-5 py-5 px-5 ">
-                  <h3 class="mb-3 fs-5 text-white inter-bold">Задайте эксперту вопрос</h3>
+                <div class="h-100 bg-castom-gray_2 rounded-5 w-100 px-5 py-5">
+                  <h3 class="text-white fs-5 inter-bold mb-3">Задайте эксперту вопрос</h3>
                   <form>
-                      <div class="mb-3">
+                      <div class="mb-4">
                           <input type="tel" id="phoneNumber" class="form-control py-3" placeholder="Введите номер телефона">
                       </div>
-                      <button type="submit" class="w-100 bg-orange_cast py-3 border-0 rounded-pill " data-bs-toggle="modal" data-bs-target="#modalOne">
-                        <span class="inter-bold fs-6  text-white text-nowrap">Оставить заявку</span>
+                      <button type="submit" class="bg-orange_cast border-0 rounded-pill w-100 py-3" data-bs-toggle="modal" data-bs-target="#modalOne">
+                        <span class="text-nowrap text-white fs-6 inter-bold">Оставить заявку</span>
                       </button>
                   </form>
                 </div>
@@ -1094,159 +1209,224 @@
             </div>
         </div> 
 
-        <div class="customer_reviews upper-backrounn__inner_customer-reviews slick-slider mt-5">
+        <div class="customer_reviews mt-5 slick-slider upper-backrounn__inner_customer-reviews">
 
-          <div class="py-cast-y container my-auto">
+          <div class="container my-auto py-cast-y">
 
-           <div class="d-flex justify-content-center align-items-center mb-4 px-2">
-             <h2 class=" text-white inter-bold px-2">Акции и скидки</h2>
+           <div class="d-flex align-items-center justify-content-center mb-4 px-2">
+             <h2 class="text-white inter-bold px-2">Акции и скидки</h2>
            </div>
-           <div class="container px-0 mt-3">
-             <div class="slider_customer-reviews ">
+           <div class="container mt-3 px-0">
+             <div class="slider_customer-reviews">
 
-              <a href="#" class="card slider_customer-reviews__card border-3 border-white bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+              <a href="#" class="card bg-transparent border-3 border-white p-0 rounded-5 mx-2 overflow-hidden slider_customer-reviews__card">
                 <div class="slider_customer-reviews_img-1"></div>
-                <div class="slider_customer-reviews_overlay2 position-absolute w-100 h-100 pt-5 px-5"  >
-                    <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex">
-                      <div class="slider_customer-reviews_overlay__name-profession text-start text-white">
+                <div class="h-100 position-absolute w-100 pt-5 px-5 slider_customer-reviews_overlay2"  >
+                    <div class="d-flex slider_customer-reviews_overlay__avatar-name-profession">
+                      <div class="text-start text-white slider_customer-reviews_overlay__name-profession">
                         <p class="inter-light">Акции и скидки</p>
                       </div>
                     </div>
-                    <p class="pt-4 text-start text-white fs-4 fs-sm-5" style="max-width: 350px;">
+                    <p class="text-start text-white fs-4 fs-sm-5 pt-4" style="max-width: 350px;">
                      Скидка 30% на 
                      профессиональную
                      химчистку
                     </p>
                     <div class="d-flex mt-5">
-                      <button type="button" class="btn bg-orange_cast border-0 py-2 mx-1 rounded-pill" tabindex="0">
-                        <span class="inter-bold fz-castom py-1 px-1 p-sm-4 text-white text-nowrap">Подробнее &gt;</span>
+                      <button type="button" class="btn bg-orange_cast border-0 rounded-pill mx-1 py-2" tabindex="0">
+                        <span class="d-flex align-items-center text-nowrap text-white fz-castom inter-bold px-4 py-1 ">
+                          <p class="me-2">Подробнее</p>
+                          <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                        </span>
                       </button>
                     </div>
                 </div>
               </a>
-              <a href="#" class="card slider_customer-reviews__card border-3 border-white bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+              <a href="#" class="card bg-transparent border-3 border-white p-0 rounded-5 mx-2 overflow-hidden slider_customer-reviews__card">
                 <div class="slider_customer-reviews_img-2"></div>
-                <div class="slider_customer-reviews_overlay2 position-absolute w-100 h-100 pt-5 px-5"  >
-                    <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex">
-                      <div class="slider_customer-reviews_overlay__name-profession text-start text-white">
+                <div class="h-100 position-absolute w-100 pt-5 px-5 slider_customer-reviews_overlay2"  >
+                    <div class="d-flex slider_customer-reviews_overlay__avatar-name-profession">
+                      <div class="text-start text-white slider_customer-reviews_overlay__name-profession">
                         <p class="inter-light">Акции и скидки</p>
                       </div>
                     </div>
-                    <p class="pt-4 text-start text-white fs-4 fs-sm-5" style="max-width: 350px;">
+                    <p class="text-start text-white fs-4 fs-sm-5 pt-4" style="max-width: 350px;">
                      Скидка 30% на 
                      профессиональную
                      химчистку
                     </p>
                     <div class="d-flex mt-5">
-                      <button type="button" class="btn bg-orange_cast border-0 py-2 mx-1 rounded-pill" tabindex="0">
-                        <span class="inter-bold fz-castom py-1 px-1 p-sm-4 text-white text-nowrap">Подробнее &gt;</span>
+                      <button type="button" class="btn bg-orange_cast border-0 rounded-pill mx-1 py-2" tabindex="0">
+                        <span class="d-flex align-items-center text-nowrap text-white fz-castom inter-bold px-4 py-1 ">
+                          <p class="me-2">Подробнее</p>
+                          <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                        </span>
                       </button>
                     </div>
                 </div>
               </a>
               
-              <a href="#" class="card slider_customer-reviews__card border-3 border-white bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+              <a href="#" class="card bg-transparent border-3 border-white p-0 rounded-5 mx-2 overflow-hidden slider_customer-reviews__card">
                 <div class="slider_customer-reviews_img-1"></div>
-                <div class="slider_customer-reviews_overlay2 position-absolute w-100 h-100 pt-5 px-5"  >
-                    <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex">
-                      <div class="slider_customer-reviews_overlay__name-profession text-start text-white">
+                <div class="h-100 position-absolute w-100 pt-5 px-5 slider_customer-reviews_overlay2"  >
+                    <div class="d-flex slider_customer-reviews_overlay__avatar-name-profession">
+                      <div class="text-start text-white slider_customer-reviews_overlay__name-profession">
                         <p class="inter-light">Акции и скидки</p>
                       </div>
                     </div>
-                    <p class="pt-4 text-start text-white fs-4 fs-sm-5" style="max-width: 350px;">
+                    <p class="text-start text-white fs-4 fs-sm-5 pt-4" style="max-width: 350px;">
                      Скидка 30% на 
                      профессиональную
                      химчистку
                     </p>
                     <div class="d-flex mt-5">
-                      <button type="button" class="btn bg-orange_cast border-0 py-2 mx-1 rounded-pill" tabindex="0">
-                        <span class="inter-bold fz-castom py-1 px-1 p-sm-4 text-white text-nowrap">Подробнее &gt;</span>
+                      <button type="button" class="btn bg-orange_cast border-0 rounded-pill mx-1 py-2" tabindex="0">
+                        <span class="d-flex align-items-center text-nowrap text-white fz-castom inter-bold px-4 py-1 ">
+                          <p class="me-2">Подробнее</p>
+                          <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                        </span>
                       </button>
                     </div>
                 </div>
               </a>
-              <a href="#" class="card slider_customer-reviews__card border-3 border-white bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+              <a href="#" class="card bg-transparent border-3 border-white p-0 rounded-5 mx-2 overflow-hidden slider_customer-reviews__card">
                 <div class="slider_customer-reviews_img-2"></div>
-                <div class="slider_customer-reviews_overlay2 position-absolute w-100 h-100 pt-5 px-5"  >
-                    <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex">
-                      <div class="slider_customer-reviews_overlay__name-profession text-start text-white">
+                <div class="h-100 position-absolute w-100 pt-5 px-5 slider_customer-reviews_overlay2"  >
+                    <div class="d-flex slider_customer-reviews_overlay__avatar-name-profession">
+                      <div class="text-start text-white slider_customer-reviews_overlay__name-profession">
                         <p class="inter-light">Акции и скидки</p>
                       </div>
                     </div>
-                    <p class="pt-4 text-start text-white fs-4 fs-sm-5" style="max-width: 350px;">
+                    <p class="text-start text-white fs-4 fs-sm-5 pt-4" style="max-width: 350px;">
                      Скидка 30% на 
                      профессиональную
                      химчистку
                     </p>
                     <div class="d-flex mt-5">
-                      <button type="button" class="btn bg-orange_cast border-0 py-2 mx-1 rounded-pill" tabindex="0">
-                        <span class="inter-bold fz-castom py-1 px-1 p-sm-4 text-white text-nowrap">Подробнее &gt;</span>
+                      <button type="button" class="btn bg-orange_cast border-0 rounded-pill mx-1 py-2" tabindex="0">
+                        <span class="d-flex align-items-center text-nowrap text-white fz-castom inter-bold px-4 py-1 ">
+                          <p class="me-2">Подробнее</p>
+                          <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                        </span>
                       </button>
                     </div>
                 </div>
               </a>
 
-              <a href="#" class="card slider_customer-reviews__card border-3 border-white bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+              <a href="#" class="card bg-transparent border-3 border-white p-0 rounded-5 mx-2 overflow-hidden slider_customer-reviews__card">
                 <div class="slider_customer-reviews_img-1"></div>
-                <div class="slider_customer-reviews_overlay2 position-absolute w-100 h-100 pt-5 px-5"  >
-                    <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex">
-                      <div class="slider_customer-reviews_overlay__name-profession text-start text-white">
+                <div class="h-100 position-absolute w-100 pt-5 px-5 slider_customer-reviews_overlay2"  >
+                    <div class="d-flex slider_customer-reviews_overlay__avatar-name-profession">
+                      <div class="text-start text-white slider_customer-reviews_overlay__name-profession">
                         <p class="inter-light">Акции и скидки</p>
                       </div>
                     </div>
-                    <p class="pt-4 text-start text-white fs-4 fs-sm-5" style="max-width: 350px;">
+                    <p class="text-start text-white fs-4 fs-sm-5 pt-4" style="max-width: 350px;">
                      Скидка 30% на 
                      профессиональную
                      химчистку
                     </p>
                     <div class="d-flex mt-5">
-                      <button type="button" class="btn bg-orange_cast border-0 py-2 mx-1 rounded-pill" tabindex="0">
-                        <span class="inter-bold fz-castom py-1 px-1 p-sm-4 text-white text-nowrap">Подробнее &gt;</span>
+                      <button type="button" class="btn bg-orange_cast border-0 rounded-pill mx-1 py-2" tabindex="0">
+                        <span class="d-flex align-items-center text-nowrap text-white fz-castom inter-bold px-4 py-1 ">
+                          <p class="me-2">Подробнее</p>
+                          <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                        </span>
                       </button>
                     </div>
                 </div>
               </a>
-              <a href="#" class="card slider_customer-reviews__card border-3 border-white bg-transparent p-0 mx-2 rounded-5 overflow-hidden">
+              <a href="#" class="card bg-transparent border-3 border-white p-0 rounded-5 mx-2 overflow-hidden slider_customer-reviews__card">
                 <div class="slider_customer-reviews_img-2"></div>
-                <div class="slider_customer-reviews_overlay2 position-absolute w-100 h-100 pt-5 px-5"  >
-                    <div class="slider_customer-reviews_overlay__avatar-name-profession d-flex">
-                      <div class="slider_customer-reviews_overlay__name-profession text-start text-white">
+                <div class="h-100 position-absolute w-100 pt-5 px-5 slider_customer-reviews_overlay2"  >
+                    <div class="d-flex slider_customer-reviews_overlay__avatar-name-profession">
+                      <div class="text-start text-white slider_customer-reviews_overlay__name-profession">
                         <p class="inter-light">Акции и скидки</p>
                       </div>
                     </div>
-                    <p class="pt-4 text-start text-white fs-4 fs-sm-5" style="max-width: 350px;">
+                    <p class="text-start text-white fs-4 fs-sm-5 pt-4" style="max-width: 350px;">
                      Скидка 30% на 
                      профессиональную
                      химчистку
                     </p>
                     <div class="d-flex mt-5">
-                      <button type="button" class="btn bg-orange_cast border-0 py-2 mx-1 rounded-pill" tabindex="0">
-                        <span class="inter-bold fz-castom py-1 px-1 p-sm-4 text-white text-nowrap">Подробнее &gt;</span>
+                      <button type="button" class="btn bg-orange_cast border-0 rounded-pill mx-1 py-2" tabindex="0">
+                        <span class="d-flex align-items-center text-nowrap text-white fz-castom inter-bold px-4 py-1 ">
+                          <p class="me-2">Подробнее</p>
+                          <svg width="15" height="15" version="1.1" id="Outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            	 viewBox="0 0 153 298.7" style="enable-background:new 0 0 153 298.7;" xml:space="preserve">
+                              <style type="text/css">
+                              	.st0{fill:#FFFFFF;}
+                              </style>
+                              <path class="st0" d="M134.3,104.1L36.4,6.2c-8.3-8.3-21.8-8.3-30.1,0C-2.1,14.5-2.1,28,6.2,36.4l0.1,0.1l98.1,97.7
+                              	c8.4,8.3,8.4,21.8,0.1,30.2l-0.1,0.1L6.3,262.2c-8.4,8.3-8.4,21.8-0.1,30.2c8.3,8.4,21.8,8.4,30.2,0.1l97.9-97.9
+                              	C159.3,169.6,159.3,129.1,134.3,104.1z"/>
+                            </svg>
+                        </span>
                       </button>
                     </div>
                 </div>
               </a>
               
-               
              </div>
            </div>
 
          </div> 
         </div>
 
-        <div class="py-cast-y container">
+        <div class="container py-cast-y">
           <div class="row justify-content-between">
               <div class="col-md-6" >
-                      <p class="fs-1 inter-bold mb-3  ">Контакты</p>
+                      <p class="fs-1 inter-bold mb-3">Контакты</p>
                       <div class="row">
                         <div class="col">
                           <div class="d-flex align-items-center">
                             <img class="pe-2" style="min-width: 15px;height: 15px;" src="../assets/img/icon/phone-receiver-silhouette.svg" alt="phone-receiver-silhouette icon">
                             <p class="opacity-75">Наши телефоны:</p>
                           </div>
-                          <div class="ps-4 mt-1 inter-bold" style="width: min-content;">
-                            <a class="text-black inter-regular text-nowrap" href="tel:+79125557945">+7 912 555 79 45</a>
-                            <a class="text-black inter-regular text-nowrap" href="tel:+79531057945">+7 953 105 79 45</a>
+                          <div class="inter-bold mt-1 ps-4" style="width: min-content;">
+                            <a class="text-black text-nowrap inter-regular" href="tel:+79125557945">+7 912 555 79 45</a>
+                            <a class="text-black text-nowrap inter-regular" href="tel:+79531057945">+7 953 105 79 45</a>
                           </div>
                         </div>
                         <div class="col">
@@ -1254,19 +1434,19 @@
                             <img class="pe-2" style="min-width: 15px;height: 15px;" src="../assets/img/icon/placeholder.svg" alt="placeholder icon">
                             <p class="opacity-75">Адрес:</p>
                           </div>
-                          <div class="ps-3 mt-1 inter-bold" style="width: 200px;">
+                          <div class="inter-bold mt-1 ps-4" style="width: 200px;">
                             <p>г. Санкт-Петербург, ул. Балтийская 41</p>
                           </div>
                         </div>
                       </div>
-                      <div class="row my-4 ">
+                      <div class="row my-4">
                         <div class="col">
                           <div class="d-flex align-items-center">
                             <img class="pe-2" style="min-width: 15px;height: 15px;" src="../assets/img/icon/clock.svg" alt="clock icon">
                             <p class="opacity-75">Режим работы:</p>
                           </div>
                           
-                          <div class="ps-4 mt-1 inter-bold" style="width: max-content;">
+                          <div class="inter-bold mt-1 ps-4" style="width: max-content;">
                             <p>Пн - Пт с 8:00 до 21:00</p>
                             <p>Сб - Вс с 9:30 до 20:00</p>
                           </div>
@@ -1277,35 +1457,35 @@
                             <p class="opacity-75">Email:</p>
                           </div>
                           
-                          <div class="ps-4 mt-1" style="width: max-content;">
+                          <div class="mt-1 ps-4" style="width: max-content;">
                             <a class="text-black inter-bold" href="mailto:example@gmail.com">example@gmail.com</a>
                           </div>
                         </div>
                       </div>
-                      <div class="ratio ratio-16x9 rounded-5 overflow-hidden">
+                      <div class="rounded-5 overflow-hidden ratio ratio-16x9">
                           <iframe src="https://yandex.ru/map-widget/v1/-/CCUBZ9MtRA" style="border:0;" allowfullscreen=""></iframe>
                       </div>
               </div>
               
-              <div class="col-md-6 p-4 p-lg-5 mt-5 mt-md-0 bg-white rounded-5 shadow" style="max-width: 600px;">
-                  <div class="form-box ">
-                      <p class="inter-bold fs-2" >Остались вопросы?</p>
-                      <p class="fs-5 w-100 w-md-75 mt-3">Заполните форму и наш менеджер свяжется с вами и ответит на все вопросы</p>
+              <div class="col-md-6 bg-white p-4 p-lg-5 rounded-5 shadow mt-5 mt-md-0" style="max-width: 600px;">
+                  <div class="form-box">
+                      <p class="fs-2 inter-bold" >Остались вопросы?</p>
+                      <p class="w-100 w-md-75 fs-5 mt-3">Заполните форму и наш менеджер свяжется с вами и ответит на все вопросы</p>
                       <div class="d-flex align-items-center my-4">
-                          <img src="../assets/img/avatar.png" class=" me-2" alt="Ольга, менеджер">
+                          <img src="../assets/img/avatar.png" class="me-2" alt="Ольга, менеджер">
                           <span class="opacity-50">Ольга, менеджер</span>
                       </div>
                       <form class="mt-4">
                           <div class="mb-3">
                               <label for="name" class="form-label inter-bold">Ваше имя</label>
-                              <input type="text" class="form-control py-3 rounded-3 bg-castom-gray" id="name" placeholder="Иван">
+                              <input type="text" class="form-control bg-castom-gray rounded-3 py-3" id="name" placeholder="Иван">
                           </div>
                           <div class="mb-3">
                               <label for="phone" class="form-label inter-bold">Номер телефона</label>
-                              <input type="tel" class="form-control py-3 rounded-3 bg-castom-gray" id="phone" placeholder="+7 900 123 45 67">
+                              <input type="tel" class="form-control bg-castom-gray rounded-3 py-3" id="phone" placeholder="+7 900 123 45 67">
                           </div>
-                          <button type="button" class="btn btn_cast border-0 rounded-pill mt-3 " data-bs-toggle="modal" data-bs-target="#modalTwo">
-                            <span class="inter-bold fz-castom  p-2 px-1 p-sm-4 text-white text-nowrap">Оставить заявку</span>
+                          <button type="button" class="btn btn_cast border-0 rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#modalTwo">
+                            <span class="p-2 p-sm-4 text-nowrap text-white fz-castom inter-bold px-1">Оставить заявку</span>
                           </button>
                       </form>
                   </div>
@@ -1317,13 +1497,13 @@
     </main>
 
     <div class="modal fade" id="modalTwo" tabindex="-1" aria-labelledby="modalTwoLabel" aria-hidden="true">
-      <div class="modal-dialog ">
+      <div class="modal-dialog">
           <div class="modal-content rounded-5 box-shadow_modal">
-              <div class=" px-5 pt-3 d-flex align-items-center justify-content-between">
-                  <p class="modal-title inter-bold fs-3">Спасибо!</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 px-5">
+                  <p class="modal-title fs-3 inter-bold">Спасибо!</p>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
               </div>
-              <div class="px-5 pt-1 py-4">
+              <div class="pt-1 px-5 py-4">
                   Ваша заявка принята. Ожидайте, с вами скоро свяжется наш специалист.
               </div>
           </div>
@@ -1332,32 +1512,47 @@
 
 
     <footer>
-      <div class="inner__footer container px-1 px-md-3 d-flex align-items-center rounded-5 rounded-bottom-0 "> 
-        <div class="w-100 mx-auto row px-1 px-md-3 align-items-center justify-content-center">
-          <div class="order-2 order-xl-1 col-6 col-lg-auto ms-0 ms-md-3 px-0 px-sm-2 text-white inter-regular text-nowrap">
+      <div class="container d-flex align-items-center rounded-5 rounded-bottom-0 inner__footer px-1 px-md-3"> 
+        <div class="row align-items-center justify-content-center w-100 mx-auto px-1 px-md-3">
+          <div class="col-6 col-lg-2 order-2 order-xxl-1 fs-7 fs-sm-6 text-nowrap text-white inter-regular ms-0 ms-md-3 ms-xl-0  px-0 px-sm-2">
             <p>Авто Детейлинг</p>
             <p>©Все права защищены</p>
           </div>
-          <div class="order-1 order-xl-2 col-auto col-lg-auto d-flex px-0 py-3">
-            <nav class="d-flex flex-wrap justify-content-between justify-content-sm-start align-items-center px-4 px-lg-2">
-              <a href="#" class="underline-hover px-3 py-2 px-md-0 text-white text-nowrap inter-regular ">О компании</a>
-              <span class="d-none d-sm-block px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-4 px-sm-3 px-lg-2 py-2 px-md-0 text-white text-nowrap inter-regular ">Услуги</a>
-              <span class="d-none d-sm-block px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-4 px-sm-3 px-lg-2 py-2 px-md-0 text-white text-nowrap inter-regular ">Цены</a>
-              <span class="d-none d-sm-block px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-4 px-sm-3 px-lg-2 py-2 px-md-0 text-white text-nowrap inter-regular ">Портфолио</a>
-              <span class="d-none d-sm-block px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-4 px-sm-3 px-lg-2 py-2 px-md-0 text-white text-nowrap inter-regular ">Отзывы</a>
-              <span class="d-none d-sm-block px-1 text-white">∙</span>
-              <a href="#" class="underline-hover px-4 px-sm-3 px-lg-2 py-2 px-md-0 text-white text-nowrap inter-regular ">Контакты</a>
-              <span class="d-none d-sm-block px-1 text-white">∙</span>
-              <a href="#" class="d-none d-lg-block underline-hover px-1 text-white text-nowrap inter-regular">Политика конфиденцифльности</a>
+          <div class="col-12 col-xxl-8 d-flex justify-content-center order-1 order-xxl-2 px-0 py-3">
+            <nav class="w-100 row row-cols-sm-3 row-cols-md-4 row-cols-xl-auto align-items-center justify-content-between justify-content-sm-center px-3">
+
+              <div class="col-6 col-md-auto px-0 d-flex flex-nowrap justify-content-start justify-content-sm-center align-items-center">
+                <a href="about_company.html" class="text-nowrap text-white text-center inter-regular px-0 pe-0 pe-md-2 py-2 underline-hover">О компании</a>
+                <span class="d-none d-md-block text-white px-1">∙</span>
+              </div>
+              <div class="col-6 col-md-1 px-0 d-flex flex-nowrap justify-content-end justify-content-sm-center align-items-center">
+                <a href="services.html" class="text-nowrap text-white inter-regular px-0 pe-0 pe-md-2 py-2 py-2 underline-hover">Услуги</a>
+                <span class="d-none d-md-block text-white px-1">∙</span>
+              </div>
+              <div class="col-6 col-md-1 px-0 d-flex flex-nowrap justify-content-start justify-content-sm-center align-items-center">
+                <a href="#" class="text-nowrap text-white inter-regular px-0 pe-0 pe-md-2 py-2 py-2 underline-hover">Цены</a>
+                <span class="d-none d-md-block text-white px-1">∙</span>
+              </div>
+              <div class="col-6 col-md-auto px-0 d-flex flex-nowrap justify-content-end justify-content-sm-center align-items-center">
+                <a href="portfolio.html" class="text-nowrap text-white inter-regular px-0 pe-0 pe-md-2 py-2 py-2 underline-hover">Портфолио</a>
+                <span class="d-none d-md-block text-white px-1">∙</span>
+              </div>
+              <div class="col-6 col-md-auto px-0 d-flex flex-nowrap justify-content-start justify-content-sm-center align-items-center">
+                <a href="#" class="text-nowrap text-white inter-regular px-0 pe-0 pe-md-2 py-2 py-2 underline-hover">Отзывы</a>
+                <span class="d-none d-md-block text-white px-1">∙</span>
+              </div>
+              <div class="col-6 col-md-auto px-0 d-flex flex-nowrap justify-content-end justify-content-sm-center align-items-center">
+                <a href="contact.html" class="text-nowrap text-white inter-regular px-0 pe-0 pe-md-2 py-2 underline-hover">Контакты</a>
+                <span class="d-none d-md-block text-white px-1">∙</span>
+              </div>
+              <div class="col-6 col-md-3 px-0 d-none d-xl-flex flex-nowrap align-items-center">
+                <a href="#" class=" text-nowrap text-white inter-regular px-0 pe-0 pe-md-2 py-2 underline-hover">Политика конфиденцифльности</a>
+              </div>
 
             </nav>
           </div>
-          <div class="order-3 order-xl-3 col-auto col-lg-2 px-0 px-sm-0 d-flex justify-content-center">
-            <div class="row w-100 w-md-50 flex-nowrap justify-content-center">
+          <div class="col-3 col-lg-1 d-flex order-3 order-xl-3 justify-content-center mx-4 lg:mx-0 px-0 px-sm-0">
+            <div class="flex-nowrap row justify-content-center w-100 w-md-50">
 
               <a href="#" class="col d-flex align-items-center justify-content-center footer-icon-hover">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="12" viewBox="0 0 20 12">
@@ -1379,8 +1574,8 @@
 
             </div>
           </div>
-          <div class="col-12 order-4 d-flex d-lg-none justify-content-center py-3">
-            <a href="#" class="d-block d-lg-none underline-hover px-1 text-white text-nowrap inter-regular">Политика конфиденцифльности</a>
+          <div class="col-12 d-flex d-xl-none order-4 justify-content-center py-3">
+            <a href="#" class="text-nowrap text-white inter-regular px-1 underline-hover">Политика конфиденцифльности</a>
           </div>
         </div>
       </div>
@@ -1408,8 +1603,8 @@
               dots: true,
               // autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="align-items-center justify-content-start position-absolute carousel-control-prev opacity-100 z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-prev-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="align-items-center justify-content-end position-absolute carousel-control-next opacity-100 z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-next-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
@@ -1444,8 +1639,8 @@
               dots: true,
               autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="align-items-center justify-content-start position-absolute carousel-control-prev opacity-100 z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-prev-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="align-items-center justify-content-end position-absolute carousel-control-next opacity-100 z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-next-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
@@ -1480,8 +1675,8 @@
               dots: true,
               // autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="align-items-center justify-content-start position-absolute carousel-control-prev opacity-100 z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-prev-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="align-items-center justify-content-end position-absolute carousel-control-next opacity-100 z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-next-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
@@ -1522,8 +1717,8 @@
               arrows: true,
               // autoplay: true,
               autoplaySpeed: 5000,
-              prevArrow: '<button class="carousel-control-prev opacity-100 position-absolute justify-content-start align-items-center z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
-              nextArrow: '<button class="carousel-control-next opacity-100 position-absolute justify-content-end align-items-center z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon-castom rounded-pill d-flex justify-content-center align-items-center shadow-lg " style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              prevArrow: '<button class="align-items-center justify-content-start position-absolute carousel-control-prev opacity-100 z-2" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="prev"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-prev-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(180deg);" viewBox="0 0 17 14" fill="d-none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
+              nextArrow: '<button class="align-items-center justify-content-end position-absolute carousel-control-next opacity-100 z-5" type="button" data-bs-target="#specialistsCarousel" data-bs-slide="next"><span class="d-flex align-items-center justify-content-center rounded-pill shadow-lg carousel-control-next-icon-castom" style="width: 50px;height: 50px;" aria-hidden="true"><svg class="rounded-pill" style="width: 20px; height: 20px; transform: rotateZ(0deg);" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7H15.5M15.5 7L9.5 1M15.5 7L9.5 13" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>',
               responsive: [
                   {
                       breakpoint: 1400,
