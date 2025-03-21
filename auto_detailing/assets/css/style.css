@@ -236,6 +236,7 @@ button{
 }
 
 .slick-track{
+  height: max-content;
   display: flex;
 }
 .licenses-certificates .slick-dots li button{
