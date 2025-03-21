@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'CentroSansPro-Regular';
+  src: url(../fonts/PFCentroSansPro-Regular.ttf);
+}
+@font-face {
+  font-family: 'CentroSansPro-Bold';
+  src: url(../fonts/PFCentroSansPro-Bold.ttf);
+}
+@font-face {
+  font-family: 'CentroSansPro-Black';
+  src: url(../fonts/PFCentroSansPro-Black.ttf);
+}
+@font-face {
+  font-family: 'CentroSansPro-Light';
+  src: url(../fonts/PFCentroSansPro-Light.ttf);
+}
+@font-face {
+  font-family: 'CentroSansPro-Medium';
+  src: url(../fonts/PFCentroSansPro-Medium.ttf);
+}
+@font-face {
+  font-family: 'CentroSansPro-Thin';
+  src: url(../fonts/PFCentroSansPro-Thin.ttf);
+}
+@font-face {
+  font-family: 'CentroSansPro-XThin';
+  src: url(../fonts/PFCentroSansPro-XThin.ttf);
+}
+
+body{
+  font-family: 'CentroSansPro-Regular';
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #000000;
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+button{
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  user-select: none;
+}
+.fs-7{
+  font-size: 14px;
+}
+
+.font-centroSansPro-regular{font-family: 'CentroSansPro-Regular'}
+.font-centroSansPro-bold{font-family: 'CentroSansPro-Bold';}
+.font-centroSansPro-black{font-family: 'CentroSansPro-Black';}
+.font-centroSansPro-light{font-family: 'CentroSansPro-Light';}
+.font-centroSansPro-medium{font-family: 'CentroSansPro-Medium';}
+.font-centroSansPro-thin{font-family: 'CentroSansPro-Thin';}
+.font-centroSansPro-xthin{font-family: 'CentroSansPro-XThin';}
