@@ -18,6 +18,29 @@ module.exports = {
         '6/8': '75%',
         '7/8': '87.5%',
         '8/8': '100%',
+        'article-w': '600px',
+      },
+      minWidth: {
+        'article-w': '600px',
+      },
+      maxWidth: {
+        'article-w': '600px',
+      },
+      height: {
+        'btn': '3.75rem',
+        'hero-block': '100vh',
+        'our-solutions-inner': '810px',
+      },
+      minHeight: {
+        'our-solutions-inner': '810px',
+        'our-solutions-set': '810px',
+      },
+      maxHeight: {
+        'our-solutions-inner': '1500px',
+        'our-solutions-set': '1500px',
+      },
+      screens: {
+        'max-860': { 'max': '860px' },
       },
       colors: {
         red: {
@@ -33,7 +56,11 @@ module.exports = {
           1: '#202020',
           2: '#494A4E',
           3: '#E6E3DE',
+          4: '#EAEAEA',
         },
+        'castom-gold': '#8E7517',
+
+
       },
       spacing: {
         '1/2': '50%',
@@ -44,6 +71,7 @@ module.exports = {
         '4': '1rem',
         '5': '1.25rem',
         '6': '1.5rem',
+        '6/7': '1.375rem',
         '7': '1.75rem',
         '8': '2rem',
         '9': '2.25rem',
@@ -154,23 +182,6 @@ module.exports = {
           '2xl': '96rem',
         },
       },
-      colors: {
-        red: {
-          500: 'oklch(0.637 0.237 25.331)',
-        },
-        blue: {
-          400: 'oklch(0.707 0.165 254.624)',
-        },
-        black: '#000',
-        white: '#fff',
-        brand: '#FFC800',
-        grey: {
-          1: '#202020',
-          2: '#494A4E',
-          3: '#E6E3DE',
-          4: '#EAEAEA',
-        },
-      },
       backgroundImage: {
         'hero-block': "url('../assets/img/pages-home/bg-hero-block.png')",
         'bg-items': "url('../assets/img/pages-home/bg-items.png')",
@@ -180,22 +191,6 @@ module.exports = {
       },
       backgroundSize: {
         'hero-block-size': '171%',
-      },
-      height: {
-        'btn': '3.75rem',
-        'hero-block': '100vh',
-        'our-solutions-inner': '810px',
-      },
-      minHeight: {
-        'our-solutions-inner': '810px',
-        'our-solutions-set': '810px',
-      },
-      maxHeight: {
-        'our-solutions-inner': '1500px',
-        'our-solutions-set': '1500px',
-      },
-      screens: {
-        'max-860': { 'max': '860px' },
       },
       order: {
         1: '1',
