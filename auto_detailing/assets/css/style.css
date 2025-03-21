@@ -211,9 +211,6 @@ button{
   }
 }
 
-
-
-
 .slider {
     max-width: 1400px;
     margin: 0 auto;
@@ -227,13 +224,11 @@ button{
     padding: 15px;
     width: 100%;
 }
-
-@media (max-width:300px) {
-  .slick-slide a{
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+.slick-slide{
+  max-width: 300px;
+  min-height: 350px;
 }
+
 
 .slick-track{
   height: max-content;
