@@ -6,17 +6,20 @@ body{
   padding: 0;
   font-family: 'inter-regular';
 }
-.inner__main{
-  position: relative;
-  z-index: 100;
-}
-/* *{border: 1px solid red;} */
 .header{
   transition: 0.3s;
   background-color: transparent;
   z-index: 10000;
 }
+.online-order{
+  z-index: 10000;
+}
 
+.inner__main{
+  position: relative;
+  z-index: 100;
+}
+/* *{border: 1px solid red;} */
 .burger-menu{
   width: 50px;
   height: 40px;

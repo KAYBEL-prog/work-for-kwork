@@ -49,7 +49,18 @@ button{
 .fs-7{
   font-size: 14px;
 }
-
+.fs-8{
+  font-size: 12px;
+}
+.rounded-4{
+  border-radius: 5px;
+}
+.bg-black{
+  background-color: black;
+}
+.order-6{order: 6;}
+.order-7{order: 7;}
+.order-8{order: 8;}
 .font-centroSansPro-regular{font-family: 'CentroSansPro-Regular'}
 .font-centroSansPro-bold{font-family: 'CentroSansPro-Bold';}
 .font-centroSansPro-black{font-family: 'CentroSansPro-Black';}

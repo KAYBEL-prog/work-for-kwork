@@ -7,3 +7,21 @@
 }
 .inner__header_btn-burger_menu svg{margin-right: 10px;}
 .inner__header_btn-burger_menu p{line-height: 100%;}
+
+.inner__header_form-search{
+
+}
+.inner__header_form-search input{
+  padding-left: 55px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  
+}
+.inner__header_form-search button{
+  margin-left: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 35px;
+  padding-right: 35px;
+  
+}
