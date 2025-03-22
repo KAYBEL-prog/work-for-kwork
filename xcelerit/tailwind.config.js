@@ -173,6 +173,7 @@ module.exports = {
         xl: '80rem',
         '2xl': '96rem',
       },
+
       container: {
         center: true,
         padding: '0rem',
@@ -194,6 +195,9 @@ module.exports = {
       },
       backgroundSize: {
         'hero-block-size': '171%',
+      },
+      borderRadius: {
+        'dropdown': "20px",
       },
       order: {
         1: '1',
