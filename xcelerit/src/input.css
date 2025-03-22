@@ -33,8 +33,22 @@
     /* color: #fff; */
   }
 
-  .list-style-image-tick-financial{
-    list-style-image: url(../assets/img/pages-financial/icon_for-list.svg);
+  .list-style-image-tick-financial::before{
+    content: '';
+    position: relative;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/img/pages-financial/icon_for-list.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+
+    display: inline-block;
+    box-sizing: border-box;
   }
 
 

@@ -468,6 +468,9 @@
   .my-20 {
     margin-block: 5rem;
   }
+  .-mt-16 {
+    margin-top: calc(4rem * -1);
+  }
   .-mt-32 {
     margin-top: calc(8rem * -1);
   }
@@ -476,6 +479,9 @@
   }
   .mt-1 {
     margin-top: 0.25rem;
+  }
+  .mt-2 {
+    margin-top: 0.5rem;
   }
   .mt-3 {
     margin-top: 0.75rem;
@@ -509,6 +515,9 @@
   }
   .mt-auto {
     margin-top: auto;
+  }
+  .-mr-40 {
+    margin-right: calc(10rem * -1);
   }
   .mr-0 {
     margin-right: calc(var(--spacing) * 0);
@@ -573,6 +582,9 @@
   .mb-36 {
     margin-bottom: 9rem;
   }
+  .-ml-40 {
+    margin-left: calc(10rem * -1);
+  }
   .ml-1\.5 {
     margin-left: calc(var(--spacing) * 1.5);
   }
@@ -584,9 +596,6 @@
   }
   .ml-6 {
     margin-left: 1.5rem;
-  }
-  .ml-7 {
-    margin-left: 1.75rem;
   }
   .box-border {
     box-sizing: border-box;
@@ -762,6 +771,12 @@
   .w-2\/2 {
     width: calc(2/2 * 100%);
   }
+  .w-2\/5 {
+    width: calc(2/5 * 100%);
+  }
+  .w-3\/7 {
+    width: 42.8571429%;
+  }
   .w-4 {
     width: 1rem;
   }
@@ -936,6 +951,10 @@
   }
   .rotate-none {
     rotate: none;
+  }
+  .rotate-y-180 {
+    --tw-rotate-y: rotateY(180deg);
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
@@ -1826,8 +1845,23 @@
   .pb-0 {
     padding-bottom: calc(var(--spacing) * 0);
   }
+  .pb-1 {
+    padding-bottom: 0.25rem;
+  }
+  .pb-3 {
+    padding-bottom: 0.75rem;
+  }
+  .pb-4 {
+    padding-bottom: 1rem;
+  }
   .pb-5 {
     padding-bottom: 1.25rem;
+  }
+  .pb-7 {
+    padding-bottom: 1.75rem;
+  }
+  .pb-9 {
+    padding-bottom: 2.25rem;
   }
   .pb-10 {
     padding-bottom: 2.5rem;
@@ -1844,11 +1878,17 @@
   .pl-0 {
     padding-left: calc(var(--spacing) * 0);
   }
+  .pl-2 {
+    padding-left: 0.5rem;
+  }
   .pl-3 {
     padding-left: 0.75rem;
   }
   .pl-5 {
     padding-left: 1.25rem;
+  }
+  .pl-6 {
+    padding-left: 1.5rem;
   }
   .text-center {
     text-align: center;
@@ -1991,6 +2031,10 @@
   .font-semibold {
     --tw-font-weight: 600;
     font-weight: 600;
+  }
+  .-tracking-wide {
+    --tw-tracking: calc(0.025em * -1);
+    letter-spacing: calc(0.025em * -1);
   }
   .tracking-widest {
     --tw-tracking: 0.1em;
@@ -2573,6 +2617,11 @@
       margin-top: 0.75rem;
     }
   }
+  .sm\:mt-11 {
+    @media (width >= 40rem) {
+      margin-top: 2.75rem;
+    }
+  }
   .sm\:mt-12 {
     @media (width >= 40rem) {
       margin-top: 3rem;
@@ -2616,6 +2665,11 @@
   .sm\:mb-20 {
     @media (width >= 40rem) {
       margin-bottom: 5rem;
+    }
+  }
+  .sm\:block {
+    @media (width >= 40rem) {
+      display: block;
     }
   }
   .sm\:h-6 {
@@ -2728,6 +2782,11 @@
       padding-right: calc(var(--spacing) * 52);
     }
   }
+  .sm\:pl-5 {
+    @media (width >= 40rem) {
+      padding-left: 1.25rem;
+    }
+  }
   .sm\:text-base {
     @media (width >= 40rem) {
       font-size: var(--text-base);
@@ -2798,6 +2857,11 @@
       margin-bottom: calc(var(--spacing) * 0);
     }
   }
+  .md\:mb-2\.5 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 2.5);
+    }
+  }
   .md\:mb-3 {
     @media (width >= 48rem) {
       margin-bottom: 0.75rem;
@@ -2813,6 +2877,11 @@
       margin-bottom: 1.25rem;
     }
   }
+  .md\:mb-16 {
+    @media (width >= 48rem) {
+      margin-bottom: 4rem;
+    }
+  }
   .md\:mb-20 {
     @media (width >= 48rem) {
       margin-bottom: 5rem;
@@ -2821,6 +2890,11 @@
   .md\:ml-0 {
     @media (width >= 48rem) {
       margin-left: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
     }
   }
   .md\:flex {
@@ -2838,9 +2912,9 @@
       height: 3rem;
     }
   }
-  .md\:h-96 {
+  .md\:min-h-96 {
     @media (width >= 48rem) {
-      height: 24rem;
+      min-height: 24rem;
     }
   }
   .md\:w-1\/2 {
@@ -2856,6 +2930,16 @@
   .md\:w-3\/7 {
     @media (width >= 48rem) {
       width: 42.8571429%;
+    }
+  }
+  .md\:w-4\/7 {
+    @media (width >= 48rem) {
+      width: 57.1428571%;
+    }
+  }
+  .md\:w-5\/7 {
+    @media (width >= 48rem) {
+      width: 71.4285714%;
     }
   }
   .md\:w-12 {
@@ -2962,6 +3046,11 @@
       padding-block: 3rem;
     }
   }
+  .md\:pt-16 {
+    @media (width >= 48rem) {
+      padding-top: 4rem;
+    }
+  }
   .md\:pt-24 {
     @media (width >= 48rem) {
       padding-top: 6rem;
@@ -2995,6 +3084,11 @@
   .md\:pb-20 {
     @media (width >= 48rem) {
       padding-bottom: 5rem;
+    }
+  }
+  .md\:pb-24 {
+    @media (width >= 48rem) {
+      padding-bottom: 6rem;
     }
   }
   .md\:pb-28 {
@@ -3121,6 +3215,11 @@
       margin-left: calc(var(--spacing) * 0);
     }
   }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
@@ -3221,9 +3320,9 @@
       justify-content: flex-end;
     }
   }
-  .lg\:gap-x-44 {
+  .lg\:gap-x-40 {
     @media (width >= 64rem) {
-      column-gap: calc(var(--spacing) * 44);
+      column-gap: 10rem;
     }
   }
   .lg\:overflow-x-auto {
@@ -3276,9 +3375,19 @@
       padding-block: 10rem;
     }
   }
+  .lg\:pt-0 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 0);
+    }
+  }
   .lg\:pr-96 {
     @media (width >= 64rem) {
       padding-right: 24rem;
+    }
+  }
+  .lg\:pb-0 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 0);
     }
   }
   .lg\:pl-1 {
@@ -3321,6 +3430,11 @@
   .xl\:w-3\/6 {
     @media (width >= 80rem) {
       width: calc(3/6 * 100%);
+    }
+  }
+  .xl\:w-3\/7 {
+    @media (width >= 80rem) {
+      width: 42.8571429%;
     }
   }
   .xl\:bg-left {
@@ -3384,8 +3498,21 @@
   .list-style-image-arrow-white {
     list-style-image: url(../assets/img/icons/Bullet-white.svg);
   }
-  .list-style-image-tick-financial {
-    list-style-image: url(../assets/img/pages-financial/icon_for-list.svg);
+  .list-style-image-tick-financial::before {
+    content: '';
+    position: relative;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/img/pages-financial/icon_for-list.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 @property --tw-translate-x {

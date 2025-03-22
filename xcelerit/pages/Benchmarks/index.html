@@ -22,10 +22,10 @@
                 </svg>
               </a>
               <nav class="hidden md:flex text-black font-sans font-medium h-max">
-                <a href="#" class="text-base font-bold px-5">About Us</a>
-                <a href="#" class="text-base font-bold px-5">Solutions</a>
-                <a href="#" class="text-base font-bold px-5">Careers</a>
-                <a href="#" class="text-base font-bold px-5">Resources</a>
+                <a href="#" class="text-base font-bold -tracking-wide px-5">About Us</a>
+                <a href="#" class="text-base font-bold -tracking-wide px-5">Solutions</a>
+                <a href="#" class="text-base font-bold -tracking-wide px-5">Careers</a>
+                <a href="#" class="text-base font-bold -tracking-wide px-5">Resources</a>
               </nav> 
               <nav class="hidden lg:flex items-center ">
                 <button id="btn-search" class="btn-search mr-6">
@@ -57,7 +57,7 @@
           <main>
             <div class="inner__main">
               <section>
-                <div class="relative z-20 pt-32 md:pt-40 pb-40 md:pb-20 h-max resources-title bg-grey-3">
+                <div class="relative z-20 pt-32 md:pt-40 pb-40 md:pb-28 h-max resources-title bg-grey-3">
                   <nav class="container flex flex-nowrap mt-3 px-3.5 md:px-0 overflow-hidden">
                     <a href="#" class="flex flex-nowrap items-center pr-2 opacity-50">
                       <p class="h-max text-sm md:text-base text-black font-medium text-nowrap mr-2">Home</p>
@@ -98,7 +98,7 @@
                     <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-4 md:mt-6">
                       There are many studies and publications claiming large speedups on High Performance Computing (HPC) hardware. The reality is that pretty much all kinds of speedups can be reported depending on the baseline used… What does this mean in practice? How should one interpret these numbers? And – more importantly – what should be the baseline to compare to? To help clear the confusion we will try to shed some light on this. We will also give our recommendations on how to choose a “fair baseline” and how to report benchmark results.
                     </p>
-                    <img class=" mt-4 md:mt-9" src="../../assets/img/page-benchmarks/image-1.jpg" alt="img-1">
+                    <img class=" mt-1 md:mt-9" src="../../assets/img/page-benchmarks/image-1.jpg" alt="img-1">
                     <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-6 md:mt-9">
                       There are many ways to tweak benchmark results to make them look more favourable. For GPU benchmarks for example, only the pure computation on the GPU for a single kernel execution could be measured, single precision could be used, or the CPU baseline may not be optimised at all and intentionally left inefficient, to name just a few. This article: 
                       <br>
@@ -111,61 +111,66 @@
                   </div>
                   <div class="mx-6 md:mx-0 mt-6 md:mt-9 h-max">
                     <h2 class="title text-2xl md:text-h4 font-semibold">Use a reasonably-optimised baseline</h2>
-                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-5">
+                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-4 md:mt-6">
                       It is certainly not fair to use intentionally inefficient baselines for comparison, but it is also not worth fine-tuning the code using intrinsics to get the absolute maximum performance for the baseline. Basically, the baseline code should reflect a level of optimisation that an average user would perform. No more and no less. However, this also applies to the code it gets compared to – spending months on fine-tuning GPU code to bits is certainly not what the average user would do and therefore not a fair comparison either.
                     </p>
                   </div>
                   <div class="mx-6 md:mx-0 mt-6 md:mt-9 h-max">
                     <h2 class="title text-2xl md:text-h4 font-semibold">Prefer full user applications</h2>
-                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-5">
+                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-4 md:mt-6">
                       Only measuring the speedup of the pure computation, without considering the setup overhead, data transfers, synchronisation, etc. is not a fair comparison and meaningless to users. Benchmarks should always look at a full application, starting the clock before passing the inputs and stopping it when the result is available and ready to use. This is what really matters to users and makes it fair when comparing to the baseline.
                     </p>
                   </div>
                   <div class="mx-6 md:mx-0 mt-6 md:mt-9 h-max">
                     <h2 class="title text-2xl md:text-h4 font-semibold">Clearly state used compilers and environment</h2>
-                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-5">
+                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-4 md:mt-6">
                       Not only the system’s hardware configuration affects the performance, but also the software and tools used. For example, moving from Visual C++ 2013 to 2015 can make a huge performance difference on some code, and the compiler flags used are equally important. As a particular example, the “fast math” optimization, allowing compilers to violate some IEEE floating point rules for better performance, can make a big difference. The same applies for the operating system, the C library or other libraries used, GPU driver versions and CUDA toolkit versions, etc. Vendors constantly improve the performance and the optimisations applied in new versions of tools and drivers and it is therefore important that the used toolset is clearly stated with the benchmark results.
                     </p>
                   </div>
                   <div class="mx-6 md:mx-0 mt-6 md:mt-9 h-max">
                     <h2 class="title text-2xl md:text-h4 font-semibold">Clearly mention the baseline used</h2>
-                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-5">
+                    <p class="text-base md:text-lg font-normal leading-6/7 md:leading-7 mt-4 md:mt-6">
                       Overall it doesn’t really matter which baseline you are using, as long as you clearly say it. If you compare to a sequential unoptimised baseline, that is fine, but indicate what level of optimisations it went through when publishing benchmarks.
                     </p>
                   </div>
                 </div>
               </section>
               <section>
-                <div class="container h-max flex bg-brand mt-20 mb-0 md:mb-20 ">
-                  <div class="h-max pt-20 md:pt-24 pb-0 md:pb-28 relative z-20 flex flex-wrap container bg-bg-items bg-no-repeat bg-left-bottom">
-                    <div class="w-full h-max mb-5 md:mb-20 px-2 sm:px-5 ">
-                      <h2 class="text-h4 lg:text-h2 text-center font-semibold leading-9  md:leading-16 ml-1.5 ">
+                <div class="container h-max flex bg-brand mt-10 mb-0 md:mb-20 ">
+                  <div class="h-max pt-20 md:pt-16 pb-0 md:pb-20 relative z-20 flex flex-wrap container ">
+                    <div class="w-full h-full flex justify-between absolute -mt-16 z-10 overflow-hidden">
+                      <div class="w-2/5 h-full bg-bg-items -ml-40 bg-no-repeat bg-contain bg-bottom"></div>
+                      <div class="w-2/5 h-full bg-bg-items -mr-40 bg-no-repeat bg-contain bg-bottom rotate-y-180"></div>
+                    </div>
+                    <div class="w-full h-max mb-5 md:mb-16 px-2 sm:px-5 z-20">
+                      <h2 class="text-h4 lg:text-h2 text-center font-semibold leading-9 md:leading-16 ml-1.5 ">
                         Stay Informed, stay Connected!
                       </h2>
-                      <p class="md:w-96 mx-auto text-base md:text-lg text-center font-normal mt-5 md:mt-7">
+                      <p class="mx-auto text-base md:text-lg text-center font-normal mt-4 md:mt-7">
                         Subscribe to our newsletter, for exclusive updates,
+                        <br class="hidden sm:block">
                         insights and exciting content
                       </p>
                     </div>
-                    <div class="w-full h-max mx-auto mb-10 px-5 lg:px-64 xl:px-80 py-5 lg:py-0">
-                      <form class="w-full px-0">
-                        <div class="flex flex-wrap md:flex-nowrap space-x-0 md:space-x-4 mb-0 md:mb-4">
+                    <div class="w-full h-max mx-auto mb-10 px-5 pb-7 lg:pb-0 pt-5 lg:pt-0 z-20">
+                      <form class="md:w-5/7 xl:w-3/7 mx-auto px-0">
+                        <div class="flex flex-wrap md:flex-nowrap space-x-0 md:space-x-4 mb-0 md:mb-2.5">
                             <div class="w-2/2 md:w-1/2 mb-5 md:mb-3">
                                 <label class="block text-xs text-black tracking-widest uppercase font-extrabold mb-3.5">First name</label>
-                                <input type="text" placeholder="Enter first name" class="w-full pl-5 py-2.5 bg-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-400">
+                                <input type="text" placeholder="Enter first name" class="w-full pl-6 py-3 text-base font-medium bg-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>
                             <div class="w-2/2 md:w-1/2 mb-5 md:mb-3">
                                 <label class="block text-xs text-black tracking-widest uppercase font-extrabold mb-3.5">Last name</label>
-                                <input type="text" placeholder="Enter last name" class="w-full pl-5 py-2.5 bg-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-400">
+                                <input type="text" placeholder="Enter last name" class="w-full pl-6 py-3 text-base font-medium bg-white rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-400">
                             </div>      
                         </div>
 
                         <div class="mb-7 md:mb-3">
                             <label class="block text-xs text-black tracking-widest uppercase font-extrabold mb-3.5">Email</label>
-                            <input type="email" placeholder="Enter email address" class="w-full pl-5 py-2.5 bg-white rounded-3xl focus:outline-none">
+                            <input type="email" placeholder="Enter email address" class="w-full pl-6 py-3 text-base font-medium bg-white rounded-3xl focus:outline-none">
                         </div>
-                        <button id="#" type="submit" class="bg-grey-1 w-full px-10 md:px-7 py-4 mt-5 mb-3 sm:mt-12 rounded-full flex items-center justify-center ">
-                          <span class="font-semibold text-white text-base text-left mr-6 leading-5">Subscribe</span>
+                        <button id="#" type="submit" class="bg-grey-1 w-full px-10 md:px-7 py-4  mb-3 mt-5 sm:mt-11 rounded-full flex items-center justify-center ">
+                          <span class="text-white text-base font-semibold text-left mr-6 leading-5">Subscribe</span>
                           <svg class="w-7 h-7 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 16.8995L16.8995 7M16.8995 7L7 7M16.8995 7V16.8995" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
                           </svg>
