@@ -32,10 +32,12 @@ module.exports = {
         'our-solutions-inner': '810px',
       },
       minHeight: {
+        'hero-block': '870px',
         'our-solutions-inner': '810px',
         'our-solutions-set': '810px',
       },
       maxHeight: {
+        'hero-block': '870px',
         'our-solutions-inner': '1500px',
         'our-solutions-set': '1500px',
       },
@@ -184,6 +186,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-block': "url('../assets/img/pages-home/bg-hero-block.png')",
+        'hero-block2': "url('../assets/img/bg-hero-block2.png')",
         'bg-items': "url('../assets/img/pages-home/bg-items.png')",
         'bgwhy-xcelerit': "url('../assets/img/pages-home/bg-hero-block__why-xcelerit.png')",
         'resources-insights': "url('../assets/img/bgbg.png')",
