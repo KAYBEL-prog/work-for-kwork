@@ -95,7 +95,7 @@ $('.slider_3').slick({
 $('.slider_4').slick({
   slidesToShow: 7,
   slidesToScroll: 1,
-
+  variableWidth: true,
   draggable: false,
   swipe: false,
   touchMove: false,
