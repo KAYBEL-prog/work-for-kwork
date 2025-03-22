@@ -3107,6 +3107,11 @@
       padding-block: calc(var(--spacing) * 0);
     }
   }
+  .md\:py-1 {
+    @media (width >= 48rem) {
+      padding-block: 0.25rem;
+    }
+  }
   .md\:py-3 {
     @media (width >= 48rem) {
       padding-block: 0.75rem;
