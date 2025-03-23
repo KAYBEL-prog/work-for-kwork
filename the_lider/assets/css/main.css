@@ -26,6 +26,14 @@
   font-family: 'CentroSansPro-XThin';
   src: url(../fonts/PFCentroSansPro-XThin.ttf);
 }
+.font-centroSansPro-regular{font-family: 'CentroSansPro-Regular'}
+.font-centroSansPro-bold{font-family: 'CentroSansPro-Bold';}
+.font-centroSansPro-black{font-family: 'CentroSansPro-Black';}
+.font-centroSansPro-light{font-family: 'CentroSansPro-Light';}
+.font-centroSansPro-medium{font-family: 'CentroSansPro-Medium';}
+.font-centroSansPro-thin{font-family: 'CentroSansPro-Thin';}
+.font-centroSansPro-xthin{font-family: 'CentroSansPro-XThin';}
+
 
 body{
   font-family: 'CentroSansPro-Regular';
@@ -58,13 +66,4 @@ button{
 .bg-black{
   background-color: black;
 }
-.order-6{order: 6;}
-.order-7{order: 7;}
-.order-8{order: 8;}
-.font-centroSansPro-regular{font-family: 'CentroSansPro-Regular'}
-.font-centroSansPro-bold{font-family: 'CentroSansPro-Bold';}
-.font-centroSansPro-black{font-family: 'CentroSansPro-Black';}
-.font-centroSansPro-light{font-family: 'CentroSansPro-Light';}
-.font-centroSansPro-medium{font-family: 'CentroSansPro-Medium';}
-.font-centroSansPro-thin{font-family: 'CentroSansPro-Thin';}
-.font-centroSansPro-xthin{font-family: 'CentroSansPro-XThin';}
+

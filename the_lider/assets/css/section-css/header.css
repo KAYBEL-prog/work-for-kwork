@@ -15,7 +15,11 @@
   padding-left: 55px;
   padding-top: 12px;
   padding-bottom: 12px;
-  
+}
+@media (max-width:767px) {
+  .inner__header_form-search input{
+    padding-left: 40px;
+  }
 }
 .inner__header_form-search button{
   margin-left: 25px;
