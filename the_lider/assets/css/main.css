@@ -34,7 +34,7 @@
 .font-centroSansPro-thin{font-family: 'CentroSansPro-Thin';}
 .font-centroSansPro-xthin{font-family: 'CentroSansPro-XThin';}
 
-
+/* *{border:0.1px solid red ;} */
 body{
   font-family: 'CentroSansPro-Regular';
   margin: 0;
@@ -54,6 +54,11 @@ button{
   color: #000000;
   user-select: none;
 }
+
+.opacity-50{
+  opacity: 0.5;
+}
+
 .fs-7{
   font-size: 14px;
 }
@@ -66,4 +71,30 @@ button{
 .bg-black{
   background-color: black;
 }
+.bg-gray{
+  background-color: #CCCCCC;
+}
+.text-dark{
+  color: black;
+}
 
+.single-item ul.slick-dots li button::before {
+  width: 15px;
+  height: 15px;
+  color: #000000;
+}
+.slick-dots{
+  width: 80%;
+  height: 15px;
+  color: #000000;
+}
+.single-item-2 .slick-list{
+  width: 100%;
+}
+@media (min-width:786px) {
+  .slick-dots{
+    width: 100%;
+    height: 15px;
+    color: #000000;
+  }
+}
