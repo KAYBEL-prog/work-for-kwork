@@ -58,6 +58,9 @@ button{
 .opacity-50{
   opacity: 0.5;
 }
+.fs-5-6{
+  font-size: 18px;
+}
 .fs-7{
   font-size: 14px;
 }
@@ -70,12 +73,28 @@ button{
 .bg-black{
   background-color: black;
 }
-.bg-gray{
+.bg-gray-50{
   background-color: #CCCCCC;
 }
-.text-dark{
+.bg-gray{
+  background-color: #B3B3B3;
+}
+.bg-gray-800{
+  background-color: #666666;
+}
+
+
+.text-black{
   color: black;
 }
+.w-max{
+  width: max-content;
+}
+.h-max{
+  height: max-content;
+}
+
+
 
 .single-item ul.slick-dots li button::before {
   width: 15px;
@@ -95,5 +114,223 @@ button{
     width: 100%;
     height: 15px;
     color: #000000;
+  }
+}
+
+.modal-dialog-castom{
+  min-width: 100vw;
+  max-width: 1170px;
+  height: max-content;
+}
+
+.forms-delivery__form{
+  width: 100%;
+}
+.forms-delivery{
+  width: 100%;
+  height: max-content;
+  min-width: none;
+  max-width: none;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.forms-delivery-modal-title__logo{
+  display: block;
+}
+.block-price{
+  margin-top: 20px;
+  width: 100%;
+  height: max-content;
+
+  max-width: none;
+  min-width: none;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.modal-title__logo{
+  display: none;
+}
+.forms-delivery-modal__inner{
+  width: 100vw;
+  height: max-content;
+}
+.form-delivery__yamaps{
+  height: 100%;
+}
+@media (min-width:1200px) {
+  .modal-dialog-castom{
+    max-width: 100vw;
+    min-width: 1170px;
+    height: auto;
+  }
+}
+@media (min-width:1090px) {
+  .forms-delivery-modal-title__logo{
+    display: none;
+  }
+  .block-price{
+    margin-top: 0;
+  }
+  .modal-title__logo{
+    display: block;
+  }
+  .forms-delivery-modal__inner{
+    height: 100%;
+  }
+  .block-price{
+    width: 100%;
+    height: max-content;
+  
+    max-width: 390px;
+    min-width: 390px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .forms-delivery{
+    width: 100%;
+    height: max-content;
+    min-width: 700px;
+    max-width: 700px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width:786px) {
+  .slick-dots{
+    width: 100%;
+    height: 15px;
+    color: #000000;
+  }
+
+}
+
+
+.form-delivery-payment_upper-navigation>div span{
+  display: block;
+  width: calc(100% * 1/3);
+  opacity: 0.3;
+}
+.form-delivery-payment_upper-navigation>div span.active{
+  display: block;
+  width: calc(100% * 1/3);
+  opacity: 1;
+}
+@media (max-width:576px) {
+  .form-delivery-payment_upper-navigation>div span{
+    display: none;
+    width: calc(100% * 1/3);
+    opacity: 0.3;
+  }
+}
+
+
+.form-delivery__list-group-item{
+  padding-top: 11px;
+  padding-bottom: 11px; 
+  border: 1px solid #B3B3B3;
+}
+.form-delivery__list-group-item input[type="radio"] {
+  display: none;
+}
+.form-delivery__list-group-item:has(input:checked) {
+  background-color: #666666;
+  color: #fff;
+  transition:  background 0.1s;
+}
+.form-delivery_btn-delivery_time{
+  padding-top: 11px;
+  padding-bottom: 11px; 
+  background: #121212;
+}
+.form-delivery_btn-delivery_time-btn{
+  padding-top: 11px;
+  padding-bottom: 11px; 
+  background: #121212;
+}
+
+.form-delivery input{
+  box-shadow: none;
+}
+.form-control_castom1{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+.form-control_castom1::placeholder{
+  opacity: 0.5;
+}
+
+/* form-contact*/
+.form-contact-input{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  border-color: #a1a1a1;
+}
+.form-contact-input::placeholder{
+  opacity: 0.5;
+}
+.form-contact-btn1{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.form-contact-btn2{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* form-contact*/
+.list-group-item-castom{
+  border: 2px solid #CCCCCC;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.list-group-item-castom label{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+.list-group-item-castom input[type="radio"] {
+  display: none;
+}
+.list-group-item-castom:has(input:checked) {
+  border: 2px solid #000;
+}
+
+@media (max-width:576px) {
+  .block-price{
+    width: 100%;
+    height: max-content;
+  
+    max-width: none;
+    min-width: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .forms-delivery{
+    width: 100%;
+    height: max-content;
+    min-width: none;
+    max-width: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .form-delivery__yamaps{
+    height: 220px;
+  }
+
+  .form-delivery-payment_upper-navigation>div span{
+    width: 100%;
+    opacity: 0.3;
+  }
+  .form-delivery-payment_upper-navigation>div span.active{
+    width: 100%;
+    opacity: 1;
   }
 }
