@@ -1,3 +1,5 @@
+
+
 .inner__header_btn-burger_menu{
   padding-left: 18px;
   padding-right: 22px;
@@ -8,18 +10,22 @@
 .inner__header_btn-burger_menu svg{margin-right: 10px;}
 .inner__header_btn-burger_menu p{line-height: 100%;}
 
-.inner__header_form-search{
+.inner__header_form-search::before{
+  content: '';
+  position: absolute;
+  margin-left: 10px;
+  width: 40px;
+  height: 45px;
+  background-image: url(../../img/icon/ic24-search.svg);
+  background-repeat: no-repeat;
+  background-size: 50% cover;
+  background-position: center;
 
 }
 .inner__header_form-search input{
   padding-left: 55px;
   padding-top: 12px;
   padding-bottom: 12px;
-}
-@media (max-width:767px) {
-  .inner__header_form-search input{
-    padding-left: 40px;
-  }
 }
 .inner__header_form-search button{
   margin-left: 25px;

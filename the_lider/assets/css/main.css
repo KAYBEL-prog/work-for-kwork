@@ -44,6 +44,10 @@ a{
   color: #000000;
   text-decoration: none;
 }
+a:hover{
+  color:unset;
+  text-decoration: none;
+}
 p{
   margin: 0;
 }
@@ -64,11 +68,26 @@ button{
 .fs-7{
   font-size: 14px;
 }
+.fs-7-8{
+  font-size: 13px;
+}
 .fs-8{
   font-size: 12px;
 }
 .rounded-4{
   border-radius: 5px;
+}
+.bg-green{
+  background-color: #3AB54A;
+}
+.bg-blue{
+  background-color: #0171BC;
+}
+.bg-orange{
+  background-color: #F05B23;
+}
+.bg-red{
+  background-color: #C2272E;
 }
 .bg-black{
   background-color: black;
@@ -82,7 +101,9 @@ button{
 .bg-gray-800{
   background-color: #666666;
 }
-
+.border-gray{
+  border-color: #B3B3B3;
+}
 
 .text-black{
   color: black;
@@ -93,8 +114,6 @@ button{
 .h-max{
   height: max-content;
 }
-
-
 
 .single-item ul.slick-dots li button::before {
   width: 15px;
@@ -109,22 +128,20 @@ button{
 .single-item-2 .slick-list{
   width: 100%;
 }
-@media (min-width:786px) {
-  .slick-dots{
-    width: 100%;
-    height: 15px;
-    color: #000000;
-  }
+.forms-delivery-modal__inner{
+  min-height: 796px;
+  
 }
-
 .modal-dialog-castom{
   min-width: 100vw;
   max-width: 1170px;
   height: max-content;
 }
 
-.forms-delivery__form{
+.forms-delivery{
   width: 100%;
+  min-width: 0;
+  max-width: 0;
 }
 .forms-delivery{
   width: 100%;
@@ -195,7 +212,7 @@ button{
     padding-right: 10px;
   }
 }
-@media (min-width:786px) {
+@media (min-width:768px) {
   .slick-dots{
     width: 100%;
     height: 15px;
@@ -215,18 +232,14 @@ button{
   width: calc(100% * 1/3);
   opacity: 1;
 }
-@media (max-width:576px) {
-  .form-delivery-payment_upper-navigation>div span{
-    display: none;
-    width: calc(100% * 1/3);
-    opacity: 0.3;
-  }
+
+.form-delivery__comment{
+  margin-top: -150px;
 }
 
-
 .form-delivery__list-group-item{
-  padding-top: 11px;
-  padding-bottom: 11px; 
+  padding-top: 12px;
+  padding-bottom: 12px; 
   border: 1px solid #B3B3B3;
 }
 .form-delivery__list-group-item input[type="radio"] {
@@ -243,8 +256,8 @@ button{
   background: #121212;
 }
 .form-delivery_btn-delivery_time-btn{
-  padding-top: 11px;
-  padding-bottom: 11px; 
+  padding-top: 13px;
+  padding-bottom: 13px; 
   background: #121212;
 }
 
@@ -254,6 +267,7 @@ button{
 .form-control_castom1{
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-left: 20px;
   border-color: rgba(0, 0, 0, 0.3);
 }
 .form-control_castom1::placeholder{
@@ -332,5 +346,55 @@ button{
   .form-delivery-payment_upper-navigation>div span.active{
     width: 100%;
     opacity: 1;
+  }
+
+  .form-delivery-payment_upper-navigation>div span{
+    display: none;
+    width: calc(100% * 1/3);
+    opacity: 0.3;
+  }
+  .form-delivery__comment{
+    margin-top: 0px;
+  }
+}
+
+.__basket-fs-5-6{
+  font-size: 18px;
+}
+.__basket-fs-10{
+  font-size: 13px;
+}
+
+.item-basket{
+
+}
+
+
+.item-basket__img{
+  width: 120px;
+  height: 130px;
+}
+.item-basket_discount{
+  width: calc(1/3 * 95%);
+  height: max-content;
+  line-height: 100%;
+}
+.item-basket_discount span{
+  line-height: 0px;
+}
+
+@media (max-width:768px) {
+  /* .item-basket_discount{
+    width:0;
+  } */
+  .__basket-fs-5-6{
+    font-size: 14px;
+  }
+  .__basket-fs-10{
+    font-size: 10px;
+  }
+  .item-basket__img{
+    width: 60px;
+    height: 70px;
   }
 }
