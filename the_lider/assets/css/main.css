@@ -92,8 +92,12 @@ button{
 .bg-black{
   background-color: black;
 }
+
 .bg-gray-50{
   background-color: #CCCCCC;
+}
+.bg-gray-10{
+  background-color: #f5f5f5;
 }
 .bg-gray{
   background-color: #B3B3B3;
@@ -104,10 +108,10 @@ button{
 .border-gray{
   border-color: #B3B3B3;
 }
-
 .text-black{
   color: black;
 }
+
 .w-max{
   width: max-content;
 }
@@ -218,9 +222,7 @@ button{
     height: 15px;
     color: #000000;
   }
-
 }
-
 
 .form-delivery-payment_upper-navigation>div span{
   display: block;
@@ -365,11 +367,6 @@ button{
   font-size: 13px;
 }
 
-.item-basket{
-
-}
-
-
 .item-basket__img{
   width: 120px;
   height: 130px;
@@ -382,7 +379,6 @@ button{
 .item-basket_discount span{
   line-height: 0px;
 }
-
 @media (max-width:768px) {
   /* .item-basket_discount{
     width:0;
@@ -397,4 +393,36 @@ button{
     width: 60px;
     height: 70px;
   }
+}
+
+/* cabinet */
+.navbar-list-hover ul li a{text-decoration: none;}
+.navbar-list-hover ul li a:hover{text-decoration: underline;}
+
+.form-change-info{
+  border: 1px solid #B3B3B3;
+}
+.form-label-castom{
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 10px;
+  background-color: #fff;
+}
+.form-input-castom{
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border: 1px solid #B3B3B3;
+}
+
+.card-favorites-item{
+  width: 100%;
+  min-height: 52px;
+  position: relative;
+  margin-bottom: -50px;
+}
+
+.order-table-castom{
+  width: 100%;
+  max-width: 920px;
+  overflow-x: scroll;
 }
