@@ -413,14 +413,12 @@ button{
   padding-bottom: 14px;
   border: 1px solid #B3B3B3;
 }
-
 .card-favorites-item{
   width: 100%;
   min-height: 52px;
   position: relative;
   margin-bottom: -50px;
 }
-
 .order-table-castom{
   width: 100%;
   max-width: 920px;
