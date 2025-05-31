@@ -87,10 +87,13 @@ header{
   margin-right: 20px;
   font-size: 1rem;
 }
-.nav__menu-link{
+.nav__menu ul li a .nav__menu-link1{
+
+}
+.nav__menu-link1{
   font-family: 'miller-regular';
   text-wrap: nowrap;
-  color: #333333;
+  color: #333333 !important;
 }
 .nav__more-menu{
   height: 60px;
