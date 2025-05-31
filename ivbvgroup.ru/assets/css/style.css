@@ -770,6 +770,13 @@ footer{
   color: #ffffff;
 }
 .middle__footer .nav__menu2 ul li{
+  font-family: 'miller-light';
+  margin-top: 10px;
+  color: #ffffff;
+
+}
+.middle__footer .nav__menu2 ul li{
+  font-family: 'miller-light';
   margin-top: 10px;
   color: #ffffff;
 
@@ -793,7 +800,7 @@ footer{
 .nav__menu-bold-link{
   font-family: 'miller-bold';
   font-size: 18px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: #ffffff;
 }
 .nav__menu-light-link{
