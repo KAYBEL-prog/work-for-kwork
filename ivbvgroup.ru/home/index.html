@@ -8,19 +8,18 @@
           <title>ivbvgroup.ru</title>
         </head>
   <body>
+    
     <header>
       <div class="header">
         <div class="inner__header">
           <div class="logo"></div>
-          <button id="burger-menu" class="burger-menu">
-            <img src="../assets/img/icon/burger-menu.png" alt="burger-menu">
-          </button>
+          
           <nav class="nav__menu">
             <ul>
-              <li><a class="nav__menu-link1" href="#">Программы 1С</a></li>
-              <li><a class="nav__menu-link1" href="#">Услуги</a></li>
-              <li><a class="nav__menu-link1" href="#">Компания</a></li>
-              <li><a class="nav__menu-link1" href="#">Контакты</a></li>
+              <li><a class="nav__menu-link" href="#">Программы 1С</a></li>
+              <li><a class="nav__menu-link" href="#">Услуги</a></li>
+              <li><a class="nav__menu-link" href="#">Компания</a></li>
+              <li><a class="nav__menu-link" href="#">Контакты</a></li>
             </ul>
           </nav>
           <nav class="nav__more-menu">
@@ -30,9 +29,29 @@
               <li><button id="" class="nav__more-menu-btn" ><span>Консультация</span></button></li>
             </ul>
           </nav>
+          <button id="burger-menu" class="burger-menu">
+            <img src="../assets/img/icon/burger-menu.png" alt="burger-menu">
+          </button>
         </div>
       </div>
     </header>
+    <div class="burger-menu-container">
+      <div class="burger-menu-container__inner">
+        <ul>
+          <li><a class="burger-menu-container__inner-link" href="#">Программы 1С</a></li>
+          <li><a class="burger-menu-container__inner-link" href="#">Услуги</a></li>
+          <li><a class="burger-menu-container__inner-link" href="#">Компания</a></li>
+          <li><a class="burger-menu-container__inner-link" href="#">Контакты</a></li>
+          <ul class="burger-menu-container__inner-tel__numb">
+            <li><a class="burger-menu-container__inner-tel" href="tel:+74956496939">7 (495) 649 69 39</a></li>
+            <li><a class="burger-menu-container__inner-tel" href="tel:+79250106639">7 (925) 010 66 39</a></li>
+          </ul>
+          <li><button id="" class="burger-menu-container__inner-btn" ><span>Консультация</span></button></li>
+          
+
+        </ul>
+      </div>
+    </div>
     <main>
       <section>
         <div class="hero-block">
@@ -40,6 +59,9 @@
 
             <div class="inner__hero-block_left">
               <div class="inner__hero-block_left__inner">
+                <div class="inner__hero-block_left__inner-notebook_img__inner">
+                  <div class="inner__hero-block_left__inner-notebook_img"></div>
+                </div>
                 <h1>
                   <span>Автоматизация</span>
                   бизнеса на базе 1С
@@ -219,8 +241,23 @@
           <div class="inner__form-po">
             
             <form action="#" method="get" class="inner__form-po__block">
-              <div class="inner__form-po__block-form1">
+              <div class="inner__form-po__block-form0">
                 <h2 class="inner__form-po__block-title"><span>1.</span>Укажите Вашу отрасль:</h2>
+                <div class="inner__form-po__block-checbox">
+                  <button id="form0-btn" class="inner__form-po__block-checbox__btn">
+                    <span>Выберете Вашу отрасль</span>
+                    <img src="./../assets/img/icon/arrow_blue-down.png" alt="arrow_blue-down">
+                  </button>
+                </div>
+                <div class="inner__form-po__block-btns">
+                  <button id="" disabled class="inner__form-po__block-btn_back">
+                    <img src="./../assets/img/icon/arrow.png" alt="arrow img">
+                  </button>
+                  <button id="" class="inner__form-po__block-btn_next">Продолжить</button>
+                </div>
+              </div>
+              <div class="inner__form-po__block-form1">
+                <h2 class="inner__form-po__block-title"><span>2.</span>Какой участок автоматизируем?</h2>
                 <div class="inner__form-po__block-checbox">
                   <label>
                     <input type="checkbox"/> 
@@ -269,12 +306,14 @@
                   </label>
                 </div>
                 <div class="inner__form-po__block-btns">
-                  <button id="" class="inner__form-po__block-btn_back"></button>
-                  <button id="" class="inner__form-po__block-btn_next">Продолжить</button>
+                  <button id="btn_back1"  class="inner__form-po__block-btn_back">
+                    <img src="./../assets/img/icon/arrow.png" alt="arrow img">
+                  </button>
+                  <button id="btn_next1" class="inner__form-po__block-btn_next">Продолжить</button>
                 </div>
               </div>
               <div class="inner__form-po__block-form2">
-                <h2 class="inner__form-po__block-title"><span>2.</span>Какой участок автоматизируем?</h2>
+                <h2 class="inner__form-po__block-title"><span>3.</span>Какой программный продукт используете или планируете использовать?</h2>
                 <div class="inner__form-po__block-checbox2">
                   <label>
                     <input type="checkbox"/> 
@@ -283,47 +322,54 @@
                   </label>
                   <label><input type="checkbox" />
                     <span class="custom-checkbox"></span> 
-                    Финансовый учет
+                      1С Бухгалтерия
                   </label>
                   <label>
                     <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Управление продажами
+                      1С Зарплата и персонал
                     </label>
                   <label>
                   <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Управление IT
+                      1С Комплексная автоматизация
                     </label>
                   <label>
                   <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Управление ремонтами
+                      1С Управление нашей фирмой
                     </label>
                   <label>
                   <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Управление проектами
+                      1С Управление торговлей
                     </label>
                   <label>
                   <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Бухгалтерский и налоговый учет
+                      1С Управление холдингом
                     </label>
                   <label>
                   <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Управленческий учет
+                      1С ERP Упр. предприятием
                     </label>
                   <label>
                     <input type="checkbox" />
                     <span class="custom-checkbox"></span>
-                     Другое
+                      1С CRM
+                  </label>
+                  <label>
+                    <input type="checkbox" />
+                    <span class="custom-checkbox"></span>
+                      Требуется помощь
                   </label>
                 </div>
                 <div class="inner__form-po__block-btns">
-                  <button id="" class="inner__form-po__block-btn_back"></button>
-                  <button id="" class="inner__form-po__block-btn_next">Продолжить</button>
+                  <button id="btn_back2" class="inner__form-po__block-btn_back">
+                    <img src="./../assets/img/icon/arrow.png" alt="arrow img">
+                  </button>
+                  <button id="btn_next2" class="inner__form-po__block-btn_next">Продолжить</button>
                 </div>
               </div>
               <div class="inner__form-po__block-form3">
@@ -337,8 +383,10 @@
                   </div>
                 </div>
                 <div class="inner__form-po__block-btns">
-                  <button id="" class="inner__form-po__block-btn_back"></button>
-                  <button id="" class="inner__form-po__block-btn_next">Продолжить</button>
+                  <button id="btn_back3" class="inner__form-po__block-btn_back">
+                    <img src="./../assets/img/icon/arrow.png" alt="arrow img">
+                  </button>
+                  <button id="" type="submit" class="inner__form-po__block-btn_next">Отправить заявку</button>
                 </div>
               </div>
             </form>
@@ -478,9 +526,9 @@
               <div class="inner__feedback-form_right__title">Есть вопрос? - Ответим!</div>
               <div class="inner__feedback-form_right__subtitle">Заполните форму ниже</div>
               <form class="inner__feedback-form_right__form">
-                <div class="inner__feedback-form_right__form">
-                  <input type="text" placeholder="Ваше имя" required />
-                  <input type="tel" placeholder="Ваш телефон" required />
+                <div class="inner__feedback-form_right__form__inner">
+                  <input class="inner__feedback-form_right__form-name" type="text" placeholder="Ваше имя" required />
+                  <input class="inner__feedback-form_right__form-tel" type="tel" placeholder="Ваш телефон" required />
                   <textarea class="inner__feedback-form_right__form-textarea" placeholder="Ваше сообщение" required></textarea>
                 </div>
                 <button type="submit">Отправить</button>
@@ -505,8 +553,8 @@
           </nav>
           <nav class="nav__more-menu">
             <ul>
-              <li><a class="nav__more-menu-link_tel1" href="tel:+74956496939">7 (495) 649 69 39</a></li>
-              <li><a class="nav__more-menu-link_tel2" href="tel:+79250106639">7 (925) 010 66 39</a></li>
+              <li><a class="nav__more-menu-link_tel11" href="tel:+74956496939">+7 (495) 649 69 39</a></li>
+              <li><a class="nav__more-menu-link_tel22" href="tel:+79250106639">+7 (925) 010 66 39</a></li>
               <li><button id="" class="nav__more-menu-btn" ><span>Консультация</span></button></li>
             </ul>
           </nav>
@@ -562,4 +610,5 @@
       
     </footer>
   </body>
+  <script src="../assets/js/main.js"></script>
 </html>
