@@ -540,7 +540,7 @@ main{
 }
 
 .inner__form-po__block-checbox__btn{
-  width: 300px;
+  max-width: 300px;
   padding: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -548,6 +548,7 @@ main{
   color: #2563eb;
   font-family: 'miller-medium';
   font-size: 16px;
+  text-align: start;
   border-radius: 999px;
   display: flex;
   justify-content: space-between;
@@ -576,11 +577,11 @@ main{
   padding: 20px;
 }
 .form-group{
-  width: 300px;
+  max-width: 300px;
   margin-top: 10px;
 }
 .inner__form-po__block-form3__inner .form-group input{
-  width: 300px;
+  max-width: 300px;
   padding: 15px;
   border: 1px solid #2563eb;
   border-radius: 999px;
@@ -737,8 +738,8 @@ input[type="checkbox"]:checked + .custom-checkbox:after {
   column-gap: 30px;
 }
 .feedback-from-customers_content-item{
-  width: 380px;
-  height: 500px;
+  max-width: 380px;
+  min-height: 500px;
   background: #FAFAFA;
   border-radius: 20px;
   border:2px #2563eb;
@@ -868,7 +869,7 @@ input[type="checkbox"]:checked + .custom-checkbox:after {
   height: 50px;
   margin-top: 20px;
   border-radius: 999px;
-  background: linear-gradient(60deg, #366CD1,#366CD1,#366CD1, #9EC5EC);
+  background: linear-gradient(60deg, #366CD1, #9EC5EC);
   font-family: 'miller-regular';
   font-size: 16px;
   color: #ffffff;
@@ -879,7 +880,7 @@ input[type="checkbox"]:checked + .custom-checkbox:after {
 
 
 footer{
-  background: linear-gradient(-200deg, #366CD1, #9EC5EC);
+  background: linear-gradient(-190deg, #366CD1,#366CD1, #9EC5EC);
   padding-top: 10px;
   padding-bottom: 51px;
 }
@@ -1186,6 +1187,7 @@ footer{
   }
   .advantages__title{
     text-align: center;
+    font-size: 40px;
   }
   .feedback-from-customers__title{
     text-align: center;
@@ -1291,7 +1293,7 @@ footer{
   }
   .inner__our-services_content-item{
     max-width: 80%;
-    height: 450px;
+    height: 350px;
     background-image: url(./../img/oblect-for-items.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -1302,6 +1304,16 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .inner__our-services_content-item__inner{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  .inner__our-services_content-item_link a{
+    margin-top: 20px;
   }
 
   .inner__promotions-discounts__right{
@@ -1454,7 +1466,6 @@ footer{
    main{
     width: 448px;
   }
-  
   .inner__hero-block {
     height: max-content;
     display: flex;
@@ -1465,7 +1476,6 @@ footer{
     margin:0;
     background-size: contain;
     background-position: bottom;
-    
   }
   .inner__hero-block_left h1 span {
     font-family: 'miller-bold';
@@ -1473,7 +1483,6 @@ footer{
     color: #333333;
   }
   .inner__hero-block_left h1 {
-    
     width: 260px;
     margin:auto;
     font-family: 'miller-bold';
@@ -1596,9 +1605,16 @@ footer{
     font-size: 14px;
   }
   .feedback-from-customers_content-item{
-    width: 310px;
+    width: 300px;
     margin-top: 80px;
-
+  }
+  .feedback-from-customers_content-item__text{
+    margin-top: 20px;
+    padding-bottom: 50px;
+    font-family: 'miller-light';
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
   }
   .inner__our-services_content-item{
     max-width: 70%;
