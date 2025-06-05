@@ -1,0 +1,126 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #000000;
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+button{
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  color: #ffffff;
+  user-select: none;
+}
+header{
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px #ffffff;
+  border-bottom-style: solid;
+}
+
+@font-face {
+  font-family: 'inter-light';
+  src: url(./../fonts/inter/Inter_18pt-Light.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'inter-regular';
+  src: url(./../fonts/inter/Inter_18pt-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'inter-medium';
+  src: url(./../fonts/inter/Inter_18pt-Medium.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'inter-bold';
+  src: url(./../fonts/inter/Inter_18pt-Bold.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.inner__header{
+  max-width: 1440px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+}
+.inner__header-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner__header-nav a{
+  padding: 15px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.inner__header-nav_link_more{
+  color: #000000;
+  font-family: 'inter-bold';
+  text-wrap: nowrap;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.inner__header-nav_link{
+  color: #ffffff;
+  font-family: 'inter-regular';
+}
+.btn_burder-menu{
+  width: 50px;
+  height: 50px;
+  display: none;
+  background-image: url(./../img/icon/menu-burger.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 0;
+}
+main{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+@media (max-width:1200px) {}
+@media (max-width:1200px) {}
+@media (max-width:1152px) {}
+@media (max-width:1024px) {}
+@media (max-width:896px) {
+  .inner__header-nav a{
+    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+@media (max-width:768px) {
+  .inner__header{
+    height: 80px;
+  }
+  .inner__header-nav{
+    display: none;
+  }
+  .btn_burder-menu{
+    display: block;
+  }
+}
+@media (max-width:672px) {}
+@media (max-width:576px) {}
+@media (max-width:512px) {}
+@media (max-width:448px) {}
+@media (max-width:384px) {}
+@media (max-width:320px) {}
