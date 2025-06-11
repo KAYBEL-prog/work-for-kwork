@@ -444,6 +444,9 @@ footer .privacy{
 .title_h1{
   font-family: 'inter-bold';
   font-size: 32px;
+  
+}
+.padd-lr{
   padding-left: 10px;
   padding-right: 10px;
 }
