@@ -195,7 +195,27 @@ header{
   padding-left: 10px;
   padding-right: 10px;
 }
+.text-light span{
+  font-family: 'inter-bold';
+  font-size: 18px;
+  line-height: 150%;
+}
 
+.navigagion_articles{
+  display: flex;
+  align-items: center;
+
+  font-family: 'inter-light';
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.navigagion_articles img{
+  margin-left: 15px;
+  margin-right: 15px;
+}
 .inner_main{
   max-width: 895px;
   margin-top: 20px;
@@ -424,11 +444,22 @@ footer .privacy{
 .title_h1{
   font-family: 'inter-bold';
   font-size: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .title_h2{
   margin-top: 20px;
   font-family: 'inter-bold';
   font-size: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.title_h3{
+  margin-top: 20px;
+  font-family: 'inter-bold';
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .title-center{
   margin-top: 10px;
@@ -441,7 +472,7 @@ footer .privacy{
   margin-top: 20px;
   font-family: 'inter-regular';
   font-size: 20px;
-  line-height: 150%;
+  line-height: 120%;
   padding-left: 10px;
   padding-right: 10px;
 }
