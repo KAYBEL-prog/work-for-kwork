@@ -92,6 +92,9 @@ button{
 .bg-black{
   background-color: black;
 }
+.bg-transparent-black{
+  background-color: rgba(0, 0, 0, 0);
+}
 
 .bg-gray-50{
   background-color: #CCCCCC;
@@ -423,4 +426,38 @@ button{
   width: 100%;
   max-width: 920px;
   overflow-x: scroll;
+}
+
+/* entry cabinet */
+.offcanvas-start-custom {
+  width: 65vw;
+}
+
+@media (max-width:1200px) {
+  .offcanvas-start-custom {
+    width: 90vw;
+  }
+}
+@media (max-width:768px) {
+  .offcanvas-start-custom {
+    width: 100vw;
+  }
+}
+@media (max-width:576px) {
+  .offcanvas-start-custom {
+    width: 10vw;
+  }
+  .offcanvas-start {
+    top: 0;
+    left: inherit;
+    right: 0;
+    width: 400px;
+    transform: translateX(-100%);
+  }
+}
+.modal-entry-cabinet{
+  position: relative;
+  width: 346px;
+  height: 375px;
+  z-index: 9999;
 }
