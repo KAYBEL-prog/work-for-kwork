@@ -428,7 +428,7 @@ button{
   overflow-x: scroll;
 }
 
-/* entry cabinet */
+/* entry cabinet and modal menu */
 .offcanvas-start-custom {
   width: 65vw;
 }
@@ -460,4 +460,19 @@ button{
   width: 346px;
   height: 375px;
   z-index: 9999;
+}
+
+/* slider(carusel) */
+.carousel{
+  max-height: 280px;
+}
+@media(max-width:1400px){
+  .carousel{
+    max-height: 240px;
+  }
+}
+@media(max-width:1090px){
+  .carousel{
+    max-height: 200px;
+  }
 }
