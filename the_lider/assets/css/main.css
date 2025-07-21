@@ -39,6 +39,7 @@ body{
   font-family: 'CentroSansPro-Regular';
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 a{
   color: #000000;
@@ -475,4 +476,21 @@ button{
   .carousel{
     max-height: 200px;
   }
+}
+
+/* complete_solutions */
+.complete_solutions-img_1{
+  background-image: url(../img/img-complete_solutions/img_1.png);
+  background-position: -90px center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* payment */
+.form-check-input:checked[type=checkbox]{
+  background-color: #000;
+  border: #000;
+}
+.form-check-input:focus{
+  border-color: #000;
 }
