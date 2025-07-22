@@ -494,3 +494,15 @@ button{
 .form-check-input:focus{
   border-color: #000;
 }
+/* delivery */
+.delivery-active-btn{
+  background: #000;
+  border-radius: 5px;
+  color: #fff;
+}
+th{
+  padding: 8px 10px;
+}
+tbody > tr:nth-of-type(odd) {
+  background-color: #F6F6F6;
+}
