@@ -1428,15 +1428,22 @@ footer{
 
 
   .portfolio__item {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
 
   }
+  .portfolio__info {
+    width: 100%;
+    min-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   .portfolio__slider{
     width: 50%;
     min-height: 500px;
-    margin-top: 50px;
+    margin-bottom: 50px;
     height: max-content;
     border-radius: 20px;
     background-image: url(../../assets/img/photo/portfolio_img1.png);
@@ -1594,7 +1601,6 @@ footer{
     grid-column: 3 / span 3; 
     grid-row: span 0;
   }
-  
   .block3 {
     grid-column: 0 / span 0; 
     grid-row: span 0;  
@@ -1618,6 +1624,8 @@ footer{
   .done-works-top_right{
     display: none;
   }
+
+
 }
 @media (max-width:1024px) {
   .left-cols {
@@ -1653,20 +1661,14 @@ footer{
   .portfolio__slider{
     width: 100%;
     min-height: 550px;
-    margin-top: 50px;
+    margin-bottom: 50px;
     height: max-content;
     border-radius: 20px;
     background-image: url(../../assets/img/photo/portfolio_img1.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
-  .portfolio__info {
-    width: 100%;
-    min-width: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+
   .portfolio__button{
     display: flex;
     justify-content: center;
@@ -1818,6 +1820,14 @@ footer{
   .logo img{
     width: 300px;
   }
+
+  .portfolio__inner {
+    width: 85%;
+    max-width: 1653px;
+    height: max-content;
+    padding: 10px;
+
+  }
 }
 @media (max-width:760px){
   .left-square{
@@ -1880,12 +1890,12 @@ footer{
   .portfolio__slider{
     width: 100%;
     min-height: 400px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     height: max-content;
     border-radius: 20px;
     background-image: url(../../assets/img/photo/portfolio_img1.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
   .block5 .best-service-line-1_box-text-pair_calculator{
     width: 100%;
@@ -1918,12 +1928,14 @@ footer{
     gap: 10px;
     margin-top: 50px;
   }
+
   .inner__footer{
     width: 90%;
     margin: auto;
     padding-top: 50px;
     margin-top: 50px;
   }
+
 }
 @media (max-width:425px) {
   .slider-title span {
@@ -2114,8 +2126,18 @@ footer{
     font-size: 12px;
     text-wrap: wrap;
   }
+  .portfolio__slider{
+    width: 100%;
+    min-height: 250px;
+    margin-bottom: 10px;
+    height: max-content;
+    border-radius: 20px;
+    background-image: url(../../assets/img/photo/portfolio_img1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   .portfolio__inner {
-    width: 90%;
+    width: 85%;
     max-width: 1653px;
     height: max-content;
     padding: 10px;
