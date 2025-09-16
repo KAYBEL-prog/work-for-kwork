@@ -1233,7 +1233,6 @@ footer{
 
 .portfolio{
   margin-top: 150px;
-  margin-bottom: 150px;
   width: 100%;
 }
 .portfolio .title{
@@ -1847,9 +1846,12 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    font-size: 16px;
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
+  }
+  .portfolio__details p{
+    font-size: 13px;
+
   }
 }
 @media (max-width:520px){
@@ -1867,10 +1869,18 @@ footer{
     font-size: 40px;
     color: var(--white-color);
   }
+  .portfolio__nav h2 {
+    margin: 0;
+    font-size: 24px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    color: var(--white-color);
+    font-weight: 500;
+  }
   .portfolio__slider{
     width: 100%;
     min-height: 400px;
-    margin-top: 50px;
+    margin-top: 10px;
     height: max-content;
     border-radius: 20px;
     background-image: url(../../assets/img/photo/portfolio_img1.png);
@@ -2057,7 +2067,7 @@ footer{
   .portfolio__nav h2 {
     margin: 0;
     font-size: 24px;
-    margin-left: 20px;
+    margin-left: 0px;
     margin-bottom: 20px;
     color: var(--white-color);
     font-weight: 500;
@@ -2067,8 +2077,8 @@ footer{
     background: var(--color-primary);
     border: none;
     color: #fff;
-    padding: 15px 25px;
-    border-radius: 35px;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
     margin-left: 5px;
     font-size: 40px;
@@ -2077,10 +2087,27 @@ footer{
     background: var(--color-primary);
     border: none;
     color: #fff;
-    padding: 30px 20px;
-    border-radius: 20px;
-    font-size: 18px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 16px;
     cursor: pointer;
+  }
+  .portfolio__details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+    text-align: center;
+  }
+  .portfolio__details div {
+    max-width: 350px;
+    margin: 5px;
+  }
+  .portfolio__details p{
+    width: max-content;
+    height: max-content;
+    font-size: 12px;
+    text-wrap: wrap;
   }
   .portfolio__inner {
     width: 90%;
