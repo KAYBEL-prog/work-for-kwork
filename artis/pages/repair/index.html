@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang='en'>
+      <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel='stylesheet' href='./../../assets/css/style.css'>
+          <title>Артис - Ремонт</title>
+        </head>
+  <body>
+    <!-- Меню -->
+    <nav class="menu" id="menu">
+      <button class="close-btn" id="closeBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="40px" height="40px" fill-rule="nonzero">
+          <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <g transform="scale(3.55556,3.55556)">
+              <path d="M19,15c-1.023,0 -2.04812,0.39087 -2.82812,1.17188c-1.562,1.562 -1.562,4.09425 0,5.65625l14.17188,14.17188l-14.17187,14.17188c-1.562,1.562 -1.562,4.09425 0,5.65625c0.78,0.78 1.80513,1.17188 2.82813,1.17188c1.023,0 2.04812,-0.39088 2.82813,-1.17187l14.17188,-14.17187l14.17188,14.17188c1.56,1.562 4.09525,1.562 5.65625,0c1.563,-1.563 1.563,-4.09325 0,-5.65625l-14.17187,-14.17187l14.17188,-14.17187c1.562,-1.562 1.562,-4.09425 0,-5.65625c-1.56,-1.561 -4.09625,-1.562 -5.65625,0l-14.17187,14.17188l-14.17187,-14.17187c-0.78,-0.78 -1.80513,-1.17187 -2.82812,-1.17187z"></path>
+            </g>
+          </g>
+        </svg>
+      </button>
+      <a href="./../repair/">Ремонт</a>
+      <a href="./../construction/">Строительство</a>
+      <a href="№" class="link__calculator">
+        <span>Кальтулятор</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
+          <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
+          <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
+          <path d="M13.5948 10.2959V9.70146H15.9072V10.2959H13.5948ZM13.5948 11.4077V10.8133H15.9072V11.4077H13.5948Z" fill="white"/>
+          <line x1="10.4128" y1="0.704468" x2="10.4128" y2="19.3711" stroke="#121011" stroke-width="0.534106"/>
+          <line x1="10.3601" y1="10.4122" x2="0.704935" y2="10.4122" stroke="#121011" stroke-width="0.534106"/>
+        </svg>
+      </a>
+      <a href="./../news/">Новости</a>
+      <a href="./../contact/">Контакты</a>
+      <a href="./../teams/">Команда</a>
+      <a class="inner__header-tel_for_burger-menu" href="tel:8 800 250 3107">8 800 250 3107</a>
+
+    </nav>
+    <header>
+      <div class="header">
+        <div class="inner__header">
+          <div class="logo">
+            <a href="./../home/" class="img-logo" ></a>
+          </div>
+          <nav class="header-menu">
+            <a href="./../repair/">Ремонт</a>
+            <a href="./../construction/">Строительство</a>
+            <a href="№" class="link__calculator">
+              <span>Кальтулятор</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
+                <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
+                <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
+                <path d="M13.5948 10.2959V9.70146H15.9072V10.2959H13.5948ZM13.5948 11.4077V10.8133H15.9072V11.4077H13.5948Z" fill="white"/>
+                <line x1="10.4128" y1="0.704468" x2="10.4128" y2="19.3711" stroke="#121011" stroke-width="0.534106"/>
+                <line x1="10.3601" y1="10.4122" x2="0.704935" y2="10.4122" stroke="#121011" stroke-width="0.534106"/>
+              </svg>
+            </a>
+            <a href="./../news/">Новости</a>
+            <a href="./../contact/">Контакты</a>
+            <a href="./../teams/">Команда</a>
+          </nav>
+          <a class="inner__header-tel" href="tel:8 800 250 3107">8 800 250 3107</a>
+          <button class="inner__header-burger_menu" id="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="35px" height="35px" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      
+      <section>
+        <div class="website-navigation">
+          <a href="./../home/" class="muted">Главная</a>
+          <span class="muted">—</span>
+          <a href="./../repair/">Ремонт</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="object object_other_settings">
+          <div class="object-line-top">
+            <h2 class="title">Какой у вас объект?</h2>
+            <p>Наши проекты узнаваемы во всем мире — стиль, в котором гармония форм, цвета и света превращает пространство в настоящее произведение искусства</p>
+          </div>
+          <div class="object-line-bottom">
+            <div class="form-wrap" role="region" aria-label="Форма недвижимости">
+              <div class="checkboxes" role="radiogroup" aria-label="Тип недвижимости">
+                <label>
+                  <input type="radio" name="type" value="novostroyka" /><span></span>Квартира в новостройке
+                </label>
+                <label>
+                  <input type="radio" name="type" value="vtorichka" /><span></span>Квартира на вторичном рынке
+                </label>
+                <label>
+                  <input type="radio" name="type" value="house" /><span></span>Частный дом
+                </label>
+                <label>
+                  <input type="radio" name="type" value="commercial" /><span></span>Коммерческая недвижимость
+                </label>
+              </div>
+              <div class="left-right-cols">
+                <div class="left-cols">
+                  <img src="./../../assets/img/photo/photo_for_form.png" alt="">
+                </div>
+
+                <div class="right-col">
+                  <div class="field">
+                    <input id="name" name="name" type="text" placeholder="Ваше имя" />
+                  </div>
+                  <div class="field">
+                    <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+                  </div>
+                  <div class="field">
+                    <label class="field-label" for="area"></label>
+                    <input id="area" name="area" type="number" min="0" step="0.1" placeholder="Площадь вашего объекта, м²" />
+                  </div>
+                  <button type="submit" class="submit-btn">Давайте обсудим ваш проект</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="stages-work">
+          <h2 class="stages-work_title">Этапы работы</h2>
+          <div class="accordion-grid">
+            <div class="accordion-column">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №1</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nihil reprehenderit inventore aliquam fugit dolores.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №2</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores ducimus distinctio iste itaque voluptates perferendis magnam officia quibusdam omnis natus recusandae consectetur libero nemo. Eos rerum numquam odio eum.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №3</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum nulla, alias laborum doloribus in repudiandae iste ad natus architecto delectus. Maxime, ut, facilis quae tenetur possimus nulla distinctio velit facere dolor, aliquid neque iure porro recusandae illo! Distinctio reiciendis dolorem sequi iste, numquam exercitationem culpa nisi quibusdam? Distinctio, ipsum soluta!</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №4</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi rerum tenetur omnis, similique quaerat animi optio autem ut alias voluptatum voluptate officia aliquid odit ipsam, totam explicabo eligendi nisi, laboriosam eveniet ea! Aliquam voluptatum temporibus exercitationem consequuntur? Commodi doloribus ratione dolor dicta aut assumenda excepturi adipisci eligendi numquam, saepe alias possimus porro quo delectus distinctio veritatis totam optio. Placeat voluptatum provident, unde reiciendis ad dolores distinctio dolore commodi quas eligendi modi hic sed, eaque quisquam eos est ab. Nisi beatae distinctio, nulla blanditiis quo obcaecati quaerat earum quisquam ut perferendis a officiis quos voluptatum, officia assumenda error maxime fugiat placeat vitae eos ad. Debitis facilis tenetur veniam obcaecati animi rem repellendus excepturi assumenda quod sapiente, adipisci vel? Laboriosam reiciendis itaque quo accusamus totam quas modi eveniet impedit ipsam voluptatibus, debitis quaerat officia quia quisquam dolorem odio amet aperiam ducimus atque alias omnis! Accusantium, maxime nihil illum fugiat doloremque id non.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №5</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ratione mollitia dolores adipisci molestiae, libero quia ut, dignissimos necessitatibus suscipit placeat at vero maxime unde rerum itaque odit obcaecati expedita.5</p>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion-column">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №6</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit hic ut dolores quos expedita natus blanditiis. Hic cum corporis, quod reiciendis soluta, corrupti voluptatum necessitatibus laboriosam voluptas amet accusamus debitis!</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №7</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore impedit repudiandae nam voluptatibus exercitationem numquam quia quibusdam quas corporis suscipit expedita quaerat, qui facere, laborum, molestias doloribus asperiores sunt. Accusantium corporis veritatis sit nesciunt. Itaque eum suscipit autem aspernatur possimus. Architecto, molestias ex. Quae voluptate eveniet accusantium distinctio provident assumenda voluptates, facilis ullam sit quia, alias, aliquid facere possimus labore est vel esse asperiores officiis commodi. Qui natus veniam iste cum autem beatae, quod perspiciatis ut harum, eveniet incidunt aperiam? Eaque est unde aliquid nihil ex earum deserunt obcaecati mollitia quisquam animi reprehenderit iste, voluptatibus accusamus doloribus fuga quo. Deleniti ipsum, cum veniam reiciendis eos, impedit aspernatur odit aperiam beatae enim voluptatem ipsa culpa doloribus eaque, in nesciunt. Suscipit eius pariatur veniam ipsum dolorem dolore nobis quas, ea repellat beatae nulla veritatis accusantium aperiam molestiae tenetur ratione accusamus! Earum eos aliquid ex consequatur ea sit ullam non numquam possimus facilis?</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №8</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id debitis excepturi, repellendus voluptates assumenda temporibus.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №9</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos distinctio voluptatum iure numquam dolorum dolore. Eligendi dolorem commodi nesciunt, id autem, nam illo, maxime magnam facere perferendis ipsam fugiat vitae qui! Est, dicta eum odit velit et, dolorem illo magnam quaerat eius error repudiandae itaque non, illum dolore aperiam nam assumenda magni temporibus! Aut incidunt explicabo quia totam perspiciatis earum tempore excepturi perferendis molestias corrupti, nulla fuga dicta sequi enim labore molestiae tenetur asperiores tempora dignissimos cupiditate quod veritatis aliquam!</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <span>Этап №10</span>
+                    <span class="accordion-icon">
+                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
+                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
+                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur voluptate, harum ipsum hic, dolorum aliquam sunt, perspiciatis magnam necessitatibus vitae nemo eum nostrum eligendi dignissimos corporis officia labore incidunt ad vero expedita unde tempore fuga numquam. Quaerat at adipisci quibusdam consequuntur harum recusandae rerum nemo maxime ipsum. Optio, et molestias facere eveniet architecto similique saepe voluptatibus vero? Odit excepturi officia dolorem, temporibus consectetur sapiente vel dolor pariatur expedita ad dicta distinctio at reprehenderit magnam nesciunt. Aliquid voluptatibus animi debitis ut eligendi possimus quibusdam quam soluta officia accusamus dolore temporibus, quas voluptas nobis illum recusandae dicta cumque adipisci amet libero cupiditate consequuntur excepturi veritatis. Quaerat laborum quae corporis odio sint ullam eligendi distinctio minima quis molestias dolore ipsa recusandae modi unde explicabo, natus doloribus repudiandae? Illum qui doloremque provident commodi dicta culpa amet ut ipsum repudiandae. Maiores id molestiae voluptate odio sunt nemo quae cupiditate natus doloribus libero! Earum quasi vero asperiores sunt quas, voluptates unde explicabo. Perferendis tempore non necessitatibus eligendi consequuntur aspernatur earum a inventore. Veniam quisquam deserunt quia, odio vel asperiores blanditiis corrupti ullam ad soluta nihil quod cupiditate repellendus alias ea aspernatur. Omnis officiis sequi nobis repellat quo, ratione minus. Hic dolore omnis magnam. Soluta aliquid maxime illo non praesentium accusamus optio odio omnis repudiandae quas iste, exercitationem, quis quia, incidunt quasi saepe quidem maiores eum perferendis expedita id repellendus facere laborum? At, illo voluptatem recusandae ipsum temporibus veniam porro rem beatae reiciendis tempore! Quia delectus, placeat laudantium reiciendis possimus earum corporis ad sed eligendi dolores, iste fuga impedit animi voluptatum hic fugiat assumenda at exercitationem molestiae! Totam iure recusandae, hic animi consectetur repellendus a iste esse ullam perspiciatis asperiores explicabo nesciunt? Dolore necessitatibus veniam velit cum illum sint! Neque itaque porro earum perspiciatis numquam. Ipsam vitae quidem facere delectus voluptates labore ducimus dolorem nisi aperiam voluptatum.</p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="portfolio">
+          <div class="title">Портфолио объектов</div>
+          <div class="portfolio__inner">
+          
+            <!-- Слайд 1 -->
+            <div class="portfolio__item active">
+              <div class="portfolio__info">
+                <div class="portfolio__nav">
+                  <div class="portfolio__arrows">
+                    <button class="prev">
+                      <img src="./../../assets/img/icons/arrow.png" alt="стрелка влево">
+                    </button>
+                    <button class="next">
+                      <img src="./../../assets/img/icons/arrow.png" alt="стрелка вправо" style="transform: rotateZ(180deg);">
+                    </button>
+                  </div>
+                  <h2>ЖК Павелецкий Парк</h2> 
+                </div>
+                <div class="portfolio__details">
+                  <div>
+                    <p>Город: <span>Москва</span></p>
+                    <p>Стилистика: <span>Ар-Деко</span></p>
+                    <p>Квадратура: <span>76 кв. м.</span></p>
+                  </div>
+                  <div>
+                    <p>Год: <span>2024 г.</span></p>
+                    <p>Стоимость: <span>740 тыс.</span></p>
+                    <p>Кол-во комнат: <span>1 ком.</span></p>
+                  </div>
+                </div>
+                <div class="portfolio__button">
+                  <button id="#">Заказать такой проект</button>
+                </div>
+              </div>
+              <div class="portfolio__slider"></div>
+            </div>
+            <!-- Слайд 2 -->
+            <div class="portfolio__item">
+              <div class="portfolio__info">
+                <div class="portfolio__nav">
+                  <div class="portfolio__arrows">
+                    <button class="prev">
+                      <img src="./../../assets/img/icons/arrow.png" alt="стрелка влево">
+                    </button>
+                    <button class="next">
+                      <img src="./../../assets/img/icons/arrow.png" alt="стрелка вправо" style="transform: rotateZ(180deg);">
+                    </button>
+                  </div>
+                  <h2>ЖК Лужники</h2>
+                  
+                </div>
+                <div class="portfolio__details">
+                  <div>
+                    <p>Город: <span>Санкт-петербург</span></p>
+                    <p>Стилистика: <span>Ар-Деко</span></p>
+                    <p>Квадратура: <span>112 кв. м.</span></p>
+                  </div>
+                  <div>
+                    <p>Год: <span>2005 г.</span></p>
+                    <p>Стоимость: <span>500 тыс.</span></p>
+                    <p>Кол-во комнат: <span>4 ком.</span></p>
+                  </div>
+                </div>
+                <div class="portfolio__button">
+                  <button id="#">Заказать такой проект</button>
+                </div>
+              </div>
+              <div class="portfolio__slider"></div>
+            </div>
+          
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="calculator">
+          <div class="calculator__title">
+            <h2>Калькулятор стоимости ремонта</h2>
+            <p>Рассчитайте стоимость онлайн</p>
+          </div>
+          <div class="calculator__wrapper">
+            <div class="fields-wrapper">
+              <div class="fields-wrapper__input-line">
+                <div class="field" id="apartment-area">
+                  <h3>Площадь квартиры</h3>
+                  <p class="subtitle">Укажите площадь без с/у, м²</p>
+
+                  <div class="control-row">
+                    <div class="number-input" id="wrap-apt">
+                      <input type="number" id="apt" value="95" min="0" step="1" aria-label="Площадь квартиры" />
+                      <span class="unit">м²</span>
+                    </div>
+                    <div class="control-row__inner">
+                      <button type="button" class="step-button decrement" data-target="apt">-</button>
+                      <button type="button" class="step-button increment" data-target="apt">+</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="field" id="bath-area">
+                  <h3>Площадь с/у</h3>
+                  <p class="subtitle">Укажите площадь с/у, м²</p>
+
+                  <div class="control-row">
+                    <div class="number-input" id="wrap-bath">
+                      <input type="number" id="bath" value="0" min="0" step="1" aria-label="Площадь с/у" />
+                      <span class="unit">м²</span>
+                    </div>
+                    <div class="control-row__inner">
+                      <button type="button" class="step-button decrement" data-target="bath">-</button>
+                      <button type="button" class="step-button increment" data-target="bath">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fields-wrapper__inner-icon">
+                <svg width="67" height="68" viewBox="0 0 67 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 5.88519C0 3.00299 2.33649 0.666504 5.21869 0.666504H61.448C64.3302 0.666504 66.6667 3.00299 66.6667 5.88519V62.1198C66.6667 64.9991 64.3326 67.3332 61.4533 67.3332H0V5.88519Z" fill="#847483"/>
+                  <path d="M15.379 23.1331V14.6653H17.5199V23.1331H15.379ZM12.2156 19.9696V17.8288H20.6834V19.9696H12.2156Z" fill="white"/>
+                  <path d="M19.7671 49.174V51.1953H14.1817V49.174H19.7671Z" fill="white"/>
+                  <path d="M46.0372 34.0641V31.9412H54.2957V34.0641H46.0372ZM46.0372 38.0349V35.9119H54.2957V38.0349H46.0372Z" fill="white"/>
+                  <line x1="34.6725" y1="0.666504" x2="34.6725" y2="67.3332" stroke="#1A1617" stroke-width="1.90752"/>
+                  <line x1="34.4846" y1="35.3366" x2="0.00186157" y2="35.3366" stroke="#1A1617" stroke-width="1.90752"/>
+                </svg>
+              </div>
+            </div>
+            <div class="services-section">
+                <div class="services-grid">
+                  <div>
+                    <div class="col-title">Черновой этап</div>
+                    <div class="option"><div class="toggle checked" data-price="30000" data-key="plaster"></div><label>Штукатурка</label></div>
+                    <div class="option"><div class="toggle" data-price="18000" data-key="screed"></div><label>Стяжка</label></div>
+                    <div class="option"><div class="toggle" data-price="15000" data-key="electro"></div><label>Электрика черновая</label></div>
+                    <div class="option"><div class="toggle checked" data-price="25000" data-key="plumbing"></div><label>Сантехника</label></div>
+                    <div class="option"><div class="toggle" data-price="22000" data-key="tiles"></div><label>Плитка</label></div>
+                  </div>
+
+                  <div>
+                    <div class="col-title">Напольное покрытие</div>
+                    <div class="option"><div class="toggle checked" data-price="20000" data-key="laminat"></div><label>Ламинат</label></div>
+                    <div class="option"><div class="toggle" data-price="35000" data-key="engineer"></div><label>Инж доска</label></div>
+                    <div class="option"><div class="toggle checked" data-price="12000" data-key="kvacvinil"></div><label>Квaцвинил</label></div>
+                  </div>
+
+                  <div>
+                    <div class="col-title">Покрытие стен</div>
+                    <div class="option"><div class="toggle checked" data-price="8000" data-key="wallpaper"></div><label>Обои</label></div>
+                    <div class="option"><div class="toggle checked" data-price="7000" data-key="paint"></div><label>Краска</label></div>
+                  </div>
+
+                  <div>
+                    <div class="col-title">Потолок</div>
+                    <div class="option"><div class="toggle checked" data-price="18000" data-key="stretch"></div><label>Потолок натяжной</label></div>
+                    <div class="option"><div class="toggle checked" data-price="14000" data-key="gkl"></div><label>Потолок ГКЛ под окраску</label></div>
+
+                    <div style="height:18px"></div>
+
+                    <div class="promo"><span class="small">Акция (<span style="opacity:.5">*акция действует до 20.09.2025</span>)</span></div>
+                    <div class="option"><div class="toggle" data-price="-5000" data-key="promo"></div><label>Выгодно *</label></div>
+                  </div>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="summary">
+                  <div class="label">Общая стоимость выбранных работ</div>
+                  <div class="total-row">
+                    <h4 class="title">Итого:</h4>
+                    <div class="amount" id="total">423 248₽</div>
+                    <div class="perm" id="perm">(23 513₽ / м²)</div>
+                  </div>
+                </div>
+            </div>
+            <div class="form-section">
+              <div class="form-section__inner">
+                <div class="form-header">
+                  <div class="form-arrow">
+                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="30.9999" cy="30.7643" r="30.6667" fill="#847483"/>
+                      <path d="M32.0998 36.9952L41.1665 28.2139C41.8332 27.5682 41.8332 26.5997 41.1665 26.0186L39.6998 24.5335C39.0332 23.9524 38.0332 23.9524 37.4332 24.5335L31.0332 30.7966L24.5665 24.5335C23.9665 23.9524 22.9665 23.9524 22.2998 24.5335L20.8332 26.0186C20.1665 26.5997 20.1665 27.5682 20.8332 28.2139L29.8998 36.9952C30.4998 37.5763 31.4998 37.5763 32.0998 36.9952Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <h3 class="accordion-title">Получите пошаговый план этапов выполненных работ и закрепите за собой стоимость оставив заявку</h3>
+                </div>
+                <div class="form-body">
+                  <input type="text" class="form-input" placeholder="Ваше имя">
+                  <input type="email" class="form-input" placeholder="Ваш e-mail">
+                  <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
+                  <button class="form-button">Получить пошаговый план</button>
+                </div>
+              </div>
+              <div class="img-calculator-form">
+                <img src="./../../assets/img/photo/img-form.png" alt="img-calculator-form">
+                <div class="item-shadow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <div class="apartment-acceptance">
+          <div class="title">Приём квартиры у застройщика</div>
+          <div class="portfolio__inner">
+
+            <div class="portfolio__item-other active">
+              <div class="portfolio__info">
+                <div class="portfolio__nav">
+                  <h2>Компания предоставляет клиентам и услугу приёма квартиры у застройщика</h2> 
+                </div>
+                <div class="portfolio__details">
+                  <p>C первого дня вас будет сопровождать персональный менеджер, который позаботится о том, чтобы каждый этап проекта доставлял вам удовольствие</p>
+                  <ul class="portfolio__details-list">
+                    <li>Тезис1</li>
+                    <li>Тезис2</li>
+                    <li>Тезис3</li>
+                  </ul>
+                </div>
+                <div class="portfolio__button">
+                  <button id="#">Заказать такой проект</button>
+                </div>
+              </div>
+              <div class="portfolio__slider"></div>
+            </div>
+          
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+    <footer>
+      <div class="inner__footer">
+        <div class="left">
+          <div class="left_box-top">
+            <div class="left_1">
+              <div class="logo">
+                <img src="./../../assets/img/logo/logo2.png" alt="logo">
+              </div>
+            </div>
+            <div class="left_2">
+              <p>Навигация</p>
+              <nav>
+                <a href="./../repair/">Ремонт</a>
+                <a href="./../construction/">Строительство</a>
+                <a href="№" class="link__calculator">
+                  <span>Кальтулятор</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
+                    <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
+                    <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
+                    <path d="M13.5948 10.2959V9.70146H15.9072V10.2959H13.5948ZM13.5948 11.4077V10.8133H15.9072V11.4077H13.5948Z" fill="white"/>
+                    <line x1="10.4128" y1="0.704468" x2="10.4128" y2="19.3711" stroke="#121011" stroke-width="0.534106"/>
+                    <line x1="10.3601" y1="10.4122" x2="0.704935" y2="10.4122" stroke="#121011" stroke-width="0.534106"/>
+                  </svg>
+                </a>
+                <a href="./../news/">Новости</a>
+                <a href="./../contact/">Контакты</a>
+                <a href="./../teams/">Команда</a>
+              </nav>
+            </div>
+          </div>
+          <div class="left_box-bottom">
+            <div class="left_1">
+              <p>Copyright © 2025.<br>All rights reserved</p>
+            </div>
+            <div class="left_2">
+              <a href="">Политика конфиденциальности</a>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right_box-top">
+            <div class="contacts">
+              <p>Контакты</p>
+              <div class="contacts_tel-mail">
+                <a class="tel" href="tel:8 800 250 3107">8 800 250 3107</a>
+                <a class="mail" href="mailto:artis@mail.ru">artis@mail.ru</a>
+              </div>
+              <div class="location">
+                <p>Адрес: <span>Ростов-на-Дону, Ул. Береговая, 8</span></p>
+                <p>Режим работы: <span>Пн-Пт 10:00-18:00</span></p>
+              </div>
+            </div>
+            <div class="icons">
+              <a href="#" class="tg">
+                <img src="./../../assets/img/icons/icon_tg.png" alt="">
+              </a>
+              <a href="#" class="vk">
+                <img src="./../../assets/img/icons/icon_vk.png" alt="">
+              </a>
+              <a href="#" class="ws">
+                <img src="./../../assets/img/icons/icon_ws.png" alt="">
+              </a>
+              <a href="#" class="ya-dzen">
+                <img src="./../../assets/img/icons/icon_ya-dzen.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="right_box-bottom">
+            <a class="left" href="#">Пользовательское соглашение</a>
+            <a class="right" href="#hero-block">
+              Наверх↑
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script src="./../../assets/js/main.js"></script>
+
+
+
+</html>

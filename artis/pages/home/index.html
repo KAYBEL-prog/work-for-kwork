@@ -4,8 +4,8 @@
         <meta charset='UTF-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
         <link rel='stylesheet' href='./../../assets/css/style.css'>
           <title>Артис - Главная</title>
         </head>
@@ -21,33 +21,56 @@
           </g>
         </svg>
       </button>
-      <a href="#">Ремонт</a>
-      <a href="#">Строительство</a>
-      <a href="#">Новости</a>
-      <a href="#">Контакты</a>
-      <a href="#">Команда</a>
+      <a href="./../repair/">Ремонт</a>
+      <a href="./../construction/">Строительство</a>
+      <a href="./../calculator" class="link__calculator">
+        <span>Кальтулятор</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
+          <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
+          <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
+          <path d="M13.5948 10.2959V9.70146H15.9072V10.2959H13.5948ZM13.5948 11.4077V10.8133H15.9072V11.4077H13.5948Z" fill="white"/>
+          <line x1="10.4128" y1="0.704468" x2="10.4128" y2="19.3711" stroke="#121011" stroke-width="0.534106"/>
+          <line x1="10.3601" y1="10.4122" x2="0.704935" y2="10.4122" stroke="#121011" stroke-width="0.534106"/>
+        </svg>
+      </a>
+      <a href="./../news/">Новости</a>
+      <a href="./../contact/">Контакты</a>
+      <a href="./../teams/">Команда</a>
       <a class="inner__header-tel_for_burger-menu" href="tel:8 800 250 3107">8 800 250 3107</a>
 
     </nav>
-
-    <div class="header">
-      <div class="inner__header">
-        <div class="logo">
-          <a href="./../home/" class="img-logo" ></a>
+    <header>
+      <div class="header">
+        <div class="inner__header">
+          <div class="logo">
+            <a href="./../home/" class="img-logo" ></a>
+          </div>
+          <nav class="header-menu">
+            <a href="./../repair/">Ремонт</a>
+            <a href="./../construction/">Строительство</a>
+            <a href="./../calculator" class="link__calculator">
+              <span>Кальтулятор</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
+                <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
+                <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
+                <path d="M13.5948 10.2959V9.70146H15.9072V10.2959H13.5948ZM13.5948 11.4077V10.8133H15.9072V11.4077H13.5948Z" fill="white"/>
+                <line x1="10.4128" y1="0.704468" x2="10.4128" y2="19.3711" stroke="#121011" stroke-width="0.534106"/>
+                <line x1="10.3601" y1="10.4122" x2="0.704935" y2="10.4122" stroke="#121011" stroke-width="0.534106"/>
+              </svg>
+            </a>
+            <a href="./../news/">Новости</a>
+            <a href="./../contact/">Контакты</a>
+            <a href="./../teams/">Команда</a>
+          </nav>
+          <a class="inner__header-tel" href="tel:8 800 250 3107">8 800 250 3107</a>
+          <button class="inner__header-burger_menu" id="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="35px" height="35px" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g></svg>
+          </button>
         </div>
-        <nav class="header-menu">
-          <a href="#">Ремонт</a>
-          <a href="#">Строительство</a>
-          <a href="#">Новости</a>
-          <a href="#">Контакты</a>
-          <a href="#">Команда</a>
-        </nav>
-        <a class="inner__header-tel" href="tel:8 800 250 3107">8 800 250 3107</a>
-        <button class="inner__header-burger_menu" id="burger">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="35px" height="35px" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g></svg>
-        </button>
       </div>
-    </div>
+    </header>
     <main>
       <section>
         <div class="hero-block" id="hero-block">
@@ -514,11 +537,22 @@
             <div class="left_2">
               <p>Навигация</p>
               <nav>
-                <a href="#">Ремонт</a>
-                <a href="#">Строительство</a>
-                <a href="#">Новости</a>
-                <a href="#">Контакты</a>
-                <a href="#">Команда</a>
+                <a href="./../repair/">Ремонт</a>
+                <a href="./../construction/">Строительство</a>
+                <a href="./../calculator" class="link__calculator">
+                  <span>Кальтулятор</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
+                    <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
+                    <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
+                    <path d="M13.5948 10.2959V9.70146H15.9072V10.2959H13.5948ZM13.5948 11.4077V10.8133H15.9072V11.4077H13.5948Z" fill="white"/>
+                    <line x1="10.4128" y1="0.704468" x2="10.4128" y2="19.3711" stroke="#121011" stroke-width="0.534106"/>
+                    <line x1="10.3601" y1="10.4122" x2="0.704935" y2="10.4122" stroke="#121011" stroke-width="0.534106"/>
+                  </svg>
+                </a>
+                <a href="./../news/">Новости</a>
+                <a href="./../contact/">Контакты</a>
+                <a href="./../teams/">Команда</a>
               </nav>
             </div>
           </div>
