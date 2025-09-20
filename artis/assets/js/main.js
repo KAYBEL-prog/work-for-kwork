@@ -53,6 +53,20 @@ document.querySelectorAll('.prev').forEach(btn => btn.addEventListener('click', 
   showSlide(current);
 }));
 
+// 
+$(document).ready(function () {
+  $(".portfolio__slider ").owlCarousel({
+    items: 1,
+    dots: true,
+    nav: false,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true
+  });
+});
+
+
 // accordion-header
 
 document.querySelectorAll('.accordion-header').forEach(header => {
@@ -78,7 +92,6 @@ function formatNum(n) {
   const num = Math.abs(Math.round(n));
   return sign + String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
-
 // пересчёт итогов
 function recalc() {
   let total = 0;
@@ -92,7 +105,6 @@ function recalc() {
   document.getElementById('total').textContent = formatNum(totalClamped) + '₽';
   document.getElementById('perm').textContent = apt > 0 ? '(' + formatNum(perM2) + '₽ / м²)' : '(— / м²)';
 }
-
 // переключатели (визуал + recalc)
 toggles.forEach(t => {
   t.addEventListener('click', () => {
@@ -100,7 +112,6 @@ toggles.forEach(t => {
     recalc();
   });
 });
-
 // подгон ширины input под количество цифр
 function adjustWidth(input) {
   const v = String(input.value || input.placeholder || '0');
@@ -108,7 +119,6 @@ function adjustWidth(input) {
   const digits = chars.length || 1;
   const widthCh = Math.min(8, digits + 1);
 }
-
 // подсветка зеленым (wrapper .number-input)
 function updateFilled(id) {
   const input = document.getElementById(id);
@@ -116,7 +126,6 @@ function updateFilled(id) {
   if (!input || !wrap) return;
   if (Number(input.value) > 0) wrap.classList.add('filled'); else wrap.classList.remove('filled');
 }
-
 // + / - behavior
 document.querySelectorAll('.increment').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -129,7 +138,6 @@ document.querySelectorAll('.increment').forEach(btn => {
     recalc();
   });
 });
-
 document.querySelectorAll('.decrement').forEach(btn => {
   btn.addEventListener('click', () => {
     const id = btn.dataset.target;
@@ -141,7 +149,6 @@ document.querySelectorAll('.decrement').forEach(btn => {
     recalc();
   });
 });
-
 // прямой ввод в поле
 document.querySelectorAll('.number-input input').forEach(inp => {
   inp.addEventListener('input', () => {
@@ -155,6 +162,5 @@ document.querySelectorAll('.number-input input').forEach(inp => {
   adjustWidth(inp);
   updateFilled(inp.id);
 });
-
 // старт
 recalc();
