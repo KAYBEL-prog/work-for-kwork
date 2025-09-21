@@ -2201,7 +2201,7 @@ footer{
   margin-bottom: 30px;
 }
 .news__content-navbar_upper-items .item:hover{
-  background-color: #262626;
+  background-color: #1A1617;
   transition: background-color 0.3s;
 }
 
@@ -3226,6 +3226,10 @@ footer{
     flex-direction: column;
     padding: 0;
   }
+
+  .left_2 nav{
+    margin-bottom: 50px;
+  }
   .left_box-top .left_2{
     text-align: center;
     margin: auto;
@@ -3234,7 +3238,7 @@ footer{
     margin: auto;
   }
   .left_box-top .left_2 nav a{
-    margin: auto;
+    margin: 5px auto;
   }
   .left_2 p {
     font-size: 21px;
