@@ -596,12 +596,19 @@ input:checked + .slider:before {
   margin-top: auto;
   background-color: var(--color-primary);
   font-family: 'inter';
+  border: 3px solid transparent;
   color: var(--white-color);
   font-weight: 500;
   border-radius: 10px;
   font-size: 18px;
+  transition: 0.3s;
 }
+.btn-request:hover{
+  background-color: var(--color-secondary);
+  border: 3px solid #847483;
+  transition: 0.3s;
 
+}
 .projects-slider {
   max-width: 1653px;
   margin: auto ;
@@ -811,13 +818,14 @@ input:checked + .slider:before {
   border-radius: 15px;
   text-decoration: none;
   background-color: var(--color-secondary);
+  border: 3px solid transparent;
   color: #fff;
   font-size: 18px;
   transition: 0.3s;
 }
 .about-company-line-1_box-text .btns a:hover {
-  background: #fff;
-  color: #111;
+  border: 3px solid var(--color-primary);
+
 }
 .about-stats {
   display: flex;
@@ -1023,15 +1031,21 @@ input:checked + .slider:before {
   margin-top: 20px;
   padding: 20px;
   background-color: var(--color-primary);
+  border: 3px solid transparent;
   border-radius: 10px;
   color: var(--white-color);
   font-family: 'inter';
   font-weight: 500;
   font-size: 20px;
   text-align: center;
+  transition: background-color 0.3s;
 }
 
-
+.btn-open-calculator:hover{
+  transition: background-color 0.3s;
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+}
 
 
 .object {
@@ -1151,8 +1165,16 @@ input:checked + .slider:before {
   border-radius: 20px;
   color: var(--white-color);
   font-size: 24px;
+  border: 3px solid transparent;
   background-color: var(--color-primary);
+  transition: 0.3s;
 }
+.submit-btn:hover{
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
+}
+
 footer{
   background: #0D0D0D;
 }
@@ -1612,6 +1634,14 @@ footer{
   cursor: pointer;
   margin-left: 5px;
   font-size: 40px;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.portfolio__arrows button:hover{
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
 }
 .portfolio__details {
   display: flex;
@@ -1644,6 +1674,14 @@ footer{
   border-radius: 20px;
   font-size: 24px;
   cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.portfolio__button button:hover{
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
 }
 .portfolio__slider{
   width: 100%;
@@ -2159,9 +2197,15 @@ footer{
   font-size: 21px;
   color: var(--white-color);
   text-align: center;
+  border: 3px solid transparent;
   background-color: var(--color-primary);
+  transition: 0.3s;
 }
-
+.text-and-btn button:hover{
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
+}
 
 .news {
   width: 100%;
@@ -2362,8 +2406,14 @@ footer{
   text-align: center;
   color: var(--white-color);
   background-color: var(--color-primary);
+  border: 3px solid transparent;
+  transition: 0.3s;
 }
-
+.banner__lower a:hover{
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
+}
 
 .contact {
   margin-top: 50px;
@@ -2410,7 +2460,6 @@ footer{
   margin-top: 50px;
   display: flex;
 }
-
 .contact_item .portfolio__info .contact__button a{
   height: 30px;
   display: flex;
@@ -2424,7 +2473,8 @@ footer{
   margin-left: 0;
   margin-right: 10px;
   border-radius: 30px;
-  
+  border: 3px solid transparent;
+  transition: 0.3s;
 }
 .contact_item .portfolio__info .contact__button .text{
   height: 30px;
@@ -2439,6 +2489,19 @@ footer{
   margin-left: 0;
   margin-right: 10px;
   border-radius: 30px;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.contact_item .portfolio__info .contact__button:hover .text{
+  background: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
+}
+.contact_item .portfolio__info .contact__button:hover a{
+  background: var(--color-secondary);
+  border: 3px solid var(--color-primary);
+  transition: 0.3s;
 }
 .contact__maps{
   width: 35%;
