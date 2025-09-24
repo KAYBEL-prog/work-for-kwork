@@ -90,23 +90,26 @@ button{
   z-index:1000;
   padding:24px;
 }
-.form-modal.is-open{display:flex}
+.form-modal.is-open{
+  display:flex
+}
 .form-modal__inner{
   width:100%;
-  max-width:320px;
-  background:#26262a;
+  max-width:500px;
+  background: var(--color-secondary);
   border-radius:12px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  padding:40px;
+  box-shadow:0 10px 30px rgba(0,0,0,1);
   color:#fff;
   box-sizing:border-box;
   position:relative;
 }
 .form-modal__title{
-  font-size:18px;
+  font-size:21px;
   margin:0 0 12px 0;
 }
 .form-modal__form{
+  margin-top: 20px;
   display:flex;
   flex-direction:column;
   gap:12px;
@@ -117,13 +120,12 @@ button{
   gap:6px;
 }
 .form-field label{
-  font-size:12px;
+  font-size:16px;
   opacity:0.9;
 }
 .form-field input[type="text"],
 .form-field input[type="tel"]{
-  height:40px;
-  padding:8px 10px;
+  padding:20px 10px;
   border-radius:8px;
   border:1px solid rgba(255,255,255,0.12);
   background:rgba(255,255,255,0.03);
@@ -135,13 +137,13 @@ button{
   display:flex;
   align-items:center;
   gap:10px;
-  font-size:14px;
+  font-size:16px;
   user-select:none;
 }
 .form-checkbox input[type="checkbox"]{
   width:18px;
   height:18px;
-  accent-color: #fff;
+  accent-color: var(--color-primary);
 }
 .form-modal__actions{
   display:flex;
@@ -149,7 +151,8 @@ button{
   margin-top:6px;
 }
 .btn{
-  display:inline-flex;
+  width: 100%;
+  display:flex;
   align-items:center;
   justify-content:center;
   height:42px;
@@ -159,17 +162,25 @@ button{
   cursor:pointer;
   font-weight:600;
 }
-.btn--primary{background:#fff;color:#26262a}
-.btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.12)}
+.btn--primary{
+  background:var(--color-primary);
+  color:var(--white-color);
+}
+.btn--ghost{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.12);
+}
 .form-error{
-  font-size:13px;
+  font-size:16px;
   color:#ffb4b4;
   min-height:18px;
 }
+.form-modal-header{
+  display: flex;
+  justify-content: space-between;
+}
 .form-modal__close{
-  position:absolute;
-  top:10px;
-  right:10px;
   width:32px;
   height:32px;
   border-radius:8px;
@@ -180,6 +191,8 @@ button{
   color:#fff;
   cursor:pointer;
 }
+
+
 
 .burger {
   position: fixed;
@@ -3682,7 +3695,7 @@ footer{
 }
 @media (max-width:425px) {
   .form-modal__inner{padding:16px}
-  
+
   .slider-title span {
     position: relative;
     top: -20px;
