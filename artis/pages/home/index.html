@@ -45,8 +45,10 @@
 
     <div class="form-modal" id="formModal" aria-hidden="true">
       <div class="form-modal__inner">
-        <button class="form-modal__close" id="modalClose" aria-label="Закрыть">✕</button>
-        <h3 class="form-modal__title">Оставьте заявку!</h3>
+        <div class="form-modal-header">
+          <h3 class="form-modal__title">Оставьте заявку!</h3>
+          <button class="form-modal__close" id="modalClose" aria-label="Закрыть">✕</button>
+        </div>
         <form id="modalForm" class="form-modal__form" novalidate>
           <div class="form-field">
             <label for="name">Имя</label>
