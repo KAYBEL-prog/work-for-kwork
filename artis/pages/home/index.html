@@ -6,6 +6,8 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <script src="./../../assets/js/modal-form.js"></script>
+
         <link rel='stylesheet' href='./../../assets/css/style.css'>
           <title>Артис - Главная</title>
         </head>
@@ -41,6 +43,21 @@
 
     </nav>
     <div id="upper_viewmodal-in-up"></div>
+
+    <div class="form-modal" id="formModal" aria-hidden="true">
+      <div class="form-modal__inner">
+        <button class="form-modal__close" id="modalClose" aria-label="Закрыть">✕</button>
+        <h3 class="form-modal__title">Оставьте данные</h3>
+        <form id="modalForm" class="form-modal__form" novalidate>
+          <div class="form-field"><label for="name">Имя</label><input id="name" name="name" type="text" placeholder="Ваше имя" required></div>
+          <div class="form-field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 999 000-00-00" required></div>
+          <label class="form-checkbox"><input id="agree" name="agree" type="checkbox" required><span>500 500</span></label>
+          <div class="form-error" id="formError" aria-live="polite"></div>
+          <div class="form-modal__actions"><button type="submit" class="btn btn--primary">Отправить</button><button type="button" class="btn btn--ghost" id="modalCancel">Отмена</button></div>
+        </form>
+      </div>
+    </div>
+
     <header>
       <div class="header">
         <div class="inner__header">
@@ -106,7 +123,7 @@
                   <div class="hero-block_bottom-box_1-profitably">*акция действует до 20.09.2025 </div>
                 </div>
               </div>
-              <button class="btn-request" id="">
+              <button class="btn-request btn btn--primary" id="openDemo">
                 <span>Оставить заявку</span>
               </button>
             </div>
@@ -637,5 +654,38 @@
 
   <script src="./../../assets/js/main.js"></script>
 
+  <script>
+(() => {
+  const m = document.getElementById('formModal');
+  const openBtn = document.getElementById('openDemo');
+  const closeBtn = document.getElementById('modalClose');
+  const cancelBtn = document.getElementById('modalCancel');
+  const f = document.getElementById('modalForm');
+  const e = document.getElementById('formError');
 
+  const open = () => { m.classList.add('is-open'); m.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; setTimeout(() => f.querySelector('#name').focus(), 50); };
+  const close = () => { m.classList.remove('is-open'); m.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; e.textContent = ''; e.style.color = ''; f.reset(); };
+
+  openBtn && openBtn.addEventListener('click', open);
+  closeBtn && closeBtn.addEventListener('click', close);
+  cancelBtn && cancelBtn.addEventListener('click', close);
+
+  m && m.addEventListener('click', ev => { if (ev.target === m) close(); });
+  addEventListener('keydown', ev => { if (ev.key === 'Escape' && m.classList.contains('is-open')) close(); });
+
+  f && f.addEventListener('submit', ev => {
+    ev.preventDefault(); e.textContent = ''; e.style.color = '';
+    const name = f.name.value.trim();
+    const phone = f.phone.value.trim();
+    const agree = f.agree.checked;
+    if (!name) { e.textContent = 'Укажите имя'; f.name.focus(); return; }
+    if (!phone) { e.textContent = 'Укажите телефон'; f.phone.focus(); return; }
+    if (phone.replace(/\D/g, '').length < 10) { e.textContent = 'Неверный телефон'; f.phone.focus(); return; }
+    if (!agree) { e.textContent = 'Отметьте чекбокс'; return; }
+    console.log('Отправка формы:', { name, phone, agree });
+    e.style.color = '#bfffc9'; e.textContent = 'Форма успешно отправлена!';
+    setTimeout(() => { e.style.color = ''; close(); }, 900);
+  });
+})();
+  </script>
 </html>
