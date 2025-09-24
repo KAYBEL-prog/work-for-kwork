@@ -290,10 +290,18 @@ button{
   color: var(--white-color);
   font-size: 18px;
   margin: 0px 15px 0px 15px ;
+  transition: 0.3s;
+}
+.header-menu a:hover{
+  color: var(--color-primary);
+  transition: 0.3s;
 }
 .header-menu .link__calculator{
   margin: 0px 0px 0px 15px ;
-
+}
+.header-menu .link__calculator span:hover{
+  color: var(--color-primary);
+  transition: 0.3s;
 }
 .header-menu span{
   color: var(--white-color);
