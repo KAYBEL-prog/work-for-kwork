@@ -1018,7 +1018,8 @@ input:checked + .slider:before {
   margin-right: 10px;
 }
 .btn-open-calculator{
-  width: 100%;
+  display: block;
+  width: 95%;
   margin-top: 20px;
   padding: 20px;
   background-color: var(--color-primary);
@@ -1027,7 +1028,7 @@ input:checked + .slider:before {
   font-family: 'inter';
   font-weight: 500;
   font-size: 20px;
-  
+  text-align: center;
 }
 
 
@@ -2148,7 +2149,7 @@ footer{
   color: var(--white-color);
   margin-top: 55px;
 }
-.text-and-btn a{
+.text-and-btn button{
   display: block;
   width: 100%;
   height: max-content;
