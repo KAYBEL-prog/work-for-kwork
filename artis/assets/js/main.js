@@ -135,3 +135,20 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(closeModal, 900);
   });
 });
+
+
+// появление элемента при обноружении
+
+const titles = document.querySelectorAll('.title__animation');
+function checkVisibility() {
+  titles.forEach(title => {
+    if (!title.classList.contains('visible')) {
+      const rect = title.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        title.classList.add('visible');
+      }
+    }
+  });
+}
+window.addEventListener('scroll', checkVisibility);
+checkVisibility(); 

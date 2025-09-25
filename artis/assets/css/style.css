@@ -488,6 +488,9 @@ button{
   font-family: 'eu-brand-bold';
   font-size: 3rem;
   color: var(--white-color);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1.5s ease-out;
 }
 .hero-block_top h2{
   width: 100%;
@@ -497,7 +500,12 @@ button{
   font-weight: 400;
   font-size: 1.5rem;
   color: var(--white-color);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1.2s ease-out, opacity 1.5s ease-out;
 }
+
+
 .btn-change-city{
   width: 200px;
   height: 50px;
@@ -646,13 +654,20 @@ input:checked + .slider:before {
   color: var(--white-color);
   display: flex;
   align-items: start;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .slider-title span {
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
   margin-left: 10px;
-  opacity: 0.8;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1.5s ease-out, opacity 1s ease-out;
 }
 .owl-carousel .item {
   border-radius: 16px;
@@ -944,6 +959,10 @@ input:checked + .slider:before {
   margin: 0;
   font-size: 60px;
   color: var(--white-color);
+
+  opacity: 0;
+    transform: translateX(-50%);
+    transition: transform 1s ease-out, opacity 1.5s ease-out;
 }
 .best-service-line-1_box-text{
   width: 60%;
@@ -1089,11 +1108,19 @@ input:checked + .slider:before {
   width: 50%;
   font-family: 'eu-brand-bold';
   font-size: 56px;
+
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .object-line-top p{
   width: 50%;
   font-size: 21px;
   opacity: 0.5;
+
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: transform 1.2s ease-out, opacity 1s ease-out;
 }
 
 .object-line-bottom {
@@ -1393,18 +1420,27 @@ footer{
   width: 50%;
   min-width: 640px;
 }
-.title {
+.done-works-top_left .title {
   font-family: 'eu-brand-bold';
-  font-size: 48px;
+  font-size: 40px;
   color: var(--white-color);
+  margin-top: 20px;
   margin: 0;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 2s ease-out;
 }
 .done-works-top_left p{
   max-width: 400px;
+  margin-top: 10px;
   font-family: 'inter';
   font-size: 21px;
   color: var(--white-color);
-  opacity: 0.3;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1.2s ease-out, opacity 2s ease-out;
 }
 
 .done-works-top_right {
@@ -1573,8 +1609,13 @@ footer{
 .portfolio .title{
   font-family: 'eu-brand-bold';
   font-size: 56px;
+  color: var(--white-color);
   text-align: center;
   margin-bottom: 50px;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;  
 }
 .portfolio .v2{
   max-width: 1653px;
@@ -2101,8 +2142,6 @@ footer{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.calculator .form-section .form-section__inner{}
-
 .calculator .form-section .form-header {
   max-width: 800px;
   display: flex;
@@ -2631,6 +2670,47 @@ footer{
 }
 
 
+.hero-block_top h1.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+.hero-block_top h2.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+.best-service-line-1_box-title-advantages h2.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+.object-line-top .title.visible{
+  opacity: 1;
+  transform: translateX(0);  
+}
+.object-line-top p.visible{
+  opacity: 1;
+  transform: translateX(0);  
+}
+.done-works-top_left .title.visible{
+  opacity: 1;
+  transform: translateX(0);   
+}
+.done-works-top_left p.visible{
+  opacity: 0.3;
+  transform: translateX(0);   
+}
+.portfolio .title.visible{
+  opacity: 1;
+  transform: translateX(0);   
+}
+
+.slider-title.visible{
+  opacity: 1;
+  transform: translateX(0); 
+}
+.slider-title span.visible{
+  opacity: 0.8;
+  transform: translateX(0); 
+}
 @media (max-width:1920px) {
   .inner__header {
     width: 97%;
