@@ -137,10 +137,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// появление элемента при обноружении
+const titles = document.querySelectorAll('.title__animation');
+const titlesUp = document.querySelectorAll('.animation-in-up');
+const titlesRight = document.querySelectorAll('.animation-in-right');
 
-const titles = document.querySelectorAll('.fade_in_right');
 function checkVisibility() {
+  // появление элемента при обноружении ( слево )
   titles.forEach(title => {
     if (!title.classList.contains('visible')) {
       const rect = title.getBoundingClientRect();
@@ -149,6 +151,72 @@ function checkVisibility() {
       }
     }
   });
+  // появление элемента при обноружении ( справо )
+
+  titlesRight.forEach(title => {
+    if (!title.classList.contains('visible_animation-in-right')) {
+      const rect = title.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        title.classList.add('visible_animation-in-right');
+      }
+    }
+  });
+  // появление элемента при обноружении ( вверх )
+  titlesUp.forEach(title => {
+    if (!title.classList.contains('visible_animation-in-up')) {
+      const rect = title.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        title.classList.add('visible_animation-in-up');
+      }
+    }
+  });
+
+
 }
 window.addEventListener('scroll', checkVisibility);
-checkVisibility(); 
+checkVisibility();
+
+// анимация 
+const easeOutCubic = p => 1 - Math.pow(1 - p, 3);
+
+const animate = (el, end, duration) => {
+  let start;
+  const step = t => {
+    if (!start) start = t;
+    let p = Math.min((t - start) / duration, 1);
+    el.textContent = Math.floor(easeOutCubic(p) * end);
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+
+const observer = new IntersectionObserver((entries, obs) => {
+  for (const e of entries) {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const end = parseInt(el.dataset.end) || 50;
+      const dur = parseInt(el.dataset.duration) || 1000;
+      animate(el, end, dur);
+      obs.unobserve(el); // убрать, если нужен повторный запуск
+    }
+  }
+}, { threshold: 0.5 });
+
+// Подключаем все существующие счётчики
+const attachAll = () => document.querySelectorAll('.counter').forEach(el => observer.observe(el));
+attachAll();
+
+// Удобная функция для добавления нового счётчика программно
+window.addCounter = (end = 50, duration = 1000, parent = document.body) => {
+  const el = document.createElement('div');
+  el.className = 'counter';
+  el.dataset.end = end;
+  el.dataset.duration = duration;
+  el.textContent = '0';
+  parent.appendChild(el);
+  observer.observe(el);
+  return el;
+};
+
+// Пример: добавить новый счётчик через 1 секунду (удалите или измените по необходимости)
+// setTimeout(() => window.addCounter(120, 800), 1000);

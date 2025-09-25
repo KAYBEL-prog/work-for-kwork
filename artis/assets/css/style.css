@@ -532,6 +532,10 @@ button{
   margin-top: auto;
   display: flex;
   flex-direction: column;
+
+  opacity: 0;
+  transform: translateY(50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .hero-block_bottom-box {
@@ -851,6 +855,10 @@ input:checked + .slider:before {
   display: flex; 
   gap: 20px;
   flex-wrap: wrap;
+
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .about-company-line-1_box-text .btns a {
   padding: 25px 70px;
@@ -878,6 +886,10 @@ input:checked + .slider:before {
   font-family: 'eu-brand-bold';
   flex: 1 1 100%;
 }
+.stat-big_num{
+  display: flex;
+  align-items: end;
+}
 .stat-big p {
   font-size: 100px;
   font-weight: bold;
@@ -888,6 +900,8 @@ input:checked + .slider:before {
 .stat-big span {
   font-size: 60px;
   font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
 .stat-big .label{
   font-family: 'inter';
@@ -965,8 +979,8 @@ input:checked + .slider:before {
   color: var(--white-color);
 
   opacity: 0;
-    transform: translateX(-50%);
-    transition: transform 1s ease-out, opacity 1.5s ease-out;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1.5s ease-out;
 }
 .best-service-line-1_box-text{
   width: 60%;
@@ -976,9 +990,31 @@ input:checked + .slider:before {
   background-position-x: right;
   background-repeat: no-repeat;
   background-size: 50%;
+  overflow-x: hidden;
 }
-.best-service-line-1_box-text .container{
+.best-service-line-1_box-text .container.item1{
   margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1s ease-out, opacity 1.5s ease-out;
+}
+.best-service-line-1_box-text .container.item2{
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1.4s ease-out, opacity 1.5s ease-out;
+}
+.best-service-line-1_box-text .container.item3{
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1.8s ease-out, opacity 1.5s ease-out;
+}
+.best-service-line-1_box-text .container.item4{
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 2.2s ease-out, opacity 1.5s ease-out;
 }
 .best-service-line-1_box-text h3{
   display: flex;
@@ -1472,6 +1508,10 @@ footer{
 .done-works-top_middle{
   position: relative;
   top: 0;
+
+  opacity: 0;
+  transform: translateY(50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .done-works-top_right-bottom-shadow{
   position: relative;
@@ -2181,6 +2221,9 @@ footer{
   flex-direction: column;
   z-index: 1;
 }
+.calculator .form-section .form-body .form-checkbox{
+  margin: 20px 0px;
+}
 .calculator .form-section .form-input {
   padding: 30px;
   margin-bottom: 20px;
@@ -2272,6 +2315,10 @@ footer{
   width: 100%;
   max-width: 700px;
   margin: 0px 10px;
+
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .text-and-btn p{
   font-size: 26px;  
@@ -2631,6 +2678,14 @@ footer{
   max-width: 1653px;
   margin: 30px auto;
   padding: 0px 20px;
+
+  color: var(--white-color);
+  font-size: 56px;
+  font-family: 'eu-brand-bold';
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .teams__inner{
   max-width: 1653px;
@@ -2701,16 +2756,30 @@ footer{
 .director-company_box h3{
   font-family: 'eu-brand-regular';
   font-size: 30px;
+
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .director-company_box h4{
   font-size: 21px;
   opacity: 0.3;
+
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1.4s ease-out, opacity 1s ease-out;
 }
 .director-company_box p{
   font-size: 21px;
   opacity: 0.3;
+
+  opacity: 0;
+  transform: translateX(50%);
+  transition: transform 1.8s ease-out, opacity 1s ease-out;
 }
 
+
+/* title__animation */
 
 .hero-block_top h1.visible{
   opacity: 1;
@@ -2744,7 +2813,6 @@ footer{
   opacity: 1;
   transform: translateX(0);   
 }
-
 .slider-title.visible{
   opacity: 1;
   transform: translateX(0); 
@@ -2781,7 +2849,51 @@ footer{
   opacity: 1;
   transform: translateX(0);  
 }
-/* title__animation */
+.teams__title.visible{
+  opacity: 1;
+  transform: translateX(0); 
+}
+/* animation-in-right visible_animation-in-right  */
+.best-service-line-1_box-text .container.visible_animation-in-right{
+  opacity: 1;
+  transform: translateY(0);
+}
+.done-works-top_middle.visible_animation-in-right{
+  opacity: 1;
+  transform: translateY(0);  
+}
+.text-and-btn.visible_animation-in-right{
+  opacity: 1;
+  transform: translateX(0);    
+}
+
+
+.director-company_box h3.visible_animation-in-right{
+  opacity: 1;
+  transform: translateX(0);
+
+}
+.director-company_box h4.visible_animation-in-right{
+  opacity: 1;
+  transform: translateX(0);
+
+}
+.director-company_box p.visible_animation-in-right{
+  opacity: 1;
+  transform: translateX(0);
+
+}
+/* visible_animation-in-up */
+.hero-block_bottom.visible_animation-in-up{
+  opacity: 1;
+  transform: translateY(0);  
+}
+.about-company-line-1_box-text .btns.visible_animation-in-up{
+  opacity: 1;
+  transform: translateY(0);    
+}
+
+
 @media (max-width:1920px) {
   .inner__header {
     width: 97%;
@@ -2897,6 +3009,9 @@ footer{
     max-width: 700px;
     min-width: 0;
     margin: 0px 10px;
+
+
+
   }
   .text-and-btn p {
     font-size: 18px;
