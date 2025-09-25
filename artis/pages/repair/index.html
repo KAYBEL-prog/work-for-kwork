@@ -25,7 +25,7 @@
       <a href="./../construction/">Строительство</a>
       <a href="./../calculator/" class="link__calculator">
         <span>Калькулятор</span>
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
           <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
           <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
@@ -56,7 +56,7 @@
             <input id="phone" name="phone" type="tel" placeholder="+7 999 000-00-00" required></div>
           <label class="form-checkbox">
             <input id="agree" name="agree" type="checkbox" required>
-            <span>500 500</span>
+            <span>я соглашаюсь с <a href="#">Политикой обработки персональных данных</a> и даю <a href="#">согласие на обработку персональных данных</a></span>
           </label>
           <div class="form-error" id="formError" aria-live="polite"></div>
           <div class="form-modal__actions">
@@ -77,7 +77,7 @@
             <a href="./../construction/">Строительство</a>
             <a href="./../calculator/" class="link__calculator">
               <span>Калькулятор</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
                 <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
                 <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>
@@ -111,7 +111,7 @@
         <div class="object object_other_settings">
           <div class="object-line-top">
             <h2 class="title">Какой у вас объект?</h2>
-            <p>Наши проекты узнаваемы во всем мире — стиль, в котором гармония форм, цвета и света превращает пространство в настоящее произведение искусства</p>
+            <p>Ремонт и отделка, выполненные точно по согласованному проекту и в установленные сроки.</p>
           </div>
           <div class="object-line-bottom">
             <div class="form-wrap" role="region" aria-label="Форма недвижимости">
@@ -143,8 +143,12 @@
                   </div>
                   <div class="field">
                     <label class="field-label" for="area"></label>
-                    <input id="area" name="area" type="number" min="0" step="0.1" placeholder="Площадь вашего объекта, м²" />
+                    <input id="area" name="area" type="number" min="0" step="0.1" placeholder="Площадь вашего объекта, м²"/>
                   </div>
+                  <label class="form-checkbox">
+                    <input id="agree" name="agree" type="checkbox" required>
+                    <span>я соглашаюсь с <a href="#">Политикой обработки персональных данных</a> и даю <a href="#">согласие на обработку персональных данных</a></span>
+                  </label>
                   <button type="submit" class="submit-btn">Давайте обсудим ваш проект</button>
                 </div>
               </div>
@@ -160,7 +164,7 @@
             <div class="accordion-column">
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №1</span>
+                    <span>1. Консультация и осмотр объекта</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -170,12 +174,12 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nihil reprehenderit inventore aliquam fugit dolores.</p>
+                    <p>Наш специалист приезжает на объект, обсуждает ваши пожелания и оценивает объем работ, чтобы предложить оптимальное решение.</p>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №2</span>
+                    <span>2. Разработка проекта и сметы</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -185,12 +189,12 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores ducimus distinctio iste itaque voluptates perferendis magnam officia quibusdam omnis natus recusandae consectetur libero nemo. Eos rerum numquam odio eum.</p>
+                    <p>Создаём детальный дизайн-проект и прозрачную смету, согласовываем все материалы и этапы работ с клиентом.</p>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №3</span>
+                    <span>3. Заключение договора</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -200,12 +204,12 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum nulla, alias laborum doloribus in repudiandae iste ad natus architecto delectus. Maxime, ut, facilis quae tenetur possimus nulla distinctio velit facere dolor, aliquid neque iure porro recusandae illo! Distinctio reiciendis dolorem sequi iste, numquam exercitationem culpa nisi quibusdam? Distinctio, ipsum soluta!</p>
+                    <p>Фиксируем сроки, стоимость и гарантийные обязательства, чтобы работа проходила без сюрпризов.</p>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №4</span>
+                    <span>4. Подготовительные работы</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -215,29 +219,14 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi rerum tenetur omnis, similique quaerat animi optio autem ut alias voluptatum voluptate officia aliquid odit ipsam, totam explicabo eligendi nisi, laboriosam eveniet ea! Aliquam voluptatum temporibus exercitationem consequuntur? Commodi doloribus ratione dolor dicta aut assumenda excepturi adipisci eligendi numquam, saepe alias possimus porro quo delectus distinctio veritatis totam optio. Placeat voluptatum provident, unde reiciendis ad dolores distinctio dolore commodi quas eligendi modi hic sed, eaque quisquam eos est ab. Nisi beatae distinctio, nulla blanditiis quo obcaecati quaerat earum quisquam ut perferendis a officiis quos voluptatum, officia assumenda error maxime fugiat placeat vitae eos ad. Debitis facilis tenetur veniam obcaecati animi rem repellendus excepturi assumenda quod sapiente, adipisci vel? Laboriosam reiciendis itaque quo accusamus totam quas modi eveniet impedit ipsam voluptatibus, debitis quaerat officia quia quisquam dolorem odio amet aperiam ducimus atque alias omnis! Accusantium, maxime nihil illum fugiat doloremque id non.</p>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header">
-                    <span>Этап №5</span>
-                    <span class="accordion-icon">
-                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
-                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
-                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="accordion-content">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi ratione mollitia dolores adipisci molestiae, libero quia ut, dignissimos necessitatibus suscipit placeat at vero maxime unde rerum itaque odit obcaecati expedita.5</p>
+                    <p>Готовим помещение к ремонту: демонтаж, вывоз, защита поверхностей и закупка материалов.</p>
                   </div>
                 </div>
             </div>
             <div class="accordion-column">
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №6</span>
+                    <span>5. Основной ремонт</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -247,12 +236,12 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit hic ut dolores quos expedita natus blanditiis. Hic cum corporis, quod reiciendis soluta, corrupti voluptatum necessitatibus laboriosam voluptas amet accusamus debitis!</p>
+                    <p>Выполняем все капитальные и отделочные работы строго по проекту, контролируя каждый этап.</p>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №7</span>
+                    <span>6. Контроль качества</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -262,12 +251,12 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore impedit repudiandae nam voluptatibus exercitationem numquam quia quibusdam quas corporis suscipit expedita quaerat, qui facere, laborum, molestias doloribus asperiores sunt. Accusantium corporis veritatis sit nesciunt. Itaque eum suscipit autem aspernatur possimus. Architecto, molestias ex. Quae voluptate eveniet accusantium distinctio provident assumenda voluptates, facilis ullam sit quia, alias, aliquid facere possimus labore est vel esse asperiores officiis commodi. Qui natus veniam iste cum autem beatae, quod perspiciatis ut harum, eveniet incidunt aperiam? Eaque est unde aliquid nihil ex earum deserunt obcaecati mollitia quisquam animi reprehenderit iste, voluptatibus accusamus doloribus fuga quo. Deleniti ipsum, cum veniam reiciendis eos, impedit aspernatur odit aperiam beatae enim voluptatem ipsa culpa doloribus eaque, in nesciunt. Suscipit eius pariatur veniam ipsum dolorem dolore nobis quas, ea repellat beatae nulla veritatis accusantium aperiam molestiae tenetur ratione accusamus! Earum eos aliquid ex consequatur ea sit ullam non numquam possimus facilis?</p>
+                    <p>Следим за соответствием работ проекту и смете, вносим корректировки при необходимости.</p>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №8</span>
+                    <span>7. Завершающие работы</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -277,12 +266,12 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id debitis excepturi, repellendus voluptates assumenda temporibus.</p>
+                    <p>Устанавливаем декоративные элементы, освещение и мебель, проверяем инженерные системы.</p>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <div class="accordion-header">
-                    <span>Этап №9</span>
+                    <span>8. Сдача объекта и гарантия</span>
                     <span class="accordion-icon">
                       <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
@@ -292,22 +281,7 @@
                     </span>
                   </div>
                   <div class="accordion-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos distinctio voluptatum iure numquam dolorum dolore. Eligendi dolorem commodi nesciunt, id autem, nam illo, maxime magnam facere perferendis ipsam fugiat vitae qui! Est, dicta eum odit velit et, dolorem illo magnam quaerat eius error repudiandae itaque non, illum dolore aperiam nam assumenda magni temporibus! Aut incidunt explicabo quia totam perspiciatis earum tempore excepturi perferendis molestias corrupti, nulla fuga dicta sequi enim labore molestiae tenetur asperiores tempora dignissimos cupiditate quod veritatis aliquam!</p>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header">
-                    <span>Этап №10</span>
-                    <span class="accordion-icon">
-                      <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="25.6666" cy="26.0001" r="25.3333" fill="#1C1C1C"/>
-                        <path d="M25.2829 18.3838C25.2829 17.8037 25.7532 17.3333 26.3334 17.3333C26.9136 17.3333 27.3839 17.8037 27.3839 18.3838V33.6162C27.3839 34.1964 26.9136 34.6667 26.3334 34.6667C25.7532 34.6667 25.2829 34.1964 25.2829 33.6162V18.3838Z" fill="white"/>
-                        <path d="M33.9496 24.9495C34.5298 24.9495 35.0001 25.4198 35.0001 26C35.0001 26.5802 34.5298 27.0505 33.9496 27.0505L18.7173 27.0505C18.1371 27.0505 17.6667 26.5802 17.6667 26C17.6667 25.4198 18.1371 24.9495 18.7173 24.9495L33.9496 24.9495Z" fill="white"/>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="accordion-content">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur voluptate, harum ipsum hic, dolorum aliquam sunt, perspiciatis magnam necessitatibus vitae nemo eum nostrum eligendi dignissimos corporis officia labore incidunt ad vero expedita unde tempore fuga numquam. Quaerat at adipisci quibusdam consequuntur harum recusandae rerum nemo maxime ipsum. Optio, et molestias facere eveniet architecto similique saepe voluptatibus vero? Odit excepturi officia dolorem, temporibus consectetur sapiente vel dolor pariatur expedita ad dicta distinctio at reprehenderit magnam nesciunt. Aliquid voluptatibus animi debitis ut eligendi possimus quibusdam quam soluta officia accusamus dolore temporibus, quas voluptas nobis illum recusandae dicta cumque adipisci amet libero cupiditate consequuntur excepturi veritatis. Quaerat laborum quae corporis odio sint ullam eligendi distinctio minima quis molestias dolore ipsa recusandae modi unde explicabo, natus doloribus repudiandae? Illum qui doloremque provident commodi dicta culpa amet ut ipsum repudiandae. Maiores id molestiae voluptate odio sunt nemo quae cupiditate natus doloribus libero! Earum quasi vero asperiores sunt quas, voluptates unde explicabo. Perferendis tempore non necessitatibus eligendi consequuntur aspernatur earum a inventore. Veniam quisquam deserunt quia, odio vel asperiores blanditiis corrupti ullam ad soluta nihil quod cupiditate repellendus alias ea aspernatur. Omnis officiis sequi nobis repellat quo, ratione minus. Hic dolore omnis magnam. Soluta aliquid maxime illo non praesentium accusamus optio odio omnis repudiandae quas iste, exercitationem, quis quia, incidunt quasi saepe quidem maiores eum perferendis expedita id repellendus facere laborum? At, illo voluptatem recusandae ipsum temporibus veniam porro rem beatae reiciendis tempore! Quia delectus, placeat laudantium reiciendis possimus earum corporis ad sed eligendi dolores, iste fuga impedit animi voluptatum hic fugiat assumenda at exercitationem molestiae! Totam iure recusandae, hic animi consectetur repellendus a iste esse ullam perspiciatis asperiores explicabo nesciunt? Dolore necessitatibus veniam velit cum illum sint! Neque itaque porro earum perspiciatis numquam. Ipsam vitae quidem facere delectus voluptates labore ducimus dolorem nisi aperiam voluptatum.</p>
+                    <p>Передаём готовый объект, подписываем акт выполненных работ и предоставляем гарантию на все услуги.</p>
                   </div>
                 </div>
             </div>
@@ -530,6 +504,10 @@
                   <input type="text" class="form-input" placeholder="Ваше имя">
                   <input type="email" class="form-input" placeholder="Ваш e-mail">
                   <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
+                  <label class="form-checkbox">
+                    <input id="agree" name="agree" type="checkbox" required>
+                    <span>я соглашаюсь с <a href="#">Политикой обработки персональных данных</a> и даю <a href="#">согласие на обработку персональных данных</a></span>
+                  </label>
                   <button class="form-button">Получить пошаговый план</button>
                 </div>
               </div>
@@ -555,11 +533,11 @@
                   <h2>Компания предоставляет клиентам и услугу приёма квартиры у застройщика</h2> 
                 </div>
                 <div class="portfolio__details">
-                  <p>C первого дня вас будет сопровождать персональный менеджер, который позаботится о том, чтобы каждый этап проекта доставлял вам удовольствие</p>
+                  <p>Мы сопроводим вас на каждом этапе приёма квартиры, чтобы вы получили готовое жильё без лишних сложностей. С первого дня за вами закрепляется персональный менеджер, который контролирует процесс и обеспечивает комфортное взаимодействие с застройщиком.</p>
                   <ul class="portfolio__details-list">
-                    <li>Тезис1</li>
-                    <li>Тезис2</li>
-                    <li>Тезис3</li>
+                    <li><span>Проверка квартиры:</span> детальный осмотр и фиксация всех недочётов, соответствие стандартам застройщика и проектной документации.</li>
+                    <li><span>Документальное сопровождение:</span> помощь с оформлением актов приёма-передачи и необходимых бумаг.</li>
+                    <li><span>Контроль устранения замечаний:</span> ведём переговоры с застройщиком и контролируем исправление дефектов до полного соответствия квартиры заявленным стандартам.</li>
                   </ul>
                 </div>
                 <div class="portfolio__button">
@@ -591,7 +569,7 @@
                 <a href="./../construction/">Строительство</a>
                 <a href="./../calculator/" class="link__calculator">
                   <span>Калькулятор</span>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.704346 2.1657C0.704346 1.35868 1.35856 0.704468 2.16558 0.704468H17.9098C18.7168 0.704468 19.371 1.35868 19.371 2.1657V17.9114C19.371 18.7176 18.7175 19.3711 17.9113 19.3711H0.704346V2.1657Z" fill="#252525"/>
                     <path d="M5.0107 7.23504V4.86407H5.61014V7.23504H5.0107ZM4.12494 6.34927V5.74983H6.49591V6.34927H4.12494Z" fill="white"/>
                     <path d="M6.23936 14.5266V15.0926H4.67546V14.5266H6.23936Z" fill="white"/>

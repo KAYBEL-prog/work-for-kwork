@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!name) { formError.textContent = 'Укажите имя'; form.name.focus(); return; }
     if (!phone) { formError.textContent = 'Укажите телефон'; form.phone.focus(); return; }
     if (phone.replace(/\D/g, '').length < 10) { formError.textContent = 'Неверный телефон'; form.phone.focus(); return; }
-    if (!agree) { formError.textContent = 'Отметьте галочку'; return; }
+    if (!agree) { formError.textContent = 'Необходимо дать согласие на обработку персональных данных и политику обработки персональных данных'; return; }
 
     console.log({ name, phone, agree });
     formError.style.color = '#bfffc9';

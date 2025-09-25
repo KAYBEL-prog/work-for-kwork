@@ -139,6 +139,14 @@ button{
   gap:10px;
   font-size:16px;
   user-select:none;
+  
+}
+.form-checkbox span{
+  color: var(--white-color);
+}
+.form-checkbox a{
+  color: var(--white-color);
+  text-decoration: underline;
 }
 .form-checkbox input[type="checkbox"]{
   width:18px;
@@ -260,7 +268,7 @@ button{
   width: 100vw;
   height: max-content;
   position: fixed;
-  z-index: 2;
+  z-index: 999;
   padding: 25px 0px 25px 0px ;
   background: var(--bg-color);
   border:1px #2B2B2B;
@@ -285,6 +293,7 @@ button{
 .header-menu {
   width: max-content;
   display: flex;
+  align-items: center;
 }
 .header-menu a{
   color: var(--white-color);
@@ -452,6 +461,9 @@ button{
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
+  background-position-y: center;
+  -webkit-box-shadow: inset -5px -150px 150px -26px #121011; 
+  box-shadow: inset -5px -150px 150px -26px #121011;
 }
 .bg2{
   background-image: url(./../img/bg_3.png);
@@ -967,8 +979,9 @@ input:checked + .slider:before {
 }
 .best-service-line-1_box-text p{
   font-size: 21px;
-  color: var(--white-color);
-  opacity: 0.3;
+  line-height: 120%;
+  letter-spacing: 1.2px;
+  color: #c1c1c1;
 }
 
 .bg_images{
@@ -1116,6 +1129,11 @@ input:checked + .slider:before {
   width: 60%;
   display: flex;
   flex-direction: column;
+}
+
+.right-col .form-checkbox{
+  max-width: 800px;
+  margin: 20px 0px;
 }
 .field{
   width: 100%;
@@ -1377,7 +1395,7 @@ footer{
 }
 .title {
   font-family: 'eu-brand-bold';
-  font-size: 56px;
+  font-size: 48px;
   color: var(--white-color);
   margin: 0;
 }
@@ -1772,7 +1790,7 @@ footer{
   flex-direction: column;
 }
 .apartment-acceptance .portfolio__details p{
-  font-size: 21px;
+  font-size: 18px;
   opacity: 0.3;
 }
 .apartment-acceptance .portfolio__info{
@@ -1781,16 +1799,21 @@ footer{
 
 .apartment-acceptance .portfolio__details-list{
   padding-left: 20px;
-  opacity: 0.3;
 }
 .portfolio__details-list{
   color: var(--white-color);
   text-align: start;
 }
-.portfolio__details-list li{
+.apartment-acceptance .portfolio__details-list li{
   margin-top: 10px;
+  color: #a1a1a1;
+  opacity: 1;
 }
-
+.apartment-acceptance .portfolio__details-list li span{
+  font-weight: 800;
+  color: var(--white-color);
+  opacity: 1;
+}
 
 
 .calculator{
@@ -1867,13 +1890,13 @@ footer{
 .calculator .field h3{
   margin:0 0 10px 0;
   font-family:'eu-brand-bold', sans-serif;
-  font-size:14px;
+  font-size:18px;
   color:#FFFFFF;
   font-weight:700;
 }
 .calculator .field .subtitle{
   margin:0 0 18px 0;
-  font-size:13px;
+  font-size:16px;
   color:#FFFFFF;
   opacity:0.28;
 }
@@ -1899,14 +1922,14 @@ footer{
   border:0;
   background:transparent;
   color:rgba(255,255,255,0.18);
-  font-size:18px;
+  font-size:24px;
   font-weight:600;
   outline:none;
   text-align:right;
   padding:0;
 }
 .calculator .number-input .unit{
-  font-size:13px;
+  font-size:18px;
   opacity:0.6;
   margin-left:0;
   line-height:1.2;
@@ -2032,7 +2055,7 @@ footer{
   align-items:flex-start;
 }
 .calculator .promo{
-  font-size:13px;
+  font-size:18px;
   color:#FFFFFF;
   opacity:0.28
 }
@@ -2046,7 +2069,7 @@ footer{
   align-items:flex-start;
 }
 .calculator .summary .label{
-  font-size:14px;
+  font-size:18px;
   color:#FFFFFF;
   opacity:0.28;
 }
@@ -2174,10 +2197,8 @@ footer{
 .discuss-project__inner h2{
   width: 100%;
   max-width: 700px;
-  min-width: 400px;
-  margin: 45px 10px;
-
-
+  margin: 45px 50px 0px 0px;
+  
   font-family: 'eu-brand-bold';
   font-size: 66px;
   margin-bottom: 0;
@@ -2186,8 +2207,7 @@ footer{
 
 .text-and-btn{
   width: 100%;
-  max-width: 650px;
-  min-width: 400px;
+  max-width: 700px;
   margin: 0px 10px;
 }
 .text-and-btn p{
@@ -2231,7 +2251,7 @@ footer{
   margin: auto;
   padding: 0px 20px;
 }
-.title {
+.news__inner .title {
   font-family: 'eu-brand-regular';
   font-size: 56px;
   margin-top: 50px;
@@ -2711,19 +2731,19 @@ footer{
 
   .discuss-project__inner h2{
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
     min-width: 0;
     font-family: 'eu-brand-bold';
     margin-top: 30px;
-
-    font-size: 35px;
-    text-align: start;
+    margin-right: 0;
     margin-bottom: 0;
+
+    text-align: start;
     color: var(--white-color);
   }
   .text-and-btn {
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
     min-width: 0;
     margin: 0px 10px;
   }
@@ -3383,6 +3403,7 @@ footer{
     font-family: 'eu-brand-bold';
     font-size: 35px;
     text-align: center;
+    margin-right: 0;
     margin-bottom: 0;
     color: var(--white-color);
   }
