@@ -396,6 +396,10 @@ button{
   font-family: 'eu-brand-bold';
   font-size: 56px;
   color: var(--white-color);
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .accordion-grid {
   display: grid;
@@ -1822,6 +1826,13 @@ footer{
   margin-bottom: 60px;
   padding: 0px 20px 0px 20px ;
   text-align: start;
+  font-family: 'eu-brand-bold';
+  font-size: 56px;
+  color: var(--white-color);
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .apartment-acceptance .portfolio__nav h2{
   margin-left: 0;
@@ -1878,12 +1889,20 @@ footer{
   color: var(--white-color);
   margin: 0;
   margin-right: 70px;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 2s ease-out;
 }
 .calculator .calculator__title p{
   font-size: 21px;
   color: var(--white-color);
   opacity: 0.3;
   margin-top: 20px;
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1.5s ease-out, opacity 2s ease-out;
 }
 
 .calculator .calculator__wrapper{
@@ -2223,6 +2242,7 @@ footer{
   align-items: center;
 }
 .discuss-project__inner { 
+  width: 100%;
   max-width: 1653px;
   height: max-content;
   margin: auto;
@@ -2242,6 +2262,10 @@ footer{
   font-size: 66px;
   margin-bottom: 0;
   color: var(--white-color);
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .text-and-btn{
@@ -2284,6 +2308,15 @@ footer{
   max-width: 1653px;
   margin: auto;
   padding: 0px 20px;
+}
+.news__title h2{
+  font-family: 'eu-brand-bold';
+  font-size: 56px;
+  color: var(--white-color);
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .news__inner{
   max-width: 1653px;
@@ -2374,6 +2407,9 @@ footer{
   max-width: 900px;
   font-size: 40px;
   margin: 0;
+  font-size: 40px;
+  color: var(--white-color);
+
 }
 .news__content-inner .title .data{
   font-size: 21px;
@@ -2490,6 +2526,12 @@ footer{
   margin: auto;
   margin-bottom: 50px;
   text-align: start;
+  font-size: 56px;
+  color: var(--white-color);
+
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 .contact .portfolio__inner{
   width: 80%;
@@ -2711,6 +2753,35 @@ footer{
   opacity: 0.8;
   transform: translateX(0); 
 }
+.stages-work_title.visible{
+  opacity: 1;
+  transform: translateX(0);   
+}
+.calculator .calculator__title h2.visible{
+  opacity: 1;
+  transform: translateX(0);    
+}
+.calculator .calculator__title p.visible{
+  opacity: 1;
+  transform: translateX(0);  
+}
+.apartment-acceptance .title.visible{
+  opacity: 1;
+  transform: translateX(0);    
+}
+.discuss-project__inner h2.visible{
+  opacity: 1;
+  transform: translateX(0);  
+}
+.news__title h2.visible{
+  opacity: 1;
+  transform: translateX(0);   
+}
+.contact .title.visible{
+  opacity: 1;
+  transform: translateX(0);  
+}
+/* title__animation */
 @media (max-width:1920px) {
   .inner__header {
     width: 97%;

@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // появление элемента при обноружении
 
-const titles = document.querySelectorAll('.title__animation');
+const titles = document.querySelectorAll('.fade_in_right');
 function checkVisibility() {
   titles.forEach(title => {
     if (!title.classList.contains('visible')) {
