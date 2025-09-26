@@ -1037,8 +1037,8 @@ input:checked + .slider:before {
   color: rgba(255, 255, 255, 0.4);
 
 }
-.best-service-line-1_box-text h3 .left{
-  margin-right: 30px
+.best-service-line-1_box-text h3 .checkbox_icon{
+  margin-right: 10px
 }
 .best-service-line-1_box-text h3 .right{
   margin-left: 30px;
