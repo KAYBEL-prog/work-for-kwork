@@ -2883,12 +2883,12 @@ footer{
 
 }
 .director-company_box h4.visible_animation-in-right{
-  opacity: 1;
+  opacity: 0.3;
   transform: translateX(0);
 
 }
 .director-company_box p.visible_animation-in-right{
-  opacity: 1;
+  opacity: 0.3;
   transform: translateX(0);
 
 }
