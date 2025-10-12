@@ -17,6 +17,14 @@
     height: 100vh;
     color: white;
   }
+  button{
+    display: block;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    text-align: start;
+    
+  }
   .phone-box {
     display: flex;
     align-items: center;
@@ -128,6 +136,90 @@
       </div>
     </div>
 
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel">Политика обработки персональных данных</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ">
+            <div class="text-white">
+              <p class="m-0 fs-6 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo nisi quod amet officiis recusandae tenetur perspiciatis sit eaque laboriosam enim doloribus ratione deserunt, temporibus quidem. Doloribus quod error, facere, unde ea possimus sint neque quasi libero ullam, ut inventore natus quae iusto soluta voluptatibus quam. Eos nesciunt qui iste?</p>
+              <div class="form-check m-2">
+                <input class="form-check-input" type="checkbox" id="cookiePolicy" required>
+                <label class="form-check-label text-white text-start text-wrap " style="display: flex; text-wrap: wrap;" for="cookiePolicy">
+                  <span class="me-1">
+                    Согласен с
+                  </span>
+                  <button id="btn" data-bs-target="#exampleModal4" data-bs-toggle="modal" style=" color: #fff;"> политикой использования файлов Cookie</button>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-black text-white" data-bs-dismiss="modal" aria-label="Close" >Подтвердить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel">политикой обработки персональных данных</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ">
+            <div class="text-white">
+              <p class="m-0 fs-6 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo nisi quod amet officiis recusandae tenetur perspiciatis sit eaque laboriosam enim doloribus ratione deserunt, temporibus quidem. Doloribus quod error, facere, unde ea possimus sint neque quasi libero ullam, ut inventore natus quae iusto soluta voluptatibus quam. Eos nesciunt qui iste?</p>
+              <div class="form-check m-2">
+                <input class="form-check-input" type="checkbox" id="cookiePolicy" required>
+                <label class="form-check-label text-white text-start text-wrap " style="display: flex; text-wrap: wrap;" for="cookiePolicy">
+                  <span class="me-1">
+                    Согласен с
+                  </span>
+                  <button id="btn" data-bs-target="#exampleModal4" data-bs-toggle="modal" style=" color: #fff;">политикой обработки персональных данных</button>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-black text-white" data-bs-dismiss="modal" aria-label="Close" >Подтвердить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel">правилами нахождения в видеочате</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ">
+            <div class="text-white">
+              <p class="m-0 fs-6 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo nisi quod amet officiis recusandae tenetur perspiciatis sit eaque laboriosam enim doloribus ratione deserunt, temporibus quidem. Doloribus quod error, facere, unde ea possimus sint neque quasi libero ullam, ut inventore natus quae iusto soluta voluptatibus quam. Eos nesciunt qui iste?</p>
+              <div class="form-check m-2">
+                <input class="form-check-input" type="checkbox" id="cookiePolicy" required>
+                <label class="form-check-label text-white text-start text-wrap " style="display: flex; text-wrap: wrap;" for="cookiePolicy">
+                  <span class="me-1">
+                    Согласен с
+                  </span>
+                  <button id="btn" data-bs-target="#exampleModal4" data-bs-toggle="modal" style=" color: #fff;">правилами нахождения в видеочате</button>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-black text-white" data-bs-dismiss="modal" aria-label="Close" >Подтвердить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section>
      <div class="container px-0 text-center d-flex align-items-center vh-100">
       <div class=" w-100 ">
@@ -156,19 +248,19 @@
               <div class="form-check mb-2">
                 <input class="form-check-input" type="checkbox" id="cookiePolicy" required>
                 <label class="form-check-label text-white text-start" for="cookiePolicy">
-                  Согласен с <a href="#" style="text-decoration: underline; color: #fff;">политикой использования файлов Cookie</a>
+                  Согласен с <button id="btn" data-bs-target="#exampleModal4" data-bs-toggle="modal" style="text-decoration: underline; color: #fff;">политикой использования файлов Cookie</button>
                 </label>
               </div>
               <div class="form-check mb-2">
                 <input class="form-check-input" type="checkbox" id="personalDataPolicy" required>
                 <label class="form-check-label text-white text-start" for="personalDataPolicy">
-                  Согласен с <a href="#" style="text-decoration: underline; color: #fff;">политикой обработки персональных данных</a>
+                  Согласен с <button id="btn" data-bs-target="#exampleModal5" data-bs-toggle="modal" style="text-decoration: underline; color: #fff;">политикой обработки персональных данных</button>
                 </label>
               </div>
               <div class="form-check mb-2">
                 <input class="form-check-input" type="checkbox" id="videoChatRules" required>
                 <label class="form-check-label text-white text-start" for="videoChatRules">
-                  Согласен с <a href="#" style="text-decoration: underline; color: #fff;">правилами нахождения в видеочате</a>
+                  Согласен с <button id="btn" data-bs-target="#exampleModal6" data-bs-toggle="modal" style="text-decoration: underline; color: #fff;">правилами нахождения в видеочате</button>
                 </label>
               </div>
             </div>
