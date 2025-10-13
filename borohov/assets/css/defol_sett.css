@@ -6,13 +6,19 @@ body{
   font-family: "Inter", sans-serif;
 }
 a{
+  font-family: "Inter", sans-serif;
+
   color: #fff;
   text-decoration: none;
 }
 p{
+  font-family: "Inter", sans-serif;
+
   margin: 0;
 }
 button{
+  font-family: "Inter", sans-serif;
+
   background-color: transparent;
   border-radius: 0;
   border: none;
