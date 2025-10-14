@@ -307,14 +307,16 @@ footer{
 /* / heroblock */
 
 /* about */
-
-.title{
+.wrap.about .title{
   width: 100%;
   font-size: 50px;
   font-weight: 800;
   color: #000;
   text-align: center;
   margin-bottom: 30px;
+}
+.wrap.about .title span{
+  color: #FF6A00;
 }
 .inner__about {
   width: 100%;
@@ -1105,38 +1107,49 @@ footer{
   border-radius: 12px;
   
   display: flex;
-
 }
 .inner__reviews-other  .row .item .card .col{
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 20px;
   padding: 10px 0px;
 }
 .inner__reviews-other  .row .item .card .col .message{
+  width: 100%;
   margin-top: auto;
+
 }
 .inner__reviews-other  .row .item .card .info {
   width: 100%;
-  max-width: 1500px;
+  max-width: none;
   height: max-content;
-
 
   background-color: #F8F8F8;
   border-radius: 12px;
   
   display: flex;
   align-items: start;
+  justify-content: space-between;
+  padding-right: 150px;
+  box-sizing: border-box;
 }
 .inner__reviews-other  .row .item .card .info  p{
   width: max-content;
-  margin-right: 100px;
+  margin-right: 10px;
   margin-top: 5px;
   font-size: 30px;
   line-height: 24px;
   text-align: start;
+  text-wrap: nowrap;
 }
-.inner__reviews-other  .row .item .card .info  span{
+.money-debited{
+  width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.inner__reviews-other  .row .item .card .info .money-debited span{
   width: max-content;
   font-size: 30px;
   line-height: 30px;
@@ -1144,6 +1157,12 @@ footer{
   margin: 0px;
   display: flex;
   align-items: start;
+}
+.inner__reviews-other  .row .item .card .info .money-debited span.other{
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 30px;
+  text-align: start;
 }
 .inner__reviews-other  .row .item .card .info  h3{
   width: max-content;
@@ -1153,7 +1172,7 @@ footer{
   text-align: start;
   margin: 0px;
   margin-top: 5px;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 .inner__reviews-other  .row .item .card a{
   width: 100%;
@@ -1185,6 +1204,30 @@ footer{
 
 
 @media (max-width:768px) {
+  .inner__reviews-other  .row .item .card .info {
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .inner__reviews-other  .row .item .card .info p{
+    text-wrap: nowrap;
+  }
+  .inner__reviews-other  .row .item .card .info span{
+    text-wrap: wrap;
+  }
+  .inner__reviews-other  .row .item .card .col .message{
+    width: 100%;
+    margin-top: auto;
+  }
+  .inner__reviews-other  .row .item .card .col .message p{
+    padding-right: 150px;
+  }
+  .inner__reviews-other  .row .item .card img {
+    width: min-content;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
   .smi-block .title{
     font-size: 38px;
   }
@@ -1229,6 +1272,15 @@ footer{
   }
 }
 @media (max-width:550px) {
+  .inner__reviews-other  .row .item .card .col .message p{
+    padding-right: 100px;
+  }
+  .inner__reviews-other  .row .item .card img {
+    width: min-content;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
   .smi-blockmenu a{
     width: 100%;
     border-radius: 10px;
@@ -1245,6 +1297,24 @@ footer{
   }
 }
 @media (max-width:425px) {
+  .inner__reviews-other  .row .item .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .inner__reviews-other .row .item .card .col{
+    margin: 0;
+  }
+  .inner__reviews-other  .row .item .card img{
+    margin: auto;
+    height: 150px;
+  }
+  .inner__reviews-other .row .item .card .col .message p{
+    padding: 0;
+  }
+  .inner__reviews-other .row .item .card .info{
+    padding: 0;
+
+  }
   .inner__ya-maps-star .stars{
     margin: 20px auto;
   }
@@ -1260,9 +1330,9 @@ footer{
     text-wrap: nowrap;
   }
   .inner__ya-maps-star p{
-  font-size: 36px;
-  font-weight: 800;
-}
+    font-size: 36px;
+    font-weight: 800;
+  }
 }
 
 /* / slick-slider */
