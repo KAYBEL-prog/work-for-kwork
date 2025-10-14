@@ -205,6 +205,9 @@ footer{
     justify-content: space-around;
     margin: 20px 0px;
   }
+  .inner__footer-column .info{
+    text-align: center;
+  }
   .inner__footer-column .info span {
     display: block;
     margin: auto;
@@ -213,6 +216,7 @@ footer{
     font-size: 12px;
     color: #a1a1a1;
   }
+
 }
 /* / footer */
 
@@ -222,7 +226,7 @@ footer{
 .wrap{
   width: 100%;
   min-height: 680px;
-  padding-top: 115px;
+  padding-top: 120px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -361,7 +365,7 @@ footer{
   overflow: hidden;
 }
 .inner__about .info {
-  max-width: 800px;
+  max-width: 870px;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -369,6 +373,7 @@ footer{
 .inner__about .info p.text{
   font-size: 18px;
   line-height: 27px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 .inner__about .info span{
@@ -480,8 +485,9 @@ footer{
 }
 .inner__achievement .lower__row .item p{
   font-size: 76px;
-  font-weight: 800;
+  font-weight: 500;
   text-align: center;
+  margin-bottom: 15px;
 }
 .inner__achievement .lower__row .item p.other{
   font-size: 21px;
@@ -657,7 +663,7 @@ footer{
 .inner__our-team{
   width: 100%;
   max-width: 1420px;
-  padding: 20px 20px;
+  padding: 0px 20px;
   box-sizing: border-box;
   margin: auto;
 }
@@ -740,6 +746,7 @@ footer{
 }
 .inner__team_slider .row {
   display: flex;
+  align-items: center;
 }
 .inner__team_slider .row .item {
   padding: 8px;
@@ -774,8 +781,8 @@ footer{
 .slick-prev,
 .slick-next {
   position: relative;
-  top: 50%;
-  transform: translateY(300%);
+  top: 0;
+  transform: translateY(0%);
   z-index: 5;
   min-width: 40px;
   height: 45px;
@@ -792,17 +799,19 @@ footer{
 
 
 .wrap.diplomas-slider{
-  padding-top: 0px;
+  padding-top: 10px;
   min-height: max-content;
 }
 .diplomas-slider .title{
   width: 100%;
+  
   max-width: 800px;
   margin: auto;
   font-weight: 800;
   font-size: 50px;
 
-  padding: 0px 10px;
+  padding: 0 10px;
+  padding-top: 100px;
   box-sizing: border-box;
 }
 .inner__diplomas-slider {
@@ -814,13 +823,14 @@ footer{
 }
 .inner__diplomas-slider .row {
   display: flex;
+  align-items: center;
 }
 .inner__diplomas-slider .row .item {
   box-sizing: border-box;
   padding: 10px;
 }
 .inner__diplomas-slider .row .item .card {
-  min-height: 290px;
+  min-height: 390px;
   padding: 50px 20px;
   box-sizing: border-box;
 
@@ -832,9 +842,10 @@ footer{
   align-items: center;
   text-align: center;
 }
+
 .inner__diplomas-slider .row .item .card img {
   width: max-content;
-  height: 350px;
+  height: 400px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -869,7 +880,7 @@ footer{
 
 
 .wrap.smi-block{
-  padding-top: 0px;
+  padding-top: 120px;
   min-height: max-content;
 }
 .smi-block .title{
@@ -891,15 +902,22 @@ footer{
 }
 .inner__smi-block .row {
   display: flex;
+  align-items: center;
+}
+.smi-block-slider .slick-track{
+  height: 480px;
+
 }
 .inner__smi-block .row .item {
   box-sizing: border-box;
   padding: 20px;
+  height: 100%;
+
 }
 .inner__smi-block .row .item .card {
   width: 100%;
   max-width: 290px;
-  height: max-content;
+  height: 100%;
   padding: 30px 20px;
   box-sizing: border-box;
 
@@ -920,7 +938,7 @@ footer{
 }
 .inner__smi-block .row .item .card a{
   width: 100%;
-  margin-top: 50px;
+  margin-top: auto;
   background-color: #E0E0E0;
   font-size: 18px;
   padding: 10px 0px;
@@ -977,7 +995,7 @@ footer{
 
 
 .wrap.reviews{
-  padding-top: 0px;
+  padding-top: 120px;
   min-height: max-content;
 }
 .reviews .title{
@@ -999,6 +1017,7 @@ footer{
 }
 .inner__reviews .row {
   display: flex;
+  align-items: center;
 }
 .inner__reviews .row .item {
   box-sizing: border-box;
@@ -1117,6 +1136,7 @@ footer{
 }
 .inner__reviews-other  .row {
   display: flex;
+  align-items: center;
 }
 .inner__reviews-other  .row .item {
   box-sizing: border-box;
