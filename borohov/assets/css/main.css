@@ -226,7 +226,7 @@ footer{
 .wrap{
   width: 100%;
   min-height: 680px;
-  padding-top: 120px;
+  padding-top: 50px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -811,7 +811,7 @@ footer{
   font-size: 50px;
 
   padding: 0 10px;
-  padding-top: 100px;
+  padding-top: 50px;
   box-sizing: border-box;
 }
 .inner__diplomas-slider {
@@ -880,7 +880,7 @@ footer{
 
 
 .wrap.smi-block{
-  padding-top: 120px;
+  padding-top: 50px;
   min-height: max-content;
 }
 .smi-block .title{
@@ -995,7 +995,7 @@ footer{
 
 
 .wrap.reviews{
-  padding-top: 120px;
+  padding-top: 50px;
   min-height: max-content;
 }
 .reviews .title{
