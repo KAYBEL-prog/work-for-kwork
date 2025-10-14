@@ -827,7 +827,7 @@ footer{
 }
 .inner__diplomas-slider .row .item {
   box-sizing: border-box;
-  padding: 10px;
+  padding:10px 17px;
 }
 .inner__diplomas-slider .row .item .card {
   min-height: 390px;
@@ -845,7 +845,7 @@ footer{
 
 .inner__diplomas-slider .row .item .card img {
   width: max-content;
-  height: 395px;
+  height: 380px;
   object-fit: cover;
   border-radius: 12px;
 }
