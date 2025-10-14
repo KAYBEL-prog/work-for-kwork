@@ -139,13 +139,39 @@ footer{
 }
 .inner__footer-column-social{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.link_social-row{
+  width: max-content;
+  display: flex;
   justify-content: end;
+  margin-bottom: auto;
+  margin-left: auto;
+  /* margin-right: auto; */
+}
+.link_politic{
+  width: max-content;
+  font-size: 18px;
+  text-decoration: underline;
+  text-align: end;
+  color: #a1a1a1;
+  margin-left: auto;
 }
 .inner__footer-column-social svg{
   margin: 0px 10px;
 }
+
 @media (max-width:768px) {
-  
+  .link_social-row{
+
+    margin-right: auto;
+  }
+  .link_politic{
+
+    margin-left: auto;
+    margin-right: auto;
+  }
   .inner__footer{
     max-width: 1920px;
     margin: auto;
@@ -307,7 +333,7 @@ footer{
 /* / heroblock */
 
 /* about */
-.wrap.about .title{
+.title{
   width: 100%;
   font-size: 50px;
   font-weight: 800;
