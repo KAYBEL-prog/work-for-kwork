@@ -234,6 +234,7 @@ footer{
 
 /* heroblock */
 .bg_hero-block{
+  margin-top: 90px;
   width: 100%;
   background-image: url(./../img/bg-img1.png);
   background-position: center;
