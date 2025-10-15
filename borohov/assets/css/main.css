@@ -1027,14 +1027,19 @@ footer{
   display: flex;
   align-items: center;
 }
+.inner__reviews .row .slick-track{
+  height: 800px;
+  display: flex;
+}
 .inner__reviews .row .item {
+  height: 100%;
   box-sizing: border-box;
   padding: 20px;
 }
 .inner__reviews .row .item .card {
   width: 100%;
   max-width: 400px;
-  height: max-content;
+  height: 100%;
   padding: 30px 30px;
   box-sizing: border-box;
 
@@ -1044,6 +1049,7 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   text-align: center;
 }
 .inner__reviews .row .item .card p{
@@ -1052,6 +1058,11 @@ footer{
   line-height: 24px;
   text-align: start;
   margin: 20px 0px;
+}
+.inner__reviews .row .item .card p span{
+
+  font-size: 18px;
+  font-weight: 700;
 }
 .inner__reviews .row .item .card span{
   width: 100%;
