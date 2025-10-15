@@ -1002,6 +1002,10 @@ footer{
   padding-top: 50px;
   min-height: max-content;
 }
+.wrap.reviews.other{
+  padding-top: 0px;
+}
+
 .reviews .title{
   width: 100%;
   max-width: 800px;
@@ -1251,9 +1255,207 @@ footer{
   margin: 0;
 }
 
+.wrap.cases {
+  padding-top: 120px;
+  min-height: 0px;
+}
+.wrap.cases .title span{
+  color: #FF6A00;
+}
 
 
+.wrap.reviews.other .inner__reviews .row .item .card h3{
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 22px;
+}
+.wrap.reviews.other .inner__reviews .row .item .card p{
+  margin: 10px 0px;
+  font-size: 18px;
+}
+
+.wrap.reviews.other .inner__reviews .row .item .card .other {
+  width: 100%;
+  font-size: 16px;
+  background-color: transparent;
+  height: max-content;
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap.reviews.other .inner__reviews .row .item .card .other span{
+  width: max-content;
+  font-size: 21px;
+  text-decoration: underline;
+}
+.wrap.reviews.other .inner__reviews .row .item .card .other1 {
+  width: 100%;
+  margin-top: 0;
+  font-size: 30px;
+  color: #fff;
+  background: linear-gradient(90deg,rgba(225, 94, 0, 1) 0%, rgba(255, 154, 82, 1) 66%);
+}
+
+
+.wrap.about_creator{
+  padding-top: 120px;
+}
+.wrap.about_creator .title{
+  font-size: 50px;
+  color: #000;
+}
+.inner__about_creator{
+  width: 100%;
+  max-width: 1420px;
+  height: 560px;
+
+  padding: 20px 20px;
+  box-sizing: border-box;
+  margin: 20px auto;
+
+  border-radius: 10px;
+
+  background-image: url(../img/photo/about_creator-img1.png);
+  background-position:  center 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: end;
+}
+.inner__about_creator .box{
+  width: 510px;
+  height: max-content;
+  
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  background-color: #fff;
+  display: flex;
+}
+.inner__about_creator .box p{
+  font-size: 18px;
+  color: #000;
+  line-height: 27px;
+  border: 5px #FF6A00;
+  border-left-style: solid;
+  padding-left: 15px;
+  margin: auto;
+}
+
+.inner__about_advantages{
+  width: 100%;
+  max-width: 1420px;
+  height: max-content;
+  padding: 0px 20px;
+  box-sizing: border-box;
+
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 20px;
+}
+.inner__about_advantages .item{
+  
+  padding: 40px 20px;
+  box-sizing:content-box;
+  background-color: #FFF9F3;
+  border-radius: 10px;
+  display: flex;
+}
+.inner__about_advantages .item:nth-child(1){
+  grid-column: span 5 / span 2;
+  padding-left: 20px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.inner__about_advantages .item:nth-child(2){
+  grid-column: span 4 / span 4;
+  padding-left: 20px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.inner__about_advantages .item:nth-child(3){
+  grid-column: span 3 / span 2;
+  padding-left: 20px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.inner__about_advantages .item:nth-child(4){
+  grid-column: span 3 / span 2;
+  padding-left: 20px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.inner__about_advantages .item:nth-child(5){
+  grid-column: span 3 / span 2;
+  padding-left: 20px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.inner__about_advantages .item p{
+  min-height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 18px;
+  color: #000;
+  line-height: 27px;
+  border: 5px #FF6A00;
+  border-left-style: solid;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.inner__seo-text{
+  width: 100%;
+  max-width: 1420px;
+  height: max-content;
+  padding: 0px 20px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+.inner__seo-text h2{
+  font-size: 50px;
+}
+.inner__seo-text h3{
+  font-size: 18px;
+}
+@media (max-width:1024px) {
+  .inner__about_creator{
+    background-image: url(../img/photo/about_creator-img1.png);
+    background-position:  center 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .inner__about_creator .box{
+    background-color: #F8F8F8;
+  }
+}
 @media (max-width:768px) {
+  .inner__about_advantages{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+  .inner__about_advantages .item:nth-child(1){
+    grid-column: span 5 / span 1;
+  }
+  .inner__about_advantages .item:nth-child(2){
+    grid-column: span 5 / span 1;
+  }
+  .inner__about_advantages .item:nth-child(3){
+    grid-column: span 5 / span 2;
+  }
+  .inner__about_advantages .item:nth-child(4){
+    grid-column: span 5 / span 1;
+  }
+  .inner__about_advantages .item:nth-child(5){
+    grid-column: span 10 / span 3;
+  }
   .inner__reviews-other  .row .item .card .info {
     margin-bottom: 10px;
     flex-wrap: wrap;
@@ -1322,6 +1524,36 @@ footer{
   }
 }
 @media (max-width:550px) {
+  .inner__about_creator{
+    background-image: url(../img/photo/about_creator-img1.png);
+    background-position:  -220px 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .inner__about_advantages{
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .inner__about_advantages .item:nth-child(1){
+    grid-column: span 10 / span 1;
+  }
+  .inner__about_advantages .item:nth-child(2){
+    grid-column: span 10 / span 1;
+  }
+  .inner__about_advantages .item:nth-child(3){
+    grid-column: span 10 / span 2;
+  }
+  .inner__about_advantages .item:nth-child(4){
+    grid-column: span 10 / span 1;
+  }
+  .inner__about_advantages .item:nth-child(5){
+    grid-column: span 10 / span 3;
+  }
+  .wrap.reviews.other .inner__reviews .row .item .card{
+    max-width: 250px;
+    padding: 10px 15px;
+    margin: 0px 20px;
+  }
   .inner__reviews-other  .row .item .card .col .message p{
     padding-right: 100px;
   }
@@ -1347,6 +1579,15 @@ footer{
   }
 }
 @media (max-width:425px) {
+  .wrap.about_creator .title{
+    font-size: 40px;
+    color: #000;
+  }
+  .wrap.reviews.other .inner__reviews .row .item .card{
+    max-width: 250px;
+    padding: 10px 5px;
+    margin: 0px 10px;
+  }
   .inner__reviews-other  .row .item .card {
     display: flex;
     flex-direction: column;
