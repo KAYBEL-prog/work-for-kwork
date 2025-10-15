@@ -1301,7 +1301,8 @@ footer{
 .wrap.reviews.other .inner__reviews .row .item .card .other span{
   width: max-content;
   font-size: 21px;
-  text-decoration: underline;
+  border: 2px #000;
+  border-bottom-style: solid;
 }
 .wrap.reviews.other .inner__reviews .row .item .card .other1 {
   width: 100%;
