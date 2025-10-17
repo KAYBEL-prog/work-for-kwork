@@ -102,6 +102,7 @@
       </section>
       <section>
         <div class="wrap form-consultation">
+          <div class="title">Заполните форму и получите бесплатную консультацию</div>
           <div class="inner__form-consultation">
             <img src="./../../assets/img/photo/form_img1.png" alt="about_img2">
             <form>
@@ -249,7 +250,7 @@
               </div>
               <div class="item">
                 <div class="card">
-                  <img data-lazy="./../../assets/img/photo/diplomas-img1.png" alt="Мария Ляшко">
+                  <img class="width_img" data-lazy="./../../assets/img/photo/diplomas-img1.png" alt="Мария Ляшко">
                 </div>
               </div>
               <div class="item">
@@ -281,7 +282,7 @@
         <div class="wrap smi-block">
           <div class="title">Юлиан Борохов и СМИ</div>
           <div class="smi-blockmenu">
-            <a href="#">Статьи</a>
+            <a href="#" class="blockmenu-active">Статьи</a>
             <a href="#">Видео</a>
             <a href="#">Жизненные истории</a>
           </div>
@@ -380,8 +381,6 @@
                   
                 </div>
               </div>
-              
-
             </div>
           </div>
           <div class="ya-maps-star">
@@ -391,7 +390,7 @@
                   <path d="M14.5 0.927246C6.49165 0.927246 0 7.4189 0 15.4272C0 19.43 1.62183 23.0542 4.24487 25.678C6.86865 28.3032 13.05 32.1023 13.4125 36.0898C13.4669 36.6876 13.8997 37.1772 14.5 37.1772C15.1003 37.1772 15.5331 36.6876 15.5875 36.0898C15.95 32.1023 22.1313 28.3032 24.7551 25.678C27.3782 23.0542 29 19.43 29 15.4272C29 7.4189 22.5084 0.927246 14.5 0.927246Z" fill="#E41919"/>
                   <path d="M14.5005 20.5025C17.3034 20.5025 19.5755 18.2304 19.5755 15.4275C19.5755 12.6247 17.3034 10.3525 14.5005 10.3525C11.6977 10.3525 9.42554 12.6247 9.42554 15.4275C9.42554 18.2304 11.6977 20.5025 14.5005 20.5025Z" fill="white"/>
                 </svg>
-                <p>Я.КАРТЫ 4.8</p>
+                <p>Я.Карты<span>4.8</span></p>
               </div>
               <div class="stars">
                 <svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -414,8 +413,8 @@
             </div>
             <a href="#">Смотреть все отзывы</a>
           </div>
-          <div class="inner__reviews-other">
-            <div class="row reviews-slider-other ">
+          <div class="inner__reviews-other mb">
+            <div class="row reviews-slider-other">
               <div class="item">
                 <div class="card">
                   <img data-lazy="./../../assets/img/photo/avatar_reviewers.png" alt="avatar_reviewers">
@@ -524,9 +523,6 @@
                   </div>
                 </div>
               </div>
-              
-              
-
             </div>
           </div>
         </div>
@@ -603,6 +599,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <script>
+
     document.addEventListener('DOMContentLoaded', function(){
       $('.js-team-slider').slick({
         slidesToShow: 5,
@@ -617,9 +614,15 @@
         prevArrow: '<button type="button" class="slick-prev"><</button>',
         nextArrow: '<button type="button" class="slick-next">></button>',
         responsive: [
-          { breakpoint: 1100, settings: { slidesToShow: 1 } },
-          { breakpoint: 700, settings: { slidesToShow: 1 } },
-          { breakpoint: 480, settings: { slidesToShow: 1 } }
+          { breakpoint: 1100, settings: { slidesToShow: 3 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
+          { breakpoint: 550, settings: { slidesToShow: 1 } },
+          { breakpoint: 480, settings: { slidesToShow: 1 } },
+          { breakpoint: 480, settings: { 
+            slidesToShow: 1,
+            arrows: false,
+
+           } }
         ]
       });
     });
@@ -639,9 +642,20 @@
         prevArrow: '<button type="button" class="slick-prev"><</button>',
         nextArrow: '<button type="button" class="slick-next">></button>',
         responsive: [
-          { breakpoint: 1100, settings: { slidesToShow: 3 } },
-          { breakpoint: 700, settings: { slidesToShow: 2,centerMode: true, } },
-          { breakpoint: 480, settings: { slidesToShow: 1,centerMode: true, } }
+          { breakpoint: 1200, settings: { slidesToShow: 2 } },
+          { breakpoint: 1100, settings: { 
+            slidesToShow: 2, 
+          }},
+          { breakpoint: 700, settings: { 
+            slidesToShow: 1, 
+            arrows: false,
+
+           }},
+          { breakpoint: 480, settings: { 
+            slidesToShow: 1, 
+            arrows: false,
+
+           }}
         ]
       });
     });
@@ -656,14 +670,14 @@
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 600,
-        variableWidth: true,
+        // variableWidth: true,
         // centerMode: true,
         prevArrow: '<button type="button" class="slick-prev"><</button>',
         nextArrow: '<button type="button" class="slick-next">></button>',
         responsive: [
-          { breakpoint: 1100, settings: { slidesToShow: 1, } },
-          { breakpoint: 700, settings: { slidesToShow: 1, } },
-          { breakpoint: 480, settings: { 
+          { breakpoint: 1100, settings: { slidesToShow: 3, } },
+          { breakpoint: 819, settings: { slidesToShow: 2, } },
+          { breakpoint: 550, settings: { 
             slidesToShow: 1,
             arrows: false,
             
@@ -682,14 +696,14 @@
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 600,
-        variableWidth: true,
+        // variableWidth: true,
         // centerMode: true,
         prevArrow: '<button type="button" class="slick-prev"><</button>',
         nextArrow: '<button type="button" class="slick-next">></button>',
         responsive: [
-          { breakpoint: 1100, settings: { slidesToShow: 1, } },
-          { breakpoint: 700, settings: { slidesToShow: 1, } },
-          { breakpoint: 480, settings: { 
+          { breakpoint: 1100, settings: { slidesToShow: 2, } },
+          { breakpoint: 768, settings: { slidesToShow: 1, } },
+          { breakpoint: 550, settings: { 
             slidesToShow: 1,
             arrows: false,
             
