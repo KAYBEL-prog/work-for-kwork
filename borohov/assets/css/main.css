@@ -1957,9 +1957,9 @@ footer{
     grid-column: span 10 / span 3;
   }
   .wrap.reviews.other .inner__reviews .row .item .card{
-    max-width: 250px;
-    padding: 10px 15px;
-    margin: 0px 20px;
+    max-width: 350px;
+    padding: 10px 10px;
+    margin: 0px auto;
   }
   .inner__reviews-other  .row .item .card .col .message p{
     padding-right: 100px;
@@ -1980,6 +1980,21 @@ footer{
   }
 }
 @media (max-width:425px) {
+  .wrap.reviews.other .inner__reviews .row .item .card .other span{
+    width: max-content;
+    font-size: 18px;
+    line-height: 25px;
+    border: 2px #000;
+    border-bottom-style: solid;
+  }
+  .wrap.reviews.other .inner__reviews .row .item .card .other1 {
+    width: 100%;
+    margin-top: 0;
+    font-size: 21px;
+    color: #fff;
+    background: linear-gradient(90deg,rgba(225, 94, 0, 1) 0%, rgba(255, 154, 82, 1) 66%);
+  }
+
   .inner__form-consultation form .btn_submit{
     width: 100%;
     max-width: none;
@@ -2054,9 +2069,9 @@ footer{
 
   
   .wrap.reviews.other .inner__reviews .row .item .card{
-    max-width: 250px;
-    padding: 10px 5px;
-    margin: 0px 10px;
+    max-width: 350px;
+    padding: 10px 10px;
+    margin: 0px auto;
   }
   .inner__reviews-other .row .item .card {
     display: flex;
