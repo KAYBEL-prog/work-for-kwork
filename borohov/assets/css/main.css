@@ -1187,6 +1187,7 @@ footer{
 .inner__reviews {
   width: 100%;
   max-width: 1700px;
+  height: max-content;
   padding: 20px 10px;
   box-sizing: border-box;
   margin: 20px auto;
@@ -1198,7 +1199,7 @@ footer{
 }
 .wrap.reviews.other .inner__reviews .row .slick-track{
   display: flex;
-  height: 720px;
+  height: 800px;
 }
 .inner__reviews .row .slick-track{
   display: flex;
