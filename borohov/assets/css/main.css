@@ -733,10 +733,10 @@ footer{
   border: 1px solid #a1a1a1;
   border-radius: 10px;
   font-size: 21px;
-  color: #000;
+  color: #332C2C;
 }
 .inner__form-consultation form input::placeholder{
-  color: #000;
+  color: #332C2C;
 }
 .inner__form-consultation form .input_checkbox{
   margin-top: 10px;
@@ -2561,14 +2561,14 @@ footer{
   border: 1px solid #CCCCCC;
   font-size: 21px;
   font-family: 'inter', serif;
-  color: #000;
+  color: #2B2626;
 }
 .input_name input:focus{
   padding-left: 10px;
 }
 .form-contact .input_name input::placeholder{
   font-family: 'inter', serif;
-  color: #000;
+  color: #2B2626;
 }
 .form-contact .input_tel input{
   width: 100%;
@@ -2579,14 +2579,14 @@ footer{
   border: 1px solid #CCCCCC;
   font-size: 21px;
   font-family: 'inter', serif;
-  color: #000;
+  color: #2B2626;
 }
 .input_tel input:focus{
   padding-left: 10px;
 }
 .form-contact .input_tel input::placeholder{
   font-family: 'inter', serif;
-  color: #000;
+  color: #2B2626;
 }
 .form-contact .input_message textarea{
   width: 100%;
@@ -2597,14 +2597,14 @@ footer{
   border: 1px solid #CCCCCC;
   font-size: 21px;
   font-family: 'inter', serif;
-  color: #000;
+  color: #2B2626;
 }
 .input_message textarea:focus{
   padding-left: 10px;
 }
 .form-contact .input_message textarea::placeholder{
   font-family: 'inter', serif;
-  color: #000;
+  color: #2B2626;
 }
 .form-contact .btn_submit{
   width: 50%;
