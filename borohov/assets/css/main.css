@@ -1758,6 +1758,7 @@ footer{
 
   }
   .inner__reviews-other .row .item .card .info {
+    padding-right: 0;
     margin-bottom: 10px;
     flex-wrap: wrap;
     gap: 10px;
