@@ -1319,7 +1319,7 @@ footer{
   color: #666;
   margin: 0;
 }
-@media (max-width:786px) {
+@media (max-width:768px) {
   .smi-block .title{
     font-size: 38px;
   }
@@ -1955,7 +1955,7 @@ footer{
   display: flex;
   align-items: center;
 }
-@media (max-width:786px) {
+@media (max-width:768px) {
   .inner__about_advantages{
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
@@ -2158,7 +2158,7 @@ footer{
     gap: 30px;
   }
 }
-@media (max-width:786px) {
+@media (max-width:768px) {
   .blog-slider_block .slick-list .items {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 0px;
@@ -2213,7 +2213,7 @@ footer{
   min-height: 0;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 240px;
+  padding-top: 200px;
   padding-bottom: 100px;
   padding-left: 10px;
   padding-right: 10px;
@@ -2498,7 +2498,7 @@ footer{
 
 /* contact */
 .wrap.contact{
-  padding-top: 240px;
+  padding-top: 200px;
 }
 .wrap.contact .title{
   width: 100%;
@@ -2675,8 +2675,6 @@ footer{
 .inner_contact .info .inner_info p{
   width: 100%;
 }
-
-
 .inner_map{
   width: 100%;
   max-width: 1500px;
@@ -2765,4 +2763,146 @@ footer{
 }
 /* / contact */
 
+
+/*  */
+.wrap.document-template{
+  padding-top: 200px;
+}
+.wrap.document-template .title{
+  width: 100%;
+  max-width: 1500px;
+  padding: 0px 10px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.wrap.document-template .title h1{
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.wrap.document-template .title h2{
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 400;
+}
+.inner_document-template{
+  width: 100%;
+  max-width: 1500px;
+  padding: 0px 10px;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.inner_document-template .item{
+  width: 100%;
+  padding: 40px 0px;
+  border: 1px #DBDBDB;
+  border-top-style: solid;
+  display: flex;
+  justify-content: space-between;
+}
+.inner_document-template .item .text{
+  padding-right: 20px;
+}
+.inner_document-template .item .text p{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.inner_document-template .item .text span{
+  font-size: 18px;
+  font-weight: 400;
+}
+.inner_document-template .item .btns{
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.inner_document-template .item .btns button{
+  padding: 20px 40px;
+  height: max-content;
+  background-color: #C0C0C0;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+}
+.inner_document-template .item .btns a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 20px 40px;
+  height: max-content;
+  background: linear-gradient(90deg,rgba(225, 94, 0, 1) 0%, rgba(255, 154, 82, 1) 66%);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+}
+
+@media (max-width:768px) {
+  .wrap.document-template {
+    padding-top: 120px;
+  }
+  .inner_document-template .item{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .inner_document-template .item .btns{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .inner_document-template .item .text p{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .inner_document-template .item .text span{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .inner_document-template .item .btns button{
+    padding: 20px 10px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+  }
+  .inner_document-template .item .btns a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 20px 10px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+  }
+}
+@media (max-width:425px) {
+
+  .wrap.document-template .title h1 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
 /* / main */
