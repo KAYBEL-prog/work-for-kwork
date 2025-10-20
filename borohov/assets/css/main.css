@@ -691,6 +691,7 @@ footer{
 /* / achievement */
 
 /* form-consultation */
+
 .wrap.form-consultation{
   height: max-content;
   padding-left: 10px;
@@ -732,6 +733,10 @@ footer{
   border: 1px solid #a1a1a1;
   border-radius: 10px;
   font-size: 21px;
+  color: #000;
+}
+.inner__form-consultation form input::placeholder{
+  color: #000;
 }
 .inner__form-consultation form .input_checkbox{
   margin-top: 10px;
@@ -828,6 +833,16 @@ footer{
   .inner__form-consultation {
     padding: 10px;
   }
+}
+
+.form-article {
+  margin-top: 50px;
+  margin-bottom: 0;
+  min-height: 400px;
+}
+.form-article .inner__form-consultation{
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 /* / form-consultation */
 
@@ -2225,6 +2240,7 @@ footer{
 }
 .inner_article-other {
   grid-column: span 2 ;
+  margin-top: 10px;
 }
 .inner_article-other .title{
   font-size: 35px;
@@ -2394,7 +2410,8 @@ footer{
   gap: 10px;
 }
 .inner_article .content h2{
-  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom:10px;
   font-size: 30px;
   font-weight: 700;
   color: #5C5C5C;
@@ -2406,8 +2423,9 @@ footer{
   padding: 0;
 }
 .inner_article .content .form-consultation .title{
+  margin: 0px;
   text-align: start;
-  color: #5C5C5C;
+  color: #000;
 }
 @media (max-width:425px) {
   .wrap.article{
@@ -2491,7 +2509,7 @@ footer{
   margin-top: 20px;
   text-align: center;
   font-size: 21px;
-  font-weight: 200;
+  font-weight: 400;
   border-radius: 10px;
   background: linear-gradient(90deg,rgba(225, 94, 0, 1) 0%, rgba(255, 154, 82, 1) 66%);
 }
