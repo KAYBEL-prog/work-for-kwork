@@ -1,0 +1,49 @@
+
+@font-face {
+  font-family: 'involve-regular';
+  src: url(./../fonts/involve/Involve-Regular.ttf);
+}
+@font-face {
+  font-family: 'involve-bold';
+  src: url(./../fonts/involve/Involve-Bold.ttf);
+}
+@font-face {
+  font-family: 'involve-medium';
+  src: url(./../fonts/involve/Involve-Medium.ttf);
+}
+@font-face {
+  font-family: 'involve-semibold';
+  src: url(./../fonts/involve/Involve-SemiBold.ttf);
+}
+.involve-regular{font-family: 'involve-regular';}
+.involve-bold{font-family: 'involve-bold';}
+.involve-medium{font-family: 'involve-medium';}
+.involve-semibold{font-family: 'involve-semibold';}
+body{
+  font-family: 'involve-regular';
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #000000;
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+button{
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  user-select: none;
+}
+
+.bg-block1{
+  width: 100%;
+  min-height: 100dvh;
+  background-image: url(./../img/photo/background/bg-block1.jpg);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
