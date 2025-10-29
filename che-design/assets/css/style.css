@@ -41,7 +41,7 @@ button{
 
 .bg-block1{
   width: 100%;
-  height: 100lvh;
+  height: 100dvh;
   background-image: url(./../img/photo/background/bg-block1.jpg);
   background-position: top center;
   background-size: cover;
