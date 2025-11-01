@@ -14,7 +14,9 @@
 .involve-regular{font-family: 'involve-regular';}
 .involve-medium{font-family: 'involve-medium';}
 .involve-semibold{font-family: 'involve-semibold';}
-
+.text-gray{
+  color:  #262626 !important;
+}
 body{
   font-family: 'involve-regular';
   margin: 0;
@@ -37,6 +39,9 @@ button{
 header{
   transition: margin-top 0.3s;
 }
+footer{
+  background-color: #0C0C0C;
+}
 .w-max{
   width: max-content;
 }
@@ -54,6 +59,19 @@ header{
 }
 .bg-white-0\.5{
   background-color: #1A1A1A;
+}
+
+.border-gray{
+  border: 1px;
+  border-right-style: solid;
+  border-color:  #262626 !important;
+}
+@media (max-width:1024px) {
+  .border-gray{
+    border: 0px;
+    border-right-style: solid;
+    border-color:  #262626 !important;
+  }
 }
 .border-white-25{
   border: 1px !important;
