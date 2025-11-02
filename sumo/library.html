@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека треков - AI Music Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background: #121212;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: #1e1e1e;
+            padding: 16px 32px;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .tokens {
+            background: #2a2a2a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            color: #0071e3;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 16px;
+        }
+        .nav-btn {
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: #ffffff;
+        }
+        .nav-btn:hover {
+            background: #2c2c2c;
+        }
+        .nav-btn.active {
+            background: #0071e3;
+            color: white;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: #1e1e1e;
+            border-radius: 16px;
+            padding: 20px;
+            height: calc(100vh - 80px - 70px); /* Учитываем header и footer */
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        .sidebar-item {
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 8px;
+        }
+        .sidebar-item:hover {
+            background: #2c2c2c;
+        }
+        .sidebar-item.active {
+            background: #0071e3;
+            color: white;
+        }
+        .content-area {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+        }
+        .tracks-list {
+            flex: 1;
+            background: #1e1e1e;
+            border-radius: 16px;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .tracks-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .tracks-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .filter-btn {
+            background: #2a2a2a;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .filter-btn:hover {
+            background: #333333;
+        }
+        .filter-btn.active {
+            background: #0071e3;
+        }
+        .track-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-radius: 12px;
+            background: #2a2a2a;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .track-item:hover {
+            background: #333333;
+        }
+        .track-item.selected {
+            background: #0071e3;
+        }
+        .track-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 16px;
+        }
+        .track-info {
+            flex: 1;
+        }
+        .track-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .track-description {
+            font-size: 14px;
+            color: #b3b3b3;
+            margin-bottom: 8px;
+        }
+        .track-duration {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        .track-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .action-icon {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+            transition: color 0.2s;
+        }
+        .action-icon:hover {
+            color: #0071e3;
+        }
+        .track-details {
+            width: 300px;
+            background: #1e1e1e;
+            border-radius: 16px;
+            padding: 20px;
+            height: calc(100vh - 80px - 70px); /* Учитываем header и footer */
+            overflow-y: auto;
+        }
+        .details-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .details-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .details-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .details-button {
+            background: #0071e3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        .details-button:hover {
+            background: #005bb5;
+        }
+        .details-section {
+            margin-bottom: 20px;
+        }
+        .details-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .details-text {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.5;
+        }
+        .footer-player {
+            background: #1e1e1e;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 -1px 0 rgba(255,255,255,0.05);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .player-track-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+        .player-track-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        .player-track-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .control-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+            transition: color 0.2s;
+        }
+        .control-btn:hover {
+            color: #0071e3;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 4px;
+            background: #333333;
+            border-radius: 2px;
+            margin: 0 12px;
+            position: relative;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #0071e3;
+            border-radius: 2px;
+            width: 30%; /* Пример, будет меняться динамически */
+        }
+        .time-display {
+            font-size: 12px;
+            color: #b3b3b3;
+        }
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: #333333;
+            border-radius: 2px;
+            position: relative;
+        }
+        .volume-fill {
+            height: 100%;
+            background: #0071e3;
+            border-radius: 2px;
+            width: 70%; /* Пример */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">AI Music Studio</div>
+        <div class="user-info">
+            <div class="tokens">50 токенов</div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="window.location.href='index.html'">Создать</button>
+                <button class="nav-btn active">Библиотека</button>
+                <button class="nav-btn" onclick="logout()">Выход</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <aside class="sidebar">
+            <h3>Библиотека</h3>
+            <div class="sidebar-item active" data-tab="songs">Песни</div>
+            <div class="sidebar-item" data-tab="vibes">Настроения</div>
+            <div class="sidebar-item" data-tab="projects">Проекты</div>
+            <div class="sidebar-item" data-tab="playlists">Плейлисты</div>
+        </aside>
+
+        <div class="content-area">
+            <section class="tracks-list">
+                <div class="tracks-header">
+                    <h2>Песни</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active">Мои песни</button>
+                        <button class="filter-btn">Избранное</button>
+                    </div>
+                </div>
+
+                <!-- Список треков -->
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">End after end</div>
+                        <div class="track-description">Melodic piano music with Japanese influences...</div>
+                    </div>
+                    <div class="track-duration">3:14</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">End after end</div>
+                        <div class="track-description">Melodic piano music with Japanese influences...</div>
+                    </div>
+                    <div class="track-duration">3:00</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">My love</div>
+                        <div class="track-description">Acoustic ballad with a gentle and heartfelt mood...</div>
+                    </div>
+                    <div class="track-duration">3:11</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">My love</div>
+                        <div class="track-description">Acoustic ballad with a gentle and heartfelt mood...</div>
+                    </div>
+                    <div class="track-duration">3:20</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item selected" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">Olya 10</div>
+                        <div class="track-description">Hip hop, Acoustic, Russian language lyrics...</div>
+                    </div>
+                    <div class="track-duration">3:25</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">Olya 10</div>
+                        <div class="track-description">Hip hop, Acoustic, Russian language lyrics...</div>
+                    </div>
+                    <div class="track-duration">3:10</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">Olya 6</div>
+                        <div class="track-description">Pop rap, Upbeat, Energetic, Catchy melodies...</div>
+                    </div>
+                    <div class="track-duration">2:50</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+
+                <div class="track-item" onclick="selectTrack(this)">
+                    <img src="https://via.placeholder.com/60" alt="Обложка" class="track-image">
+                    <div class="track-info">
+                        <div class="track-title">Olya 6</div>
+                        <div class="track-description">Pop rap, Upbeat, Energetic, Catchy melodies...</div>
+                    </div>
+                    <div class="track-duration">2:31</div>
+                    <div class="track-actions">
+                        <button class="action-icon">❤️</button>
+                        <button class="action-icon">⋯</button>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="track-details">
+                <div class="details-header">
+                    <img src="https://via.placeholder.com/120" alt="Обложка" class="details-image">
+                    <div>
+                        <div class="details-title">Olya 10</div>
+                        <button class="details-button">Опубликовать</button>
+                    </div>
+                </div>
+
+                <div class="details-section">
+                    <h4>Звук</h4>
+                    <div class="details-text">
+                        Hip hop, Acoustic, Russian language lyrics, Melodic rap flow, Organic instrumentation with guitar and minimal percussion, Intimate and expressive mood, Focus on lyrical storytelling and emotional depth, Laid-back tempo, Clear pronunciation, Warm and natural sound textures
+                    </div>
+                </div>
+
+                <div class="details-section">
+                    <h4>Модель</h4>
+                    <div class="details-text">FUZZ-11</div>
+                </div>
+
+                <div class="details-section">
+                    <h4>Текст песни</h4>
+                    <div class="details-text">
+                        [Male voice]<br>
+                        [Verse 1]<br>
+                        Ти моя мила чорнобрива,<br>
+                        В твоїх карих очах чарівне Сила,<br>
+                        Словами тебе ніжно обнімаю,<br>
+                        <br>
+                        [Chorus]
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer-player">
+        <div class="player-track-info">
+            <img src="https://via.placeholder.com/40" alt="Обложка" class="player-track-image">
+            <div class="player-track-title">Olya 10</div>
+        </div>
+        <div class="player-controls">
+            <button class="control-btn">⏮️</button>
+            <button class="control-btn">⏸️</button>
+            <button class="control-btn">⏭️</button>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="time-display">0:07 / 3:26</div>
+        <div class="volume-control">
+            <span>🔊</span>
+            <div class="volume-slider">
+                <div class="volume-fill"></div>
+            </div>
+        </div>
+        <div class="player-actions">
+            <button class="control-btn">🔁</button>
+            <button class="control-btn">🔀</button>
+            <button class="control-btn">📋</button>
+        </div>
+    </footer>
+
+    <script>
+        // Функция для выбора трека
+        function selectTrack(element) {
+            // Снимаем выделение со всех треков
+            document.querySelectorAll('.track-item').forEach(item => item.classList.remove('selected'));
+            // Добавляем выделение к выбранному
+            element.classList.add('selected');
+            
+            // Здесь можно добавить логику для обновления деталей справа и плеера внизу
+            // Для примера просто выводим в консоль
+            console.log('Выбран трек:', element.querySelector('.track-title').textContent);
+        }
+
+        // Функция для выхода
+        function logout() {
+            if (confirm('Вы действительно хотите выйти?')) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Обработка навигации в боковой панели
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                // Здесь можно добавить логику для переключения контента
+                console.log('Активная вкладка:', this.getAttribute('data-tab'));
+            });
+        });
+
+        // Обработка фильтров
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
