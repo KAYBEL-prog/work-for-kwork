@@ -114,17 +114,18 @@
             height: calc(100dvh - 70px - 40px);
             display: flex;
             justify-content: space-between;
-
         }
         .library__left{
-            width: max;
+            width: 100%;
+            min-width: max-content;
+            max-width: 250px;
             border-radius: 10px;
             box-sizing: border-box;
             display: flex;
         }
         .library__left-menu{
             position: relative;
-            z-index: 1;
+            z-index: 2;
             width: max-content;
             min-width: 250px;
             height: 100%;
@@ -163,7 +164,8 @@
         }
         .library__left-create{
             position: relative;
-            left: -40px;
+            z-index: 1;
+            margin-left: -300px;
             transition: 0.1s;
             opacity: 0;
             width: max-content;
@@ -174,10 +176,36 @@
             padding: 20px 20px;
         }
         .library__left-create.active{
-            left: -10px;
+            margin-left: -20px;
+
             opacity: 1;
             transition: 0.5s;
-
+        }
+        .library__main{
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 700px;
+            min-width: 300px;
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 100%;
+            min-height: max-content;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+        .library__right{
+            position: relative;
+            z-index: 1;
+            width: max-content;
+            min-width: 250px;
+            height: 100%;
+            min-height: max-content;
+            background: white;
+            box-shadow: 0 4px 60px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            box-sizing: border-box;
         }
 
         .title {
@@ -380,12 +408,16 @@
                 </div>
                 <div class="library__left-create "></div>
             </div>
-            <!-- <div class="library__main">
-                <div class="library__main-list"></div>
+            <div class="library__main">
+                <div class="library__main-list">
+                    <div class="item">
+                        <div class=""></div>
+                    </div>
+                </div>
             </div>
             <div class="library__right">
                 <div class="library__right-audio_description"></div>
-            </div> -->
+            </div>
         </div>
     </main>
 
@@ -456,7 +488,6 @@
                     document.getElementById('authCard').classList.add('hidden')
                     document.getElementById('createForm').classList.remove('hidden')
                     document.getElementById('library').classList.add('hidden')
-                    document.querySelector('.library__left-create').classList.toggle('active')
                     // if (confirm('Вы действительно хотите выйти?')) {
                     //     // Очистка сессии и редирект
                     //     window.location.href = 'index.php';
@@ -467,6 +498,8 @@
 
 
         document.getElementById('create_audio').addEventListener('click', () => {
+            document.querySelector('.library__left-create').classList.toggle('active')
+
         });
     </script>
 </body>
