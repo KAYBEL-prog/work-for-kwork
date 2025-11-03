@@ -11,6 +11,9 @@
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
+        a{  
+            text-decoration: none;
+        }
         body {
             background: #f5f5f7;
             color: #1d1d1f;
@@ -24,6 +27,9 @@
             border: none;
             user-select: none;
             cursor: pointer;
+        }
+        .hidden {
+            display: none !important;
         }
         .header {
             width: 100%;
@@ -94,7 +100,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 20px 10px;
             box-sizing: border-box;
         }
         
@@ -103,15 +109,49 @@
             border-radius: 24px;
             padding: 40px;
             box-sizing: border-box;
-            box-shadow: 0 4px 60px rgba(0,0,0,0.08);
+            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
+
             max-width: 600px;
             width: 100%;
             text-align: center;
         }
-        
+        .card.overlay{
+            position: fixed;
+            z-index: 99;
+            width: 100%;
+            height: calc(100dvh - 40px);
+            /* max-height: 748px; */
+            display: flex;
+            justify-content: center;
+            align-items:start;
+            max-width: none;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.5);
+            border-radius: 0px;
+            padding: 0px;
+            overflow-y: auto;
+        }
+        .card.overlay .overlay_inner{
+            width: 100%;
+            max-width: 600px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
+        }
         .library {
             width: 100vw;
-            height: calc(100dvh - 70px - 40px);
+            height: calc(100dvh - 110px);
+            min-height: 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .inner__library{
+            width: 100%;
+            height: calc(100% - 100px);
             display: flex;
             justify-content: space-between;
         }
@@ -131,8 +171,8 @@
             height: 100%;
             min-height: max-content;
             background: white;
-            box-shadow: 0 4px 60px rgba(0,0,0,0.08);
             border-radius: 10px;
+            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
             box-sizing: border-box;
         }
         .library__left-menu ul{
@@ -149,8 +189,8 @@
         .library__left-menu ul li ul li button{
             width: 100%;
             padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #fff;
+            margin-top: 5px;
+            background-color: transparent;
             transition: 0.1s;
             border-radius: 5px;
             font-weight: 600;
@@ -172,6 +212,7 @@
             min-width: 300px;
             height: 100%;
             min-height: max-content;
+            border-radius: 10px;
             background: white;
             padding: 20px 20px;
         }
@@ -193,8 +234,108 @@
             min-height: max-content;
             border-radius: 10px;
             box-sizing: border-box;
-            background-color: #fff;
         }
+        .library__main-title_nav{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .library__main-title_nav .menu{
+            display: flex;
+            gap: 10px;
+        }
+        .library__main-title_nav .menu a{
+            border-radius: 10px;
+            padding: 8px 10px;
+            background-color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            color: #000;
+            box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        }
+        .library__main-list{
+            height: calc(100dvh - 220px);
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0px;
+            overflow-y: auto;
+        }
+        .library__main-list .item{
+            width: 100%;
+            height: max-content;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .library__main-list .item:nth-last-child(1){
+            margin-bottom: 25px;
+        }
+
+        .library__main-list .item.focus{
+            background-color: #005bb5;
+        }
+        .avatar-title{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .library__main-list .item .title-subtitle{
+            display: flex;
+            flex-direction: column;
+        }
+        .library__main-list .item.focus .title-subtitle span{
+            color: #fff;
+
+        }
+        .library__main-list .item .title-subtitle span{
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #000;
+        }
+        .library__main-list .item.focus .title-subtitle p{
+            color: #fff;
+        }
+        .library__main-list .item .title-subtitle p{
+            opacity: 0.7;
+            color: #000;
+        }
+        .library__main-list .item .navigation_item-audio{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .library__main-list .item.focus .navigation_item-audio span{
+            color: #fff;
+        }
+        .library__main-list .item .navigation_item-audio span{
+            font-size: 13px;
+            opacity: 0.5;
+            color: #000;
+        }
+
+        .library__main-list .item.focus .navigation_item-audio svg path{
+            fill: #fff;
+        }
+        .library__main-list .item.focus{
+            fill: #fff;
+        }
+
+        .navigation_item-audio button:focus svg path {
+          fill: #005bb5;
+        }
+        .library__main-list .item.focus .navigation_item-audio button:focus svg path{
+            fill:red;
+        }
+
+
+
         .library__right{
             position: relative;
             z-index: 1;
@@ -203,9 +344,41 @@
             height: 100%;
             min-height: max-content;
             background: white;
-            box-shadow: 0 4px 60px rgba(0,0,0,0.08);
+            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
             border-radius: 10px;
             box-sizing: border-box;
+        }
+        .lower-player{
+            width: 100%;
+            height: 80px;
+            z-index: 95;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+        .inner_lower-player{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .player-sound_item{
+            max-width: 400px;
+            display: flex;
+            gap: 20px;
+        }
+        .player-sound_item .avatar-title .title-subtitle span{
+            font-weight: 700;
+        }
+        .player-sound_item .avatar-title .title-subtitle p{
+            opacity: 0.5;
+            line-height: 100%;
+        }
+        .player-sound_item .navigation_item-audio{
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
 
         .title {
@@ -214,19 +387,15 @@
             margin-bottom: 8px;
             color: #1d1d1f;
         }
-        
         .subtitle {
             font-size: 16px;
             color: #86868b;
             margin-bottom: 32px;
         }
-        
         .input-group {
             margin-bottom: 24px;
             text-align: left;
         }
-
-        
         .input-label {
             display: block;
             font-size: 14px;
@@ -234,7 +403,6 @@
             margin-bottom: 8px;
             color: #1d1d1f;
         }
-        
         .input-field {
             width: 100%;
             padding: 14px 16px;
@@ -322,9 +490,7 @@
             color: #0077ff;
         }
         
-        .hidden {
-            display: none;
-        }
+
     </style>
 </head>
 <body>
@@ -334,8 +500,8 @@
             <div class="user-info">
                 <div class="tokens">50 токенов</div>
                 <div class="nav-buttons">
-                    <button class="nav-btn active">Создать</button>
-                    <button class="nav-btn">Библиотека</button>
+                    <button class="nav-btn">Создать</button>
+                    <button class="nav-btn active">Библиотека</button>
                     <button class="nav-btn">Выход</button>
                 </div>
             </div>
@@ -343,80 +509,745 @@
     </header>
     
     <main class="main-content">
-        <div class="card " id="authCard">
-            <h1 class="title">Создайте свою первую песню</h1>
-            <p class="subtitle">AI создаст для вас уникальную музыку по вашему тексту</p>
-            <textarea class="input-field" placeholder="Введите текст песни..." id="songText"></textarea>
-            <button class="auth-btn" onclick="initVKAuth()">
-                <span class="vk-icon">VK</span>
-                Авторизоваться через ВКонтакте
-            </button>
-        </div>
         
-        <div class="card hidden" id="createForm">
-            <h1 class="title">Настройте трек</h1>
-            <p class="subtitle">Заполните детали для генерации</p>
-            
-            <div class="input-group">
-                <label class="input-label">Название трека</label>
-                <input type="text" class="input-field" id="trackTitle" placeholder="Введите название">
+        <div class="card overlay hidden" id="createForm">
+            <div class="overlay_inner">
+                 <h2 class="title">Настройте трек</h2>
+                 <p class="subtitle">Заполните детали для генерации</p>
+                 <div class="input-group">
+                     <label class="input-label">Название трека</label>
+                     <input type="text" class="input-field" id="trackTitle" placeholder="Введите название">
+                 </div>
+                 <div class="input-group">
+                     <label class="input-label">Текст песни</label>
+                     <textarea class="input-field" id="trackText" placeholder="Текст песни..."></textarea>
+                 </div>
+                 <div class="input-group">
+                     <label class="input-label">Голос</label>
+                     <div class="radio-group">
+                         <label class="radio-option">
+                             <input type="radio" name="voice" value="male" checked> Мужской
+                         </label>
+                         <label class="radio-option">
+                             <input type="radio" name="voice" value="female"> Женский
+                         </label>
+                         <label class="radio-option">
+                             <input type="radio" name="voice" value="duet"> Дуэт
+                         </label>
+                     </div>
+                 </div>
+                 <div class="input-group">
+                     <label class="input-label">Стиль музыки</label>
+                     <input type="text" class="input-field" id="musicStyle" placeholder="Например: электронная рок-баллада">
+                 </div>
+                 <button class="generate-btn" onclick="generateTrack()">Генерировать трек</button>
             </div>
-            
-            <div class="input-group">
-                <label class="input-label">Текст песни</label>
-                <textarea class="input-field" id="trackText" placeholder="Текст песни..."></textarea>
-            </div>
-            
-            <div class="input-group">
-                <label class="input-label">Голос</label>
-                <div class="radio-group">
-                    <label class="radio-option">
-                        <input type="radio" name="voice" value="male" checked> Мужской
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="voice" value="female"> Женский
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="voice" value="duet"> Дуэт
-                    </label>
-                </div>
-            </div>
-            
-            <div class="input-group">
-                <label class="input-label">Стиль музыки</label>
-                <input type="text" class="input-field" id="musicStyle" placeholder="Например: электронная рок-баллада">
-            </div>
-            
-            <button class="generate-btn" onclick="generateTrack()">Генерировать трек</button>
         </div>
 
-        <div class="library hidden" id="library">
-            <div class="library__left">
-                <div class="library__left-menu">
-                    <ul>
-                        <li>Библиотека</li>
-                        <li>
-                            <ul>
-                                <li><button type="button" id="#">Песни</button></li>
-                                <li><button type="button" id="#">Настроения</button></li>
-                                <li><button type="button" id="#">Проекты</button></li>
-                                <li><button type="button" id="create_audio">Создать</button></li>
-                                <li><button type="button" id="#">Плейлисты</button></li>
-                            </ul>
-                        </li>
-                    </ul>
+        <div class="library" id="library">
+            <div class="inner__library">
+                <div class="library__left">
+                    <div class="library__left-menu">
+                        <ul>
+                            <li>Библиотека</li>
+                            <li>
+                                <ul>
+                                    <li><button type="button" id="#">Песни</button></li>
+                                    <li><button type="button" id="#">Настроения</button></li>
+                                    <li><button type="button" id="#">Проекты</button></li>
+                                    <li><button type="button" id="create_audio">Создать</button></li>
+                                    <li><button type="button" id="#">Плейлисты</button></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="library__left-create"></div>
                 </div>
-                <div class="library__left-create "></div>
-            </div>
-            <div class="library__main">
-                <div class="library__main-list">
+                <div class="library__main">
+                    <div class="library__main-title_nav">
+                        <h2 class="title">Песни</h2>
+                        <nav class="menu">
+                           <a href="#">Мои песни</a>
+                           <a href="#">Избранное</a>
+                        </nav>
+                    </div>
+                    <div class="library__main-list">
+                    <div class="item ">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item focus">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                     <div class="item">
-                        <div class=""></div>
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                     </div>
                 </div>
+                <div class="library__right">
+                    <div class="library__right-audio_description"></div>
+                </div>
             </div>
-            <div class="library__right">
-                <div class="library__right-audio_description"></div>
+            <div class="lower-player">
+                <div class="inner_lower-player">
+                    <div class="player-sound_item">
+                        <div class="avatar-title">
+                            <img src="./avatar_audio.png" alt="avatar_audio">
+                            <div class="title-subtitle">
+                                <span>End after end</span>
+                                <p>Melodic piano music with Japanese influences...</p>
+                            </div>
+                        </div>
+                        <div class="navigation_item-audio">
+                            <span id="timeLine">0:00</span>
+                            <button id="#">
+                                <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_31_657)">
+                                        <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_31_657">
+                                            <rect width="18" height="16" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button id="#">
+                                <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -474,20 +1305,17 @@
                 this.classList.add('active');
                 
                 if (this.textContent === 'Библиотека') {
-                    document.getElementById('authCard').classList.add('hidden')
+                    // document.getElementById('authCard').classList.add('hidden')
                     document.getElementById('createForm').classList.add('hidden')
-                    document.getElementById('library').classList.remove('hidden')
 
                 } else if (this.textContent === 'Создать') {
-                    document.getElementById('authCard').classList.add('hidden')
-                    document.getElementById('createForm').classList.add('hidden')
-                    document.getElementById('library').classList.remove('hidden')
-                    document.querySelector('.library__left-create').classList.toggle('active')
+                    // document.getElementById('authCard').classList.add('hidden')
+                    document.getElementById('createForm').classList.toggle('hidden')
+                    // document.querySelector('.library__left-create').classList.toggle('active')
 
                 } else if (this.textContent === 'Выход') {
                     document.getElementById('authCard').classList.add('hidden')
                     document.getElementById('createForm').classList.remove('hidden')
-                    document.getElementById('library').classList.add('hidden')
                     // if (confirm('Вы действительно хотите выйти?')) {
                     //     // Очистка сессии и редирект
                     //     window.location.href = 'index.php';
@@ -496,10 +1324,8 @@
             });
         });
 
-
         document.getElementById('create_audio').addEventListener('click', () => {
             document.querySelector('.library__left-create').classList.toggle('active')
-
         });
     </script>
 </body>
