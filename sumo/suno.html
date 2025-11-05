@@ -57,9 +57,12 @@
         .user-info {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 10px;
         }
-        
+        .btn_burger-menu{
+            display: none;
+            height: 25px;
+        }
         .tokens {
             background: #e8f4fd;
             padding: 8px 16px;
@@ -93,7 +96,8 @@
         }
         
         .main-content {
-            height: 100dvh;
+            height: calc(100dvh - 80px);
+            margin-top: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -140,15 +144,18 @@
         }
         .library {
             width: 100vw;
-            height: max-content;
-            margin-top: 40px;
+            height: 100%;
+            margin-top: 50px;
             display: flex;
             flex-direction: column;
+            justify-content: space-between
+            ;
             gap: 20px;
         }
         .inner__library{
             width: 100%;
-            height: calc(100dvh - 220px);
+            height: calc(100dvh - 190px);
+            min-height: 364px;
             display: flex;
             justify-content: space-between;
         }
@@ -228,7 +235,7 @@
             margin-left: 20px;
             margin-right: 20px;
             height: 100%;
-            min-height: max-content;
+            min-height: 364px;
             border-radius: 10px;
             box-sizing: border-box;
             flex-grow: 1;
@@ -239,9 +246,28 @@
             justify-content: space-between;
             align-items: center;
         }
+        
+        .btn-and-title{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn_left-menu{
+            display: none;
+        }
+        .btn-and-title button{
+            height: 20px;
+        }
+        .btn-and-title button svg{
+            width: 25px;
+            height: 20px;
+        }
         .library__main-title_nav .menu{
             display: flex;
             gap: 10px;
+        }
+        .library__main-title_nav .title{
+            line-height: 100%;
         }
         .library__main-title_nav .menu a{
             border-radius: 10px;
@@ -256,11 +282,12 @@
             background-color: #f0f0f2;
         }
         .library__main-list{
-            height: calc(100dvh - 220px);
-            min-height: 260px;
+            height: calc(100dvh - 225px);
+            min-height: 364px;
             display: flex;
             flex-direction: column;
             padding: 10px 0px;
+            margin-top: 10px;
             overflow: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
@@ -420,7 +447,7 @@
 
         .lower-player{
             width: 100%;
-            height: 80px;
+            max-height: 90px;
             z-index: 95;
             background-color: #fff;
             border-radius: 10px;
@@ -437,8 +464,8 @@
             gap: 15px;
         }
         .player-sound_item{
-            max-width: 400px;
-            min-width: 180px;
+            width: max-content;
+            max-width: 170px;
             display: flex;
             gap: 10px;
             flex: 1;
@@ -446,6 +473,7 @@
         .player-sound_item .avatar-title .title-subtitle span{
             font-weight: 700;
             font-size: 14px;
+            text-wrap: nowrap;
         }
         .player-sound_item .avatar-title .title-subtitle p{
             opacity: 0.5;
@@ -552,24 +580,79 @@
             display: flex;
             align-items: center;
         }
+        .other_settings{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
         .player-volume button {
             background: #f5f5f7;
             border-radius: 50%;
-            width: 36px;
-            height: 36px;
+            padding: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background-color 0.2s;
         }
-         .player-volume button:hover {
+        .player-volume button:hover {
             background: #e0e0e0;
         }
         .player-volume button svg {
             width: 18px;
             height: 18px;
         }
+
+        .btn_playlist {
+            background: #f5f5f7;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .btn_playlist:hover {
+            background: #e0e0e0;
+        }
+        .btn_playlist svg {
+            width: 15px;
+            height: 15px;
+        }
         
+        .btn_repet {
+            background: #f5f5f7;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .btn_repet:hover {
+            background: #e0e0e0;
+        }
+        .btn_repet svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .btn_random {
+            background: #f5f5f7;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .btn_random:hover {
+            background: #e0e0e0;
+        }
+        .btn_random svg {
+            width: 15px;
+            height: 15px;
+        }
+
         .volume-slider-container {
             position: absolute;
             bottom: 30px; 
@@ -633,73 +716,120 @@
             cursor: pointer;
             border: none;
         }
-        
-        /* Стили для дорожки (трека) — это помогает для кроссбраузерности,
-           но основной "заполненный" эффект достигается через JS gradient */
+
         #volumeSlider::-webkit-slider-runnable-track {
-            background: transparent; /* Оставляем трек прозрачным, чтобы JS управлял фоном */
+            background: transparent;
         }
         #volumeSlider::-moz-range-track {
             background: transparent;
         }
-
-
-        @media (max-width: 1024px) {
-            .library__right {
-                display: none;
+        @media (max-width:1024px) {
+            .library__right{
+                width: 0;
             }
-            .library__main {
-                margin-left: 10px;
-                margin-right: 10px;
+            .btn_left-menu{
+                display: block;
             }
-            .player-sound_item {
-                min-width: 150px;
-            }
-        }
-        @media (max-width: 768px) {
-            .inner__header {
+            .player-controls_progress{
+                min-width: 350px;
+                display: flex;
                 flex-direction: column;
                 gap: 10px;
-            }
-            .main-content {
-                margin-top: 120px;
-                padding: 10px;
-            }
-            .library__left {
-                max-width: 100%;
-                width: 100%;
-                justify-content: center;
-            }
-            .library__left-menu {
-                min-width: 0;
-                width: 100%;
-            }
-            .library__main {
-                max-width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .lower-player {
-                height: auto;
-                padding: 10px;
-            }
-            .inner_lower-player {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .player-sound_item {
-                min-width: 100%;
-                max-width: 100%;
-                justify-content: center;
-            }
-            .player-progress {
-                width: 100%;
-            }
-            .player-volume {
-                display: none;
+                margin: 10px 0px;
             }
         }
+        @media (max-width:768px) {
+            .nav-buttons {
+                display: none;
+            }   
+            .btn_burger-menu{
+                display: block;
+            }
+            .library__left{
+                width: 0%;
+                overflow: hidden;
+                height: 100%;
+                max-width: max-content;
+                max-width: 250px;
+                border-radius: 10px;
+                box-sizing: border-box;
+                display: flex;
+            }
+            .btn_playlist {
+                display: none;
+            }
+            .btn_repet {
+                display: none;
 
+            }
+            .btn_random {
+                display: none;
+            }
+            .player-sound_item{
+                display: none;
+            }
+            .inner_lower-player{
+                display: flex;
+                justify-content: center;
+                gap: 0;
+            }
+        }
+        @media (max-width:425px) {
+            .header {
+                width: 100%;
+                background: white;
+                padding: 16px 20px;
+                box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+                position: fixed;
+                top: 0;
+                z-index: 100;
+            }
+            .logo {
+               font-size: 18px;
+            }
+            .tokens {
+                font-size: 12px;
+            }
+            .player-volume{
+                display: none;
+            }
+            .player-controls_progress {
+                width: 100%;
+                min-width: 300px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin: 10px 0px;
+            }
+            .library__main{
+                margin: 0;
+                padding: 0 10px;
+            }
+            .library__main-title_nav .menu a {
+                border-radius: 10px;
+                padding: 8px 10px;
+                background-color: #fff;
+                font-weight: 600;
+                font-size: 11px;
+                color: #000;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            .library__main-list .item .title-subtitle span{
+               font-size: 13px;
+            }
+            .library__main-list .item .title-subtitle p {
+               font-size: 11px;
+            }
+            .library__main-list .item{
+                gap: 0px;
+            }
+            .library__main-list .item .navigation_item-audio{
+                gap: 5px;
+            }
+            .main-content{
+                padding: 10px 0px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -713,6 +843,11 @@
                     <button class="nav-btn active">Библиотека</button>
                     <button class="nav-btn">Выход</button>
                 </div>
+                <button class="btn_burger-menu">
+                    <svg width="35" height="25" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34.0579 21.0973C35.6829 21.0973 37 22.4192 37 24.0491C36.9999 25.6789 35.6828 27 34.0579 27H2.9421C1.31715 27 0.000139221 25.6789 0 24.0491C0 22.4192 1.31707 21.0973 2.9421 21.0973H34.0579ZM34.0579 10.5491C35.6829 10.5491 37 11.8701 37 13.5C36.9999 15.1298 35.6829 16.4509 34.0579 16.4509H2.9421C1.31711 16.4509 6.96127e-05 15.1298 0 13.5C0 11.8701 1.31707 10.5491 2.9421 10.5491H34.0579ZM34.0579 0C35.6829 0 37 1.32101 37 2.95091C37 4.58081 35.6829 5.90182 34.0579 5.90182H2.9421C1.31707 5.90182 0 4.58081 0 2.95091C0 1.32101 1.31707 0 2.9421 0H34.0579Z" fill="black"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
@@ -777,7 +912,14 @@
                 </div>
                 <div class="library__main">
                     <div class="library__main-title_nav">
-                        <h2 class="title">Песни</h2>
+                        <div class="btn-and-title">
+                            <button id="openLeftMenu" class="btn_left-menu">
+                                <svg viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M34.0579 21.0973C35.6829 21.0973 37 22.4192 37 24.0491C36.9999 25.6789 35.6828 27 34.0579 27H2.9421C1.31715 27 0.000139221 25.6789 0 24.0491C0 22.4192 1.31707 21.0973 2.9421 21.0973H34.0579ZM34.0579 10.5491C35.6829 10.5491 37 11.8701 37 13.5C36.9999 15.1298 35.6829 16.4509 34.0579 16.4509H2.9421C1.31711 16.4509 6.96127e-05 15.1298 0 13.5C0 11.8701 1.31707 10.5491 2.9421 10.5491H34.0579ZM34.0579 0C35.6829 0 37 1.32101 37 2.95091C37 4.58081 35.6829 5.90182 34.0579 5.90182H2.9421C1.31707 5.90182 0 4.58081 0 2.95091C0 1.32101 1.31707 0 2.9421 0H34.0579Z" fill="black"/>
+                                </svg>
+                            </button>
+                            <h2 class="title">Песни</h2>
+                        </div>
                         <nav class="menu">
                            <a href="#">Мои песни</a>
                            <a href="#">Избранное</a>
@@ -883,27 +1025,60 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
+                        <div class="item" 
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                             data-title="End after end"
+                             data-artist="Melodic piano music..."
+                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
+                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
                                 <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
+                                    <span>End after end</span>
+                                    <p>Melodic piano music with Japanese influences...</p>
                                 </div>
                             </div>
                             <div class="navigation_item-audio">
                                 <span class="track-duration">0:00</span>
                                 <button id="#">
                                     <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
+                                        <g clip-path="url(#clip0_31_657)">
                                             <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
                                         </g>
                                         <defs>
-                                            <clipPath id="clip2_31_657">
+                                            <clipPath id="clip0_31_657">
+                                                <rect width="18" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button id="#">
+                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item"
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+                             data-title="Morning Stars"
+                             data-artist="Electronic beats for coding"
+                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
+                            <div class="avatar-title">
+                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
+                                <div class="title-subtitle">
+                                    <span>Morning Stars</span>
+                                    <p>Electronic beats for coding</p>
+                                </div>
+                            </div>
+                            <div class="navigation_item-audio">
+                                <span class="track-duration">0:00</span>
+                                <button id="#">
+                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip1_31_657)">
+                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip1_31_657">
                                                 <rect width="18" height="16" fill="white"/>
                                             </clipPath>
                                         </defs>
@@ -949,27 +1124,60 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
+                        <div class="item" 
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                             data-title="End after end"
+                             data-artist="Melodic piano music..."
+                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
+                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
                                 <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
+                                    <span>End after end</span>
+                                    <p>Melodic piano music with Japanese influences...</p>
                                 </div>
                             </div>
                             <div class="navigation_item-audio">
                                 <span class="track-duration">0:00</span>
                                 <button id="#">
                                     <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
+                                        <g clip-path="url(#clip0_31_657)">
                                             <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
                                         </g>
                                         <defs>
-                                            <clipPath id="clip2_31_657">
+                                            <clipPath id="clip0_31_657">
+                                                <rect width="18" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button id="#">
+                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item"
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+                             data-title="Morning Stars"
+                             data-artist="Electronic beats for coding"
+                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
+                            <div class="avatar-title">
+                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
+                                <div class="title-subtitle">
+                                    <span>Morning Stars</span>
+                                    <p>Electronic beats for coding</p>
+                                </div>
+                            </div>
+                            <div class="navigation_item-audio">
+                                <span class="track-duration">0:00</span>
+                                <button id="#">
+                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip1_31_657)">
+                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip1_31_657">
                                                 <rect width="18" height="16" fill="white"/>
                                             </clipPath>
                                         </defs>
@@ -1015,27 +1223,60 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
+                        <div class="item" 
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                             data-title="End after end"
+                             data-artist="Melodic piano music..."
+                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
+                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
                                 <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
+                                    <span>End after end</span>
+                                    <p>Melodic piano music with Japanese influences...</p>
                                 </div>
                             </div>
                             <div class="navigation_item-audio">
                                 <span class="track-duration">0:00</span>
                                 <button id="#">
                                     <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
+                                        <g clip-path="url(#clip0_31_657)">
                                             <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
                                         </g>
                                         <defs>
-                                            <clipPath id="clip2_31_657">
+                                            <clipPath id="clip0_31_657">
+                                                <rect width="18" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button id="#">
+                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item"
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+                             data-title="Morning Stars"
+                             data-artist="Electronic beats for coding"
+                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
+                            <div class="avatar-title">
+                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
+                                <div class="title-subtitle">
+                                    <span>Morning Stars</span>
+                                    <p>Electronic beats for coding</p>
+                                </div>
+                            </div>
+                            <div class="navigation_item-audio">
+                                <span class="track-duration">0:00</span>
+                                <button id="#">
+                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip1_31_657)">
+                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip1_31_657">
                                                 <rect width="18" height="16" fill="white"/>
                                             </clipPath>
                                         </defs>
@@ -1081,6 +1322,72 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="item" 
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                             data-title="End after end"
+                             data-artist="Melodic piano music..."
+                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
+                            <div class="avatar-title">
+                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
+                                <div class="title-subtitle">
+                                    <span>End after end</span>
+                                    <p>Melodic piano music with Japanese influences...</p>
+                                </div>
+                            </div>
+                            <div class="navigation_item-audio">
+                                <span class="track-duration">0:00</span>
+                                <button id="#">
+                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_31_657)">
+                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_31_657">
+                                                <rect width="18" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button id="#">
+                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item"
+                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+                             data-title="Morning Stars"
+                             data-artist="Electronic beats for coding"
+                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
+                            <div class="avatar-title">
+                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
+                                <div class="title-subtitle">
+                                    <span>Morning Stars</span>
+                                    <p>Electronic beats for coding</p>
+                                </div>
+                            </div>
+                            <div class="navigation_item-audio">
+                                <span class="track-duration">0:00</span>
+                                <button id="#">
+                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip1_31_657)">
+                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip1_31_657">
+                                                <rect width="18" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button id="#">
+                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                         <div class="item"
                              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
                              data-title="Cyber Dreams"
@@ -1114,10 +1421,13 @@
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="library__right">
-                    <div class="library__right-audio_description"></div>
+                    <div class="library__right-audio_description">
+                        
+                    </div>
                 </div>
             </div>
             <div class="lower-player">
@@ -1143,30 +1453,71 @@
                         <button id="nextBtn" title="Next">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 6H18V18H16V6ZM6 18L14.5 12L6 6V18Z"></path></svg>
                         </button>
-                    </div>
-                    
+                    </div>                   
                     <div class="player-progress">
                         <span id="currentTime">0:00</span>
                         <input type="range" id="progressBar" min="0" max="100" value="0">
                         <span id="totalDuration">0:00</span>
                     </div>
                     </div>
-                    <div class="player-volume">
-                         <button id="volumeBtn" title="Volume">
-                            <svg id="volumeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.5 8.71 14 7.97V16.02C15.5 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.84 14 18.7V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z"></path></svg>
-                            <svg id="muteIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hidden"><path d="M16.5 12C16.5 10.23 15.5 8.71 14 7.97V10.18L16.45 12.63C16.5 12.43 16.5 12.21 16.5 12ZM19 12C19 12.94 18.8 13.82 18.46 14.64L19.97 16.15C20.62 14.91 21 13.5 21 12C21 7.72 18.01 4.14 14 3.23V5.29C16.89 6.15 19 8.83 19 12ZM4.27 3L3 4.27L7.73 9H3V15H7L12 20V13.27L16.25 17.52C15.58 17.83 14.83 18.06 14 18.2V20.27C14.91 20.13 15.77 19.86 16.54 19.5L19.73 22.7L21 21.43L4.27 3ZM12 4L9.91 6.09L12 8.18V4Z"></path></svg>
-                         </button>
-                         <div class="volume-slider-container">
-                            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
-                         </div>
+                    <div class="other_settings">
+                        <button class="btn_playlist">
+                            <svg viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_28_95)">
+                            <path d="M0.987461 0.260858C1.59893 -0.0802315 2.35457 -0.0874024 2.97262 0.242758L6.739 2.25534C7.36848 2.59171 7.75855 3.22542 7.75862 3.91288C7.75862 4.60047 7.36863 5.23474 6.739 5.57112L2.97262 7.58301C2.35459 7.91316 1.59892 7.90666 0.987461 7.5656C0.37609 7.22457 0.00012453 6.60026 0 5.92546V1.901C0 1.2261 0.376039 0.60196 0.987461 0.260858Z" fill="black"/>
+                            <path d="M23.1233 16.0865C24.1596 16.0865 25 16.9627 25 18.0432C25 19.1237 24.1596 19.9999 23.1233 19.9999H1.87672C0.840387 19.9999 4.13395e-05 19.1237 0 18.0432C0 16.9627 0.840362 16.0865 1.87672 16.0865H23.1233ZM23.1233 8.91311C24.1595 8.91311 24.9998 9.78871 25 10.8691C25 11.9496 24.1596 12.8258 23.1233 12.8258H1.87672C0.840362 12.8258 0 11.9496 0 10.8691C0.000164981 9.78871 0.840463 8.91311 1.87672 8.91311H23.1233ZM23.1233 1.73901C24.1596 1.73901 25 2.61519 25 3.69571C25 4.77624 24.1596 5.65242 23.1233 5.65242H10.1395C9.10314 5.65242 8.26278 4.77624 8.26278 3.69571C8.26278 2.61519 9.10314 1.73901 10.1395 1.73901H23.1233Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_28_95">
+                            <rect width="25" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+
+                        </button>
+                        <button class="btn_random">
+                            <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_28_174)">
+                            <path d="M10.7785 8.29625C10.1313 9.29292 9.39238 10.7717 8.56177 12.7325C8.32445 12.245 8.12489 11.8523 7.96308 11.5544C7.80127 11.2565 7.58283 10.9125 7.30776 10.5225C7.03268 10.1325 6.75761 9.82646 6.48254 9.60437C6.20746 9.38229 5.86767 9.19271 5.46315 9.03562C5.05863 8.87854 4.61905 8.8 4.14442 8.8H0.519921C0.368901 8.8 0.244848 8.75125 0.147763 8.65375C0.0506786 8.55625 0.00213623 8.43167 0.00213623 8.28V5.16C0.00213623 5.00833 0.0506786 4.88375 0.147763 4.78625C0.244848 4.68875 0.368901 4.64 0.519921 4.64H4.14442C6.84121 4.64 9.05258 5.85875 10.7785 8.29625ZM28.9981 21.28C28.9981 21.4317 28.9495 21.5562 28.8525 21.6537L23.6746 26.8537C23.5775 26.9512 23.4535 27 23.3025 27C23.1622 27 23.0409 26.9485 22.9384 26.8456C22.8359 26.7427 22.7847 26.6208 22.7847 26.48V23.36C22.4395 23.36 21.981 23.3627 21.4093 23.3681C20.8376 23.3735 20.4007 23.379 20.0987 23.3844C19.7966 23.3898 19.4029 23.3844 18.9175 23.3681C18.432 23.3519 18.0491 23.3248 17.7686 23.2869C17.4882 23.249 17.143 23.1921 16.7331 23.1162C16.3231 23.0404 15.9834 22.9402 15.7137 22.8156C15.444 22.691 15.1312 22.5367 14.7752 22.3525C14.4192 22.1683 14.101 21.9517 13.8205 21.7025C13.5401 21.4533 13.2434 21.1635 12.9306 20.8331C12.6177 20.5027 12.3157 20.1262 12.0245 19.7037C12.6609 18.6962 13.3944 17.2175 14.225 15.2675C14.4624 15.755 14.6619 16.1477 14.8237 16.4456C14.9855 16.7435 15.204 17.0875 15.4791 17.4775C15.7541 17.8675 16.0292 18.1735 16.3043 18.3956C16.5793 18.6177 16.9191 18.8073 17.3237 18.9644C17.7282 19.1215 18.1678 19.2 18.6424 19.2H22.7847V16.08C22.7847 15.9283 22.8332 15.8037 22.9303 15.7062C23.0274 15.6087 23.1514 15.56 23.3025 15.56C23.4319 15.56 23.5613 15.6142 23.6908 15.7225L28.8525 20.9062C28.9495 21.0037 28.9981 21.1283 28.9981 21.28ZM28.9981 6.72C28.9981 6.87167 28.9495 6.99625 28.8525 7.09375L23.6746 12.2937C23.5775 12.3912 23.4535 12.44 23.3025 12.44C23.1622 12.44 23.0409 12.3885 22.9384 12.2856C22.8359 12.1827 22.7847 12.0608 22.7847 11.92V8.8H18.6424C18.1246 8.8 17.6554 8.88125 17.2347 9.04375C16.814 9.20625 16.4418 9.45 16.1182 9.775C15.7946 10.1 15.5195 10.4331 15.293 10.7744C15.0664 11.1156 14.8237 11.5354 14.5648 12.0337C14.2196 12.7054 13.7989 13.6317 13.3027 14.8125C12.9899 15.5275 12.7229 16.1287 12.5018 16.6162C12.2807 17.1038 11.9894 17.6725 11.628 18.3225C11.2667 18.9725 10.9215 19.5142 10.5925 19.9475C10.2634 20.3808 9.86432 20.8304 9.39508 21.2962C8.92584 21.7621 8.44041 22.1331 7.93881 22.4094C7.4372 22.6856 6.86279 22.9131 6.21556 23.0919C5.56832 23.2706 4.87794 23.36 4.14442 23.36H0.519921C0.368901 23.36 0.244848 23.3112 0.147763 23.2137C0.0506786 23.1162 0.00213623 22.9917 0.00213623 22.84V19.72C0.00213623 19.5683 0.0506786 19.4437 0.147763 19.3462C0.244848 19.2487 0.368901 19.2 0.519921 19.2H4.14442C4.6622 19.2 5.13144 19.1187 5.55214 18.9562C5.97284 18.7937 6.345 18.55 6.66862 18.225C6.99223 17.9 7.26731 17.5669 7.49384 17.2256C7.72037 16.8844 7.96308 16.4646 8.22197 15.9662C8.56716 15.2946 8.98786 14.3683 9.48407 13.1875C9.7969 12.4725 10.0639 11.8712 10.285 11.3837C10.5062 10.8962 10.7974 10.3275 11.1588 9.6775C11.5202 9.0275 11.8653 8.48583 12.1944 8.0525C12.5234 7.61917 12.9225 7.16958 13.3917 6.70375C13.861 6.23792 14.3464 5.86687 14.848 5.59062C15.3496 5.31437 15.924 5.08687 16.5713 4.90812C17.2185 4.72937 17.9089 4.64 18.6424 4.64H22.7847V1.52C22.7847 1.36833 22.8332 1.24375 22.9303 1.14625C23.0274 1.04875 23.1514 1 23.3025 1C23.4319 1 23.5613 1.05417 23.6908 1.1625L28.8525 6.34625C28.9495 6.44375 28.9981 6.56833 28.9981 6.72Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_28_174">
+                            <rect width="29" height="26" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+
+                        </button>
+                        <button class="btn_repet">
+                            <svg viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_28_101)">
+                            <path d="M23.6667 8.66665C24.1639 8.66667 24.6432 8.85187 25.0112 9.18614C25.3793 9.52041 25.6096 9.97977 25.6573 10.4746L25.6667 10.6666V16C25.6667 17.5423 25.0727 19.0255 24.0081 20.1415C22.9435 21.2575 21.49 21.9207 19.9493 21.9933L19.6667 22H8.41334L8.38668 22.416L8.37201 22.6026C8.29734 23.5613 7.37334 24.1626 6.59734 23.756L6.17868 23.532L5.68801 23.2533L5.41734 23.0946L4.83201 22.736C4.41506 22.4726 4.00514 22.1983 3.60268 21.9133L3.08934 21.54L2.65868 21.2133L2.47601 21.0706C1.82401 20.5506 1.84934 19.4773 2.54268 18.9293L2.72401 18.7866L3.15068 18.464L3.65734 18.0973L4.24134 17.696C4.55473 17.4868 4.87213 17.2836 5.19334 17.0866L5.76134 16.7467L6.26134 16.4653L6.68268 16.2386C7.45201 15.8386 8.29201 16.352 8.36534 17.2467L8.41601 18H19.6667C20.1639 18 20.6432 17.8148 21.0112 17.4805C21.3793 17.1462 21.6096 16.6869 21.6573 16.192L21.6667 16V10.6666C21.6667 10.1362 21.8774 9.62751 22.2525 9.25243C22.6275 8.87736 23.1362 8.66665 23.6667 8.66665ZM19.4027 0.243982L19.8213 0.467982L20.312 0.746648C20.4009 0.796426 20.4911 0.849315 20.5827 0.905315L21.168 1.26398C21.585 1.52733 21.9949 1.80165 22.3973 2.08665L22.9107 2.45998L23.3413 2.78665L23.524 2.92932C24.176 3.44932 24.1507 4.52265 23.4573 5.07065L23.276 5.21332L22.8493 5.53598L22.3427 5.90265C21.8414 6.25551 21.3291 6.59256 20.8067 6.91332L20.2387 7.25331L19.7387 7.53465L19.3173 7.76132C18.548 8.16131 17.708 7.64798 17.636 6.75331L17.5827 5.99998H6.33334C5.80291 5.99998 5.2942 6.2107 4.91913 6.58577C4.54406 6.96084 4.33334 7.46955 4.33334 7.99998V13.3333C4.33334 13.8637 4.12263 14.3725 3.74756 14.7475C3.37248 15.1226 2.86378 15.3333 2.33334 15.3333C1.80291 15.3333 1.2942 15.1226 0.91913 14.7475C0.544057 14.3725 0.333344 13.8637 0.333344 13.3333V7.99998C0.333344 6.40868 0.965484 4.88256 2.0907 3.75734C3.21592 2.63212 4.74204 1.99998 6.33334 1.99998H17.5867L17.628 1.39731C17.7027 0.438648 18.6267 -0.162685 19.4027 0.243982Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_28_101">
+                            <rect width="26" height="25" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+                        </button>
+                        
+                        <div class="player-volume">
+                             <button id="volumeBtn" title="Volume">
+                                <svg id="volumeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.5 8.71 14 7.97V16.02C15.5 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.15 19 8.83 19 12C19 15.17 16.89 17.84 14 18.7V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z"></path></svg>
+                                <svg id="muteIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hidden"><path d="M16.5 12C16.5 10.23 15.5 8.71 14 7.97V10.18L16.45 12.63C16.5 12.43 16.5 12.21 16.5 12ZM19 12C19 12.94 18.8 13.82 18.46 14.64L19.97 16.15C20.62 14.91 21 13.5 21 12C21 7.72 18.01 4.14 14 3.23V5.29C16.89 6.15 19 8.83 19 12ZM4.27 3L3 4.27L7.73 9H3V15H7L12 20V13.27L16.25 17.52C15.58 17.83 14.83 18.06 14 18.2V20.27C14.91 20.13 15.77 19.86 16.54 19.5L19.73 22.7L21 21.43L4.27 3ZM12 4L9.91 6.09L12 8.18V4Z"></path></svg>
+                             </button>
+                             <div class="volume-slider-container">
+                                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+                             </div>
+                        </div>
                     </div>
+                    <audio id="audioPlayer"></audio>
                     
                 </div>
             </div>
         </div>
     </main>
 
-    <audio id="audioPlayer"></audio>
 
     <script>
         // Имитация авторизации ВКонтакте
@@ -1292,10 +1643,9 @@
             let isPlaying = false;
             const tracks = Array.from(trackItems);
             
-            // --- Функции для работы с громкостью (вынесены для удобства) ---
+            
             function updateVolumeGradient(volumeValue) {
                 const percentage = volumeValue * 100;
-                // Применяем градиент: синий от 0 до % громкости, серый от % до 100%
                 volumeSlider.style.background = `linear-gradient(to right, #0071e3 0%, #0071e3 ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
             }
 
@@ -1343,7 +1693,6 @@
                 totalDurationEl.textContent = '0:00';
                 progressBar.value = 0;
                 
-                // Сброс градиента при загрузке нового трека
                 progressBar.style.background = `linear-gradient(to right, #d2d2d7 0%, #d2d2d7 100%)`;
             }
 
@@ -1436,7 +1785,6 @@
                  
                  if (!isNaN(duration) && duration > 0) {
                      progressBar.value = current;
-                     // Обновление фона прогресс-бара для отображения пройденного пути синим
                      const percentage = (current / duration) * 100;
                      progressBar.style.background = `linear-gradient(to right, #0071e3 0%, #0071e3 ${percentage}%, #d2d2d7 ${percentage}%, #d2d2d7 100%)`;
                  }
@@ -1482,14 +1830,11 @@
             });
 
             progressBar.addEventListener('input', (e) => {
-                // Плавное обновление времени при перетаскивании ползунка
                 audioPlayer.currentTime = parseFloat(e.target.value);
-                // Обновляем прогресс при ручном изменении
                 updateProgress();
             });
             
             
-            // --- Обработчики громкости с обновлением градиента ---
             volumeSlider.addEventListener('input', (e) => {
                 const newVolume = parseFloat(e.target.value);
                 audioPlayer.volume = newVolume;
@@ -1501,13 +1846,11 @@
             volumeBtn.addEventListener('click', () => {
                 audioPlayer.muted = !audioPlayer.muted;
             });
-            // ----------------------------------------------------
 
+            // ----------------------------------------------------
             if(tracks.length > 0) {
                  loadTrack(0);
             }
-            
-            // Инициализация градиента громкости при загрузке страницы
             updateVolumeGradient(audioPlayer.volume);
         });
 
