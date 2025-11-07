@@ -3,834 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>AI Music Studio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-        a{  
-            text-decoration: none;
-        }
-        body {
-            background: #f5f5f7;
-            color: #1d1d1f;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        button{
-            background-color: transparent;
-            border-radius: 0;
-            border: none;
-            user-select: none; 
-            cursor: pointer;
-        }
-        .hidden {
-            display: none !important;
-        }
-        .header {
-            width: 100%;
-            background: white;
-            padding: 16px 32px;
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-            position: fixed;
-            top: 0;
-            z-index: 100;
-        }
-        .inner__header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: 600;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .btn_burger-menu{
-            display: none;
-            height: 25px;
-        }
-        .tokens {
-            background: #e8f4fd;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 500;
-            color: #0071e3;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 16px;
-        }
-        
-        .nav-btn {
-            background: none;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .nav-btn:hover {
-            background: #f0f0f2;
-        }
-        
-        .nav-btn.active {
-            background: #0071e3;
-            color: white;
-        }
-        
-        .main-content {
-            height: calc(100dvh - 80px);
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 10px;
-            box-sizing: border-box;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-sizing: border-box;
-            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-        }
-        .card.overlay{
-            position: fixed;
-            z-index: 99;
-            width: 100%;
-            height: calc(100dvh - 70px);
-            top: 70px;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items:start;
-            max-width: none;
-            box-sizing: border-box;
-            background: rgba(0,0,0,0.5);
-            border-radius: 0px;
-            padding: 0px;
-            overflow-y: auto;
-        }
-        .card.overlay .overlay_inner{
-            width: 100%;
-            max-width: 600px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
-        }
-        .library {
-            width: 100vw;
-            height: 100%;
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between
-            ;
-            gap: 20px;
-        }
-        .inner__library{
-            width: 100%;
-            height: calc(100dvh - 190px);
-            min-height: 364px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .library__left{
-            width: 100%;
-            height: 100%;
-            max-width: max-content;
-            max-width: 250px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            display: flex;
-        }
-        .library__left-menu{
-            position: relative;
-            z-index: 2;
-            width: max-content;
-            min-width: 250px;
-            height: 100%;
-            min-height: max-content;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-        }
-        .library__left-menu ul{
-            list-style: none;
-            padding: 20px 20px;
-        }
-        .library__left-menu ul li{
-            font-weight: 700;
-        }
-        .library__left-menu ul li ul{
-            list-style: none;
-            padding: 0px;
-        }
-        .library__left-menu ul li ul li button{
-            width: 100%;
-            padding: 10px 20px;
-            margin-top: 5px;
-            background-color: transparent;
-            transition: 0.1s;
-            border-radius: 5px;
-            font-weight: 600;
-            text-align: start;
-            color: #000;
-        }
-        .library__left-menu ul li ul li button:hover{
-            background-color: #005bb5;
-            color: #fff;
-            transition: 0.3s;
-        }
-        .library__left-create{
-            position: relative;
-            z-index: 1;
-            margin-left: -300px;
-            transition: 0.1s;
-            opacity: 0;
-            width: max-content;
-            min-width: 300px;
-            height: 100%;
-            min-height: max-content;
-            border-radius: 10px;
-            background: white;
-            padding: 20px 20px;
-        }
-        .library__left-create.active{
-            margin-left: -20px;
-            opacity: 1;
-            transition: 0.5s;
-        }
-        .library__main{
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 700px;
-            min-width: 300px;
-            margin-left: 20px;
-            margin-right: 20px;
-            height: 100%;
-            min-height: 364px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            flex-grow: 1;
-        }
-        .library__main-title_nav{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .btn-and-title{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .btn_left-menu{
-            display: none;
-        }
-        .btn-and-title button{
-            height: 20px;
-        }
-        .btn-and-title button svg{
-            width: 25px;
-            height: 20px;
-        }
-        .library__main-title_nav .menu{
-            display: flex;
-            gap: 10px;
-        }
-        .library__main-title_nav .title{
-            line-height: 100%;
-        }
-        .library__main-title_nav .menu a{
-            border-radius: 10px;
-            padding: 8px 10px;
-            background-color: #fff;
-            font-weight: 600;
-            font-size: 16px;
-            color: #000;
-            box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-        }
-        .library__main-title_nav .menu a:hover{
-            background-color: #f0f0f2;
-        }
-        .library__main-list{
-            height: calc(100dvh - 225px);
-            min-height: 364px;
-            display: flex;
-            flex-direction: column;
-            padding: 10px 0px;
-            margin-top: 10px;
-            overflow: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .library__main-list::-webkit-scrollbar {
-          display: none;
-        }
-        .library__main-list .item{
-            width: 100%;
-            height: max-content;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            display: flex;
-            gap: 10px;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .library__main-list .item:nth-last-child(1){
-            margin-bottom: 25px;
-        }
-        .library__main-list .item.focus{
-            background-color: #0071e3;
-        }
-        .avatar-title{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        .avatar-title img {
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-            object-fit: cover;
-        }
-        .library__main-list .item .title-subtitle{
-            display: flex;
-            flex-direction: column;
-        }
-        .library__main-list .item.focus .title-subtitle span{
-            color: #fff;
-        }
-        .library__main-list .item .title-subtitle span{
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #1d1d1f;
-        }
-        .library__main-list .item.focus .title-subtitle p{
-            color: #e8f4fd;
-        }
-        .library__main-list .item .title-subtitle p{
-            opacity: 0.7;
-            color: #1d1d1f;
-            font-size: 14px;
-        }
-        .library__main-list .item .navigation_item-audio{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        .library__main-list .item.focus .navigation_item-audio span{
-            color: #fff;
-        }
-        .library__main-list .item .navigation_item-audio span{
-            font-size: 13px;
-            opacity: 0.5;
-            color: #1d1d1f;
-            min-width: 35px;
-        }
-        .library__main-list .item.focus .navigation_item-audio svg path{
-            fill: #fff;
-        }
-        .navigation_item-audio button:focus svg path {
-          fill: #0071e3;
-        }
-        .library__main-list .item.focus .navigation_item-audio button:focus svg path{
-            fill:#fff;
-        }
-        .library__right{
-            width: 100%;
-            max-width: 250px;
-            height: 100%;
-            min-height: max-content;
-            background: white;
-            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .generate-lyrics-btn {
-            position: absolute;
-            right: 8px;
-            top: 35px;
-            background: #e8f4fd;
-            color: #0071e3;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-        .generate-lyrics-btn:hover {
-            background: #d0e9fa;
-        }
-        .generate-lyrics-btn.loading {
-            opacity: 0.7;
-            cursor: wait;
-        }
-        .input-label {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #1d1d1f;
-        }
-        .input-field {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #d2d2d7;
-            border-radius: 10px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        textarea.input-field {
-            min-height: 100px;
-            resize: vertical;
-        }
-        .radio-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .radio-option input[type="radio"] {
-            margin-right: 5px;
-            accent-color: #0071e3;
-        }
-        .generate-btn {
-            background: #0071e3;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: background 0.2s;
-        }
-        .generate-btn:hover {
-            background: #005bb5;
-        }
-
-        .lower-player{
-            width: 100%;
-            max-height: 90px;
-            z-index: 95;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 40px rgba(0,0,0,0.1);
-            padding: 10px 20px;
-            position: relative;
-            border: 1px solid #eee;
-        }
-        .inner_lower-player{
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-        }
-        .player-sound_item{
-            width: max-content;
-            max-width: 170px;
-            display: flex;
-            gap: 10px;
-            flex: 1;
-        }
-        .player-sound_item .avatar-title .title-subtitle span{
-            font-weight: 700;
-            font-size: 14px;
-            text-wrap: nowrap;
-        }
-        .player-sound_item .avatar-title .title-subtitle p{
-            opacity: 0.5;
-            line-height: 100%;
-            font-size: 12px;
-        }
-        .player-sound_item .navigation_item-audio{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .player-controls {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            justify-content: center;
-        }
-        .player-controls button {
-            background: #f5f5f7;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-        }
-        .player-controls button:hover {
-            background: #e0e0e0;
-        }
-        .player-controls button svg {
-            width: 20px;
-            height: 20px;
-        }
-        .player-controls #playPauseBtn svg {
-            position: relative;
-            left: 1px;
-        }
-        .player-controls #pauseIcon {
-            width: 18px;
-            height: 18px;
-            left: 0;
-        }
-        .player-controls_progress{
-            min-width: 500px;
-            display: flex;
-            gap: 20px;
-        }
-        .player-progress {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 2;
-        }
-        .player-progress span {
-            font-size: 12px;
-            color: #86868b;
-            min-width: 35px;
-            text-align: center;
-        }
-        
-        #progressBar {
-            flex-grow: 1;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 8px;
-            background: #d2d2d7;
-            border-radius: 5px;
-            cursor: pointer;
-            outline: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #progressBar::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            background: #0071e3;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s;
-        }
-        #progressBar::-webkit-slider-thumb:hover {
-            box-shadow: 0 0 5px rgba(0, 113, 227, 0.5);
-        }
-        #progressBar::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            background: #0071e3;
-            border-radius: 50%;
-            cursor: pointer;
-            border: none;
-            transition: background 0.2s, box-shadow 0.2s;
-        }
-        #progressBar::-moz-range-thumb:hover {
-            box-shadow: 0 0 5px rgba(0, 113, 227, 0.5);
-        }
-
-        .player-volume {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        .other_settings{
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .player-volume button {
-            background: #f5f5f7;
-            border-radius: 50%;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-        }
-        .player-volume button:hover {
-            background: #e0e0e0;
-        }
-        .player-volume button svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .btn_playlist {
-            background: #f5f5f7;
-            border-radius: 50%;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-        }
-        .btn_playlist:hover {
-            background: #e0e0e0;
-        }
-        .btn_playlist svg {
-            width: 15px;
-            height: 15px;
-        }
-        
-        .btn_repet {
-            background: #f5f5f7;
-            border-radius: 50%;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-        }
-        .btn_repet:hover {
-            background: #e0e0e0;
-        }
-        .btn_repet svg {
-            width: 15px;
-            height: 15px;
-        }
-
-        .btn_random {
-            background: #f5f5f7;
-            border-radius: 50%;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-        }
-        .btn_random:hover {
-            background: #e0e0e0;
-        }
-        .btn_random svg {
-            width: 15px;
-            height: 15px;
-        }
-
-        .volume-slider-container {
-            position: absolute;
-            bottom: 30px; 
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 10px; 
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            
-            width: 30px; 
-            height: 150px; 
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-            z-index: 90; 
-        }
-        
-        .player-volume:hover .volume-slider-container {
-            visibility: visible;
-            opacity: 1;
-        }
-        .volume-slider-container:hover {
-            visibility: visible !important; 
-            opacity: 1 !important;
-        }
-
-        #volumeSlider {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100px;
-            height: 8px;
-            /* Убрали фиксированный фон, он будет устанавливаться JS */
-            background: #e0e0e0; 
-            border-radius: 4px;
-            outline: none;
-            
-            transform-origin: center center;
-            transform: rotate(-90deg);
-        }
-        
-        /* Стили для ползунка (движка) */
-        #volumeSlider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            background: #0071e3;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        #volumeSlider::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            background: #0071e3;
-            border-radius: 50%;
-            cursor: pointer;
-            border: none;
-        }
-
-        #volumeSlider::-webkit-slider-runnable-track {
-            background: transparent;
-        }
-        #volumeSlider::-moz-range-track {
-            background: transparent;
-        }
-        @media (max-width:1024px) {
-            .library__right{
-                width: 0;
-            }
-            .btn_left-menu{
-                display: block;
-            }
-            .player-controls_progress{
-                min-width: 350px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                margin: 10px 0px;
-            }
-        }
-        @media (max-width:768px) {
-            .nav-buttons {
-                display: none;
-            }   
-            .btn_burger-menu{
-                display: block;
-            }
-            .library__left{
-                width: 0%;
-                overflow: hidden;
-                height: 100%;
-                max-width: max-content;
-                max-width: 250px;
-                border-radius: 10px;
-                box-sizing: border-box;
-                display: flex;
-            }
-            .btn_playlist {
-                display: none;
-            }
-            .btn_repet {
-                display: none;
-
-            }
-            .btn_random {
-                display: none;
-            }
-            .player-sound_item{
-                display: none;
-            }
-            .inner_lower-player{
-                display: flex;
-                justify-content: center;
-                gap: 0;
-            }
-        }
-        @media (max-width:425px) {
-            .header {
-                width: 100%;
-                background: white;
-                padding: 16px 20px;
-                box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-                position: fixed;
-                top: 0;
-                z-index: 100;
-            }
-            .logo {
-               font-size: 18px;
-            }
-            .tokens {
-                font-size: 12px;
-            }
-            .player-volume{
-                display: none;
-            }
-            .player-controls_progress {
-                width: 100%;
-                min-width: 300px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                margin: 10px 0px;
-            }
-            .library__main{
-                margin: 0;
-                padding: 0 10px;
-            }
-            .library__main-title_nav .menu a {
-                border-radius: 10px;
-                padding: 8px 10px;
-                background-color: #fff;
-                font-weight: 600;
-                font-size: 11px;
-                color: #000;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            }
-            .library__main-list .item .title-subtitle span{
-               font-size: 13px;
-            }
-            .library__main-list .item .title-subtitle p {
-               font-size: 11px;
-            }
-            .library__main-list .item{
-                gap: 0px;
-            }
-            .library__main-list .item .navigation_item-audio{
-                gap: 5px;
-            }
-            .main-content{
-                padding: 10px 0px;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -843,11 +17,18 @@
                     <button class="nav-btn active">Библиотека</button>
                     <button class="nav-btn">Выход</button>
                 </div>
-                <button class="btn_burger-menu">
-                    <svg width="35" height="25" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M34.0579 21.0973C35.6829 21.0973 37 22.4192 37 24.0491C36.9999 25.6789 35.6828 27 34.0579 27H2.9421C1.31715 27 0.000139221 25.6789 0 24.0491C0 22.4192 1.31707 21.0973 2.9421 21.0973H34.0579ZM34.0579 10.5491C35.6829 10.5491 37 11.8701 37 13.5C36.9999 15.1298 35.6829 16.4509 34.0579 16.4509H2.9421C1.31711 16.4509 6.96127e-05 15.1298 0 13.5C0 11.8701 1.31707 10.5491 2.9421 10.5491H34.0579ZM34.0579 0C35.6829 0 37 1.32101 37 2.95091C37 4.58081 35.6829 5.90182 34.0579 5.90182H2.9421C1.31707 5.90182 0 4.58081 0 2.95091C0 1.32101 1.31707 0 2.9421 0H34.0579Z" fill="black"/>
-                    </svg>
-                </button>
+                <div class="header-burger_menu">
+                    <button class="btn_burger-menu">
+                        <svg width="35" height="25" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M34.0579 21.0973C35.6829 21.0973 37 22.4192 37 24.0491C36.9999 25.6789 35.6828 27 34.0579 27H2.9421C1.31715 27 0.000139221 25.6789 0 24.0491C0 22.4192 1.31707 21.0973 2.9421 21.0973H34.0579ZM34.0579 10.5491C35.6829 10.5491 37 11.8701 37 13.5C36.9999 15.1298 35.6829 16.4509 34.0579 16.4509H2.9421C1.31711 16.4509 6.96127e-05 15.1298 0 13.5C0 11.8701 1.31707 10.5491 2.9421 10.5491H34.0579ZM34.0579 0C35.6829 0 37 1.32101 37 2.95091C37 4.58081 35.6829 5.90182 34.0579 5.90182H2.9421C1.31707 5.90182 0 4.58081 0 2.95091C0 1.32101 1.31707 0 2.9421 0H34.0579Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <div class="block-burger_menu hidden">
+                        <button class="nav-btn">Создать</button>
+                        <button class="nav-btn active">Библиотека</button>
+                        <button class="nav-btn">Выход</button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -896,7 +77,14 @@
                 <div class="library__left">
                     <div class="library__left-menu">
                         <ul>
-                            <li>Библиотека</li>
+                            <li class="text-btn_close-left-menu">
+                                <span>Библиотека</span> 
+                                <button class="close_left-menu">
+                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="20px" height="20px">
+                                        <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"/>
+                                    </svg>
+                                </button>
+                            </li>
                             <li>
                                 <ul>
                                     <li><button type="button" id="#">Песни</button></li>
@@ -930,9 +118,11 @@
                              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
                              data-title="End after end"
                              data-artist="Melodic piano music..."
-                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
+                             data-text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, a sequi nihil natus reiciendis magnam doloremque omnis, corporis eveniet rem accusamus consectetur officiis. Ratione cumque nobis alias, earum iste voluptatibus accusantium explicabo, odit soluta animi dolor maxime corporis delectus! Voluptas autem, asperiores dolores, qui illum sequi culpa saepe sunt ab aut ipsa cum accusantium ut molestias porro quam consequatur dolorum blanditiis quisquam et optio aperiam reprehenderit! Nostrum fugit, deleniti magni, nobis dicta earum praesentium laudantium officia perferendis autem excepturi quis tenetur, aut quibusdam perspiciatis? Sed reprehenderit fuga enim voluptatem unde nihil aut deserunt laboriosam a odit quidem, voluptates nam ad!"
+                             data-model="ChatGPT"
+                             data-avatar="./preview1.png">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
+                                <img src="./preview1.png" alt="avatar_audio">
                                 <div class="title-subtitle">
                                     <span>End after end</span>
                                     <p>Melodic piano music with Japanese influences...</p>
@@ -952,20 +142,30 @@
                                         </defs>
                                     </svg>
                                 </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
+                                <div class="block-dialog-menu">
+                                    <button id="openDialogMenu" class="openDialogMenu">
+                                        <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                    <div class="dialog-menu hidden">
+                                        <button id="">Создать по данному образцу</button>
+                                        <button id="">Отделить вокал(создать минус)</button>
+                                        <button id="">Заменить текст</button>
+                                        <button id="">Заменить голос</button>
+                                        <button id="">Опубликовать в каталоге</button>
+                                        <button id="">Удалить</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="item"
                              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
                              data-title="Morning Stars"
                              data-artist="Electronic beats for coding"
-                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
+                             data-avatar="./preview2.png">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
+                                <img src="./preview2.png" alt="avatar_audio">
                                 <div class="title-subtitle">
                                     <span>Morning Stars</span>
                                     <p>Electronic beats for coding</p>
@@ -985,20 +185,31 @@
                                         </defs>
                                     </svg>
                                 </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
+                                <div class="block-dialog-menu">
+                                    <button id="openDialogMenu" class="openDialogMenu">
+                                        <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                    <div class="dialog-menu hidden">
+                                        <button id="">Создать по данному образцу</button>
+                                        <button id="">Отделить вокал(создать минус)</button>
+                                        <button id="">Заменить текст</button>
+                                        <button id="">Заменить голос</button>
+                                        <button id="">Опубликовать в каталоге</button>
+                                        <button id="">Удалить</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="item"
                              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
                              data-title="Cyber Dreams"
                              data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
+                             
+                             data-avatar="./preview3.png">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
+                                <img src="./preview3.png" alt="avatar_audio">
                                 <div class="title-subtitle">
                                     <span>Cyber Dreams</span>
                                     <p>Synthwave for late nights</p>
@@ -1018,20 +229,30 @@
                                         </defs>
                                     </svg>
                                 </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
+                                <div class="block-dialog-menu">
+                                    <button id="openDialogMenu" class="openDialogMenu">
+                                        <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                    <div class="dialog-menu hidden">
+                                        <button id="">Создать по данному образцу</button>
+                                        <button id="">Отделить вокал(создать минус)</button>
+                                        <button id="">Заменить текст</button>
+                                        <button id="">Заменить голос</button>
+                                        <button id="">Опубликовать в каталоге</button>
+                                        <button id="">Удалить</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="item" 
                              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
                              data-title="End after end"
                              data-artist="Melodic piano music..."
-                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
+                             data-avatar="./preview1.png">
                             <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
+                                <img src="./preview1.png" alt="avatar_audio">
                                 <div class="title-subtitle">
                                     <span>End after end</span>
                                     <p>Melodic piano music with Japanese influences...</p>
@@ -1051,382 +272,55 @@
                                         </defs>
                                     </svg>
                                 </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-                             data-title="Morning Stars"
-                             data-artist="Electronic beats for coding"
-                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Morning Stars</span>
-                                    <p>Electronic beats for coding</p>
+                                <div class="block-dialog-menu">
+                                    <button id="openDialogMenu" class="openDialogMenu">
+                                        <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                    <div class="dialog-menu hidden">
+                                        <button id="">Создать по данному образцу</button>
+                                        <button id="">Отделить вокал(создать минус)</button>
+                                        <button id="">Заменить текст</button>
+                                        <button id="">Заменить голос</button>
+                                        <button id="">Опубликовать в каталоге</button>
+                                        <button id="">Удалить</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip1_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip1_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
                         </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip2_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item" 
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-                             data-title="End after end"
-                             data-artist="Melodic piano music..."
-                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>End after end</span>
-                                    <p>Melodic piano music with Japanese influences...</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-                             data-title="Morning Stars"
-                             data-artist="Electronic beats for coding"
-                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Morning Stars</span>
-                                    <p>Electronic beats for coding</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip1_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip1_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip2_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item" 
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-                             data-title="End after end"
-                             data-artist="Melodic piano music..."
-                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>End after end</span>
-                                    <p>Melodic piano music with Japanese influences...</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-                             data-title="Morning Stars"
-                             data-artist="Electronic beats for coding"
-                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Morning Stars</span>
-                                    <p>Electronic beats for coding</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip1_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip1_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip2_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item" 
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-                             data-title="End after end"
-                             data-artist="Melodic piano music..."
-                             data-avatar="https://placehold.co/60x60/4ecdc4/ffffff?text=End">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/4ecdc4/ffffff?text=End" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>End after end</span>
-                                    <p>Melodic piano music with Japanese influences...</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-                             data-title="Morning Stars"
-                             data-artist="Electronic beats for coding"
-                             data-avatar="https://placehold.co/60x60/ff6b6b/ffffff?text=Star">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/ff6b6b/ffffff?text=Star" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Morning Stars</span>
-                                    <p>Electronic beats for coding</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip1_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip1_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item"
-                             data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-                             data-title="Cyber Dreams"
-                             data-artist="Synthwave for late nights"
-                             data-avatar="https://placehold.co/60x60/0071e3/ffffff?text=CD">
-                            <div class="avatar-title">
-                                <img src="https://placehold.co/60x60/0071e3/ffffff?text=CD" alt="avatar_audio">
-                                <div class="title-subtitle">
-                                    <span>Cyber Dreams</span>
-                                    <p>Synthwave for late nights</p>
-                                </div>
-                            </div>
-                            <div class="navigation_item-audio">
-                                <span class="track-duration">0:00</span>
-                                <button id="#">
-                                    <svg width="20" height="18" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip2_31_657)">
-                                            <path d="M9.08861 13.6766L8.99997 13.7633L8.90247 13.6766C4.69225 9.94128 1.90906 7.47128 1.90906 4.96662C1.90906 3.23328 3.23861 1.93328 5.01134 1.93328C6.37634 1.93328 7.70588 2.79995 8.17566 3.97862H9.82429C10.2941 2.79995 11.6236 1.93328 12.9886 1.93328C14.7613 1.93328 16.0909 3.23328 16.0909 4.96662C16.0909 7.47128 13.3077 9.94128 9.08861 13.6766ZM12.9886 0.199951C11.4463 0.199951 9.96611 0.901951 8.99997 2.00262C8.03384 0.901951 6.55361 0.199951 5.01134 0.199951C2.28134 0.199951 0.136337 2.28862 0.136337 4.96662C0.136337 8.23395 3.14997 10.912 7.71475 14.9593L8.99997 16.1033L10.2852 14.9593C14.85 10.912 17.8636 8.23395 17.8636 4.96662C17.8636 2.28862 15.7186 0.199951 12.9886 0.199951Z" fill="black"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip2_31_657">
-                                                <rect width="18" height="16" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button id="#">
-                                    <svg width="25" height="30" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.1792 13.62C15.5192 13.62 14.9792 13.08 14.9792 12.42C14.9792 11.76 15.5192 11.22 16.1792 11.22C16.8592 11.22 17.3792 11.76 17.3792 12.42C17.3792 13.08 16.8592 13.62 16.1792 13.62ZM4.01922 13.64C3.33922 13.64 2.81922 13.08 2.81922 12.44C2.81922 11.78 3.35922 11.24 4.01922 11.24C4.63922 11.24 5.21922 11.74 5.21922 12.44C5.21922 13.1 4.67922 13.64 4.01922 13.64ZM10.1392 13.64C9.47922 13.64 8.93922 13.1 8.93922 12.44C8.93922 11.76 9.49922 11.24 10.1392 11.24C10.7592 11.24 11.3392 11.74 11.3392 12.44C11.3392 13.1 10.7992 13.64 10.1392 13.64Z" fill="black"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
+                    </div>             
                 </div>
                 <div class="library__right">
                     <div class="library__right-audio_description">
-                        
+                        <div class="library__right-audio_description-btn_close">
+                            <button id="BtnDescriptionClose" class="btn-description-close">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="20px" height="20px">  
+                                    <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <img src="https://placehold.co/60x60/f5f5f7/cccccc?text=AI" alt="avatar_audio" id="playerAvatar">
+                        <div class="btns">
+                            <button id="#" class="btn_publish">Опубликовать</button>
+                            <button id="#" class="btn_other1">Кнопка</button>
+                            <button id="#" class="btn_other2">Кнопка</button>
+                        </div>
+                        <div class="title-subtitle">
+                            <div class="title-subtitle_box1">
+                                <span class="title">Название</span>
+                                <span id="playerTitle" class="title-audio">Выберите трек</span>
+                                <p id="playerArtist" class="subtitle-audio"></p>
+                            </div>
+                            <div class="title-subtitle_box2">
+                                <span class="title">Модель</span>
+                                <p id="playerAudioModel">модель неизвестна</p>
+                            </div> 
+                            <div class="title-subtitle_box2">
+                                <span class="title">Текст песни</span>
+                                <p id="playerArtistText">У этой песни нету текста</p>
+                            </div>    
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1517,343 +411,6 @@
             </div>
         </div>
     </main>
-
-
-    <script>
-        // Имитация авторизации ВКонтакте
-        function initVKAuth() {
-            // В реальном приложении здесь будет редирект на VK OAuth
-            console.log('Инициализация авторизации ВКонтакте');
-            
-            // Имитация успешной авторизации через таймаут
-            setTimeout(() => {
-                document.getElementById('authCard').classList.add('hidden');
-                document.getElementById('createForm').classList.remove('hidden');
-                
-                // Заполняем текст из первого поля
-                const songText = document.getElementById('songText').value;
-                document.getElementById('trackText').value = songText;
-            }, 1500);
-        }
-
-
-        function generateTrack() {
-            const tokens = 50; 
-            const cost = 40;
-            
-            if (tokens < cost) {
-                showModal('Недостаточно токенов! Необходимо пополнить баланс.');
-                return;
-            }
-            
-            const title = document.getElementById('trackTitle').value.trim();
-            const text = document.getElementById('trackText').value.trim();
-            const style = document.getElementById('musicStyle').value.trim();
-            
-            if (!title || !text || !style) {
-                showModal('Пожалуйста, заполните все обязательные поля.');
-                return;
-            }
-            
-            console.log('Начинаем генерацию трека...');
-            console.log('Списываем 40 токенов');
-            
-            showModal('Трек отправлен на генерацию! Переходим в библиотеку...');
-            
-            document.getElementById('createForm').classList.add('hidden');
-            document.querySelector('.nav-btn.active').classList.remove('active');
-            document.querySelectorAll('.nav-btn')[1].classList.add('active');
-        }
-
-        function showModal(message) {
-            const oldModal = document.getElementById('customModal');
-            if (oldModal) {
-                oldModal.remove();
-            }
-
-            const modal = document.createElement('div');
-            modal.id = 'customModal';
-            modal.style.cssText = `
-                position: fixed;
-                top: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: white;
-                padding: 20px 30px;
-                border-radius: 12px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                z-index: 1001;
-                font-size: 16px;
-                font-weight: 500;
-                text-align: center;
-            `;
-            modal.textContent = message;
-            document.body.appendChild(modal);
-
-            setTimeout(() => {
-                modal.style.transition = 'opacity 0.5s';
-                modal.style.opacity = '0';
-                setTimeout(() => modal.remove(), 500);
-            }, 3000);
-        }
-        
-        document.querySelectorAll('.nav-btn').forEach((btn, index) => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                if (this.textContent === 'Библиотека') {
-                    document.getElementById('createForm').classList.add('hidden');
-                    document.getElementById('library').classList.remove('hidden');
-                } else if (this.textContent === 'Создать') {
-                    document.getElementById('createForm').classList.remove('hidden');
-                } else if (this.textContent === 'Выход') {
-                    showModal('Выход из системы...');
-                }
-            });
-        });
-
-        document.getElementById('create_audio').addEventListener('click', () => {
-            document.getElementById('createForm').classList.remove('hidden');
-            document.querySelector('.nav-btn.active').classList.remove('active');
-            document.querySelectorAll('.nav-btn')[0].classList.add('active');
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const audioPlayer = document.getElementById('audioPlayer');
-            const trackItems = document.querySelectorAll('.library__main-list .item');
-            
-            const playerAvatar = document.getElementById('playerAvatar');
-            const playerTitle = document.getElementById('playerTitle');
-            const playerArtist = document.getElementById('playerArtist');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-            const playIcon = document.getElementById('playIcon');
-            const pauseIcon = document.getElementById('pauseIcon');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const currentTimeEl = document.getElementById('currentTime');
-            const totalDurationEl = document.getElementById('totalDuration');
-            const progressBar = document.getElementById('progressBar');
-            const volumeBtn = document.getElementById('volumeBtn');
-            const volumeIcon = document.getElementById('volumeIcon');
-            const muteIcon = document.getElementById('muteIcon');
-            const volumeSlider = document.getElementById('volumeSlider');
-            
-            let currentTrackIndex = 0;
-            let isPlaying = false;
-            const tracks = Array.from(trackItems);
-            
-            
-            function updateVolumeGradient(volumeValue) {
-                const percentage = volumeValue * 100;
-                volumeSlider.style.background = `linear-gradient(to right, #0071e3 0%, #0071e3 ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
-            }
-
-            function handleVolumeChange() {
-                volumeSlider.value = audioPlayer.volume;
-                updateVolumeGradient(audioPlayer.volume);
-                
-                if (audioPlayer.muted || audioPlayer.volume === 0) {
-                    volumeIcon.classList.add('hidden');
-                    muteIcon.classList.remove('hidden');
-                } else {
-                    volumeIcon.classList.remove('hidden');
-                    muteIcon.classList.add('hidden');
-                }
-            }
-            // -----------------------------------------------------------------
-
-            function loadTrack(index) {
-                if (index < 0 || index >= tracks.length) return;
-
-                const track = tracks[index];
-                const src = track.dataset.src;
-                const title = track.dataset.title;
-                const artist = track.dataset.artist;
-                const avatar = track.dataset.avatar;
-
-                if (audioPlayer.src !== src) {
-                    audioPlayer.pause();
-                    isPlaying = false;
-                    playIcon.classList.remove('hidden');
-                    pauseIcon.classList.add('hidden');
-                    audioPlayer.src = src;
-                }
-
-                playerTitle.textContent = title;
-                playerArtist.textContent = artist;
-                playerAvatar.src = avatar;
-
-                tracks.forEach(t => t.classList.remove('focus'));
-                track.classList.add('focus');
-                
-                currentTrackIndex = index;
-                
-                currentTimeEl.textContent = '0:00';
-                totalDurationEl.textContent = '0:00';
-                progressBar.value = 0;
-                
-                progressBar.style.background = `linear-gradient(to right, #d2d2d7 0%, #d2d2d7 100%)`;
-            }
-
-            async function playTrack() {
-                if (!audioPlayer.src || audioPlayer.src === window.location.href) {
-                    showModal("Пожалуйста, выберите трек для воспроизведения.");
-                    return;
-                }
-
-                try {
-                    await audioPlayer.play();
-                    
-                    isPlaying = true;
-                    playIcon.classList.add('hidden');
-                    pauseIcon.classList.remove('hidden');
-
-                } catch (error) {
-                    console.error("Ошибка при воспроизведении (возможно, Autoplay заблокирован):", error);
-                    
-                    isPlaying = false;
-                    audioPlayer.pause();
-                    playIcon.classList.remove('hidden');
-                    pauseIcon.classList.add('hidden');
-                    
-                    if (error.name === 'NotAllowedError' || error.name === 'NotSupportedError') {
-                        showModal("Воспроизведение заблокировано браузером. Нажмите кнопку 'Play' для старта.");
-                    } else {
-                        showModal("Произошла ошибка при попытке воспроизведения. Проверьте консоль.");
-                    }
-                }
-            }
-
-            function pauseTrack() {
-                isPlaying = false;
-                audioPlayer.pause();
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-            }
-
-            async function playPauseToggle() {
-                if (isPlaying) {
-                    pauseTrack();
-                } else {
-                    await playTrack();
-                }
-            }
-
-            async function nextTrack() {
-                let newIndex = currentTrackIndex + 1;
-                if (newIndex >= tracks.length) {
-                    newIndex = 0;
-                }
-                loadTrack(newIndex);
-                await playTrack();
-            }
-
-            async function prevTrack() {
-                let newIndex = currentTrackIndex - 1;
-                if (newIndex < 0) {
-                    newIndex = tracks.length - 1;
-                }
-                loadTrack(newIndex);
-                await playTrack();
-            }
-
-            function formatTime(seconds) {
-                if (isNaN(seconds) || seconds < 0) return '0:00';
-                const minutes = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-            }
-
-            function setDuration() {
-                const duration = audioPlayer.duration;
-                totalDurationEl.textContent = formatTime(duration);
-                progressBar.max = duration;
-                
-                const trackItem = tracks[currentTrackIndex];
-                if(trackItem) {
-                    const durationEl = trackItem.querySelector('.track-duration');
-                    if(durationEl) durationEl.textContent = formatTime(duration);
-                }
-            }
-            
-            function updateProgress() {
-                 const current = audioPlayer.currentTime;
-                 const duration = audioPlayer.duration;
-                 
-                 currentTimeEl.textContent = formatTime(current);
-                 
-                 if (!isNaN(duration) && duration > 0) {
-                     progressBar.value = current;
-                     const percentage = (current / duration) * 100;
-                     progressBar.style.background = `linear-gradient(to right, #0071e3 0%, #0071e3 ${percentage}%, #d2d2d7 ${percentage}%, #d2d2d7 100%)`;
-                 }
-            }
-
-            tracks.forEach((track, index) => {
-                const tempAudio = new Audio(track.dataset.src);
-                tempAudio.addEventListener('loadedmetadata', () => {
-                     const durationEl = track.querySelector('.track-duration');
-                     if(durationEl) durationEl.textContent = formatTime(tempAudio.duration);
-                });
-
-                track.addEventListener('click', async (e) => {
-                    if (e.target.closest('button')) {
-                        return;
-                    }
-                    loadTrack(index);
-                    await playTrack();
-                });
-            });
-
-            playPauseBtn.addEventListener('click', playPauseToggle);
-            nextBtn.addEventListener('click', nextTrack);
-            prevBtn.addEventListener('click', prevTrack);
-
-            audioPlayer.addEventListener('loadedmetadata', setDuration);
-            audioPlayer.addEventListener('timeupdate', updateProgress);
-            audioPlayer.addEventListener('ended', nextTrack);
-            audioPlayer.addEventListener('pause', () => {
-                isPlaying = false;
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-            });
-            audioPlayer.addEventListener('play', () => {
-                isPlaying = true;
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-            });
-            audioPlayer.addEventListener('error', (e) => {
-                 console.error("Audio error:", e);
-                 showModal("Ошибка загрузки аудио. Проверьте источник.");
-                 pauseTrack();
-            });
-
-            progressBar.addEventListener('input', (e) => {
-                audioPlayer.currentTime = parseFloat(e.target.value);
-                updateProgress();
-            });
-            
-            
-            volumeSlider.addEventListener('input', (e) => {
-                const newVolume = parseFloat(e.target.value);
-                audioPlayer.volume = newVolume;
-                updateVolumeGradient(newVolume);
-            });
-
-            audioPlayer.addEventListener('volumechange', handleVolumeChange);
-
-            volumeBtn.addEventListener('click', () => {
-                audioPlayer.muted = !audioPlayer.muted;
-            });
-
-            // ----------------------------------------------------
-            if(tracks.length > 0) {
-                 loadTrack(0);
-            }
-            updateVolumeGradient(audioPlayer.volume);
-        });
-
-    </script>
 </body>
+<script src="./js/main.js"></script>
 </html>
