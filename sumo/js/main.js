@@ -359,3 +359,9 @@ document.querySelector('.close_left-menu').addEventListener('click', () => {
 document.querySelector('.btn_burger-menu').addEventListener('click', () => {
   document.querySelector('.block-burger_menu').classList.toggle('hidden');
 });
+
+document.querySelectorAll('.about_audio').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelector('.library__right').classList.toggle('hidden');
+  });
+});

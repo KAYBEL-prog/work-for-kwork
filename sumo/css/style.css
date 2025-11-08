@@ -876,6 +876,9 @@
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 
         }
+        .about_audio{
+          display: none;
+        }
         .dialog-menu.hidden{
             width: 0%;
             opacity: 0;
@@ -889,6 +892,9 @@
             font-weight: 600;
         }
         @media (max-width:1024px) {
+            .about_audio{
+              display: block;
+            }
             .library__right-audio_description-btn_close{
                 display: flex;
             }
