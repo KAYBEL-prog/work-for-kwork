@@ -24,12 +24,65 @@
             <a href="#" class="d-block fs-6 ms-lg-1 ms-0">блог</a>
             <a href="#" class="d-block fs-6 ms-lg-1 ms-0">контакты</a>
           </nav>
-          <button id="burger-menu" class="px-0 d-md-none d-block ">
-            <img src="./assets/img/icon/burger-menu.png" alt="burger-menu.png" style="width: 25px;">
+          <button id="burgerMenu" class="px-0 d-md-none d-block ">
+            <svg width="35" height="35" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="7" width="25" height="1.5" fill="white"/>
+            <rect x="2" y="14" width="25" height="1.5" fill="white"/>
+            <rect x="2" y="21" width="25" height="1.5" fill="white"/>
+            </svg>
           </button>
         </div>
       </header>
+      <div class="burger-menu d-none">
+        <div class="container px-3 px-sm-0 d-flex justify-content-between align-items-center mt-3">
+          <div class="burger-menu__logo w-max d-flex">
+            <img style="width: 85px;" src="./assets/img/logo/logo.png" alt="logo.png">
+          </div>
+          <button id="burgerMenuClose" class="burger-menu__btn-close h-max">
+            <svg width="35" height="35" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="23.6777" width="25" height="1.5" transform="rotate(-45 5 23.6777)" fill="white"/>
+            <rect x="6.06055" y="6" width="25" height="1.5" transform="rotate(45 6.06055 6)" fill="white"/>
+            </svg>
 
+          </button>
+        </div>
+        <ul class="container list-unstyled d-flex flex-column gap-2 px-3 ">
+          <li><a class="text-white" href="#">главная</a></li>
+          <li><a class="text-white" href="#">портфолио</a></li>
+          <li><a class="text-white" href="#">о нас</a></li>
+          <li><a class="text-white" href="#">услуги и цены</a></li>
+          <li><a class="text-white" href="#">блог</a></li>
+          <li><a class="text-white" href="#">контакты</a></li>
+        </ul>
+        <div class="container mx-auto justify-content-end row col-12 gap-2 px-3 mt-4">
+          <div class="col-2 col-sm-1 px-0">
+              <svg class="w-100" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48.4698" height="48.4698" fill="#E41919"/>
+                <path d="M33.9294 15.2708L30.2876 34.2831C30.2876 34.2831 29.778 35.6013 28.3783 34.9691L19.9756 28.2974L19.9367 28.2778C21.0717 27.2224 29.873 19.0277 30.2576 18.6562C30.8531 18.081 30.4834 17.7385 29.792 18.173L16.7914 26.7226L11.7758 24.9751C11.7758 24.9751 10.9865 24.6843 10.9106 24.0521C10.8337 23.4189 11.8018 23.0764 11.8018 23.0764L32.2489 14.77C32.2489 14.77 33.9294 14.0053 33.9294 15.2708Z" fill="white"/>
+              </svg>
+          </div>
+          <div class="col-2 col-sm-1 px-0">
+              <svg class="w-100" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48.4698" height="48.4698" fill="#E41919"/>
+                <path d="M25.426 32.7164C16.3179 32.7164 11.1227 26.3483 10.9062 15.752H15.4686C15.6185 23.5294 18.982 26.8238 21.6462 27.5031V15.752H25.9422V22.4596C28.573 22.1709 31.3371 19.1143 32.2696 15.752H36.5656C36.2142 17.4957 35.5138 19.1468 34.5081 20.602C33.5025 22.0571 32.2132 23.2849 30.721 24.2087C32.3867 25.0528 33.8579 26.2475 35.0375 27.714C36.2172 29.1805 37.0785 30.8855 37.5646 32.7164H32.8357C32.3993 31.1261 31.5124 29.7025 30.2862 28.6241C29.0599 27.5457 27.5487 26.8603 25.9422 26.654V32.7164H25.426Z" fill="white"/>
+              </svg>
+          </div>
+          <div class="col-2 col-sm-1 px-0">
+
+              <svg class="w-100" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48.4698" height="48.4698" fill="#E41919"/>
+                <path d="M33.8409 14.6172C31.447 12.2316 28.2551 10.9062 24.8858 10.9062C17.8813 10.9062 12.2068 16.5611 12.2068 23.5412C12.2068 25.7501 12.8275 27.959 13.8914 29.8145L12.1182 36.3529L18.8566 34.5858C20.7186 35.5577 22.7579 36.0878 24.8858 36.0878C31.8903 36.0878 37.5648 30.433 37.5648 23.4529C37.4761 20.1837 36.2348 17.0028 33.8409 14.6172ZM31.0036 28.0474C30.7376 28.7542 29.4963 29.4611 28.8757 29.5494C28.3437 29.6378 27.6344 29.6378 26.9251 29.4611C26.4818 29.2844 25.8611 29.1077 25.1518 28.7542C21.9599 27.4289 19.9206 24.2481 19.7433 23.983C19.566 23.8063 18.4133 22.3042 18.4133 20.7138C18.4133 19.1234 19.2113 18.4165 19.4773 18.0631C19.7433 17.7097 20.0979 17.7097 20.3639 17.7097C20.5413 17.7097 20.8073 17.7097 20.9846 17.7097C21.1619 17.7097 21.4279 17.6213 21.6939 18.2398C21.9599 18.8583 22.5805 20.4487 22.6692 20.5371C22.7579 20.7138 22.7579 20.8905 22.6692 21.0672C22.5805 21.2439 22.4919 21.4207 22.3145 21.5974C22.1372 21.7741 21.9599 22.0392 21.8712 22.1275C21.6939 22.3042 21.5166 22.4809 21.6939 22.746C21.8712 23.0994 22.4919 24.0713 23.4672 24.9549C24.7085 26.0152 25.6838 26.3686 26.0384 26.5453C26.3931 26.722 26.5704 26.6337 26.7478 26.457C26.9251 26.2803 27.5457 25.5734 27.7231 25.22C27.9004 24.8666 28.1664 24.9549 28.4324 25.0433C28.6984 25.1316 30.2943 25.9268 30.5603 26.1035C30.915 26.2803 31.0923 26.3686 31.181 26.457C31.2696 26.722 31.2696 27.3405 31.0036 28.0474Z" fill="white"/>
+              </svg>
+          </div>
+          <div class="col-2 col-sm-1 px-0">
+              <svg class="w-100" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48.4698" height="48.4698" fill="#E41919"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8008 24.3213V37.122H17.1797H21.5586V33.1396V29.1571H24.3193H27.0799V33.1396V37.122H31.4611H35.8422L35.7925 29.7833L35.7426 22.4446L27.653 20.1207C23.2038 18.8427 19.3698 17.7485 19.1331 17.6893C18.7087 17.5833 18.7028 17.5399 18.7028 14.5512V11.5205H15.7518H12.8008V24.3213Z" fill="white"/>
+              </svg>
+          </div>
+
+        </div>
+      </div>
       <main>
         <section class="bg-block1">
           <div class="container px-3 px-sm-0 h-100 d-flex flex-column pt-5">
@@ -75,15 +128,20 @@
               <div class="col-12 col-md-6 p-0 pe-0 pe-xl-3 d-flex flex-column">
                 <span class="text-secondary d-none d-sm-block mb-0 mb-md-5" style="font-size: 18px;">О студии</span>
                 <span class="text-secondary fw-light mb-3 d-block d-sm-none" style="font-size: 13px;">О студии</span>
-                <div class="w-max d-none d-sm-flex flex-column mx-auto ms-sm-2 ms-lg-0 mt-2 mt-md-4">
+                <div class="w-max d-none d-md-flex flex-column mx-auto ms-sm-2 ms-lg-0 mt-2 mt-md-4">
                   <span class="text-other w-max involve-regular ms-5 mb-1 ps-5  text-red lh-1 fw-semibold">CHE DESIGN</span>
                   <p class="text-other w-max involve-regular lh-1 fw-bold p-0">ВХОДИТ В <span class="text-red">ТОП 10</span> СТУДИЙ</p>
                   <span class="text-other w-100 involve-regular text-end lh-sm fw-bold fst-italic pe-1">МОСКВЫ</span>
                 </div>
-                <div class="w-max d-flex d-sm-none flex-column mx-auto ms-sm-2 ms-lg-0 mt-2 mt-md-5">
+                <div class="w-max d-none d-sm-flex d-md-none flex-column mx-auto ms-sm-2 ms-lg-0 mt-2 mt-md-5">
                   <span class="w-max involve-regular ms-5 mb-1 ps-2 px-sm-5 text-red lh-1 fw-semibold" style="font-size: 24px;">CHE DESIGN</span>
                   <p class="w-max involve-regular lh-1 fw-bold p-0" style="font-size: 24px;">ВХОДИТ В <span class="text-red">ТОП 10</span> СТУДИЙ</p>
                   <span class="w-100 involve-regular text-end fw-bold fst-italic pe-1" style="font-size: 24px;">МОСКВЫ</span>
+                </div>
+                <div class="w-max d-flex d-sm-none flex-column mx-auto ms-sm-2 ms-lg-0 mt-2 mt-md-5">
+                  <span class="w-max involve-regular ms-5 mb-1 ps-2 px-sm-5 text-red lh-1 fw-semibold" style="font-size: 18px;">CHE DESIGN</span>
+                  <p class="w-max involve-regular lh-1 fw-bold p-0" style="font-size: 18px;">ВХОДИТ В <span class="text-red">ТОП 10</span> СТУДИЙ</p>
+                  <span class="w-100 involve-regular text-end fw-bold fst-italic pe-1" style="font-size: 18px;">МОСКВЫ</span>
                 </div>
                 <img class="photo-img_1 w-100 mx-auto mt-3 d-block d-md-none" src="./assets/img/photo/img_1.png" alt="studio-about img_1.png">
                 <div class="justify-content-between mt-3 d-flex d-md-none">
@@ -149,46 +207,46 @@
             <div class="container px-2 px-md-0 mx-auto mt-5 my-5 pb-5 pt-0 pt-sm-5 row row-cols-2 row-cols-xl-4 gx-0 ">
               <div class="col p-1 px-md-2" style="box-sizing: border-box;">
                 <div class="h-100 mb-3 mb-sm-0 py-4 p-3 p-sm-4 bg-red" style="padding-bottom: 40px !important;">
-                  <svg class="d-none d-md-block" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g style="mix-blend-mode:color-dodge">
-<g clip-path="url(#clip0_4221_783)">
+                  
+<svg class="d-none d-md-block" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4444_42)">
 <rect width="44.6667" height="44.6667" rx="9.30556" fill="#E4E4E4" fill-opacity="0.1"/>
-<rect width="44.6667" height="44.6667" fill="url(#paint0_linear_4221_783)"/>
-<g filter="url(#filter0_d_4221_783)">
-<path d="M26.0539 18.6112V11.1667H11.165V18.6112L26.0539 18.6112Z" fill="url(#paint1_linear_4221_783)"/>
-<path d="M26.0536 26.0556C21.9422 26.0556 18.6092 29.3886 18.6092 33.5L11.1659 33.5003L11.1659 33.3082C11.2683 25.2055 17.843 18.6626 25.9578 18.6114L33.4984 18.6118V33.5007H26.0539L26.0536 26.0556Z" fill="url(#paint2_linear_4221_783)"/>
-</g>
+<rect width="44.6667" height="44.6667" fill="url(#paint0_linear_4444_42)"/>
+<g filter="url(#filter0_d_4444_42)">
+<path d="M26.054 18.6112V11.1667H11.1652V18.6112L26.054 18.6112Z" fill="url(#paint1_linear_4444_42)"/>
+<path d="M26.0537 26.0556C21.9423 26.0556 18.6093 29.3886 18.6093 33.5L11.1661 33.5003L11.1661 33.3082C11.2684 25.2055 17.8431 18.6626 25.958 18.6114L33.4985 18.6118V33.5007H26.054L26.0537 26.0556Z" fill="url(#paint2_linear_4444_42)"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d_4221_783" x="8.37337" y="4.88534" width="27.9188" height="39.0833" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_4444_42" x="8.37349" y="4.88534" width="27.9185" height="39.0833" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="1.39583" operator="erode" in="SourceAlpha" result="effect1_dropShadow_4221_783"/>
+<feMorphology radius="1.39583" operator="erode" in="SourceAlpha" result="effect1_dropShadow_4444_42"/>
 <feOffset dy="2.09375"/>
 <feGaussianBlur stdDeviation="2.09375"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0.1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4221_783"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4221_783" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_4444_42"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_4444_42" result="shape"/>
 </filter>
-<linearGradient id="paint0_linear_4221_783" x1="22.3333" y1="5.54655e-07" x2="24.1944" y2="44.6667" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_4444_42" x1="22.3333" y1="5.54655e-07" x2="24.1944" y2="44.6667" gradientUnits="userSpaceOnUse">
 <stop stop-color="white" stop-opacity="0"/>
 <stop offset="1" stop-color="white" stop-opacity="0.12"/>
 </linearGradient>
-<linearGradient id="paint1_linear_4221_783" x1="22.3317" y1="11.1667" x2="22.3317" y2="33.5007" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_4444_42" x1="22.3318" y1="11.1667" x2="22.3318" y2="33.5007" gradientUnits="userSpaceOnUse">
 <stop stop-color="white" stop-opacity="0.8"/>
 <stop offset="1" stop-color="white" stop-opacity="0.5"/>
 </linearGradient>
-<linearGradient id="paint2_linear_4221_783" x1="22.3317" y1="11.1667" x2="22.3317" y2="33.5007" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_4444_42" x1="22.3318" y1="11.1667" x2="22.3318" y2="33.5007" gradientUnits="userSpaceOnUse">
 <stop stop-color="white" stop-opacity="0.8"/>
 <stop offset="1" stop-color="white" stop-opacity="0.5"/>
 </linearGradient>
-<clipPath id="clip0_4221_783">
+<clipPath id="clip0_4444_42">
 <rect width="44.6667" height="44.6667" rx="9.30556" fill="white"/>
 </clipPath>
 </defs>
 </svg>
+
 
                   <div class="d-flex flex-column mt-0 mt-md-5 pt-0 pt-md-5">
                     <span class="fs-0.1 fs-md-0.1 fw-bold text-white lh-1">19+</span>
@@ -1059,9 +1117,9 @@
                 <span class="col-12 col-md-4 col-lg-3 d-none d-sm-flex px-0 mb-4 lh-1" style="font-size: 55px;">ТАРИФЫ</span> 
                 <span class="col-12 col-md-4 col-lg-3 d-flex d-sm-none px-0 mb-4 lh-1 fs-2 ">ТАРИФЫ</span> 
                 <p class="col-12 col-lg-5 px-0 d-none d-sm-flex " style="font-size: 18px; color: #616161; line-height: 120%;">Конечная стоимость работы зависит от объекта и будет рассчитана при первой встрече в офисе.</p>
-                <p class="col-12 col-lg-5 px-0 d-flex d-sm-none opacity-25" style="font-size: 13px;">Конечная стоимость работы зависит от объекта и будет рассчитана при первой встрече в офисе.</p>
+                <p class="col-12 col-lg-5 px-0 d-flex d-sm-none" style="font-size: 13px; color: #616161; line-height: 100%;">Конечная стоимость работы зависит от объекта и будет рассчитана при первой встрече в офисе.</p>
               </div>
-              <div class="row row-cols-3 px-0 pb-4 pt-4 g-2 d-none d-md-flex" >
+              <div class="row row-cols-3 px-0 pb-4 pt-2 pt-sm-4 g-2 d-none d-md-flex" >
                 <div class="col">
                   <button class="portfolio_item-btn active w-100 text-center border-white-25 py-3">
                     <span class="fs-6 text-white">Премиум 7 990 ₽/м²</span>
@@ -1647,6 +1705,14 @@
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/slick.min.js"></script>
 <script type="text/javascript">
+  document.getElementById('burgerMenu').addEventListener('click', () => {
+    document.querySelector('.burger-menu').classList.remove('d-none')
+  });
+  document.getElementById('burgerMenuClose').addEventListener('click', () => {
+    document.querySelector('.burger-menu').classList.add('d-none')
+  });
+
+
 
   $(document).ready(function(){
     $('.slick-slider-portfolio').slick({

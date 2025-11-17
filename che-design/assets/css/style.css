@@ -42,6 +42,18 @@ header{
 footer{
   background-color: #0C0C0C;
 }
+
+.burger-menu{
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  height: 100dvh;
+  background-color: #262626;
+}
+.burger-menu ul{
+  margin-top: 30px;
+  text-align: end;
+}
 .w-max{
   width: max-content;
 }
