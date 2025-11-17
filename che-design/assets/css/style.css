@@ -407,7 +407,14 @@ footer{
   transition: 0.3s;
   margin-top: 0px;
 }
+.footer-logo img{
+  width: 164px;
+}
+
 @media (max-width:768px) {
+  .footer-logo img{
+    width: 90px;
+  }
   .scrolled {
     margin-top: 0px;
   }
