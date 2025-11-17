@@ -1707,9 +1707,11 @@
 <script type="text/javascript">
   document.getElementById('burgerMenu').addEventListener('click', () => {
     document.querySelector('.burger-menu').classList.remove('d-none')
+    document.body.classList.add('overflow-y-hidden');
   });
   document.getElementById('burgerMenuClose').addEventListener('click', () => {
     document.querySelector('.burger-menu').classList.add('d-none')
+    document.body.classList.remove('overflow-y-hidden');
   });
 
 
