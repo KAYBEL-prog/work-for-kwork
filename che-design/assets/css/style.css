@@ -297,15 +297,15 @@ footer{
   transition: transform 0.3s;
 }
 .portfolio_item-btn span{
-  color: #959595;
+  color: #959595 !important;
 }
 .portfolio_item-btn.active{
   background-color: transparent;
   transition: background-color 0.3s;
-  color: #fff;
+  color: #fff !important;
 }
 .portfolio_item-btn.active span{
-  color: #fff;
+  color: #fff !important;
 }
 .portfolio_item-btn.active{
   background-color: #CA110F;
@@ -316,7 +316,7 @@ footer{
   transition: background-color 0.3s;
 }
 .portfolio_item-btn:focus span{
-  color: #fff;
+  color: #fff !important;
 
 }
 
