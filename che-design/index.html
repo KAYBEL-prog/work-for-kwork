@@ -1075,10 +1075,10 @@
               </div>
             </div>
             <div class="row mx-auto px-0 ">
-              <div class="col-5 col-md-6 px-1 px-sm-3 d-flex flex-column">
+              <div class="col-5 col-md-6 px-0 px-sm-3 d-flex flex-column">
                 <img class="w-100 h-100 my-auto " style="object-fit: cover;" src="./assets/img/photo/img_form1.png" alt="">
               </div>
-              <div class="col-7 col-md-6 px-1 px-sm-3">
+              <div class="col-7 col-md-6 px-2 px-sm-3">
                 <form id="requestForm" class="h-100 d-flex flex-column">
                   <div class="mb-3">
                     <input type="text" class="form-control rounded-0 p-3 bg-gray " id="name1" name="name1" placeholder="Ваше имя" required>
@@ -1089,13 +1089,16 @@
                   <div class="mb-3">
                     <input type="email" class="form-control rounded-0 p-3 bg-gray " id="email" name="email" placeholder="Ваш e‑mail" required>
                   </div>
-                  <div class="mb-3">
+                  <div class="">
                     <textarea class="form-control rounded-0 p-3 bg-gray " id="comment" name="comment" rows="3" placeholder="Комментарий (м²)"></textarea>
                   </div>
-                  <div class="mt-auto">
+                  <div class="d-none d-lg-block mt-3">
                     <button type="submit" class="w-100 bg-red py-3 text-white">Отправить заявку</button>
                   </div>
                 </form>
+              </div>
+              <div class="d-block d-lg-none col-12 px-0 mt-4">
+                <button type="submit" class="w-100 bg-red py-3 text-white">Отправить заявку</button>
               </div>
             </div>
           </div>
