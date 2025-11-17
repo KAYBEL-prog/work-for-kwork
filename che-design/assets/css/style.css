@@ -120,14 +120,14 @@ footer{
 }
 @media (max-width:768px) {
   .slick-slider-video .slick-list .slick-track .slick-slide img{
-    width: 300px;
+    width: 290px;
     margin: 0px 10px;
+    margin-left: 0px;
   }
 }
 @media (max-width:425px) {
   .slick-slider-video .slick-list .slick-track .slick-slide img{
-    width: 250px;
-    height: 200px;
+    width: 290px;
     object-fit: cover;
     margin: 0px 10px;
     margin-left: 0px;
@@ -142,12 +142,12 @@ footer{
   justify-self: center;
   justify-content: space-between;
 }
-@media (max-width:768px) {
+@media (max-width:991px) {
   .slider-arrows{
     position: absolute;
     margin-top: -285px;
-    padding-left: 190px;
-    padding-right: 190px;
+    padding-left: 0px;
+    padding-right: 0px;
     display: flex;
     justify-self: center;
     justify-content: space-between;
