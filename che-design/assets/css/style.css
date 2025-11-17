@@ -111,6 +111,9 @@ footer{
 .slick-slider-video .slick-list{
   overflow: visible;
 }
+.slick-slider-video .slick-list .slick-track{
+  overflow: hidden;
+}
 .slick-slider-video .slick-list .slick-track .slick-slide img{
   width: auto;
   margin: 0px 50px;
