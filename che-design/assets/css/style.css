@@ -478,15 +478,17 @@ footer{
 }
 .bg-block4{
   width: 100%;
-  max-width: 1720px;
+  max-width: 1920px;
   margin: auto;
   height: 720px;
   background-image: url(./../img/photo/background/bg-block4.jpg);
   background-position: top center;
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
-
+.bg-block4 .container{
+  max-width: 1440px;
+}
 
 @media (max-width:991px) {
   .bg-block4{
